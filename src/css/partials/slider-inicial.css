@@ -1,0 +1,36 @@
+ .imagen-slider-inicial{
+ 	background-size: cover !important;
+ 	background-repeat: no-repeat !important;
+ 	height: 80vh;
+ 	background-position: center center !important;
+ 	position: relative;
+ 	& .cont-articulos-slide{
+ 		position: absolute;
+ 		top: 130px;
+ 		padding: 0 6rem;
+ 		& h1{
+ 			font-size: 7rem;
+ 			color: var(--colorSecundario);
+ 			font-family: 'Raleway';
+ 		}
+ 		& p{
+ 			font-size: 1.9rem;
+ 			color: var(--colorSecundario);
+ 			font-family: 'Raleway-Ligera';
+ 			padding: 1.5rem 0;
+ 		}
+ 		& button{
+ 			width: 120px;
+ 			font-size: 1.9rem;
+ 			border-radius: 5px;
+ 			border: 0px;
+ 			padding: 1rem 0;
+ 			background: var(--colorTercero);
+ 			font-family: 'Raleway';
+ 		}
+ 	}
+ }
+
+ .slick-prev, .slick-next{
+ 	display: none !important;
+ }

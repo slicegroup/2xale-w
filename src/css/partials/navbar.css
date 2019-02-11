@@ -1,0 +1,63 @@
+.navbar-expand-lg{
+	padding: 1.5rem 0 0 0;
+	background: var(--colorSecundario) !important;
+	& .navbar-brand{
+		font-size: 3rem;
+		color: var(--colorPrimario);
+		margin-right: 2rem;
+		font-family: 'Raleway';
+	}
+	& .icono-primario{
+		color: var(--colorPrimario) !important;
+		font-size: 2rem;
+	}
+	& .barra-buscador{
+		width: 55% !important;
+		& input{
+			font-size: 1.5rem;
+			width: 100%;
+			height: 30px !important;
+			border: 0px;
+			border-radius: 5px;
+		}
+		& .btn-outline-success{
+			position: absolute !important;
+			height: 30px !important;
+			left: 60.4% !important;
+			background: var(--colorCuarto) !important;
+			border: 0px;
+			border-radius: 0px 2px 2px 0px;
+			color: var(--colorPrimario);
+			& i{
+				font-size: 1.5rem;
+				padding: 0 1.5rem;
+			}
+			&:hover{
+				background: var(--colorTercero) !important;
+				color: var(--colorPrimario) !important;
+			}
+		}
+	}
+	& .info-header{
+		font-size: 1.5rem;
+		font-family: 'Raleway-ligera';
+		color: var(--colorPrimario) !important;
+		& i{
+			padding: 0 1rem;
+			font-size: 2rem;
+		}
+	}
+}
+
+.navbar-secundario {
+	padding: 0rem 0 1.8rem 0;
+	margin-left: 90px;
+	& .nav-item{
+		& a{
+			font-size: 1.5rem;
+			padding: 0 2rem;
+			color: var(--colorPrimario);
+			font-family: 'Raleway-ligera';
+		} 
+	}
+}

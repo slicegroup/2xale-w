@@ -1,18 +1,18 @@
 @import 'variables';
 .navbar-expand-lg {
 	padding: 15px 0 0 0;
-	padding: 1.5rem 0 0 0;
+	padding: 1.8rem 0 0 0;
 	background-color: $colorSecundario !important;
 	.navbar-brand {
 	  font-size: 30px;
 	  font-size: 3rem;
 	  color: #fff;
-	  margin-right: 20px;
-	  margin-right: 2rem;
+	  margin-right: 3.5rem;
 		font-family: $font-primary;
 		font-weight: bold;
 		img{
-			width: 90px;
+			width: 65px;
+			margin: 10px -5px;
 		}
 	}
 	.icono-primario {
@@ -21,7 +21,7 @@
 	  font-size: 2rem;
 	}
 	.barra-buscador {
-	  width: 55% !important;
+	  width: 65% !important;
 	  input {
 		font-size: 15px;
 		font-size: 1.5rem;
@@ -33,7 +33,7 @@
 	  .btn-outline-success {
 		position: absolute !important;
 		height: 30px !important;
-		left: 60.4% !important;
+		left: 67.4% !important;
 		background: rgb(2, 201, 7) !important;
 		border: 0px;
 		border-radius: 0px 2px 2px 0px;
@@ -65,9 +65,12 @@
   }
   
   .navbar-secundario {
-	padding: 0px 0 18px 0;
-	padding: 0rem 0 1.8rem 0;
-	margin-left: 90px;
+	padding: 0rem;
+	margin-left: 71px;
+	margin-top: -10px;
+	.navbar-nav{
+	margin-bottom: 8px;
+	}
 	.nav-item a {
 	  font-size: 15px;
 	  font-size: 1.5rem;

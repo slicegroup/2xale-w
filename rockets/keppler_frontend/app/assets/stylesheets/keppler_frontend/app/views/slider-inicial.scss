@@ -57,3 +57,7 @@
       border: 2px solid rgb(37, 92, 243);
     }
   }
+
+  .slick-dots li button::before{
+    color: transparent !important;
+  }

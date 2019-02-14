@@ -1,0 +1,7 @@
+modules:
+  banners:
+    name: Banner
+    model: KepplerBannersBanner
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]

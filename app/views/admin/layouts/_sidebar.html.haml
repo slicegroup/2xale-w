@@ -8,7 +8,7 @@
         - @sidebar.each do |menu|
           - menu.each do |key, _value|
             - if menu[key]['submenu']
-              - if !menu[key]['enviroment'] || menu[key]['enviroment'].eql?(Rails.env)
+              - if !menu[key]['enviroment'] || menu[key]['enviroment'].eql?(Rails.env) || menu[key]['enviroment'].eql?('all')
                 - if menu[key]['model']
                   - if included_in?(current_user.allowed_modules, menu[key]['submenu'].map(&:keys).flatten) || can?(menu[key]['model'].constantize).index? || allowed_action?(menu[key]['model'], menu[key]['submenu'].map(&:keys).flatten)
                     %li.sidebar-item{ class: ('active' if menu[key]['current'].include?(controller_path)) }

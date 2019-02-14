@@ -1,4 +1,13 @@
 PATH
+  remote: rockets/keppler_banners
+  specs:
+    keppler_banners (0.1.0)
+      haml_rails
+      pundit
+      rails (= 5.2.0)
+      simple_form
+
+PATH
   remote: rockets/keppler_capsules
   specs:
     keppler_capsules (0.1.0)
@@ -595,6 +604,7 @@ DEPENDENCIES
   jshint
   kaminari (~> 1.1, >= 1.1.1)
   kaminari-i18n (= 0.5.0)
+  keppler_banners!
   keppler_capsules!
   keppler_frontend!
   keppler_ga_dashboard!

@@ -3,6 +3,7 @@
     margin: 30px 0;
     margin: 3rem 0;
     .card-inicio {
+      cursor: pointer;
       margin-bottom: 2rem;
       border: solid 1px $bgSecundario;
       height: 440px;
@@ -51,6 +52,10 @@
           position: absolute;
           left: 37px;
           color: $colorPrimario;
+          &:hover{
+            background: $colorSecundario !important;
+            transition: 0.5s;
+          }
         }
         ul{
           padding: 0px !important;
@@ -59,12 +64,17 @@
             font-size: 1rem;
             list-style-type: none;
             padding: 1em;
+            color: $colorTercero;
             text-transform: uppercase;
+            font-family: $font-primary;
+            font-weight: bold;
           }
           
           li span {
             display: block;
             font-size: 1.5rem;
+            color: $colorTercero;
+            
           }
         }
       }

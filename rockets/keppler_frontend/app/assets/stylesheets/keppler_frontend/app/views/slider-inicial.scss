@@ -39,7 +39,7 @@
         padding: 1rem 0;
         cursor: pointer;
         z-index: 1000;
-        background: rgb(37, 92, 243);
+        background: $colorTercero;
         font-family: $font-primary;
         font-weight: bold;
       }
@@ -55,7 +55,7 @@
     li {
       border-radius: 20px;
       background: #fff;
-      border: 2px solid rgb(37, 92, 243);
+      border: 2px solid $colorTercero;
     }
   }
 

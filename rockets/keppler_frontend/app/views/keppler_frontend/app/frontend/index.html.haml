@@ -1,139 +1,280 @@
 %header
-  / Cabecera de la pagina
-  .container
-    / navbar
-    %nav.navbar.navbar-expand-lg.navbar-light
-      %a.navbar-brand{:href => "#"} 2XALE
-      %form.form-inline.barra-buscador.my-2.my-lg-0
-        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Buscador", :type => "search"}/
-        %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"}
-          %i.fa.fa-search
-      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-        %span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        %ul.navbar-nav.ml-auto
-          %li.nav-item.info-header.active
-            %p
-              %i.fa.fa-whatsapp
-              +584120640761 / 414 6300761
-            %p
-              %i.fa.fa-envelope
-              servicioalcliente@2xale.com
-    %nav.navbar.navbar-expand-lg.navbar-secundario.navbar-light
-      #navbarSupportedContent.collapse.navbar-collapse
-        %ul.navbar-nav
-          %li.nav-item.active
-            %a{:href => ""} Inicio
-          %li.nav-item.active
-            %a{:href => ""} Contacto
-          %li.nav-item.active
-            %a{:href => ""} About Us
+	/ Cabecera de la pagina
+	.container
+		/ navbar
+		%nav.navbar.navbar-expand-lg.navbar-light
+			%a.navbar-brand{:href => "#"} 2xale
+			-# %img{:href => "/assets/keppler_frontend/app/logo_2xale.svg"}
+			%form.form-inline.barra-buscador.my-2.my-lg-0
+				%input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Buscador", :type => "search"}/
+				%button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"}
+					%i.fa.fa-search
+			%button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+				%span.navbar-toggler-icon
+			#navbarSupportedContent.collapse.navbar-collapse
+				%ul.navbar-nav.ml-auto
+					%li.nav-item.info-header.active
+						%p
+							%i.fa.fa-whatsapp
+							+584120640761 / 414 6300761
+						%p
+							%i.fa.fa-envelope
+							servicioalcliente@2xale.com
+		%nav.navbar.navbar-expand-lg.navbar-secundario.navbar-light
+			#navbarSupportedContent.collapse.navbar-collapse
+				%ul.navbar-nav
+					%li.nav-item.active
+						%a{:href => ""} Inicio
+					%li.nav-item.active
+						%a{:href => ""} Contacto
+					%li.nav-item.active
+						%a{:href => ""} About Us
 %section.sp-slider
-  / Slider Principal
-  .slider-inicial
-    .imagen-slider-inicial{:style => "background-image: url('/assets/keppler_frontend/app/img-01.png');"}
-      .cont-articulos-slide
-        %h1 Zapatos Lacoste
-        %p El mejor estilo que puede llevar un caballero, en pleno 2019.
-        %button Comprar
-    .imagen-slider-inicial{:style => "background-image: url('/assets/keppler_frontend/app/img-03.png');"}
-      .cont-articulos-slide
-        %h1 Control de PS4
-        %p Pasa horas de diversion con el PS4.
-        %button{:href => ""} Comprar
+	/ Slider Principal
+	.slider-inicial
+		.imagen-slider-inicial{:style => "background-image: url('/assets/keppler_frontend/app/img-01.png');"}
+			.cont-articulos-slide
+				%h1 Zapatos Lacoste
+				%p El mejor estilo que puede llevar un caballero, en pleno 2019.
+				%button Comprar
+		.imagen-slider-inicial{:style => "background-image: url('/assets/keppler_frontend/app/img-03.png');"}
+			.cont-articulos-slide
+				%h1 Control de PS4
+				%p Pasa horas de diversion con el PS4.
+				%button{:href => ""} Comprar
 %section.sp-publicidad-a
-  / Primera publicidad
-  .container
-    .publicidad-01
-      .text-center PUBLICIDAD
+	/ Primera publicidad
+	.container
+		.publicidad-01
+			.text-center PUBLICIDAD
 %section.sp-cards
-  / Cards de productos y publicidad del sidebar
-  .container
-    .row
-      .col-md-12
-        .row
-          .col-md-3
-            .card-inicio
-              / card
-              .img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-01.png');"}
-              .contenedor-texto-card
-                %span Calzado - 
-                %i.fa.fa-search 
-                %span Punto Fijo
-                %h3 Zapato Lacoste
-                %h2 44.000$
-                %p Contador de Dias para caducar
-                %button Comprar
-          .col-md-3
-            .card-inicio
-              / card
-              .img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
-              .contenedor-texto-card
-                %span Calzado - 
-                %i.fa.fa-search 
-                %span Punto Fijo
-                %h3 Zapato Lacoste
-                %h2 44.000$
-                %p Contador de Dias para caducar
-                %button Comprar
-          .col-md-3
-            .card-inicio
-              / card
-              .img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
-              .contenedor-texto-card
-                %span Calzado - 
-                %i.fa.fa-search 
-                %span Punto Fijo
-                %h3 Zapato Lacoste
-                %h2 44.000$
-                %p Contador de Dias para caducar
-                %button Comprar
-          .col-md-3
-            %div.publicidad-02 PUBLICIDAD
-%footer
-  / Footer 
+	/ Cards de productos y publicidad del sidebar
+	.container
+		.row
+			.col-md-12
+				.row
+					.col-md-3
+						.card-inicio
+							/ card
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-01.png');"}
+							.contenedor-texto-card
+								%span Calzado - 
+								%i.fa.fa-search 
+								%span Punto Fijo
+								%h3 Zapato Lacoste
+								%h2 44.000$
+								%ul
+									%li
+										%span#days>
+										days
+									%li
+										%span#hours>
+										Hour
+									%li
+										%span#minutes>
+										Minutes
+								%button Ordenar
+
+					.col-md-3
+						.card-inicio
+							/ card
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+							.contenedor-texto-card
+								%span Calzado - 
+								%i.fa.fa-search 
+								%span Punto Fijo
+								%h3 Zapato Lacoste
+								%h2 44.000$
+								%p Fecha por Asignar
+								%button Ordenar
+
+					.col-md-3
+						.card-inicio
+							/ card
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
+							.contenedor-texto-card
+								%span Calzado - 
+								%i.fa.fa-search 
+								%span Punto Fijo
+								%h3 Zapato Lacoste
+								%h2 44.000$
+								%p Fecha por Asignar
+								%button Ordenar
+
+					.col-md-3
+						%div.publicidad-02 PUBLICIDAD
+
+					.col-md-3
+						.card-inicio
+							/ card
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
+							.contenedor-texto-card
+								%span Calzado - 
+								%i.fa.fa-search 
+								%span Punto Fijo
+								%h3 Zapato Lacoste
+								%h2 44.000$
+								%p Fecha por Asignar
+								%button Ordenar
+
+					.col-md-3
+						.card-inicio
+							/ card
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-01.png');"}
+							.contenedor-texto-card
+								%span Calzado - 
+								%i.fa.fa-search 
+								%span Punto Fijo
+								%h3 Zapato Lacoste
+								%h2 44.000$
+								%p Fecha por Asignar
+								%button Ordenar
+
+					.col-md-3
+						.card-inicio
+							/ card
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+							.contenedor-texto-card
+								%span Calzado - 
+								%i.fa.fa-search 
+								%span Punto Fijo
+								%h3 Zapato Lacoste
+								%h2 44.000$
+								%p Fecha por Asignar
+								%button Ordenar
+								
+					.col-md-3
+						%div.publicidad-02 PUBLICIDAD
+
+%section.sp-publicidad-b
+	.container
+		.row
+			.col-md-6
+				.publicidad-03
+					.text-center
+						PUBLICIDAD
+			.col-md-6
+				.publicidad-03
+					.text-center
+						PUBLICIDAD
+
+%section.sp-mas-vendidos
+	.container
+		%h1.text-center Productos Más Vendidos
+		.row
+			.col-md-3
+				.card-inicio
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+					.contenedor-texto-card
+						%span Calzado - 
+						%i.fa.fa-search 
+						%span Punto Fijo
+						%h3 Zapato Lacoste
+						%h2 44.000$
+						%p Fecha por Asignar
+						%button Ordenar
+			.col-md-3
+				.card-inicio
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-01.png');"}
+					.contenedor-texto-card
+						%span Calzado - 
+						%i.fa.fa-search 
+						%span Punto Fijo
+						%h3 Zapato Lacoste
+						%h2 44.000$
+						%p Fecha por Asignar
+						%button Ordenar
+			.col-md-3
+				.card-inicio
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
+					.contenedor-texto-card
+						%span Calzado - 
+						%i.fa.fa-search 
+						%span Punto Fijo
+						%h3 Zapato Lacoste
+						%h2 44.000$
+						%p Fecha por Asignar
+						%button Ordenar
+			.col-md-3
+				.card-inicio
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+					.contenedor-texto-card
+						%span Calzado - 
+						%i.fa.fa-search 
+						%span Punto Fijo
+						%h3 Zapato Lacoste
+						%h2 44.000$
+						%p Fecha por Asignar
+						%button Ordenar
+
+%section.sp-publicidad-a
+	/ Primera publicidad
+	.container
+		.publicidad-01
+			.text-center PUBLICIDAD
+
+%section.sp-footer
+	%footer
+	/ Footer 
+	.container
+		.row
+			.col-md-12
+				.about-footer
+					%h4 About
+					%p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum qui, omnis sapiente numquam doloremque ratione explicabo quis consectetur commodi eaque consequatur ullam accusamus, vero esse, impedit corrupti excepturi alias.
+				
+		.row
+			.col-md-4 
+				.colm-a
+					%h4 Contactanos
+					%p Telefono
+					%p Correo 
+					%img 
+
+			.col-md-4
+				.colm-b
+					%h4 Siguenos
+					%a.links-redes
+						%i.fa.fa-facebook.official  
+							%span Facebook
+			.col-md-4
+			.col-md-12
+				%article
+					.copy-footer
+						%p Copyright 2Xale 2019 | Powered by Slice Group with Keppler					
 
 :javascript
-  $(document).ready(function(){
-    $('.slider-inicial').slick({
-      slidesToScroll: 1,
-      dots: true,
-      autoplaySpeed: 4000,
-      infinite: true,
-      autoplay: true,
-    });
-  });
+	$(document).ready(function(){
+		$('.slider-inicial').slick({
+			slidesToScroll: 1,
+			dots: true,
+			autoplaySpeed: 4000,
+			infinite: true,
+			autoplay: true,
+		});
+	});
 
 :javascript
-function ConteoRegresivo()
-{
-    var fecha=new Date('2014','5','12','15','00','00')
-    var hoy=new Date()
-    var dias=0
-    var horas=0
-    var minutos=0
-    var segundos=0
-    if (fecha>hoy)
-    {
-        var diferencia=(fecha.getTime()-hoy.getTime())/1000
-        dias=Math.floor(diferencia/86400)
-        diferencia=diferencia-(86400*dias)
-        horas=Math.floor(diferencia/3600)
-        diferencia=diferencia-(3600*horas)
-        minutos=Math.floor(diferencia/60)
-        diferencia=diferencia-(60*minutos)
-        segundos=Math.floor(diferencia)
-        document.getElementById('contador').innerHTML = '' + dias + ' : ' + horas + ' : ' + minutos + ' : ' + segundos + '
+	const second = 1000,
+				minute = second * 60,
+				hour = minute * 60,
+				day = hour * 24;
 
-Días  -  Horas  -  Minutos - Segundos';
-        if (dias>0 || horas>0 || minutos>0 || segundos>0)
-        {
-            setTimeout("ConteoRegresivo()",1000)
-        }
-    }
-    else
-    {
-        document.getElementById('contador').innerHTML = '0 Días 
-¡Comenzo el Mundial Brasil 2014!';
-    }
-}
+	let countDown = new Date('Sep 30, 2019 00:00:00').getTime(),
+			x = setInterval(function() {
+
+				let now = new Date().getTime(),
+						distance = countDown - now;
+
+				document.getElementById('days').innerText = Math.floor(distance / (day)),
+					document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+					document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+					document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+				
+				//do something later when date is reached
+				//if (distance < 0) {
+				//  clearInterval(x);
+				//  'IT'S MY BIRTHDAY!;
+				//}
+
+			}, second)

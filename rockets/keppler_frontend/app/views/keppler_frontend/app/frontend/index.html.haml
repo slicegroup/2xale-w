@@ -1,6 +1,6 @@
 %header
 	/ Cabecera de la pagina
-	.container
+	.container{:style => "padding-bottom: 1rem;"}
 		/ navbar
 		%nav.navbar.navbar-expand-lg.navbar-light
 			%a.navbar-brand{:href => "#"}
@@ -45,8 +45,9 @@
 %section.sp-publicidad-a
 	/ Primera publicidad
 	.container
-		.publicidad-01
-			.text-center PUBLICIDAD
+		.titulo-1
+			.text-center 
+				%h1 Productos Nuevos
 %section.sp-cards
 	/ Cards de productos y publicidad del sidebar
 	.container
@@ -56,7 +57,7 @@
 					.col-md-3
 						.card-inicio
 							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/logo_2xale.svg');"}
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-04.png');"}
 							.contenedor-texto-card
 								%span Calzado - 
 								%i.fa.fa-map-marker
@@ -78,7 +79,7 @@
 					.col-md-3
 						.card-inicio
 							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-05.png');"}
 							.contenedor-texto-card
 								%span Calzado - 
 								%i.fa.fa-map-marker 
@@ -91,7 +92,7 @@
 					.col-md-3
 						.card-inicio
 							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-06.png');"}
 							.contenedor-texto-card
 								%span Calzado - 
 								%i.fa.fa-map-marker 
@@ -107,7 +108,7 @@
 					.col-md-3
 						.card-inicio
 							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-07.png');"}
 							.contenedor-texto-card
 								%span Calzado - 
 								%i.fa.fa-map-marker 
@@ -120,7 +121,7 @@
 					.col-md-3
 						.card-inicio
 							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-01.png');"}
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-08.jpg');"}
 							.contenedor-texto-card
 								%span Calzado - 
 								%i.fa.fa-map-marker 
@@ -133,7 +134,7 @@
 					.col-md-3
 						.card-inicio
 							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-09.png');"}
 							.contenedor-texto-card
 								%span Calzado - 
 								%i.fa.fa-map-marker
@@ -164,7 +165,7 @@
 		.row
 			.col-md-3
 				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-04.png');"}
 					.contenedor-texto-card
 						%span Calzado - 
 						%i.fa.fa-map-marker
@@ -175,7 +176,7 @@
 						%button Ordenar
 			.col-md-3
 				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-01.png');"}
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-05.png');"}
 					.contenedor-texto-card
 						%span Calzado - 
 						%i.fa.fa-map-marker 
@@ -186,7 +187,7 @@
 						%button Ordenar
 			.col-md-3
 				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-03.png');"}
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-06.png');"}
 					.contenedor-texto-card
 						%span Calzado - 
 						%i.fa.fa-map-marker
@@ -197,7 +198,7 @@
 						%button Ordenar
 			.col-md-3
 				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-02.png');"}
+					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-07.png');"}
 					.contenedor-texto-card
 						%span Calzado - 
 						%i.fa.fa-map-marker 
@@ -218,26 +219,34 @@
 	/ Footer 
 	.container
 		.row
-			.col-md-12
+			.col-md-4
 				.about-footer
 					%h4 About
-					%p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorum qui, omnis sapiente numquam doloremque ratione explicabo quis consectetur commodi eaque consequatur ullam accusamus, vero esse, impedit corrupti excepturi alias.
-				
-		.row
+					%p 2xale, surge de la combinación de un día de unión y compromiso y del nombre propio de su creador; con el sueño de ser una marca reconocida en el mundo y con la iniciativa de brindar apoyo a quienes se les dificulta la venta de diversos productos, siendo el enlace más confiable entre el vendedor y el comprador; además de ofrecer el impulso de negocios y empresas a través de la publicidad en nuestra página web.
+					%img{:src => "/assets/keppler_frontend/app/logo_2xale.svg"}
+
 			.col-md-4 
 				.colm-a
-					%h4 Contactanos
-					%p Telefono
-					%p Correo 
-					%img 
+					%h4 Contáctanos
+					%p Telefono: +584120640761 / 414 6300761 
+					%p Correo:  servicioalcliente@2xale.com  
+					
 
 			.col-md-4
 				.colm-b
-					%h4 Siguenos
-					%a.links-redes
-						%i.fa.fa-facebook.official  
-							%span Facebook 
-			.col-md-4
+					%h4 Síguenos
+					.sp-links-footer
+						%a.links-redes
+							%i.fa.fa-facebook.official  
+								%span Facebook 
+					.sp-links-footer
+						%a.links-redes
+							%i.fa.fa-instagram 
+								%span Instagram
+					.sp-links-footer
+						%a.links-redes
+							%i.fa.fa-twitter 
+								%span Twitter		
 			.col-md-12
 				%article
 					.copy-footer

@@ -5,7 +5,7 @@
     .card-inicio {
       cursor: pointer;
       margin-bottom: 2rem;
-      border: solid 1px $bgSecundario;
+      border: solid 2px $bgSecundario;
       height: 440px;
       text-align: center;
       border-radius: 2px;
@@ -18,18 +18,18 @@
           font-family: $font-primary;
         }
         h3{
-          font-size: 2.5rem;
+          font-size: 2.1rem;
           margin: 0.5rem 0;
           color: $colorSecundario;
           font-family: $font-primary;
           font-weight: bold;
         }
         h2{
-          font-size: 3.5rem;
+          font-size: 3rem;
           margin: 0.5rem 0;
           font-family: $font-primary;
           font-weight: bold;
-          color: $colorCuarto;
+          color: #469224;
         }
         p{
           font-family: $font-primary;
@@ -53,8 +53,9 @@
           left: 37px;
           color: $colorPrimario;
           &:hover{
-            background: $colorSecundario !important;
+            background: rgb(37, 92, 243) !important;
             transition: 0.5s;
+            color: $colorPrimario;
           }
         }
         ul{
@@ -95,10 +96,12 @@
     font-family: $font-primary;
     color: $colorSecundario;
     font-weight: bold;
+    padding: 0.5rem 0 4rem 0;
   }
   .card-inicio {
+    cursor:pointer;
     margin-bottom: 2rem;
-    border: solid 1px $bgSecundario;
+    border: solid 2px $bgSecundario;
     height: 440px;
     text-align: center;
     border-radius: 2px;
@@ -111,18 +114,18 @@
         font-family: $font-primary;
       }
       h3{
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         margin: 0.5rem 0;
         color: $colorSecundario;
         font-family: $font-primary;
         font-weight: bold;
       }
       h2{
-        font-size: 3.5rem;
+        font-size: 3rem;
         margin: 0.5rem 0;
         font-family: $font-primary;
         font-weight: bold;
-        color: $colorCuarto;
+        color: #469224;
       }
       p{
         font-family: $font-primary;
@@ -145,6 +148,11 @@
         position: absolute;
         color: $colorPrimario;
         left: 37px;
+        &:hover{
+          background:rgb(37, 92, 243) !important;
+          transition: 0.5s;
+          color: $colorPrimario;
+        }
       }
       ul{
         padding: 0px !important;

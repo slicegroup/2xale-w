@@ -1,0 +1,21 @@
+menu:
+  keppler_products:
+    name: Keppler Products
+    current: ['/']
+    url_path: /
+    icon: rocket
+    model: User
+    submenu:
+      - product:
+          name: products
+          url_path: /admin/products/products
+          icon: layers
+          current: ['/admin/products/products']
+          model: KepplerProducts::Product
+
+      # - new:
+      #     name: + Add new module
+      #     url_path: /url_path
+      #     current: ['/current_path']
+      #     enviroment: development
+      #     model: User

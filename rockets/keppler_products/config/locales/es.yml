@@ -1,0 +1,25 @@
+es:
+  keppler:
+    sidebar-menu:
+      keppler-products: Productos
+      keppler-products-submenu:
+        products: Products
+    permissions:
+    models:
+      singularize:
+        product: product
+      pluralize:
+        products: products
+    modules:
+      admin/products: Products
+    messages:
+    actions:
+  activerecord:
+    attributes:
+      name: Nombre
+      expiration: Fecha de expiración
+      seller: Vendedor
+    errors:
+      messages:
+  errors:
+  helpers:

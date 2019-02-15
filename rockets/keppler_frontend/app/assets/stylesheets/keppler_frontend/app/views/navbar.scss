@@ -1,7 +1,6 @@
 @import 'variables';
 .navbar-expand-lg {
-	padding: 15px 0 0 0;
-	padding: 1.8rem 0 0 0;
+	padding: 1rem 0 0 0 !important;
 	background-color: $colorSecundario !important;
 	.navbar-brand {
 	  font-size: 30px;
@@ -34,7 +33,7 @@
 		position: absolute !important;
 		height: 30px !important;
 		left: 67.4% !important;
-		background: $colorCuarto;
+		background: $colorTercero;
 		border: 0px;
 		border-radius: 0px 2px 2px 0px;
 		color: #fff;
@@ -53,12 +52,15 @@
 	.info-header {
 	  font-size: 15px;
 	  font-size: 1.5rem;
-	  font-family: $font-primary;
-	  color: #fff !important;
+		font-family: $font-primary;
+		padding-top: 1rem;
+		z-index: 1;
+	  color: $colorPrimario !important;
 	  i {
 		padding: 0 10px;
 		padding: 0 1rem;
 		font-size: 20px;
+		color: $colorCuarto !important;
 		font-size: 2rem;
 	  }
 	}
@@ -67,7 +69,7 @@
   .navbar-secundario {
 	padding: 0rem;
 	margin-left: 71px;
-	margin-top: -10px;
+	margin-top: -18px;
 	.navbar-nav{
 	margin-bottom: 8px;
 	}
@@ -78,5 +80,9 @@
 	  padding: 1rem 2rem ;
 	  color: #fff;
 		font-family: $font-primary;
+		&:hover{
+			text-decoration: none;
+			border-bottom: 2px solid $colorCuarto;
+		}
 	}
   }

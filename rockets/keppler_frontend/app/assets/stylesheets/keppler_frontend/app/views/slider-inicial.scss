@@ -5,23 +5,23 @@
     height: 82vh;
     background-position: center center !important;
     position: relative;
-    z-index: -1;
+    z-index: 0 !important;
     .cont-articulos-slide {
       position: absolute;
-      z-index: 3333333;
-      top: 130px;
+      z-index: 3333333 !important;
+      top: 140px;
       padding: 0 60px;
       padding: 0 6rem;
+      left: 66px;
       h1 {
-        font-size: 70px;
-        font-size: 7rem;
+        font-size: 5.5rem;
         color: rgb(51, 51, 51);
         font-family: $font-primary;
         font-weight: bold;
       }
       p {
         font-size: 19px;
-        font-size: 1.9rem;
+        font-size: 1.6rem;
         color: rgb(51, 51, 51);
         font-family: $font-primary;
         font-weight: 500;
@@ -42,6 +42,10 @@
         background: $colorTercero;
         font-family: $font-primary;
         font-weight: bold;
+        &:hover{
+          background: rgb(37, 92, 243) !important;
+          transition: 0.5s;
+        }
       }
     }
   }
@@ -51,7 +55,7 @@
   }
   
   .slick-dots {
-    bottom: 15px !important;
+    bottom: 30px !important;
     li {
       border-radius: 20px;
       background: #fff;

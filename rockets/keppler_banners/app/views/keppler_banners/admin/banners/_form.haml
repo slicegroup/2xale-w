@@ -19,10 +19,10 @@
             %table.table.table-bordered
               %tbody
                 .form-padding
-                  .col-xs-12
-                    = f.input :title, as: :string
-                  .col-xs-12
+                  .col-xs-6
                     = f.input :image, as: :keppler_file # , max_size: 225
+                  .col-xs-6
+                    = f.input :title, as: :string
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'

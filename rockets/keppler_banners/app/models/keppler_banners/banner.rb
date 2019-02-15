@@ -12,6 +12,7 @@ module KepplerBanners
     mount_uploader :image, AttachmentUploader
     acts_as_list
     acts_as_paranoid
+    validates_presence_of :image
 
     def self.index_attributes
       %i[title image]

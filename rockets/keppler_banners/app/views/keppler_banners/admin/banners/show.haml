@@ -22,7 +22,11 @@
           .box-body.no-padding
             %table.table
               %tbody
-                - @banner.as_json(except: %w[position deleted_at]).each do |attribute, value|
+                - unless @banner.title.blank?
+                  %tr.list-row
+                    %th.display-label= t("activerecord.attributes.title")
+                    %td.display-value.fs-body-1.tc-black-2=  @banner.title
+                - @banner.as_json(except: %w[position deleted_at id title]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2
@@ -31,5 +35,5 @@
                       - elsif @attachments.dig('images', 'names').map(&:pluralize).include?(attribute)
                         - value.each do |image|
                           = image_tag image.url if image.url
-                      - else 
+                      - else
                         = sanitize raw value

@@ -1,17 +1,17 @@
 menu:
   keppler_banners:
     name: Keppler Banners
-    current: ['/']
-    url_path: /
+    current: ['/admin/banners/banners']
+    url_path: /admin/banners/banners
     icon: rocket
-    model: User
-    submenu:
-      - banner:
-          name: banners
-          url_path: /admin/banners/banners
-          icon: layers
-          current: ['/admin/banners/banners']
-          model: KepplerBanners::Banner
+    model: KepplerBanners::Banner
+    # submenu:
+    #   - banner:
+    #       name: banners
+    #       url_path: /admin/banners/banners
+    #       icon: layers
+    #       current: ['/admin/banners/banners']
+    #       model: KepplerBanners::Banner
 
       # - new:
       #     name: + Add new module

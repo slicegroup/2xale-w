@@ -22,7 +22,7 @@
           .box-body.no-padding
             %table.table
               %tbody
-                - @product.as_json(except: %w[position deleted_at]).each do |attribute, value|
+                - @product.as_json(except: %w[position deleted_at id seller_name seller_phone seller_email seller]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2
@@ -33,3 +33,16 @@
                           = image_tag image.url if image.url
                       - else 
                         = sanitize raw value
+                %tr.list-row
+                  - if @product.seller.eql?('2xale')
+                    %th.display-label= t("activerecord.attributes.seller")
+                    %td.display-value.fs-body-1.tc-black-2= @product.seller
+                  - else
+                    %th.display-label= t("activerecord.attributes.seller")
+                    %td.display-value.fs-body-1.tc-black-2= @product.seller_name
+                    %tr.list-row
+                    %th.display-label= t("activerecord.attributes.seller_phone")
+                    %td.display-value.fs-body-1.tc-black-2= @product.seller_phone
+                    %tr.list-row
+                    %th.display-label= t("activerecord.attributes.seller_email")
+                    %td.display-value.fs-body-1.tc-black-2= @product.seller_email

@@ -12,10 +12,15 @@ module KepplerProducts
     mount_uploader :image, AttachmentUploader
     acts_as_list
     acts_as_paranoid
-    validates_presence_of :name, :image, :description, :expiration
+    belongs_to :category
+    validates_presence_of :name, :image, :description, :expiration, :address
 
     def self.index_attributes
-      %i[name image seller seller_name seller_phone seller_email category_id]
+      %i[name image seller seller_name seller_phone seller_email address category_id]
+    end
+
+    def category_id
+      category.name
     end
   end
 end

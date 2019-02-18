@@ -1,5 +1,7 @@
 KepplerFrontend::Engine.routes.draw do
   root to: 'app/frontend#index', as: :keppler
+  get '/productos', to: 'app/frontend#productos', as: :app_productos
+
   namespace :admin do
     scope :frontend, as: :frontend do
       resources :parameters do

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   localized do
     get '/index', to: 'app/front#index', as: :app_index
+    get '/productos', to: 'app/front#productos', as: :app_productos
   end
 
   # root to: 'app/front#index'

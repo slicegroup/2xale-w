@@ -3,7 +3,6 @@
 .sp-footer{
 background: $colorSecundario;
 width: 100%;
-height: 72vh;
 padding: 3rem 0 0 0;
 color: $colorPrimario;
 .about-footer{
@@ -16,12 +15,12 @@ color: $colorPrimario;
     font-weight: bold;  
     border-bottom: 1px solid $colorPrimario;
     width: 50;
+    margin-bottom: 1.5rem;
     }
     p{
         font-size: 1.2rem;
         font-family: $font-primary;
         font-weight: 500;
-        padding: 1rem 0;
     }
     .sp-links-footer{
         padding: 1rem 0;
@@ -37,8 +36,16 @@ color: $colorPrimario;
     }
     .copy-footer{
         text-align: center !important;
+        padding: 0.4rem 0;
     }
     img{
-        width: 150px;
+        width: 240px;
+    }
+    a{
+        color: $colorPrimario;
+        padding: 0 1rem 0 0;
+        &:hover{
+            color: $colorPrimario;
+        }
     }
 }

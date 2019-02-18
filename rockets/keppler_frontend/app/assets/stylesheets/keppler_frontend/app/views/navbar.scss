@@ -33,10 +33,10 @@
 		position: absolute !important;
 		height: 30px !important;
 		left: 67.4% !important;
-		background: $colorTercero;
+		background: $colorCuarto;
 		border: 0px;
 		border-radius: 0px 2px 2px 0px;
-		color: #fff;
+		color: $colorSecundario;
 		i {
 		  font-size: 15px;
 		  font-size: 1.5rem;
@@ -78,7 +78,8 @@
 	  font-size: 15px;
 	  font-size: 1.5rem;
 	  padding: 0 20px;
-	  padding: 1rem 2rem ;
+		padding: 1rem 2rem ;
+		text-decoration: none !important;
 	  color: #fff;
 		font-family: $font-primary;
 		span{
@@ -90,7 +91,7 @@
 	
 	}
 		&:hover{
-			text-decoration: none;
+			text-decoration: none !important;
 			border-bottom: 2px solid $colorCuarto;
 		}
 	}

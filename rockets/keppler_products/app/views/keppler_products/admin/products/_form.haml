@@ -40,9 +40,9 @@
                         %p Tercero
                     .col-xs-6.fields
                       = f.input :seller, as: :string, as: :hidden
-                      = f.input :seller_name, as: :string
-                      = f.input :seller_phone, as: :string
-                      = f.input :seller_email, as: :string
+                      = f.input :seller_name, as: :string, label: t('activerecord.attributes.seller_name')
+                      = f.input :seller_phone, as: :string, label: t('activerecord.attributes.seller_phone')
+                      = f.input :seller_email, as: :string, label: t('activerecord.attributes.seller_email')
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
@@ -84,6 +84,11 @@
   .fields{
     margin-top: 20px;
   }
+  .error-class{
+    font-weight: 600;
+    color: red;
+    font-size: 12px;
+  }
 
 :javascript
   $('.fields').hide()
@@ -102,3 +107,22 @@
     $('#product_seller_phone').val('')
     $('#product_seller_email').val('')
   })
+  $('#new_product').validate({
+    event: 'blur',
+    errorClass: 'error-class',
+    validClass: 'valid-class',
+     rules: {
+       'product[seller_name]': { required: true},
+       'product[seller_phone]': { required: true},
+       'product[seller_email]': { required: true},
+      },
+     messages: {
+       'product[seller_name]': 'Indica el nombre del vendedor',
+       'product[seller_phone]': 'Teléfono del vendedor',
+       'product[seller_email]': 'Correo del vendedor'
+      },
+    debug: true,errorElement: 'label',
+    submitHandler: function(form){
+      form.submit();
+    }
+  });

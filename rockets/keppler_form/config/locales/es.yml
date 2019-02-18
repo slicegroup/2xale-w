@@ -1,0 +1,45 @@
+es:
+  keppler:
+    sidebar-menu:
+      keppler-form: Keppler Form
+      form: Formulario
+  keppler-form:
+    models:
+      singularize:
+        poll: encuesta
+        option: opción
+        question: pregunta
+        result: resultado
+      pluralize:
+        polls: encuestas
+        options: opciones
+        questions: preguntas
+        results: resultados
+    modules:
+      keppler_form/admin/polls: 'Encuestas'
+      keppler_form/admin/options: 'Opciones'
+      keppler_form/admin/questions: 'Preguntas'
+      keppler_form/admin/results: 'Resultados'
+    settings: 
+    actions:
+      add_new_option: añade una nueva opción
+      add-sentence: ¿Qué deseas preguntar?
+      add-description: Añade alguna descripción a esta pregunta para dar una pista de cómo responderla
+    questions:
+      yes_or_not: sí o no
+      short_text: texto corto
+      long_text: texto largo
+      simple_selection: selección simple
+      multiple_selection: selección múltiple
+  activerecord:
+    attributes:
+      statistics: estadísticas
+      results: resultados
+      answer: respuesta
+    errors:
+      messages:
+        record_invalid: "Validación fallida: %{errors}"
+        restrict_destroy: "No se puede borrar el registro"
+        restrict_dependent_destroy:
+          has_one: "No se puede borrar el registro porque un registro dependiente %{record} existe"
+          has_many: "No se puede borrar el registro porque registros dependientes %{record} existen"

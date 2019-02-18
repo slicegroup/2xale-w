@@ -1,0 +1,22 @@
+en:
+  keppler:
+    sidebar-menu:
+      keppler-publicity: Publicity
+      keppler-publicity-submenu:
+        ads: Ads
+    permissions:
+    models:
+      singularize:
+        ad: ad
+      pluralize:
+        ads: ads
+    modules:
+      admin/ads: Ads
+    messages:
+    actions:
+  activerecord:
+    attributes:
+    errors:
+      messages:
+  errors:
+  helpers:

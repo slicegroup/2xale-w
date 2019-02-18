@@ -19,8 +19,8 @@ module KepplerProducts
       %i[name image seller seller_name seller_phone seller_email address category_id]
     end
 
-    def category_id
-      category.name
-    end
+    # def category_id
+    #   category.name
+    # end
   end
 end

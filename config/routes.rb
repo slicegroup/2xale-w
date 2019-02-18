@@ -190,6 +190,12 @@ Rails.application.routes.draw do
   # Ckeditor routes engine
   mount Ckeditor::Engine => '/ckeditor'
 
+  # Publicity routes engine
+  mount KepplerPublicity::Engine, at: '/', as: 'publicity'
+
+  # KepplerForm routes engine
+  mount KepplerForm::Engine, at: '/', as: 'keppler_form'
+
   # Products routes engine
   mount KepplerProducts::Engine, at: '/', as: 'products'
 

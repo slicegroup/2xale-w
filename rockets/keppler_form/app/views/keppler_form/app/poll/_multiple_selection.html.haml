@@ -1,0 +1,10 @@
+.question
+  %h3
+    - unless question.sentence.blank?
+      %li.question-encuesta= question.sentence
+    - unless question.description.blank?
+      %p.description-encuesta= question.description
+  - question.options.each do |option|
+    .fields.check.check-primary{id: "option-#{option.id}"}
+      %input.btn.btn-check.opciones{ name: "question-#{question.id}[multiple]", id: "multiple_selection_option-#{option.id}", type: 'checkbox', value: option.name }
+      %label.opciones{ for: "multiple_selection_option-#{option.id}" }= option.name

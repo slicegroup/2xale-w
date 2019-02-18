@@ -1,0 +1,18 @@
+= simple_form_for category, url: admin_products_category_toggle_path(category), method: :post do |f|
+  %label
+    - if category.featured?
+      %label.switch
+        %input{name: "category[featured]", type: "hidden", value: "false"}
+        %input.active{id: "switch-#{category.id}", :type => "checkbox", checked: "checked"}
+        %span.slider.round{onclick: "sendPermission('#{category.id}')"}
+
+    - else
+      %label.switch
+        %input{name: "category[featured]", type: "hidden", value: "true"}
+        %input{id: "switch-#{category.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "sendPermission('#{category.id}')"}
+
+:javascript
+  function sendPermission(id) {
+    $("#edit_category_"+id).submit()
+  }

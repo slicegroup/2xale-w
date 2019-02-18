@@ -1,0 +1,9 @@
+modules:
+ polls:
+    name: Polls
+    actions: [
+      'index', 'create', 'update',
+      'destroy', 'download', 'upload',
+      'clone'
+    ]
+  

@@ -1,0 +1,49 @@
+en:
+  keppler:
+    sidebar-menu:
+      keppler-form: Keppler Form
+      form: Form
+    models:
+      singularize:
+        poll: poll
+        option: option
+        question: question
+        result: result
+      pluralize:
+        polls: polls
+        options: options
+        questions: questions
+        results: results
+  keppler-form:
+    models:
+      singularize:
+        poll: poll
+        option: option
+        question: question
+        result: result
+      pluralize:
+        polls: polls
+        options: options
+        questions: questions
+        results: results
+    modules:
+      keppler_form/admin/polls: 'Polls'
+      keppler_form/admin/options: 'Options'
+      keppler_form/admin/questions: 'Questions'
+      keppler_form/admin/results: 'Results'
+    settings: 
+    actions:
+      add_new_option: add a new option
+      add-sentence: What do you want to know?
+      add-description: Add some description or example to explain how to answer this question
+    questions:
+      yes_or_not: yes or not
+      short_text: short text
+      long_text: long text
+      simple_selection: simple selection
+      multiple_selection: multiple selection
+  activerecord:
+    attributes:
+      statistics: statistics
+      results: results
+      answer: answer

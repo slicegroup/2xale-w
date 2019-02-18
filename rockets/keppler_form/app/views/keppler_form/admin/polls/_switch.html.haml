@@ -1,0 +1,14 @@
+= simple_form_for [:admin, poll], url: admin_polls_path, method: :patch do |f|
+  .switch
+    %label
+      - if poll.public.eql?(false)
+        INACTIVO
+        %input{name: "poll[public]", type: "hidden", value: "true"}
+        %input{name: "poll[public]", type: "checkbox", onclick: "$('#edit_pool_#{poll.id}').submit()"}
+          %span.lever
+
+      - else
+        ACTIVO
+        %input{name: "poll[public]", type: "hidden", value: "false"}
+        %input{name: "poll[public]", type: "checkbox", checked: "true", onclick: "$('#edit_pool_#{poll.id}').submit()"}
+          %span.lever

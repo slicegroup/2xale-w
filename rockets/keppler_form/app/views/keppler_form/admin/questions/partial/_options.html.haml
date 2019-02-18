@@ -1,0 +1,28 @@
+- if question.ask_type.eql?('simple_selection')
+  - question.options.each do |option|
+    .fields-editable{ id: "fields-question#{question.id}" }
+      .item-check{ style: 'width: 10%' }
+        .checkbox
+          %label{ for:"question#{question.id}-option#{option.id}" }
+            = option.name
+            %input{ id: "fields-question#{question.id}-option#{option.id}", type: 'radio', name: "question#{question.id}" }
+            %span.cr{ style: 'margin: 3px; border-radius: 50%' }
+              %i.cr-icon.fa.fa-circle
+      .delete-sentence
+        = link_to({ controller: :questions, action: :delete_option, poll_id: question.poll.id, id: question.id, option_id: option.id }, method: :delete, remote: true) do
+          .right
+            %i.icon-trash
+- else
+  - question.options.each do |option|
+    .fields-editable{ id: "fields-question#{question.id}" }
+      .item-check{ style: 'width: 10%' }
+        .checkbox
+          %label{ for: "question#{question.id}-option#{option.id}" }
+            = option.name
+            %input{ id: "fields-question#{question.id}-option#{option.id}", type: 'checkbox', name: "question#{question.id}" }
+            %span.cr{ style: 'margin: 3px' }
+              %i.cr-icon.glyphicon.glyphicon-ok
+      .delete-sentence
+        = link_to({ controller: :questions, action: :delete_option, poll_id: question.poll.id, id: question.id, option_id: option.id }, method: :delete, remote: true) do
+          .right
+            %i.icon-trash

@@ -3,16 +3,16 @@
 require_dependency "keppler_products/application_controller"
 module KepplerProducts
   module Admin
-    # ProductsController
-    class ProductsController < ::Admin::AdminController
+    # CategoriesController
+    class CategoriesController < ::Admin::AdminController
       layout 'keppler_products/admin/layouts/application'
-      before_action :set_product, only: %i[show edit update destroy]
+      before_action :set_category, only: %i[show edit update destroy]
       before_action :index_variables
       include ObjectQuery
 
       # GET /products
       def index
-        respond_to_formats(@products)
+        respond_to_formats(@categories)
         redirect_to_index(@objects)
       end
 
@@ -21,8 +21,7 @@ module KepplerProducts
 
       # GET /products/new
       def new
-        @product = Product.new
-        @categories = Category.all
+        @category = Category.new
       end
 
       # GET /products/1/edit
@@ -30,9 +29,10 @@ module KepplerProducts
 
       # POST /products
       def create
-        @product = Product.new(product_params)
-        if @product.save
-          redirect(@product, params)
+        @category = Category.new(category_params)
+
+        if @category.save
+          redirect(@category, params)
         else
           render :new
         end
@@ -40,60 +40,60 @@ module KepplerProducts
 
       # PATCH/PUT /products/1
       def update
-        if @product.update(product_params)
-          redirect(@product, params)
+        if @category.update(category_params)
+          redirect(@category, params)
         else
           render :edit
         end
       end
 
       def clone
-        @product = Product.clone_record params[:product_id]
-        @product.save
+        @category = Category.clone_record params[:category_id]
+        @category.save
         redirect_to_index(@objects)
       end
 
       # DELETE /products/1
       def destroy
-        @product.destroy
+        @category.destroy
         redirect_to_index(@objects)
       end
 
       def destroy_multiple
-        Product.destroy redefine_ids(params[:multiple_ids])
+        Category.destroy redefine_ids(params[:multiple_ids])
         redirect_to_index(@objects)
       end
 
       def upload
-        Product.upload(params[:file])
+        Category.upload(params[:file])
         redirect_to_index(@objects)
       end
 
       def reload; end
 
       def sort
-        Product.sorter(params[:row])
+        Category.sorter(params[:row])
       end
 
       private
 
       def index_variables
-        @q = Product.ransack(params[:q])
-        @products = @q.result(distinct: true)
-        @objects = @products.page(@current_page).order(position: :desc)
-        @total = @products.size
-        @attributes = Product.index_attributes
+        @q = Category.ransack(params[:q])
+        @categories = @q.result(distinct: true)
+        @objects = @categories.page(@current_page).order(position: :desc)
+        @total = @categories.size
+        @attributes = Category.index_attributes
       end
 
       # Use callbacks to share common setup or constraints between actions.
-      def set_product
-        @product = Product.find(params[:id])
+      def set_category
+        @category = Category.find(params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.
-      def product_params
-        params.require(:product).permit(
-          :name, :image, :description, :expiration, :seller, :seller_name, :seller_phone, :seller_email, :address, :category_id
+      def category_params
+        params.require(:category).permit(
+          :name, :featured
         )
       end
     end

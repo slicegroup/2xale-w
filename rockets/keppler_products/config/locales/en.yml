@@ -3,14 +3,18 @@ en:
     sidebar-menu:
       keppler-products: Products
       keppler-products-submenu:
+        categories: Categories
         products: Products
     permissions:
     models:
       singularize:
+        category: category
         product: product
       pluralize:
+        categories: categories
         products: products
     modules:
+      admin/categories: Categories
       admin/products: Products
     messages:
     actions:

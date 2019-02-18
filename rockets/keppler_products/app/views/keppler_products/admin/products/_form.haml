@@ -19,13 +19,16 @@
             %table.table.table-bordered
               %tbody
                 .form-padding
-                  .col-xs-6
-                    = f.input :name, as: :string, label: t('activerecord.attributes.name')
-                    = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
-                  .col-xs-6
+                  .col-xs-12
+                    .col-xs-6
+                      = f.input :name, as: :string, label: t('activerecord.attributes.name')
+                      = f.input :expiration, as: :string, input_html: { class: 'datepicker' }, label: t('activerecord.attributes.expiration')
+                      = f.input :category_id, include_blank: false, collection: @categories
+                      = f.input :address, as: :string, label: t('activerecord.attributes.address')
+                    .col-xs-6
+                      = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
+                  .col-xs-12
                     = f.input :image, as: :keppler_file # , max_size: 225
-                  .col-xs-6
-                    = f.input :expiration, as: :string, input_html: { class: 'datepicker' }, label: t('activerecord.attributes.expiration')
                   .col-xs-12
                     .col-xs-6.col-sellers
                       %p.bold= t('activerecord.attributes.seller')
@@ -40,8 +43,6 @@
                       = f.input :seller_name, as: :string
                       = f.input :seller_phone, as: :string
                       = f.input :seller_email, as: :string
-                  .col-xs-12
-                    = f.input :category_id, as: :string, as: :hidden
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'

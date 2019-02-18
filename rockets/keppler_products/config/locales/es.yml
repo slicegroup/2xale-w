@@ -3,14 +3,18 @@ es:
     sidebar-menu:
       keppler-products: Productos
       keppler-products-submenu:
+        categories: Categories
         products: Products
     permissions:
     models:
       singularize:
+        category: category
         product: product
       pluralize:
+        categories: categories
         products: products
     modules:
+      admin/categories: Categories
       admin/products: Products
     messages:
     actions:
@@ -19,6 +23,10 @@ es:
       name: Nombre
       expiration: Fecha de expiración
       seller: Vendedor
+      seller_name: Nombre del Vendedor
+      seller_phone: Número de telefono
+      seller_email: Correo
+      category_id: Categoría
     errors:
       messages:
   errors:

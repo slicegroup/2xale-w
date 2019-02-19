@@ -7,6 +7,7 @@ KepplerProducts::Engine.routes.draw do
         get '/clone', action: 'clone'
         post '/upload', action: 'upload', as: :upload
         get '/reload', action: :reload, on: :collection
+        post '', action: :toggle, as: :toggle
         delete '/destroy_multiple', action: :destroy_multiple, on: :collection
       end
 

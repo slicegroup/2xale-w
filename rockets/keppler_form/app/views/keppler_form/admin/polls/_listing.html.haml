@@ -1,0 +1,89 @@
+-# %tr{ id: "row-#{poll.id}" }
+-# 	- if can?(module_name).destroy_multiple?
+-# 		%td.item-check{style:"width: 10%"}
+-# 			= link_to "", admin_poll_path(poll), remote: true, class: "show-row"
+-# 			%input{ type:"checkbox", class: "filled-in", id: "checkbox-#{poll.id}", 'checklist-model'=>"check", 'checklist-value'=>"#{poll.id}", "ng-click"=>"selectByCheck(#{@objects.size})"}
+-# 			%label{ for: "checkbox-#{poll.id}" }
+
+-# 	%td.center{style:"width: 60%"}
+-# 		= link_to "", admin_poll_path(poll, search: @query), remote: true, class: "show-row"
+-# 		%span
+-# 			= poll.name
+-# 	%td.center{style:"width: 30%"}
+-# 		%span
+-# 			- poll.update(language: 'es') if poll.language.nil?
+-# 			= poll.language.capitalize
+
+-# 	%td.center{style:"width: 5%"}
+-# 		= link_to admin_poll_path(poll), class: "btn-floating waves-effect btn-flat", title: "#{t('keppler.actions.show')} - #{t('keppler.actions.edit')}" do
+-# 			= material_icon.md_24.format_list_numbered.css_class("md-dark")
+
+-# 	%td.center{style:"width: 5%"}
+-# 		= link_to admin_poll_statistics_path(poll), class: "btn-floating waves-effect btn-flat", title: t('activerecord.attributes.poll.statistics') do
+-# 			= material_icon.md_24.show_chart.css_class("md-dark")
+
+-# 	%td.center{style:"width: 5%"}
+-# 		= link_to admin_poll_results_path(poll), class: "btn-floating waves-effect btn-flat", title: t('activerecord.attributes.poll.results') do
+-# 			= material_icon.md_24.done_all.css_class("md-dark")
+
+- objects.each do |object|
+  %tr{ id: "row-#{object.id}" }
+    %td.item-check{ style: 'width: 10%' }
+      - if can?(model).destroy_multiple?
+        .checkbox
+          %label{ for: "checkbox-#{object.id}" }
+            %input{ type: 'checkbox', id: "checkbox-#{object.id}", 'checklist-model' => 'check', 'checklist-value' => "#{object.id}", '@click' => "listDelete(#{object.id})"}
+            %span.cr
+              %i.cr-icon.glyphicon.glyphicon-ok
+    - attributes.each do |attribute|
+      - if @attachments.dig('images', 'names').include?(attribute.to_s)
+        %td
+          = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
+            %span
+              = image_tag object.try(attribute).url if object.try(attribute).url
+      - elsif @attachments.dig('images', 'names').map(&:pluralize).include?(attribute.to_s)
+        %td
+          = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
+            %span
+              - object.try(attribute).each do |image|
+                = image_tag image.try(:url)
+      - elsif object.try(attribute).is_a?(Integer)
+        %td
+          = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
+            %span= object.try(attribute)
+      - else
+        %td
+          = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
+            %span= object.try(attribute).try(:truncate_words, 4)
+
+    %td.dropdown{ style: 'width: 15px;padding-right:15px;' }
+      %a.action-btn.pull-right{:id => "menu-#{object.id}", 'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown' }
+        %i.icon-options-vertical
+      %ul.actions.dropdown-menu{ 'aria-labelledby': "menu-#{object.id}" }
+        - if can?(model).index?
+          %li
+            = link_to({action: :show, id: object.id}, {title: t('keppler.actions.show')}) do
+              %i.icon-eye
+              = t('keppler.actions.show')
+          %li
+            = link_to({action: :poll_statistics, poll_id: object.id}, {title: t('activerecord.attributes.statistics')}) do
+              %i.icon-chart
+              = t('activerecord.attributes.statistics').humanize
+          %li
+            = link_to({controller: :results, poll_id: object.id}, {title: t('activerecord.attributes.results')}) do
+              %i.icon-check
+              = t('activerecord.attributes.results').humanize
+        - if can?(model).update?
+          %li
+            = link_to({action: :edit, id: object.id}, {title: t('keppler.actions.edit')}) do
+              %i.icon-pencil
+              = t('keppler.actions.edit')
+        - if can?(model).destroy?
+          %li
+            = link_to({action: :destroy, id: object.id}, {title: t('keppler.actions.delete'), method: :delete, data: { confirm: t('keppler.messages.data_confirm') }}) do
+              %i.icon-trash
+              = t('keppler.actions.delete')
+
+    %td{ style: 'width: 5%;'}
+      %a.drop{ href: '#' }
+        %i.icon-cursor-move

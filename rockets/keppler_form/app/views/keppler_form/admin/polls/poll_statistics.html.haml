@@ -1,0 +1,56 @@
+= title "Polls | #{@poll.id}"
+.wrapper
+  .wrapper-body.container-fluid
+    .row
+      .col-lg-2
+        = link_to :back, class: '', 'data-position': 'bottom', 'data-tooltip': t('keppler.actions.back') do
+          .arrow-back.btn.btn-default
+            %i.icon-arrow-left
+            = t('keppler.actions.back')
+
+    .row
+      .col-xs-12
+        .box.slice-box
+          .box-header.with-border
+            %h3.box-title= @poll.name
+          .box-body
+            = "Se ha realizado esta encuesta a #{@count} personas"
+    #ask-container
+      .row
+        .col-xs-12
+          - @poll.questions.each do |question|
+            - if question.ask_type.eql?("long_text") || question.ask_type.eql?("short_text")
+              .col-xs-12
+                .box.slice-box
+                  .box-header
+                    %h5= question.sentence unless question.sentence.blank?
+                  .box-body
+                    - question.results_questions.each do |result_question|
+                      - if !result_question.option.blank?
+                        %p
+                          %b= result_question.result.name
+                          = result_question.option
+
+            - else
+              .col-xs-6
+                .box.slice-box
+                  .box-header
+                    %h5= question.sentence unless question.sentence.blank?
+                  .box-body
+                    - if question.ask_type.eql?("yes_or_not")
+                      = pie_chart(question.statistics, colors: ["#1935a1", "#ff5507"])
+                    - elsif question.ask_type.eql?("simple_selection")
+                      = pie_chart(question.statistics, colors: ["#1935a1", "#ff5507"])
+                    - elsif question.ask_type.eql?("multiple_selection")
+                      = pie_chart(question.statistics, colors: ["#1935a1", "#ff5507"])
+
+
+
+
+:css
+  .header-information {
+    display: none;
+  }
+  .wrapper {
+    margin-top: 10px;
+  }

@@ -1,0 +1,7 @@
+.question
+  %h3
+    - unless question.sentence.blank?
+      %li.question-encuesta= question.sentence
+    - unless question.description.blank?
+      %p.description-encuesta= question.description
+  %textarea.message-escuesta-1{ name: "long_text-#{question.id}[answer]", placeholder: "Escriba sus comentario aquí", id: "long_text_answer-#{question.id}", type: 'text' }

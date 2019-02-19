@@ -27,6 +27,12 @@ module KepplerProducts
       # GET /products/1/edit
       def edit; end
 
+      #POST /toggle
+      def toggle
+        Category.find(params[:category_id]).update(featured: params[:category][:featured])
+        redirect_to admin_products_categories_path
+      end
+
       # POST /products
       def create
         @category = Category.new(category_params)

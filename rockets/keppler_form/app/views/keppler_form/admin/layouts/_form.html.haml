@@ -1,0 +1,32 @@
+.container-fluid
+  .row
+    .listing.col-lg-12.col-xs-12
+      %section.content
+        .row
+          .col-md-3
+            = render 'keppler_form/admin/layouts/compose'
+            = render 'keppler_form/admin/layouts/folders'
+            = render 'keppler_form/admin/layouts/labels'
+          .col-md-9
+            = simple_form_for [:admin, :form, object], action: (action_name.eql?('new') ? :create : :send_message), url: (admin_poll_message_send_path unless action_name.eql?('new')), method: (action_name.eql?('new') ? :post : :patch) do |f|
+              .container-fluid
+                .row
+                  .box.slice-box
+                    .box-header.with-border
+                      %h3.box-title= t("keppler-form.modules.#{action_name.underscore}") # + "(#{controller_path})"
+                      .box-tools.pull-right
+                        %a.btn.btn-box-tool{ 'data-widget': 'collapse', type: 'button' }
+                          %i.fa.fa-minus
+
+                    .box-body.message-form
+                      = f.input :name, input_html: { value: current_user.name }, as: :hidden
+                      = f.input :from_email, input_html: { value: current_user.email }, as: :hidden
+                      .form-group
+                        = f.input :to_emails, label: t('keppler-form.attributes.to_emails'), placeholder: t('keppler-form.actions.insert_email'), as: :string, input_html: { 'data-role': 'tagsinput', value: (object&.from_email if action_name.eql?('reply')) }, class: 'form-control bootstrap-tagsinput'
+                      .form-group
+                        = f.input :subject, label: t('keppler-form.attributes.subject'), placeholder: t('keppler-form.actions.insert_subject'), value: (object&.subject)
+                      .form-group
+                        = f.input :content, input_html: { class: 'wysihtml5', value: (action_name.eql?('reply') ? '' : object&.content) }
+                        = f.input :read, input_html: { value: true }, as: :hidden
+                      .form-group
+                        = f.submit t('keppler-form.actions.send')

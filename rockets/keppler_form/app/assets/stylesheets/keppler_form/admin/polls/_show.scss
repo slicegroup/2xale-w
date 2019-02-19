@@ -1,0 +1,87 @@
+//Hoja de estilos generado por Keppler.
+.poll-menu {
+  padding: 0 !important;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.card-ask {
+  margin-bottom: 2px !important;
+}
+
+#ask-header {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2px !important;
+}
+
+.fields-option {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.add-option {
+  background: #c0c0c0;
+  border: 1px dashed #ffffff;
+  padding: .3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+
+.fields-editable {
+  border: 1px dashed #ffffff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: .5rem 1rem;
+  position: relative;
+  transition: .3s;
+  .right {
+    opacity: 0;
+    top: 0;
+    right: .5rem;
+    position: absolute;
+    transition: .3s;
+  }
+  &:hover {
+    border: 1px dashed #c0c0c0;
+
+    .right {
+      opacity: 1;
+      top: .5rem;
+      transition: .3s;
+    }
+  }
+}
+
+.edit-sentence {
+  right: 1rem;
+  color: #666;
+  cursor: text;
+
+  &:focus {
+    color: inherit;
+  }
+}
+
+.card-notification-charts {
+  max-height: 300px;
+  overflow: hidden !important;
+  overflow-y: scroll !important;
+}
+
+#ask-container {
+  textarea {
+    resize: none;
+  }
+}

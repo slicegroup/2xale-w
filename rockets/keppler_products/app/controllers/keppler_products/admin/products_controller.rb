@@ -8,6 +8,7 @@ module KepplerProducts
       layout 'keppler_products/admin/layouts/application'
       before_action :set_product, only: %i[show edit update destroy]
       before_action :index_variables
+      before_action :set_categories, only: %i[new create edit update]
       include ObjectQuery
 
       # GET /products
@@ -22,7 +23,6 @@ module KepplerProducts
       # GET /products/new
       def new
         @product = Product.new
-        @categories = Category.all
       end
 
       # GET /products/1/edit
@@ -76,6 +76,10 @@ module KepplerProducts
       end
 
       private
+
+      def set_categories
+        @categories = Category.all
+      end
 
       def index_variables
         @q = Product.ransack(params[:q])

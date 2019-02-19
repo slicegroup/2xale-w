@@ -21,8 +21,9 @@ en:
   activerecord:
     attributes:
       name: Name
-      expiration: expiration
-      seller: seller
+      expiration: Expiration
+      seller: Seller
+      featured: Featured
     errors:
       messages:
   errors:

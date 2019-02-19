@@ -1,0 +1,21 @@
+menu:
+  keppler_publicity:
+    name: Publicity
+    current: ['/']
+    url_path: /
+    icon: rocket
+    model: User
+    submenu:
+      - ad:
+          name: ads
+          url_path: /admin/publicity/ads
+          icon: layers
+          current: ['/admin/publicity/ads']
+          model: KepplerPublicity::Ad
+
+      # - new:
+      #     name: + Add new module
+      #     url_path: /url_path
+      #     current: ['/current_path']
+      #     enviroment: development
+      #     model: User

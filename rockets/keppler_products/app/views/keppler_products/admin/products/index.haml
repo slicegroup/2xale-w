@@ -54,9 +54,11 @@
                               %span.cr
                                 %i.cr-icon.glyphicon.glyphicon-ok
                     - @attributes.each do |attribute|
-                      %th
-                        = sort_link(@q, attribute) do
-                          = t("activerecord.attributes.#{attribute.to_s}")
+                      -if attribute.to_s.eql?('name') || attribute.to_s.eql?('image') || attribute.to_s.eql?('seller')
+                        %th
+                          = sort_link(@q, attribute) do
+                            = t("activerecord.attributes.#{attribute.to_s}")
+                    %th= t("activerecord.attributes.expiration")
                     %th
                     %th
               %tbody.objects-container

@@ -1,0 +1,7 @@
+.question
+  %h3
+    - unless question.sentence.blank?
+      %li.question-encuesta= question.sentence
+    - unless question.description.blank?
+      %p.description-encuesta= question.description
+  %input.input-escuesta-1{ name: "short_text-#{question.id}[answer]", id: "short_text_answer-#{question.id}", placeholder: "Escriba su comentario aquí", type: 'text'}

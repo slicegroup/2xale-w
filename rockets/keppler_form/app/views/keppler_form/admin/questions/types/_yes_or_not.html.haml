@@ -1,0 +1,17 @@
+.box.slice-box.p-15{ id: "question-#{question.id}" }
+  .box-header.with-border
+    .box-title
+      = "#{ t('keppler-form.models.singularize.question').humanize } ##{ question.id }"
+      .badge= "#{ t('keppler-form.questions.yes_or_not').humanize }"
+    .box-tools.pull-right
+      %a.btn.btn-box-tool{ 'data-widget': 'collapse', type: 'button' }
+        %i.fa.fa-minus
+      = link_to({ controller: :questions, action: :delete, poll_id: question.poll.id, id: question.id }, { method: :delete, remote: true }) do
+        %i.fa.fa-times
+  .box-body
+    .fields{ id: "fields-#{question.id}" }
+      = render 'keppler_form/admin/questions/fields', question: question
+    %label.keppler-switch
+      %input#poll_public{ type: 'checkbox', checked: 'checked', value: 'false' }
+      %span.slider.round
+      %label.inline-label false

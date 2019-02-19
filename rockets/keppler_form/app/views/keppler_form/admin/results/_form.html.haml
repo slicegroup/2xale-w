@@ -1,0 +1,21 @@
+.wrapper
+	.wrapper-body.container
+		.actions
+			= link_to admin_poll_results_path(@poll), class: "btn-floating btn-flat tooltipped", "data-position" => "bottom", "data-tooltip" => "Volver" do
+				= material_icon.md_18.arrow_back.css_class("md-dark")
+		.wrapper-inputs
+			.card
+				.card-content
+					= simple_form_for [:admin, @poll, @result] do |f|
+						.row
+							.col.s12
+								= f.input :name
+							.col.s12
+								= f.input :email
+							.col.s12
+								= f.input :phone
+							.col.s12
+								= f.input :company
+							.col.s12
+								.form-actions.right
+									= f.button :submit, "Guardar", class: "btn"

@@ -1,0 +1,6 @@
+= link_to({ controller: :questions, action: :edit, poll_id: question.poll.id, id: question.id }, remote: true, class: 'edit-sentence') do
+  .fields-editable
+    .right
+      %i.icon-pencil
+    %h4= question.sentence.blank? ? "[ #{t('keppler-form.actions.add-sentence')} ]" : question.sentence
+    %h5= question.description.blank? ? "[ #{t('keppler-form.actions.add-description')} ]" : question.description

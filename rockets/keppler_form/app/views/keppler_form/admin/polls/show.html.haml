@@ -1,0 +1,54 @@
+= title "Polls | #{@poll.id}"
+.container-fluid
+  .show-section
+    .row
+      .col-xs-12
+        = link_to :back, 'data-position': 'bottom', 'data-tooltip': t('keppler.actions.back') do
+          .arrow-back.btn.btn-default
+            %i.icon-arrow-left
+            = t('keppler.actions.back')
+      .col-lg-3.sticky
+        .box.slice-box
+          .box-body.no-padding
+            %table.table
+              %thead
+                %th.center
+                  %h3.box-title= t('keppler-form.models.pluralize.questions').humanize
+            %table.table
+              %tbody#questions
+                - @question_types.each do |question|
+                  %tr
+                    %td
+                      = link_to({ controller: :questions, action: :create, poll_id: @poll.id, question_type: question.first }, remote: true) do
+                        %i.fa{ class: "fa-#{question.last}" }
+                    %td
+                      = link_to({ controller: :questions, action: :create, poll_id: @poll.id, question_type: question.first }, remote: true) do
+                        = t("keppler-form.questions.#{question.first}").humanize
+      .col-lg-9
+        .box.slice-box
+          .box-body.no-padding
+            %table.table
+              %thead
+                %th#ask-header
+                  %h3.box-title= @poll.name
+        #ask-container
+          - @questions.each do |question|
+            = render "keppler_form/admin/questions/types/#{question.ask_type}", question: question
+
+:scss
+  #questions {
+    tr {
+      padding: 0;
+      transition: .15s;
+      
+      &:hover {
+        filter: opacity(.8);
+        transition: .15s;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px;
+    }
+  }

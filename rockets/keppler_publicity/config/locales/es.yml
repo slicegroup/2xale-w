@@ -1,0 +1,25 @@
+es:
+  keppler:
+    sidebar-menu:
+      keppler-publicity: Publicidad
+      keppler-publicity-submenu:
+        ads: Anuncios
+    permissions:
+    models:
+      singularize:
+        ad: anuncio
+      pluralize:
+        ads: Anuncios
+    modules:
+      admin/ads: Anuncios
+    messages:
+    actions:
+  activerecord:
+    attributes:
+      location: Ubicación
+      active: Activo
+      type: Tipo
+    errors:
+      messages:
+  errors:
+  helpers:

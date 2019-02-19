@@ -3,19 +3,19 @@ es:
     sidebar-menu:
       keppler-products: Productos
       keppler-products-submenu:
-        categories: Categories
-        products: Products
+        categories: Categorias
+        products: Productos
     permissions:
     models:
       singularize:
-        category: category
-        product: product
+        category: categoría
+        product: producto
       pluralize:
-        categories: categories
-        products: products
+        categories: categorias
+        products: productos
     modules:
-      admin/categories: Categories
-      admin/products: Products
+      admin/categories: Categorias
+      admin/products: Productos
     messages:
     actions:
   activerecord:
@@ -27,6 +27,7 @@ es:
       seller_phone: Número de telefono
       seller_email: Correo
       category_id: Categoría
+      featured: Destacada
     errors:
       messages:
   errors:

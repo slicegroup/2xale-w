@@ -1,0 +1,7 @@
+modules:
+  ads:
+    name: Ad
+    model: KepplerPublicityAd
+    actions: [
+      'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
+    ]

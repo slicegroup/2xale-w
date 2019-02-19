@@ -1,0 +1,5 @@
+= simple_form_for [:admin, :form, poll, question], method: :patch, remote: true do |f|
+  %h5= f.input :sentence, label: false, placeholder: "[ #{t('keppler-form.actions.add-sentence')} ]"
+  %p= f.input :description, label: false, placeholder: "[ #{t('keppler-form.actions.add-description')} ]"
+  .form-group.pull-right
+    = f.button :submit, class: 'btn-primary'

@@ -1,0 +1,15 @@
+// = require animate-css
+// = require_self
+
+// Utils
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/base';
+
+// Libraries and plugins as gems
+@import 'bourbon';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+// Page folder
+@import 'polls/*';

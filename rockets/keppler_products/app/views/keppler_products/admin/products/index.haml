@@ -53,12 +53,11 @@
                               %input{ type: 'checkbox', id: 'checkbox-all', '@click': 'selectAll()' }
                               %span.cr
                                 %i.cr-icon.glyphicon.glyphicon-ok
-                    - @attributes.each do |attribute|
-                      -if attribute.to_s.eql?('name') || attribute.to_s.eql?('image') || attribute.to_s.eql?('seller')
+                    - @attributes.each_with_index do |attribute, index|
+                      - if index.eql?(0) || index.eql?(2) || index.eql?(3)
                         %th
                           = sort_link(@q, attribute) do
                             = t("activerecord.attributes.#{attribute.to_s}")
-                    %th= t("activerecord.attributes.expiration")
                     %th
                     %th
               %tbody.objects-container

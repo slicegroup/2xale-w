@@ -29,25 +29,13 @@
     /         %span= object.try(attribute).try(:truncate_words, 4)
     %td
       = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
-        %span
-          = object.name
+        %span= object.name
     %td
       = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
-        %span
-          - unless object.image.url.blank?
-            = image_tag object.image.url, style: 'width: 40px'
+        %span= object.address
     %td
       = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
-        %span
-          - if object.seller.eql?('2xale')
-            = object.seller
-          - else
-            = object.seller_name
-    %td
-      = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
-        %span
-          = object.expiration
-
+        %span= object.seller.eql?('2xale') ? object.seller : object.seller_name
 
     %td.dropdown{ style: 'width: 15px;padding-right:15px;' }
       %a.action-btn.pull-right{:id => "menu-#{object.id}", 'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown' }

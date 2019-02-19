@@ -31,6 +31,7 @@ module KepplerProducts
       # POST /products
       def create
         @product = Product.new(product_params)
+
         if @product.save
           redirect(@product, params)
         else
@@ -97,7 +98,7 @@ module KepplerProducts
       # Only allow a trusted parameter "white list" through.
       def product_params
         params.require(:product).permit(
-          :name, :image, :description, :expiration, :seller, :seller_name, :seller_phone, :seller_email, :address, :category_id
+          :name, :category_id, :address, :expiration, :description, {images: []}, :seller, :seller_name, :seller_phone, :seller_email
         )
       end
     end

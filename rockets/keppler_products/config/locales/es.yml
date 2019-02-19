@@ -3,17 +3,20 @@ es:
     sidebar-menu:
       keppler-products: Productos
       keppler-products-submenu:
+        products: Productos
         categories: Categorias
         products: Productos
     permissions:
     models:
       singularize:
-        category: categoría
         product: producto
+        category: categoría
       pluralize:
+        products: productos
         categories: categorias
         products: productos
     modules:
+      admin/products: Productos
       admin/categories: Categorias
       admin/products: Productos
     messages:
@@ -28,6 +31,8 @@ es:
       seller_email: Correo
       category_id: Categoría
       featured: Destacada
+      address: Ubicación
+      category_id: Categoría
     errors:
       messages:
   errors:

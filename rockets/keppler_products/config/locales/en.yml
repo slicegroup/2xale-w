@@ -3,19 +3,19 @@ en:
     sidebar-menu:
       keppler-products: Products
       keppler-products-submenu:
-        categories: Categories
         products: Products
+        categories: Categories
     permissions:
     models:
       singularize:
-        category: category
         product: product
+        category: category
       pluralize:
-        categories: categories
         products: products
+        categories: categories
     modules:
-      admin/categories: Categories
       admin/products: Products
+      admin/categories: Categories
     messages:
     actions:
   activerecord:
@@ -24,6 +24,8 @@ en:
       expiration: Expiration
       seller: Seller
       featured: Featured
+      address: Address
+      category_id: Categoría
     errors:
       messages:
   errors:

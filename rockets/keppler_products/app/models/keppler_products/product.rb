@@ -9,18 +9,14 @@ module KepplerProducts
     include Downloadable
     include Sortable
     include Searchable
-    mount_uploader :image, AttachmentUploader
+    mount_uploaders :images, AttachmentUploader
     acts_as_list
     acts_as_paranoid
     belongs_to :category
-    validates_presence_of :name, :image, :description, :expiration, :address
+    validates_presence_of :name, :images, :description, :expiration, :address
 
     def self.index_attributes
-      %i[name image seller seller_name seller_phone seller_email address category_id]
+      %i[name category_id address seller seller_name seller_phone seller_email]
     end
-
-    # def category_id
-    #   category.name
-    # end
   end
 end

@@ -14,7 +14,7 @@ module KepplerPublicity
     acts_as_paranoid
 
     def self.index_attributes
-      %i[image type location]
+      %i[image type_ad location]
     end
   end
 end

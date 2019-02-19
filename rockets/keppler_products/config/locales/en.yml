@@ -25,7 +25,7 @@ en:
       seller: Seller
       featured: Featured
       address: Address
-      category_id: Categoría
+      category_id: Category
     errors:
       messages:
   errors:

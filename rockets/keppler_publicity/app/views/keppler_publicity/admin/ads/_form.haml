@@ -21,24 +21,20 @@
                 .form-padding
                   %label.control-label.keppler_file.optional= t('activerecord.attributes.type')
                   .flex{ style: 'padding-bottom: 27px'}
-                    .banner
+                    .banner.active
                       .lines
-                        %p.title BANNER
-                    .medium
+                        %p BANNER
+                    .medium.active
                       .lines
                         %p MEDIA BANNER
-                    .steal-page
+                    .steal-page.active
                       .lines
                         %p ROBA PÁGINA
-                    = f.input :type, as: :string, as: :hidden
+                    = f.input :type_ad, as: :string, as: :hidden
                   .col-xs-12
                     = f.input :image, as: :keppler_file # , max_size: 225
                   .col-xs-12
-                    = f.input :type, as: :string
-                  .col-xs-12
-                    = f.input :location, as: :string
-                  .col-xs-12
-                    = f.input :active, as: :keppler_boolean
+                    = f.input :location, as: :radio_buttons, collection: [['0', 'About'], ['1', 'Home']], label_method: :second, value_method: :first, label: t('activerecord.attributes.location')
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
@@ -74,10 +70,6 @@
     align-items: center;
     flex-direction: colums;
   }
-  .title{
-    transition: 0.5s;
-    margin: 0!important;
-  }
   .lines{
     width: 95%;
     border: solid 1px #989191;
@@ -99,3 +91,10 @@
   .medium p{
     font-size: 22px;
   }
+
+:javascript
+  $('.active').click(function(){
+    $('.active').css('background-color', 'rgba(160, 158, 158, 0.5)')
+    $(this).css('background-color', 'rgba(99, 101, 105, 0.4)')
+    $('#ad_type_ad').val($(this).find('p').text())
+  })

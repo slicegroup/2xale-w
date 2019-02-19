@@ -56,16 +56,16 @@
           text-transform: uppercase;
           font-family: $font-primary;
           font-weight: bold;
-          border: 1px solid $colorTercero;
+          border: 1px solid $colorQuinto;
           padding: 0.5rem 0;
           border-radius: 2px;
           background: transparent;
           bottom: 30px;
           position: absolute;
           left: 37px;
-          color: $colorTercero;
+          color: $colorQuinto;
           &:hover{
-            background: rgb(37, 92, 243) !important;
+            background: $colorQuinto !important;
             transition: 0.5s;
             color: $colorPrimario;
           }
@@ -164,16 +164,16 @@
         text-transform: uppercase;
         font-family: $font-primary;
         font-weight: bold;
-        border: 1px solid $colorTercero;
+        border: 1px solid $colorQuinto;
         padding: 0.5rem 0;
         border-radius: 2px;
         background: transparent;
         bottom: 30px;
         position: absolute;
         left: 37px;
-        color: $colorTercero;
+        color: $colorQuinto;
         &:hover{
-          background: rgb(37, 92, 243) !important;
+          background: $colorQuinto !important;
           transition: 0.5s;
           color: $colorPrimario;
         }

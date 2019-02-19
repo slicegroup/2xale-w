@@ -1,20 +1,77 @@
 .sp-vista-productos{
     margin: 2rem 0;
     .breadcrumb{
-        width: 30%;
+        width: 100%;
         margin: 4rem 0;
         background: $colorPrimario;
         box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
         a{
             padding: 0 1rem;
             font-size: 1.2rem;
+            color: #469224;
+            font-family: $font-primary;
+            font-weight: 500;
         }
     }
     .producto-general{
         margin: 2rem 0;
         .cont-producto-b{
-            h2{
-                font-size: 4rem !important;
+            height: 395px;
+            padding: 2rem;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            h3{
+                font-size: 3rem !important;
+                font-family: $font-primary;
+                padding-bottom: 1rem;
+                font-weight: bold;
+                color: $colorSecundario;
+                border-bottom: 2px solid #469224;
+            }
+            span{
+                font-family: $font-primary;
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-left: 1rem;
+                color: #469224;
+            }
+            .parrafo-a{
+                font-size: 1.8rem;
+                font-weight: bold;
+                font-family: $font-primary;
+                color: grey;
+            } 
+            .parrafo-producto{
+                font-family: $font-primary;
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+            h4{
+                font-size: 4rem;
+                bottom: 72px;
+                position: absolute;
+                font-family: $font-primary;
+                font-weight: bold;
+                color: #469224;
+            }
+            button{
+                bottom: 78px;
+                position: absolute;
+                left: 500px;
+                font-weight: bold;
+                font-family: $font-primary;
+                padding: 0.5rem 3rem;
+                border: 2px solid #469224;
+                background: transparent;
+                color: #469224;
+                border-radius: 5px;
+                font-size: 1.8rem;
+                left: 290px;
+                &:hover{
+                    background: #469224;
+                    color: $colorPrimario;
+                    transition: 0.5s;
+                    border: 2px solid #469224;
+                }
             }
         }
         .cont-producto-a{

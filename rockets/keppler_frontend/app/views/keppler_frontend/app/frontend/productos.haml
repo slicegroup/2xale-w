@@ -1,36 +1,40 @@
 %section.sp-vista-productos
-    .container
-        %ol.breadcrumb
-            %li.breadcrumb-item
-            %a{:href => "#"} Home / 
-            %li.breadcrumb-item
-            %a{:href => "#"} Library / 
-            %li.breadcrumb-item
-            %a{:href => "#"} Categoria / 
+	.container
+		.row
+			.col-md-4
+				%ol.breadcrumb
+					%li.breadcrumb-item
+					%a{:href => "#"} Inicio / 
+					%li.breadcrumb-item
+					%a{:href => "#"} PS4 / 
+					%li.breadcrumb-item
+					%a{:href => "#"} Video /
+			.col-md-8
+				Publicidad 
 
-        %section.producto-general          
-            .row
-                .col-md-4
-                    .cont-producto-a
-                        .slider-productos
-                            .imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-01.png');"}
-                            .imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-02.jpg');"}
-                            .imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-03.png');"}
-                            .imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-04.png');"}
-                        .slider-nav 
-                            .imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-01.png');"}
-                            .imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-02.jpg');"}
-                            .imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-03.png');"}
-                            .imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-04.png');"}
-                .col-md-6
-                    .cont-producto-b
-                        %h2 Ps4 con su Control
-                        %span Modelo
-                        %p Tipo de modelo 
-                        %span Condicion 
-                        %p tipo de producto 
-                        %p.parrafo-producto Lorem ipsum dolor sit amet consectetur adipisicing elit. At, reprehenderit voluptatibus! Doloremque, non. Optio, voluptates! Sunt quis ducimus laboriosam, dolore tempore, repudiandae eveniet beatae quas, cum hic illum repellat tenetur?
-                        %h4 precio
-                .col-md-2
-                    .cont-producto-c 
-                        PUBLICIDAD o OTRA COSA
+		%section.producto-general          
+			.row
+				.col-md-4
+					.cont-producto-a
+						.slider-productos
+							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-01.png');"}
+							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-02.jpg');"}
+							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-03.png');"}
+							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-04.png');"}
+						.slider-nav 
+							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-01.png');"}
+							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-02.jpg');"}
+							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-03.png');"}
+							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-04.png');"}
+				.col-md-8
+					.cont-producto-b
+						%h3 Ps4 con su Control
+						%p.parrafo-a 
+							Modelo:
+							%span V.2 
+						%p.parrafo-a  
+							Tipo de Producto:
+							%span Electronico
+						%p.parrafo-producto PS4 nuevo de paquete con su control inalanbirco, contiene 360gb de memoria en el disco duro, con la capacidad nueva de cargar el control para que dure hasta 10 horas de juegos continuos.
+						%h4 400.00$
+						%button Comprar

@@ -12,6 +12,9 @@ module KepplerFrontend
     end
     # end keppler
 
+    def product
+    end
+    
     private
     # begin callback user_authenticate
     def user_authenticate

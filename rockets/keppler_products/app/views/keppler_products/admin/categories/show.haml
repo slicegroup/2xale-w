@@ -22,7 +22,7 @@
           .box-body.no-padding
             %table.table
               %tbody
-                - @category.as_json(except: %w[position deleted_at id]).each do |attribute, value|
+                - @category.as_json(except: %w[position deleted_at id featured]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2
@@ -33,3 +33,10 @@
                           = image_tag image.url if image.url
                       - else 
                         = sanitize raw value
+                %tr.list-row
+                  %th.display-label= t("activerecord.attributes.featured")
+                  %td.display-value.fs-body-1.tc-black-2.text-overflow
+                    - if @category.featured?
+                      %i.icon-star{ style: 'color: yelow' }
+                    - else
+                      %i.icon-close{ style: 'color: red' }

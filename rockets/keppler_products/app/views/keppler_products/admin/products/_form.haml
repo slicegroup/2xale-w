@@ -1,3 +1,8 @@
+%script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js' }
+%link{ href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css.map' }
+%script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js' }
+
+
 = simple_form_for [:admin, :products, @product] do |f|
   .container
     .row
@@ -22,15 +27,23 @@
                   .col-xs-12
                     .col-xs-6
                       = f.input :name, as: :string
-                      = f.input :category_id, collection: @categories, include_blank: false, label: t('activerecord.attributes.category_id')
-                      = f.input :address, as: :string, label: t('activerecord.attributes.address')
-                      = f.input :expiration, as: :string, input_html: { class: 'datepicker' }, label: t('activerecord.attributes.expiration')
                     .col-xs-6
-                      = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
+                      = f.input :category_id, collection: @categories, include_blank: false, label: t('activerecord.attributes.category_id')
+                  .col-xs-12    
+                    .col-xs-6
+                      = f.input :address, as: :string, label: t('activerecord.attributes.address')
+                    .col-xs-6
+                      %label{:for => "product[expiration]", class: 'control-label string required'}= t('activerecord.attributes.expiration')
+                      #datetimepicker6.input-group.date{"data-date-format" => "dd/DD/mm/yyyy"}
+                        %span.input-group-addon{ style: 'width: 100% !important' }
+                          %input.form-control{:type => 'text', name: 'product[expiration]', style: 'border-radius: 15px;'}
+                  .col-xs-12
+                    = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
                     = f.input :images, as: :keppler_file, multiple: true # , max_size: 225
                   .col-xs-12
                     .col-xs-6.col-sellers
+                      %p= @product.seller
                       %p.bold= t('activerecord.attributes.seller')
                       .options-sellers.seller1
                         %img{:src => "https://image.flaticon.com/icons/svg/1117/1117882.svg", :alt => "", width: '130px'}/
@@ -89,40 +102,56 @@
     color: red;
     font-size: 12px;
   }
-
-:javascript
-  $('.fields').hide()
-  $('.seller2').click(function(){
+- if @product.seller.eql?('2xale')
+  :javascript
+    $('.seller1').addClass('selected')
+    $('#product_seller').val('2xale')
+- elsif !@product.seller_name.blank?
+  :javascript
     $('.fields').show()
     $(this).addClass('selected')
-    $('.seller1').removeClass('selected')
     $('#product_seller').val('tercero')
-  })
-  $('.seller1').click(function(){
+:javascript
+  $(document).ready(function () {
+    $('#datetimepicker6').datetimepicker({
+       defaultDate: new Date(),
+       minDate: new Date(),
+       format: 'D/M/Y'
+     });
     $('.fields').hide()
-    $(this).addClass('selected')
-    $('.seller2').removeClass('selected')
-    $('#product_seller').val('2xale')
-    $('#product_seller_name').val('')
-    $('#product_seller_phone').val('')
-    $('#product_seller_email').val('')
+    $('.seller2').click(function(){
+      $('.fields').show()
+      $(this).addClass('selected')
+      $('.seller1').removeClass('selected')
+      $('#product_seller').val('tercero')
+    })
+    $('.seller1').click(function(){
+      $('.fields').hide()
+      $(this).addClass('selected')
+      $('.seller2').removeClass('selected')
+      $('#product_seller').val('2xale')
+      $('#product_seller_name').val('')
+      $('#product_seller_phone').val('')
+      $('#product_seller_email').val('')
+    })
+    $('#new_product').validate({
+      event: 'blur',
+      errorClass: 'error-class',
+      validClass: 'valid-class',
+       rules: {
+         'product[seller_name]': { required: true},
+         'product[seller_phone]': { required: true},
+         'product[seller_email]': { required: true},
+        },
+       messages: {
+         'product[seller_name]': 'Indica el nombre del vendedor',
+         'product[seller_phone]': 'Teléfono del vendedor',
+         'product[seller_email]': 'Correo del vendedor'
+        },
+      debug: true,errorElement: 'label',
+      submitHandler: function(form){
+        form.submit();
+      }
+    });
   })
-  $('#new_product').validate({
-    event: 'blur',
-    errorClass: 'error-class',
-    validClass: 'valid-class',
-     rules: {
-       'product[seller_name]': { required: true},
-       'product[seller_phone]': { required: true},
-       'product[seller_email]': { required: true},
-      },
-     messages: {
-       'product[seller_name]': 'Indica el nombre del vendedor',
-       'product[seller_phone]': 'Teléfono del vendedor',
-       'product[seller_email]': 'Correo del vendedor'
-      },
-    debug: true,errorElement: 'label',
-    submitHandler: function(form){
-      form.submit();
-    }
-  });
+  

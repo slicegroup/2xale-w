@@ -43,7 +43,6 @@
                     = f.input :images, as: :keppler_file, multiple: true # , max_size: 225
                   .col-xs-12
                     .col-xs-6.col-sellers
-                      %p= @product.seller
                       %p.bold= t('activerecord.attributes.seller')
                       .options-sellers.seller1
                         %img{:src => "https://image.flaticon.com/icons/svg/1117/1117882.svg", :alt => "", width: '130px'}/
@@ -106,10 +105,10 @@
   :javascript
     $('.seller1').addClass('selected')
     $('#product_seller').val('2xale')
-- elsif !@product.seller_name.blank?
+- elsif (!@product.seller_name.blank?)
   :javascript
     $('.fields').show()
-    $(this).addClass('selected')
+    $('.seller2').addClass('selected')
     $('#product_seller').val('tercero')
 :javascript
   $(document).ready(function () {
@@ -134,14 +133,14 @@
       $('#product_seller_phone').val('')
       $('#product_seller_email').val('')
     })
-    $('#new_product').validate({
+    $('.simple_form').validate({
       event: 'blur',
       errorClass: 'error-class',
       validClass: 'valid-class',
        rules: {
          'product[seller_name]': { required: true},
-         'product[seller_phone]': { required: true},
-         'product[seller_email]': { required: true},
+         'product[seller_phone]': { required: true, number: true},
+         'product[seller_email]': { required: true, email: true},
         },
        messages: {
          'product[seller_name]': 'Indica el nombre del vendedor',

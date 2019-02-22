@@ -1,132 +1,29 @@
 !!!
 %html
   %body
-    %header
-      / Cabecera de la pagina
-      .container{:style => "padding-bottom: 1rem;"}
-        / navbar
-        %nav.navbar.navbar-expand-lg.navbar-light
-          %a.navbar-brand{:href => ""}
-            %img{:src => "/assets/keppler_frontend/app/logo_2xale.svg"}
-          %form.form-inline.barra-buscador.my-2.my-lg-0
-            %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Buscador", :type => "search"}/
-            %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"}
-              %i.fa.fa-search
-          %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-            %span.navbar-toggler-icon
-          #navbarSupportedContent.collapse.navbar-collapse
-            %ul.navbar-nav.ml-auto
-              %li.nav-item.info-header.active
-                %p
-                  %i.fa.fa-whatsapp
-                  +584120640761 / 414 6300761
-                %p
-                  %i.fa.fa-envelope
-                  servicioalcliente@2xale.com
-        %nav.navbar.navbar-expand-lg.navbar-secundario.navbar-light
-          #navbarSupportedContent.collapse.navbar-collapse
-            %ul.navbar-nav
-              %li.nav-item.active
-                %a{:href => ""} 
-                  Categorias 
-                  %span
-                    %i.fa.fa-caret-down
-              %li.nav-item.active
-                %a{:href => "#footer"} Contacto
-              %li.nav-item.active
-                %a{:href => ""} Nosotros
     = set_head
+    = render 'keppler_frontend/app/partials/navbar'
     = yield
-
-    %section.sp-footer
-      %footer{:id => "footer"}
-      / Footer 
-      .container
-        .row
-          .col-md-4.text-center
-            %img{:src => "/assets/keppler_frontend/app/logo_2xale.svg"}
-
-          .col-md-4 
-            .colm-a
-              %h4 Contactos
-              %p Telefono: +584120640761 / 414 6300761 
-              %p Correo:  servicioalcliente@2xale.com 
-              .colm-b
-                .sp-links-footer
-                  %a.links-redes{:href => "#"}
-                    %i.fa.fa-facebook.official  
-                      %span Facebook 
-                  %a.links-redes{:href => "#"}
-                    %i.fa.fa-instagram 
-                      %span Instagram
-                  %a.links-redes{:href => "#"}
-                    %i.fa.fa-twitter 
-                      %span Twitter	 
-                .sp-links-footer
-                 
-                .sp-links-footer
-                 
-              
-          .col-md-4
-            .about-footer
-              %h4 Nosotros
-              %p 2xale, surge de la combinación de un día de unión y compromiso y del nombre propio de su creador; con el sueño de ser una marca reconocida en el mundo y con la iniciativa de brindar apoyo a quienes se les dificulta la venta de diversos productos, siendo el enlace más confiable entre el vendedor y el comprador; además de ofrecer el impulso de negocios y empresas a través de la publicidad en nuestra página web.
-          .col-md-12
-            %article
-              .copy-footer
-                %p Copyright 2Xale 2019 | Powered by Slice Group with Keppler					
-
+    -# = render 'keppler_frontend/app/partials/footer'
+    // Boostrap CDN
+    %script{ :src => "https://code.jquery.com/jquery-3.3.1.min.js" }
+    %script{ :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
+    %script{ :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"}
+    %script{ src: 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' }
     :javascript
-      $(document).ready(function(){
-        $('.slider-inicial').slick({
-          slidesToScroll: 1,
-          dots: true,
-          autoplaySpeed: 4000,
-          infinite: true,
-          autoplay: true,
-        });
+      WebFont.load({
+        google: {
+          families: ['Quicksand:300,400,500,600,700']
+        }
       });
-
-    :javascript
-      $('.slider-productos').slick({
-        slidesToShow: 1,
+      $('.home-slider').slick({
         slidesToScroll: 1,
+        slidesToShow: 1,
+        dots: true,
+        autoplaySpeed: 4000,
+        infinite: true,
+        autoplay: false,
         arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
+        fade: true
       });
-      $('.slider-nav').slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          asNavFor: '.slider-productos',
-          centerMode: true,
-          focusOnSelect: true
-      });
-      
-
-   
-
-    :javascript
-      const second = 1000,
-            minute = second * 60,
-            hour = minute * 60,
-            day = hour * 24;
-
-      let countDown = new Date('Sep 30, 2019 00:00:00').getTime(),
-          x = setInterval(function() {
-
-            let now = new Date().getTime(),
-                distance = countDown - now;
-
-            document.getElementById('days').innerText = Math.floor(distance / (day)),
-              document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-              document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-              document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-            
-            //do something later when date is reached
-            //if (distance < 0) {
-            //  clearInterval(x);
-            //  'IT'S MY BIRTHDAY!;
-            //}
-
-          }, second)

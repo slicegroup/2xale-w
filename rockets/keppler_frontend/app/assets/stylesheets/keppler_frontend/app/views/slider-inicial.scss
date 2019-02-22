@@ -1,84 +1,181 @@
-@import 'variables';
-.imagen-slider-inicial {
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    height: 82vh;
-    background-position: center center !important;
-    position: relative;
-    z-index: 0 !important;
-    .cont-articulos-slide {
-      position: absolute;
-      z-index: 3333333 !important;
-      top: 140px;
-      padding: 0 60px;
-      padding: 0 6rem;
-      left: 66px;
-      h1 {
-        font-size: 5.5rem;
-        color: rgb(51, 51, 51);
-        font-family: $font-primary;
-        font-weight: bold;
-      }
-      p {
-        font-size: 19px;
-        font-size: 1.6rem;
-        color: rgb(51, 51, 51);
-        font-family: $font-primary;
-        font-weight: 500;
-        padding: 15px 0;
-        padding: 1.5rem 0;
-      }
-      button {
-        width: 120px;
-        font-size: 19px;
-        font-size: 1.9rem;
-        border-radius: 5px;
-        border: 1px solid $colorQuinto;
-        padding: 10px 0;
-        color: $colorQuinto;
-        padding: 1rem 0;
-        cursor: pointer;
-        z-index: 1000;
-        background: transparent;
-        font-family: $font-primary;
-        font-weight: bold;
-        &:hover{
-          background: $colorQuinto !important;
-          transition: 0.5s;
-          color: $colorPrimario;
-        }
-      }
-    }
-  }
-  
-  .slick-prev, .slick-next {
-    display: none !important;
-  }
-  
+.home {
+  position: relative;
+}
+
+.home-slider {
+  position: relative;
+
   .slick-dots {
-    bottom: 30px !important;
-    li {
-      border-radius: 20px;
-      background: $colorPrimario;
-      border: 1px solid $colorQuinto;
-      width: 15px !important;
-      height: 15px !important;
+    bottom: 10%;
+  }
+
+  .slick-dots li {
+    width: 10px;
+    height: 7px;
+  }
+
+  .slick-dots li button {
+    width: 10px;
+    height: 7px;
+
+    &::before {
+      width: 10px;
+      height: 7px;
+      content: '';
+      border-radius: 15px;
+      background-color: $blue;
     }
   }
 
-  .slick-dots li button::before{
-    color: transparent !important;
+  .slick-dots li.slick-active {
+    width: 20px;
   }
 
-  .slick-dots li.slick-active button::before{
-    background: $colorQuinto;
-    border-radius: 20px;
-    width: 15px !important;
-    height: 15px !important;
-    border: 1px solid $colorQuinto;
+  .slick-dots li.slick-active button::before {
+    width: 20px;
+  }
+}
+
+.banner-slider {
+  @include size(100%, 80vh);
+  display: flex !important;
+}
+
+.banners-box {
+  @include size(60%, 100%);
+  @include respond-to(xs) {
+    width: 100%;
+    margin-top: 40px;
   }
 
-  .slick-dots li button::before{
-    top: -1px !important;
-    left: -1px !important;
+  .banner-item {
+    @include size(100%);
+    @include bg(cover, no-repeat, center);
+    border-radius: 0 10px 10px 0;
+    position: relative;
+    @include respond-to(xs) {
+      border-radius: 0;
+    }
   }
+
+  .banner-mask {
+    @include size(100%);
+    display: flex;
+    padding: 20px 50px;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 0 10px 10px 0;
+    background-color: rgba($green, .5);
+    @include respond-to(xs) {
+      border-radius: 0;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-family: $quicksand;
+      font-weight: $semi-bold;
+      color: $white;
+      width: 60%;
+    }
+
+    .btn-more {
+      color: $white;
+      font-family: $quicksand;
+      font-weight: $semi-bold;
+    }
+  }
+}
+
+.search-cta {
+  @include size(40%, 100%);
+  display: flex;
+  justify-content: flex-end;
+  @include respond-to(xs) {
+    display: none;
+  }
+  
+  h1 {
+    font-family: $quicksand;
+    font-weight: $semi-bold;
+    text-align: right;
+    margin-top: 100px;
+    margin-right: 50px;
+
+    @include respond-to(sm) {
+      margin-right: 25px;
+      font-size: 25px;
+    }
+  }
+}
+
+.search-input {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50%;
+  padding-right: 50px;
+
+  @include respond-to(xs) {
+    top: 0;
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  @include respond-to(sm) {
+    padding-right: 25px;
+  }
+
+  .input-group {
+    width: 100% !important;
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    @include respond-to(xs) {
+      box-shadow: 0 0 15px transparent;
+      border-radius: 0;
+    }
+  }
+  
+  .form-control {
+    border: 0;
+    height: 60px;
+    font-family: $quicksand;
+
+    @include respond-to(xs) {
+      border: 2px solid $blue;
+      height: auto;
+      border-radius: 0;
+    }
+
+    &::placeholder {
+      font-family: $quicksand;
+      font-weight: $semi-bold;
+    }
+
+    &:focus{ 
+      box-shadow: 0 0 0 transparent;
+      border: 2px solid $blue;
+    }
+  }
+
+  .input-group-prepend {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    @include respond-to(xs) {
+      border-radius: 0;
+    }
+
+    .input-group-text {
+      background-color: $blue;
+      color: $white;
+      border: 0;
+      font-weight: $bold;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      @include respond-to(xs) {
+        border-radius: 0;
+      }
+    }
+  }
+}

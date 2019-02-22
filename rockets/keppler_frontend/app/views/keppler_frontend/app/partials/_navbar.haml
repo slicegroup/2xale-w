@@ -1,0 +1,28 @@
+%nav.navbar.navbar-expand-lg
+  %a.navbar-brand{href: "#"}
+    %img{ src: 'assets/keppler_frontend/app/logo_2xale.svg', alt: '2xale logo' }
+  %button.navbar-toggler{"aria-controls" => "nav2xale", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav2xale", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon
+  #nav2xale.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+          Categorías
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{href: "#"} Action
+          %a.dropdown-item{href: "#"} Another action
+          .dropdown-divider
+          %a.dropdown-item{href: "#"} Something else here
+      - 2.times do
+        %li.nav-item
+          %a.nav-link{href: "#"} Link
+    %ul.navbar-nav.ml-auto
+      %li.nav-item
+        %a.nav-link{href: "#"}
+          %i.icofont-facebook
+      %li.nav-item
+        %a.nav-link{href: "#"}
+          %i.icofont-twitter
+      %li.nav-item
+        %a.nav-link{href: "#"}
+          %i.icofont-instagram

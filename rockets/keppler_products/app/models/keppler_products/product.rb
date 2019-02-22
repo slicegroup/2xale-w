@@ -13,7 +13,7 @@ module KepplerProducts
     acts_as_list
     acts_as_paranoid
     belongs_to :category
-    validates_presence_of :name, :images, :description, :expiration, :address
+    validates_presence_of :name, :images, :description, :seller, :expiration, :address
 
     def self.index_attributes
       %i[name category_id address seller seller_name seller_phone seller_email]

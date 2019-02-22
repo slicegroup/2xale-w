@@ -2,7 +2,6 @@
 %link{ href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css.map' }
 %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js' }
 
-
 = simple_form_for [:admin, :products, @product] do |f|
   .container
     .row
@@ -40,17 +39,23 @@
                   .col-xs-12
                     = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
-                    = f.input :images, as: :keppler_file, multiple: true # , max_size: 225
+                    %p.bold= t('activerecord.attributes.images')
+                    - unless @product.errors[:images][0].blank?
+                      %p.error-class *Requerido
+                    = f.input :images, as: :keppler_file, multiple: true, label: false # , max_size: 225
                   .col-xs-12
-                    .col-xs-6.col-sellers
-                      %p.bold= t('activerecord.attributes.seller')
+                    .col-xs-6.col-md-12.col-sm-12.col-lg-6.col-sellers
+                      %p.bold
+                        = t('activerecord.attributes.seller')
+                        - unless @product.errors[:seller][0].blank?
+                          %span.error-class *Requerido
                       .options-sellers.seller1
                         %img{:src => "https://image.flaticon.com/icons/svg/1117/1117882.svg", :alt => "", width: '130px'}/
                         %p Empresa
                       .options-sellers.seller2
                         %img{:src => "https://image.flaticon.com/icons/svg/816/816548.svg", :alt => "", width: '130px'}/
                         %p Tercero
-                    .col-xs-6.fields
+                    .col-xs-6.col-md-12.col-sm-12.col-lg-6.fields
                       = f.input :seller, as: :string, as: :hidden
                       = f.input :seller_name, as: :string, label: t('activerecord.attributes.seller_name')
                       = f.input :seller_phone, as: :string, label: t('activerecord.attributes.seller_phone')
@@ -150,11 +155,17 @@
          'product[seller_name]': { required: true},
          'product[seller_phone]': { required: true, number: true},
          'product[seller_email]': { required: true, email: true},
+         'product[name]': {required: true},
+         'product[address]': {required: true},
+         'product[expiration]': {required: true}
         },
        messages: {
          'product[seller_name]': 'Indica el nombre del vendedor',
          'product[seller_phone]': 'Teléfono del vendedor',
-         'product[seller_email]': 'Correo del vendedor'
+         'product[seller_email]': 'Correo del vendedor',
+         'product[name]': 'Indica el nombre del producto',
+         'product[address]': 'Indica la ubicación del producto',
+         'product[address]': 'Indica la fecha de expiración del producto'
         },
       debug: true,errorElement: 'label',
       submitHandler: function(form){

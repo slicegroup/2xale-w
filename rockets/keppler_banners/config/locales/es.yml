@@ -17,6 +17,7 @@ es:
   activerecord:
     attributes:
       active: Activo
+      search_text: Texto de busqueda
     errors:
       messages:
   errors:

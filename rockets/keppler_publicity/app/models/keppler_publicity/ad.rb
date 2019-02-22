@@ -12,6 +12,7 @@ module KepplerPublicity
     mount_uploader :image, AttachmentUploader
     acts_as_list
     acts_as_paranoid
+    validates_presence_of :image, :type_ad, :location
 
     def self.index_attributes
       %i[image type_ad location]

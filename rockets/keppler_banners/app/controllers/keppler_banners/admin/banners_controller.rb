@@ -53,6 +53,11 @@ module KepplerBanners
         redirect_to_index(@objects)
       end
 
+      def toggle
+        Banner.find(params[:banner_id]).update(active: params[:banner][:active])
+        redirect_to_index(@objects)
+      end
+
       # DELETE /banners/1
       def destroy
         @banner.destroy

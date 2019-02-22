@@ -16,6 +16,7 @@ es:
     actions:
   activerecord:
     attributes:
+      active: Activo
     errors:
       messages:
   errors:

@@ -20,6 +20,8 @@
               %tbody
                 .form-padding
                   %label.control-label.keppler_file.optional= t('activerecord.attributes.type')
+                  - unless @ad.errors[:location][0].blank?
+                    %p.error *Requerido
                   .flex{ style: 'padding-bottom: 27px'}
                     .banner.active
                       .lines
@@ -32,13 +34,40 @@
                         %p ROBA PÁGINA
                     = f.input :type_ad, as: :string, as: :hidden
                   .col-xs-12
-                    = f.input :image, as: :keppler_file # , max_size: 225
+                    %label.control-label.keppler_file.optional= t('activerecord.attributes.image')
+                    %p.error.error-image
+                    = f.input :image, as: :keppler_file, label: false # , max_size: 225
                   .col-xs-12
-                    = f.input :location, as: :radio_buttons, collection: [['0', 'About'], ['1', 'Home']], label_method: :second, value_method: :first, label: t('activerecord.attributes.location')
+                    %label= t('activerecord.attributes.location')
+                    - unless @ad.errors[:location][0].blank?
+                      %p.error *Requerido
+                    .banner-location.opacity
+                      %div.location-form
+                        %input.location#home-banner-1{:name => "location-1", :type => "radio", :value => "home-banner-1"}
+                        %label{:for => "home-banner"} HOME
+                      %div.location-form
+                        %input.location#products-banner-1{:name => "location-2", :type => "radio", :value => "products-banner-1"}
+                        %label{:for => "products-banner"} PRODUCTS
+                    .media-banner-location.opacity
+                      %div.location-form
+                        %input.location#home-media-banner-1{:name => "location-3", :type => "radio", :value => "home-media-banner-1"}
+                        %label{:for => "home-media-banner-1"} HOME - Primer media banner
+                      %div.location-form
+                        %input.location#home-media-banner-2{:name => "location-4", :type => "radio", :value => "home-media-banner-2"}
+                        %label{:for => "home-media-banner-2"} HOME - Segundo media banner
+                    .roba-pagina-location.opacity
+                      %div.location-form
+                        %input.location#home-roba-pagina-1{:name => "location-5", :type => "radio", :value => "home-roba-pagina-1"}
+                        %label{:for => "home-roba-pagina-1"} HOME - Primer roba página
+                      %div.location-form
+                        %input.location#home-roba-pagina-2{:name => "location-6", :type => "radio", :value => "home-roba-pagina-2"}
+                        %label{:for => "home-roba-pagina-2"} HOME - Segundo roba página
+                  = f.input :location, as: :hidden
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
+
 :scss
   .flex div{
     cursor: pointer;
@@ -91,10 +120,70 @@
   .medium p{
     font-size: 22px;
   }
-
+  .opacity{
+    display: none;
+  }
+  .error{
+    color: red;
+    font-size: 13px;
+    display: inline;
+  }
+- if @ad.type_ad.eql?('banner')
+  %p.hide= @ad.location
+  :javascript
+    $('.banner').css('background-color', 'rgba(99, 101, 105, 0.4)')
+    $('.banner-location').show()
+- elsif @ad.type_ad.eql?('media banner')
+  :javascript
+    $('.medium').css('background-color', 'rgba(99, 101, 105, 0.4)')
+    $('.media-banner-location').show()
+- elsif @ad.type_ad.eql?('roba página')
+  :javascript
+    $('.steal-page').css('background-color', 'rgba(99, 101, 105, 0.4)')
+    $('.roba-pagina-location').show()
 :javascript
   $('.active').click(function(){
     $('.active').css('background-color', 'rgba(160, 158, 158, 0.5)')
     $(this).css('background-color', 'rgba(99, 101, 105, 0.4)')
-    $('#ad_type_ad').val($(this).find('p').text())
+    $('#ad_type_ad').val(($(this).find('p').text()).toLowerCase())
+    if ($(this).find('p').text() == 'BANNER'){
+      $('.file-drop-zone-title').text('1920 x 1080px')
+      $('.opacity').hide()
+      $('.banner-location').show()
+    }else{
+      if ($(this).find('p').text() == 'MEDIA BANNER'){
+        $('.file-drop-zone-title').text('1080 x 600px')
+        $('.opacity').hide()
+        $('.media-banner-location').show()
+      }else{
+        $('.file-drop-zone-title').text('600 x 800px')
+        $('.opacity').hide()
+        $('.roba-pagina-location').show()
+      }
+    }
   })
+  $('.location-form').click(function(){
+    $('#ad_location').val($(this).find('input').val())
+  })  
+
+  var location_name = "#{@ad.location}"
+  $('input[type="radio"]').each(function() {
+    var location_id = $(this).attr('id');
+
+    if (location_id == location_name) {
+      $(this).prop('checked', 'checked')
+    }
+  });
+  $('.simple_form').validate({
+      event: 'blur',
+      errorClass: 'error-class',
+      validClass: 'valid-class',
+       rules: {
+         'ad[image]': { required: true},
+        },
+       messages: {
+        },
+      errorPlacement: function(error, element) {
+        $('.error-image').text('*Requerido')
+      }
+    });

@@ -16,6 +16,7 @@ en:
     actions:
   activerecord:
     attributes:
+      type_id: Type
     errors:
       messages:
   errors:

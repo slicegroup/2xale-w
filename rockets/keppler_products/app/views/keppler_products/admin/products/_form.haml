@@ -95,29 +95,38 @@
   }
   .fields{
     margin-top: 20px;
+    display: none;
   }
   .error-class{
     font-weight: 600;
     color: red;
     font-size: 12px;
   }
+- if action_name.eql?('new')
+  :javascript
+    $(document).ready(function () {
+      $('#datetimepicker6').datetimepicker({
+         defaultDate: new Date(),
+         minDate: new Date(),
+         format: 'D/M/Y'
+       });
+      })
+- else
+  :javascript
+    $(document).ready(function () {
+      $('#datetimepicker6').datetimepicker({
+         minDate: new Date(),
+         format: 'D/M/Y'
+       });
+    })
 - if @product.seller.eql?('2xale')
   :javascript
     $('.seller1').addClass('selected')
-    $('#product_seller').val('2xale')
 - elsif (!@product.seller_name.blank?)
   :javascript
     $('.fields').show()
     $('.seller2').addClass('selected')
-    $('#product_seller').val('tercero')
 :javascript
-  $(document).ready(function () {
-    $('#datetimepicker6').datetimepicker({
-       defaultDate: new Date(),
-       minDate: new Date(),
-       format: 'D/M/Y'
-     });
-    $('.fields').hide()
     $('.seller2').click(function(){
       $('.fields').show()
       $(this).addClass('selected')
@@ -152,5 +161,4 @@
         form.submit();
       }
     });
-  })
   

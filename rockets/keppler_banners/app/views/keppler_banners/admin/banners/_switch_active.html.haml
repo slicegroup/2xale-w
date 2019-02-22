@@ -1,0 +1,30 @@
+= simple_form_for banner, url: admin_banners_banner_toggle_path(banner), method: :post do |f|
+  %label
+    - if @objects.where(active: true).count >= 3 && !banner.active  
+      %label.switch
+        %input{name: "banner[active]", type: "hidden", value: "false"}
+        %input{id: "switch-#{banner.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "notPermission()"}
+
+    - elsif banner.active?
+      %label.switch
+        %input{name: "banner[active]", type: "hidden", value: "false"}
+        %input.active{id: "switch-#{banner.id}", :type => "checkbox", checked: "checked"}
+        %span.slider.round{onclick: "sendPermission('#{banner.id}')"}
+
+    - else
+      %label.switch
+        %input{name: "banner[active]", type: "hidden", value: "true"}
+        %input{id: "switch-#{banner.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "sendPermission('#{banner.id}')"}
+
+:javascript
+  function sendPermission(id) {
+    $("#edit_banner_"+id).submit()
+  }
+  function notPermission(){
+    Swal.fire({
+      type: 'error',
+      title: 'No pueden haber mas de 3 banners activos',
+    })
+  }

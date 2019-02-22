@@ -26,7 +26,7 @@
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.title")
                     %td.display-value.fs-body-1.tc-black-2=  @banner.title
-                - @banner.as_json(except: %w[position deleted_at id title]).each do |attribute, value|
+                - @banner.as_json(except: %w[position deleted_at id title active]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2

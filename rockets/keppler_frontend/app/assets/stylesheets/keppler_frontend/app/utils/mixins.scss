@@ -36,3 +36,9 @@
   background-size: $size;
   background-position: $pos;
 }
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -129,8 +129,7 @@
   .input-group {
     width: 100% !important;
     box-shadow: 0 0 15px rgba(0,0,0,.5);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
     @include respond-to(xs) {
       box-shadow: 0 0 15px transparent;
       border-radius: 0;
@@ -141,9 +140,11 @@
     border: 0;
     height: 60px;
     font-family: $quicksand;
+    border-radius: 10px;
+    padding: 6px 20px;
 
     @include respond-to(xs) {
-      border: 2px solid $blue;
+      border: 1px solid $blue;
       height: auto;
       border-radius: 0;
     }
@@ -162,17 +163,21 @@
   .input-group-prepend {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    width: 60px;
     @include respond-to(xs) {
       border-radius: 0;
     }
 
     .input-group-text {
+      width: 60px;
       background-color: $blue;
       color: $white;
       border: 0;
       font-weight: $bold;
+      font-size: 18px;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
+      @include flex-center();
       @include respond-to(xs) {
         border-radius: 0;
       }

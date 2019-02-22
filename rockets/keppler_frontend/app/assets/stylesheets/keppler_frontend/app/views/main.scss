@@ -1,0 +1,19 @@
+.products {
+  padding: 50px;
+}
+
+.badge-offer {
+  background-color: $green;
+  color: $white;
+}
+
+.badge-new {
+  background-color: $blue;
+  color: $white;
+}
+
+.ad_full {
+  border: 1px solid #000;
+  @include size(100%, 400px);
+  margin-bottom: 30px;
+}

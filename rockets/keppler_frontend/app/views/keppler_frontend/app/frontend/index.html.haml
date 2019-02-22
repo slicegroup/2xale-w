@@ -3,9 +3,9 @@
     - 3.times do
       .banner-slider
         .banners-box
-          .banner-item{ style: 'background-image: url("https://images.unsplash.com/photo-1519638831568-d9897f54ed69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");' }
+          .banner-item{ style: 'background-image: url("https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");' }
             .banner-mask
-              %h1 Titulo del Producto
+              %h1 Titulo del Banner
               %a.btn-more{ href: '' }
                 Ver más
                 %i.icofont-arrow-right
@@ -17,3 +17,40 @@
         %input.form-control{ type: 'search', placeholder: 'Buscar' }
         .input-group-prepend
           %i.icofont-search.input-group-text
+%section.products
+  .row
+    .col-lg-9
+      .row
+        - 6.times do
+          .col-lg-4
+            .product-card
+              %a{ href: '' }
+                .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
+                  %span.badge.badge-new New
+                  .product-price
+                    %span 400$
+              .product-content
+                %a{ href: '' }
+                  %small Categoría
+                %a{ href: '' }
+                  %h4 Titulo de producto
+                .description-text
+                  %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum amet eum optio.
+                .product-footer
+                  .counter
+                    %ul
+                      %li
+                        %span#days
+                        Dias
+                      %li
+                        %span#hours
+                        Horas
+                      %li
+                        %span#minutes
+                        Minutos
+                  %a.btn-more{ href: '#' }
+                    Solicitar
+                    %i.icofont-arrow-right
+    .col-lg-3
+      - 2.times do
+        .ad_full

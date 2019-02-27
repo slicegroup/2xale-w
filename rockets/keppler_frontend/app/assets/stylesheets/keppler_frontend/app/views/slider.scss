@@ -10,17 +10,17 @@
   }
 
   .slick-dots li {
-    width: 10px;
-    height: 7px;
+    width: 20px;
+    height: 10px;
   }
 
   .slick-dots li button {
-    width: 10px;
-    height: 7px;
+    width: 20px;
+    height: 10px;
 
     &::before {
-      width: 10px;
-      height: 7px;
+      width: 20px;
+      height: 10px;
       content: '';
       border-radius: 15px;
       background-color: $blue;
@@ -28,30 +28,37 @@
   }
 
   .slick-dots li.slick-active {
-    width: 20px;
+    width: 30px;
   }
 
   .slick-dots li.slick-active button::before {
-    width: 20px;
+    width: 30px;
   }
 }
 
 .banner-slider {
-  @include size(100%, 80vh);
+  @include size(100%, calc(80vh + 20px));
+  padding-bottom: 20px;
   display: flex !important;
 }
 
 .banners-box {
   @include size(60%, 100%);
+  background-color: rgba($green, 1);
+  position: relative;
+  border-radius: 0 10px 10px 0;
+  margin-top: 10px;
   @include respond-to(xs) {
     width: 100%;
     margin-top: 40px;
   }
-
+  
   .banner-item {
     @include size(100%);
-    @include bg(cover, no-repeat, center);
     border-radius: 0 10px 10px 0;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 0.6;
     position: relative;
     @include respond-to(xs) {
       border-radius: 0;
@@ -61,12 +68,13 @@
   .banner-mask {
     @include size(100%);
     display: flex;
+    top: 0;
     padding: 20px 50px;
     justify-content: center;
     flex-direction: column;
     position: absolute;
     border-radius: 0 10px 10px 0;
-    background-color: rgba($green, .5);
+    box-shadow: 1px 1px 10px rgba($green, .5);
     @include respond-to(xs) {
       border-radius: 0;
     }
@@ -76,13 +84,20 @@
       font-family: $quicksand;
       font-weight: $semi-bold;
       color: $white;
-      width: 60%;
+      width: 70%;
+      font-size: 50px;
+      text-shadow: 0px 5px 5px rgba($black, .2);
     }
 
     .btn-more {
       color: $white;
       font-family: $quicksand;
       font-weight: $semi-bold;
+      font-size: 22px;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

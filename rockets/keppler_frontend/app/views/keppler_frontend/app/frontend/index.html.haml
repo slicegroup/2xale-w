@@ -3,12 +3,12 @@
     - 3.times do
       .banner-slider
         .banners-box
-          .banner-item{ style: 'background-image: url("https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");' }
-            .banner-mask
-              %h1 Titulo del Banner
-              %a.btn-more{ href: '' }
-                Ver más
-                %i.icofont-arrow-right
+          %img.banner-item{src:'https://images.unsplash.com/photo-1534497977663-a73dfabd7774?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=987&q=80'}
+          .banner-mask
+            %h1 Titulo del Banner
+            %a.btn-more{ href: '' }
+              Ver más
+              %i.icofont-arrow-right
         .search-cta
           %h1 Encuentra el producto que estás buscando
   .search-input
@@ -27,16 +27,13 @@
               %a{ href: '' }
                 .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
                   %span.badge.badge-new New
-                  .product-price
-                    %span 400$
               .product-content
                 %a{ href: '' }
-                  %small Categoría
+                  %small Ropa y Calzado
                 %a{ href: '' }
-                  %h4 Titulo de producto
-                .description-text
-                  %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum amet eum optio.
-                .product-footer
+                  %h4 Adidas Perfomance
+                  .product-price
+                    %span 400$
                   .counter
                     %ul
                       %li
@@ -48,9 +45,84 @@
                       %li
                         %span#minutes
                         Minutos
-                  %a.btn-more{ href: '#' }
-                    Solicitar
-                    %i.icofont-arrow-right
+              %a.product-footer{ href: '#' }
+                .btn-more
+                  Solicitar
+                  %i.icofont-arrow-right
     .col-lg-3
       - 2.times do
-        .ad_full
+        .ad_full{ style: 'background-image: url("https://cdn-images-1.medium.com/max/1600/1*ibN0ptxrg6LkZ5DZbKv2YA.png")' }
+%section.half_banners
+  .row
+    - 2.times do
+      .col-lg-6
+        .ad_half{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+%section.categories
+  .row
+    .col-lg-3
+      .categories-text
+        %h1 Categorias destacadas
+        %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
+        .carousel-buttons
+          %button.btn.left
+            %i.icofont-arrow-left
+          %button.btn.right
+            %i.icofont-arrow-right
+    .col-lg-9
+      .row.categories-carousel
+        - 2.times do
+          .category-card
+            %img{src: 'https://images.unsplash.com/photo-1500840216050-6ffa99d75160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1073&q=80'}
+            %a.category-content{ href: '#' }
+              %h4 Belleza y cuidado
+              %span.btn-more
+                Ver más
+                %i.icofont-arrow-right
+          .category-card
+            %img{src: 'https://upload.wikimedia.org/wikipedia/commons/2/25/2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg'}
+            %a.category-content{ href: '#' }
+              %h4 Carros
+              %span.btn-more
+                Ver más
+                %i.icofont-arrow-right
+          .category-card
+            %img{src: 'https://images.unsplash.com/photo-1461218779480-bb61b6be1924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'}
+            %a.category-content{ href: '#' }
+              %h4 Hogar
+              %span.btn-more
+                Ver más
+                %i.icofont-arrow-right
+%section.full_banner_ad
+  .row
+    .col-lg-12
+      .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+%footer
+  .row
+    .col-lg-8.offset-lg-2
+      .footer-block
+        %img{src: "assets/keppler_frontend/app/logo_2xale_white.svg"}
+        .footer-list
+          %ul.contact-list
+            %li
+              %strong Telefónos
+              %br
+              +58 4120640761 / 414 6300761
+            %li
+              %strong Correo Electrónico
+              %br
+              %a{href:''} servicioalcliente@2xale.com
+          %ul.rrss
+            %li
+              %a{href:''}
+                %i.icofont-facebook
+            %li
+              %a{href:''}
+                %i.icofont-instagram
+            %li
+              %a{href:''}
+                %i.icofont-twitter
+        %small.copyright
+          Copyright 2Xale 2019 | Powered by 
+          %a{href:''} Slice Group
+          with
+          %a{href:''} Keppler

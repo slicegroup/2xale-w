@@ -1,5 +1,22 @@
 .products {
+  padding: 100px 50px 50px;
+  @include respond-to(xs) {
+    padding: 100px 20px 50px;
+  }
+}
+
+.categories {
   padding: 50px;
+  @include respond-to(xs) {
+    padding: 50px 10px;
+  }
+}
+
+.half_banners, .full_banner_ad {
+  padding: 10px 50px;
+  @include respond-to(xs) {
+    padding: 10px;
+  }
 }
 
 .badge-offer {
@@ -13,7 +30,86 @@
 }
 
 .ad_full {
-  border: 1px solid #000;
-  @include size(100%, 400px);
-  margin-bottom: 30px;
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 550px);
+  margin-bottom: 50px;
+}
+
+.ad_half {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 200px);
+  margin-bottom: 50px;
+}
+
+.ad_banner_full {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 200px);
+  margin-bottom: 50px;
+}
+
+footer {
+  padding: 50px;
+  background-color: $blue;
+  text-align: center;
+  font-family: $quicksand;
+  color: $white;
+
+  .copyright {
+    a {
+      color: $light-green;
+      font-weight: $bold;
+    }
+  }
+
+  img {
+    width: 140px;
+    margin-bottom: 40px;
+  }
+
+  .contact-list {
+    padding-left: 0;
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: $white;
+      transition: all ease-in-out .1s;
+
+      &:hover {
+        color: $light-green;
+        text-decoration: none;
+        transition: all ease-in-out .1s;
+      }
+    }
+  }
+
+  .rrss {
+    padding-left: 0;
+    display: inline-flex;
+    ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      color: $white;
+      transition: all ease-in-out .1s;
+
+      &:hover {
+        color: $light-green;
+        text-decoration: none;
+        transition: all ease-in-out .1s;
+      }
+    }
+
+    i {
+      font-size: 25px;
+      margin-right: 15px;
+    }
+  }
 }

@@ -22,11 +22,45 @@
         slidesToShow: 1,
         dots: true,
         autoplaySpeed: 4000,
+        pauseOnHover: false,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         arrows: false,
         fade: true
       });
+
+      $('.categories-carousel').slick({
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        dots: false,
+        infinite: true,
+        autoplay: false,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+
+      $('.left').click(function(){
+        $('.categories-carousel ').slick('slickPrev');
+      })
+
+      $('.right').click(function(){
+        $('.categories-carousel ').slick('slickNext');
+      })
 
       const second = 1000,
             minute = second * 60,

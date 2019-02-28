@@ -8,21 +8,33 @@ $breakpoints: (
 ) !default;
 
 // Fonts
-$putua: 'Patua One', cursive;
-$raleway: 'Raleway', sans-serif;
+$quicksand: 'Quicksand', sans-serif;
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
 
 // Fonts size
 $base-font-size: 10px;
 
-// Fonts Weight
-$light: 300;
-$normal: 400;
-$semibold: 500;
-$bold: 700;
-
 // Colors
 $primary-color: #f44336;
 $white: #fff;
+$black: #000;
 
 // Shadow
-$primary-shadow: rgba(0, 0, 0, .17);
+$primary-shadow: 0 0 15px rgba(0, 0, 0, .2);
+
+$dark-gray: #333333;
+$blue:#2670ca;
+$light-green: #a8d42e;
+$green: #469224;
+
+$bg-medium: rgba(44, 44, 44, 0.5);
+$bg-light: #e6e6e6;
+$bg-dark: rgba(22,21,21, 0.5);
+
+$border-radius: 15px;
+$border-width: 2px;

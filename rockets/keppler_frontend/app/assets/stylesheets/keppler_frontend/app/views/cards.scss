@@ -1,204 +1,186 @@
-@import 'variables';
-.sp-cards {
-    margin: 30px 0;
-    margin: 3rem 0;
-    a{
-      color: $colorSecundario;
-      text-decoration: none !important;
+// Products
+.product-card {
+  font-family: $quicksand;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  border-radius: 5px;
+  height: 550px;
+  margin-bottom: 50px;
+  transition: all ease-in-out .3s;
+  position: relative;
+
+  &:hover {
+    transition: all ease-in-out .3s;
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+    .product-footer {
+      transition: all ease-in-out .3s;
+      text-decoration: none;
+      background-color: $blue;
+      color: $white;
     }
-    .card-inicio {
-      cursor: pointer;
-      margin-bottom: 2rem;
-      border: solid 2px $bgSecundario;
-      height: 440px;
-      text-align: center;
-      border-radius: 2px;
-      &:hover{
-        transition: 0.6s ease all;
-        transition-property: all;
-        transition-duration: 0.6s;
-        transition-timing-function: ease;
-        transition-delay: 0s;
-        box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);
+  }
+  
+  .product-image {
+    @include bg(cover, no-repeat, center);
+    @include size(100%, 60%);
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+    .badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 16px;
+    }
+  }
+
+  .product-price {
+    color: $blue;
+    font-weight: $bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .product-content {
+    @include size(100%, 40%);
+    padding: 20px;
+    position: relative;
+    text-align: center;
+
+    small {
+      color: $dark-gray;
+    }
+
+    a {
+      &:hover {
+        text-decoration: none;
       }
-      .contenedor-texto-card{
-        padding: 2rem 0;
-        span{
-          font-size: 1.2rem;
-          font-weight: 500;
-          color: $colorSecundario;
-          font-family: $font-primary;
-        }
-        h3{
-          font-size: 2.1rem;
-          margin: 0.5rem 0;
-          color: $colorSecundario;
-          font-family: $font-primary;
-          font-weight: bold;
-        }
-        h2{
-          font-size: 3rem;
-          margin: 0.5rem 0;
-          font-family: $font-primary;
-          font-weight: bold;
-          color: #469224;
-        }
-        p{
-          font-family: $font-primary;
-          font-weight: bold;
-          color: $colorTercero;
-          margin: 1rem;
-          font-size: 1.5rem;
-        }
-        button{
-          width: 75%;
-          font-size: 1.5rem;
-          text-transform: uppercase;
-          font-family: $font-primary;
-          font-weight: bold;
-          border: 1px solid $colorQuinto;
-          padding: 0.5rem 0;
-          border-radius: 2px;
-          background: transparent;
-          bottom: 30px;
-          position: absolute;
-          left: 37px;
-          color: $colorQuinto;
-          &:hover{
-            background: $colorQuinto !important;
-            transition: 0.5s;
-            color: $colorPrimario;
-          }
-        }
-        ul{
-          padding: 0px !important;
-          li {
-            display: inline-block;
-            font-size: 1rem;
-            list-style-type: none;
-            padding: 1em;
-            color: $colorTercero;
-            text-transform: uppercase;
-            font-family: $font-primary;
-            font-weight: bold;
-          }
-          
-          li span {
-            display: block;
-            font-size: 1.5rem;
-            color: $colorTercero;
-            
-          }
-        }
-      }
-      .img-card-inicio {
-        height: 200px;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-position: center center !important;
+
+      h4 {
+        font-weight: $medium;
+        color: #484848;
       }
     }
   }
 
-.sp-mas-vendidos{
-  margin: 30px 0;
-  margin: 3rem 0;
-  a{
-    color: $colorSecundario;
-    text-decoration: none !important;
+  .product-footer {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    color: $blue;
+    padding: 10px;
+    transition: all ease-in-out .3s;
+
+    .btn-more {
+      font-weight: $bold;
+    }
   }
-  h1{
-    font-size: 4rem;
-    font-family: $font-primary;
-    color: $colorSecundario;
-    font-weight: bold;
-    padding: 0.5rem 0 4rem 0;
+
+  .counter {
+    display: flex;
+    justify-content: center;
+
+    ul {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+      text-align: center;
+      font-weight: $medium;
+      padding-right: 10px;
+      font-size: 13px;
+      color: #484848;
+
+      span {
+        display: block;
+      }
+    }
   }
-  .card-inicio {
-    cursor:pointer;
-    margin-bottom: 2rem;
-    border: solid 2px $bgSecundario;
-    height: 440px;
-    text-align: center;
-    border-radius: 2px;
-    &:hover{
-      transition: 0.6s ease all;
-      transition-property: all;
-      transition-duration: 0.6s;
-      transition-timing-function: ease;
-      transition-delay: 0s;
-      box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);
+}
+
+// Categories
+.categories-text {
+  position: relative;
+  height: 100%;
+  
+  h1 {
+    font-family: $quicksand;
+    font-weight: $bold;
+    text-transform: uppercase;
+  }
+
+  span {
+    font-family: $quicksand;
+  }
+
+  .carousel-buttons {
+    position: absolute;
+    bottom: 60px;
+  }
+
+  .left, .right {
+    background-color: rgba($blue, .8);
+    color: $white;
+    border-radius: 5px;
+    font-size: 30px;
+
+    &:focus, &:hover {
+      background-color: $blue;
+      outline: none;
+      box-shadow: 0 0 0 transparent;
     }
-    .contenedor-texto-card{
-      padding: 2rem 0;
-      span{
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: $colorSecundario;
-        font-family: $font-primary;
-      }
-      h3{
-        font-size: 2.1rem;
-        margin: 0.5rem 0;
-        color: $colorSecundario;
-        font-family: $font-primary;
-        font-weight: bold;
-      }
-      h2{
-        font-size: 3rem;
-        margin: 0.5rem 0;
-        font-family: $font-primary;
-        font-weight: bold;
-        color: #469224;
-      }
-      p{
-        font-family: $font-primary;
-        font-weight: bold;
-        color: $colorTercero;
-        margin: 1rem;
-        font-size: 1.5rem;
-      }
-      button{
-        width: 75%;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        font-family: $font-primary;
-        font-weight: bold;
-        border: 1px solid $colorQuinto;
-        padding: 0.5rem 0;
-        border-radius: 2px;
-        background: transparent;
-        bottom: 30px;
-        position: absolute;
-        left: 37px;
-        color: $colorQuinto;
-        &:hover{
-          background: $colorQuinto !important;
-          transition: 0.5s;
-          color: $colorPrimario;
-        }
-      }
-      ul{
-        padding: 0px !important;
-        li {
-          display: inline-block;
-          font-size: 1rem;
-          list-style-type: none;
-          padding: 1em;
-          text-transform: uppercase;
-        }
-        
-        li span {
-          display: block;
-          font-size: 1.5rem;
-        }
-      }
+  }
+}
+
+.category-card {
+  @include size(100%, 500px);
+  position: relative;
+  border-radius: 5px;
+  padding: 0 15px;
+  
+  img {
+    @include size(100%);
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .category-content {
+    background: linear-gradient(0deg, rgba($black, .8) 0%, transparent 50%);
+    top: 0;
+    @include size(calc(100% - 30px), 100%);
+    position: absolute;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: $white;
+    padding:  50px 20px;
+
+    &:hover {
+      text-decoration: none;
     }
-    .img-card-inicio {
-      height: 200px;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-      background-position: center center !important;
+
+    h4 {
+      text-transform: uppercase;
+      font-family: $quicksand;
+      font-weight: $bold;
+      font-size: 28px;
     }
-  } 
+
+    span {
+      color: $white;
+      font-family: $quicksand;
+      font-weight: $medium;
+      font-size: 18px;
+    }
+  }
 }

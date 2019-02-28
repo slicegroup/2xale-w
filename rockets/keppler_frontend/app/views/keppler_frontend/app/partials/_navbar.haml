@@ -1,0 +1,32 @@
+%nav.navbar.navbar-expand-lg
+  %a.navbar-brand{href: "#"}
+    %img{ src: 'assets/keppler_frontend/app/logo_2xale_color.svg', alt: '2xale logo' }
+  %button.navbar-toggler{"aria-controls" => "nav2xale", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav2xale", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon
+  #nav2xale.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+          Categorías
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          .row
+            - 3.times do
+              .col-lg-4
+                %a.dropdown-item.dropdown-category{href: "#"} Categorías
+                .dropdown-divider
+                - 5.times do
+                  %a.dropdown-item.dropdown-subcategory{href: "#"} Subcategorías
+        %li.nav-item
+          %a.nav-link{href: "#"} Nosotros
+        %li.nav-item
+          %a.nav-link{href: "#"} Contacto
+    %ul.navbar-nav.ml-auto
+      %li.nav-item
+        %a.nav-link{href: "#"}
+          %i.icofont-facebook
+      %li.nav-item
+        %a.nav-link{href: "#"}
+          %i.icofont-twitter
+      %li.nav-item
+        %a.nav-link{href: "#"}
+          %i.icofont-instagram

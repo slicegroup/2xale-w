@@ -16,3 +16,29 @@
     @media only screen and (orientation : portrait) { @content; }
   }
 }
+
+@mixin pseudo($pos: absolute, $content: ''){
+  content: $content;
+  position: $pos;
+}
+
+@mixin truncate($height, $lines) {
+  max-height: $height;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin bg($size, $repeat, $pos) {
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $pos;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

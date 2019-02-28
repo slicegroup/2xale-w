@@ -1,187 +1,128 @@
-
-%section.sp-slider
-	/ Slider Principal
-	.slider-inicial
-		.imagen-slider-inicial{:style => "background-image: url('/assets/keppler_frontend/app/img-01.png');"}
-			.cont-articulos-slide
-				%h1 Zapatos Lacoste
-				%p El mejor estilo que puede llevar un caballero, en pleno 2019.
-				%button Comprar
-		.imagen-slider-inicial{:style => "background-image: url('/assets/keppler_frontend/app/img-03.png');"}
-			.cont-articulos-slide
-				%h1 Control de PS4
-				%p Pasa horas de diversion con el PS4.
-				%button{:href => ""} Comprar
-%section.sp-publicidad-a
-	/ Primera publicidad
-	.container
-		.titulo-1
-			.text-center 
-				%h1 Productos Nuevos
-%section.sp-cards
-	/ Cards de productos y publicidad del sidebar
-	.container
-		.row
-			.col-md-12
-				.row
-					.col-md-3
-						%a{:href => app_product_path}
-							.card-inicio
-								/ card
-								.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/ps4-01.png');"}
-								.contenedor-texto-card
-									%span Tecnologia - 
-									%i.fa.fa-map-marker
-									%span Punto Fijo
-									%h3 PS4 + Control
-									%h2 44.000$
-									%ul.tiempo-card
-										%li
-											%span#days>
-											days
-										%li
-											%span#hours>
-											Hour
-										%li
-											%span#minutes>
-											Minutes
-									%button Ordenar
-
-					.col-md-3
-						.card-inicio
-							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-05.png');"}
-							.contenedor-texto-card
-								%span Calzado - 
-								%i.fa.fa-map-marker 
-								%span Punto Fijo
-								%h3 Zapato Lacoste
-								%h2 44.000$
-								%p Fecha por Asignar
-								%button Ordenar
-
-					.col-md-3
-						.card-inicio
-							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-06.png');"}
-							.contenedor-texto-card
-								%span Calzado - 
-								%i.fa.fa-map-marker 
-								%span Punto Fijo
-								%h3 Zapato Lacoste
-								%h2 44.000$
-								%p Fecha por Asignar
-								%button Ordenar
-
-					.col-md-3
-						%div.publicidad-02 PUBLICIDAD
-
-					.col-md-3
-						.card-inicio
-							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-07.png');"}
-							.contenedor-texto-card
-								%span Calzado - 
-								%i.fa.fa-map-marker 
-								%span Punto Fijo
-								%h3 Zapato Lacoste
-								%h2 44.000$
-								%p Fecha por Asignar
-								%button Ordenar
-
-					.col-md-3
-						.card-inicio
-							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-08.jpg');"}
-							.contenedor-texto-card
-								%span Calzado - 
-								%i.fa.fa-map-marker 
-								%span Punto Fijo
-								%h3 Zapato Lacoste
-								%h2 44.000$
-								%p Fecha por Asignar
-								%button Ordenar
-
-					.col-md-3
-						.card-inicio
-							/ card
-							.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-09.png');"}
-							.contenedor-texto-card
-								%span Calzado - 
-								%i.fa.fa-map-marker
-								%span Punto Fijo
-								%h3 Zapato Lacoste
-								%h2 44.000$
-								%p Fecha por Asignar
-								%button Ordenar
-								
-					.col-md-3
-						%div.publicidad-02 PUBLICIDAD
-
-%section.sp-publicidad-b
-	.container
-		.row
-			.col-md-6
-				.publicidad-03
-					.text-center
-						PUBLICIDAD
-			.col-md-6
-				.publicidad-03
-					.text-center
-						PUBLICIDAD
-
-%section.sp-mas-vendidos
-	.container
-		%h1.text-center Productos Más Vendidos
-		.row
-			.col-md-3
-				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-04.png');"}
-					.contenedor-texto-card
-						%span Calzado - 
-						%i.fa.fa-map-marker
-						%span Punto Fijo
-						%h3 Zapato Lacoste
-						%h2 44.000$
-						%p Fecha por Asignar
-						%button Ordenar
-			.col-md-3
-				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-05.png');"}
-					.contenedor-texto-card
-						%span Calzado - 
-						%i.fa.fa-map-marker 
-						%span Punto Fijo
-						%h3 Zapato Lacoste
-						%h2 44.000$
-						%p Fecha por Asignar
-						%button Ordenar
-			.col-md-3
-				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-06.png');"}
-					.contenedor-texto-card
-						%span Calzado - 
-						%i.fa.fa-map-marker
-						%span Punto Fijo
-						%h3 Zapato Lacoste
-						%h2 44.000$
-						%p Fecha por Asignar
-						%button Ordenar
-			.col-md-3
-				.card-inicio
-					.img-card-inicio{:style => "background: url('/assets/keppler_frontend/app/img-07.png');"}
-					.contenedor-texto-card
-						%span Calzado - 
-						%i.fa.fa-map-marker 
-						%span Punto Fijo
-						%h3 Zapato Lacoste
-						%h2 44.000$
-						%p Fecha por Asignar
-						%button Ordenar
-
-%section.sp-publicidad-a
-	/ Primera publicidad
-	.container
-		.publicidad-01
-			.text-center PUBLICIDAD
-
+%section.home
+  .home-slider
+    - 3.times do
+      .banner-slider
+        .banners-box
+          %img.banner-item{src:'https://images.unsplash.com/photo-1534497977663-a73dfabd7774?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=987&q=80'}
+          .banner-mask
+            %h1 Titulo del Banner
+            %a.btn-more{ href: '' }
+              Ver más
+              %i.icofont-arrow-right
+        .search-cta
+          %h1 Encuentra el producto que estás buscando
+  .search-input
+    %form.form-inline
+      .input-group
+        %input.form-control{ type: 'search', placeholder: 'Buscar' }
+        .input-group-prepend
+          %i.icofont-search.input-group-text
+%section.products
+  .row
+    .col-lg-9
+      .row
+        - 6.times do
+          .col-lg-4
+            .product-card
+              %a{ href: '' }
+                .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
+                  %span.badge.badge-new New
+              .product-content
+                %a{ href: '' }
+                  %small Ropa y Calzado
+                %a{ href: '' }
+                  %h4 Adidas Perfomance
+                  .product-price
+                    %span 400$
+                  .counter
+                    %ul
+                      %li
+                        %span#days
+                        Dias
+                      %li
+                        %span#hours
+                        Horas
+                      %li
+                        %span#minutes
+                        Minutos
+              %a.product-footer{ href: '#' }
+                .btn-more
+                  Solicitar
+                  %i.icofont-arrow-right
+    .col-lg-3
+      - 2.times do
+        .ad_full{ style: 'background-image: url("https://cdn-images-1.medium.com/max/1600/1*ibN0ptxrg6LkZ5DZbKv2YA.png")' }
+%section.half_banners
+  .row
+    - 2.times do
+      .col-lg-6
+        .ad_half{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+%section.categories
+  .row
+    .col-lg-3
+      .categories-text
+        %h1 Categorias destacadas
+        %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
+        .carousel-buttons
+          %button.btn.left
+            %i.icofont-arrow-left
+          %button.btn.right
+            %i.icofont-arrow-right
+    .col-lg-9
+      .row.categories-carousel
+        - 2.times do
+          .category-card
+            %img{src: 'https://images.unsplash.com/photo-1500840216050-6ffa99d75160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1073&q=80'}
+            %a.category-content{ href: '#' }
+              %h4 Belleza y cuidado
+              %span.btn-more
+                Ver más
+                %i.icofont-arrow-right
+          .category-card
+            %img{src: 'https://upload.wikimedia.org/wikipedia/commons/2/25/2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg'}
+            %a.category-content{ href: '#' }
+              %h4 Carros
+              %span.btn-more
+                Ver más
+                %i.icofont-arrow-right
+          .category-card
+            %img{src: 'https://images.unsplash.com/photo-1461218779480-bb61b6be1924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'}
+            %a.category-content{ href: '#' }
+              %h4 Hogar
+              %span.btn-more
+                Ver más
+                %i.icofont-arrow-right
+%section.full_banner_ad
+  .row
+    .col-lg-12
+      .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+%footer
+  .row
+    .col-lg-8.offset-lg-2
+      .footer-block
+        %img{src: "assets/keppler_frontend/app/logo_2xale_white.svg"}
+        .footer-list
+          %ul.contact-list
+            %li
+              %strong Telefónos
+              %br
+              +58 4120640761 / 414 6300761
+            %li
+              %strong Correo Electrónico
+              %br
+              %a{href:''} servicioalcliente@2xale.com
+          %ul.rrss
+            %li
+              %a{href:''}
+                %i.icofont-facebook
+            %li
+              %a{href:''}
+                %i.icofont-instagram
+            %li
+              %a{href:''}
+                %i.icofont-twitter
+        %small.copyright
+          Copyright 2Xale 2019 | Powered by 
+          %a{href:''} Slice Group
+          with
+          %a{href:''} Keppler

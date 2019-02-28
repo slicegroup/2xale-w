@@ -123,6 +123,9 @@
          minDate: new Date(),
          format: 'D/M/Y'
        });
+      $('')
+    $('#datetimepicker6').find('input').val("#{@product.expiration}")
+    console.log("#{@product.expiration}")
     })
 - if @product.seller.eql?('2xale')
   :javascript

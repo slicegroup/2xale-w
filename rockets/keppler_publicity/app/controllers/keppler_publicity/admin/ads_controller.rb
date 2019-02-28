@@ -93,7 +93,7 @@ module KepplerPublicity
       # Only allow a trusted parameter "white list" through.
       def ad_params
         params.require(:ad).permit(
-          :image, :type_ad, :location, :active
+          :image, :type_ad, {location: []}, :active
         )
       end
     end

@@ -1,3 +1,5 @@
+%link{href: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css", rel: "stylesheet"}/
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"}
 = simple_form_for [:admin, :publicity, @ad] do |f|
   .container
     .row
@@ -38,31 +40,50 @@
                     %p.error.error-image
                     = f.input :image, as: :keppler_file, label: false # , max_size: 225
                   .col-xs-12
-                    %label= t('activerecord.attributes.location')
-                    - unless @ad.errors[:location][0].blank?
-                      %p.error *Requerido
-                    .banner-location.opacity
-                      %div.location-form
-                        %input.location#home-banner-1{:name => "location-1", :type => "radio", :value => "home-banner-1"}
-                        %label{:for => "home-banner"} HOME
-                      %div.location-form
-                        %input.location#products-banner-1{:name => "location-2", :type => "radio", :value => "products-banner-1"}
-                        %label{:for => "products-banner"} PRODUCTS
-                    .media-banner-location.opacity
-                      %div.location-form
-                        %input.location#home-media-banner-1{:name => "location-3", :type => "radio", :value => "home-media-banner-1"}
-                        %label{:for => "home-media-banner-1"} HOME - Primer media banner
-                      %div.location-form
-                        %input.location#home-media-banner-2{:name => "location-4", :type => "radio", :value => "home-media-banner-2"}
-                        %label{:for => "home-media-banner-2"} HOME - Segundo media banner
-                    .roba-pagina-location.opacity
-                      %div.location-form
-                        %input.location#home-roba-pagina-1{:name => "location-5", :type => "radio", :value => "home-roba-pagina-1"}
-                        %label{:for => "home-roba-pagina-1"} HOME - Primer roba página
-                      %div.location-form
-                        %input.location#home-roba-pagina-2{:name => "location-6", :type => "radio", :value => "home-roba-pagina-2"}
-                        %label{:for => "home-roba-pagina-2"} HOME - Segundo roba página
-                  = f.input :location, as: :hidden
+                    .form-group
+                      .banner-location.opacity
+                        %label= t('activerecord.attributes.location')
+                        - unless @ad.errors[:location][0].blank?
+                          %p.error *Requerido
+                        %select.form-control.select.optional.select2{ name: 'ad[location][]', multiple: true }
+                          %option{ value: 'home-1', selected: (f.object&.location&.include?('home-1')) } HOME
+                          %option{ value: 'products-1', selected: (f.object&.location&.include?('products-1')) } PRODUCTS
+                      .media-banner-location.opacity
+                        %label= t('activerecord.attributes.location')
+                        - unless @ad.errors[:location][0].blank?
+                          %p.error *Requerido
+                        %select.form-control.select.optional.select2{ name: 'ad[location][]', multiple: true }
+                          %option{ value: 'home-1', selected: (f.object&.location&.include?('home-1')) } HOME(1)
+                          %option{ value: 'home-2', selected: (f.object&.location&.include?('home-2')) } HOME(2)
+                      .roba-pagina-location.opacity
+                        %label= t('activerecord.attributes.location')
+                        - unless @ad.errors[:location][0].blank?
+                          %p.error *Requerido
+                        %select.form-control.select.optional.select2{ name: 'ad[location][]', multiple: true }
+                          %option{ value: 'home-1', selected: (f.object&.location&.include?('home-1')) } HOME(1)
+                          %option{ value: 'home-2', selected: (f.object&.location&.include?('home-2')) } HOME(2)
+                  /   .banner-location.opacity
+                  /     %div.location-form
+                  /       %input.location#home-banner-1{:name => "location-1", :type => "radio", :value => "home-banner-1"}
+                  /       %label{:for => "home-banner"} HOME
+                  /     %div.location-form
+                  /       %input.location#products-banner-1{:name => "location-2", :type => "radio", :value => "products-banner-1"}
+                  /       %label{:for => "products-banner"} PRODUCTS
+                  /   .media-banner-location.opacity
+                  /     %div.location-form
+                  /       %input.location#home-media-banner-1{:name => "location-3", :type => "radio", :value => "home-media-banner-1"}
+                  /       %label{:for => "home-media-banner-1"} HOME - Primer media banner
+                  /     %div.location-form
+                  /       %input.location#home-media-banner-2{:name => "location-4", :type => "radio", :value => "home-media-banner-2"}
+                  /       %label{:for => "home-media-banner-2"} HOME - Segundo media banner
+                  /   .roba-pagina-location.opacity
+                  /     %div.location-form
+                  /       %input.location#home-roba-pagina-1{:name => "location-5", :type => "radio", :value => "home-roba-pagina-1"}
+                  /       %label{:for => "home-roba-pagina-1"} HOME - Primer roba página
+                  /     %div.location-form
+                  /       %input.location#home-roba-pagina-2{:name => "location-6", :type => "radio", :value => "home-roba-pagina-2"}
+                  /       %label{:for => "home-roba-pagina-2"} HOME - Segundo roba página
+                  / = f.input :location, as: :hidden
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
@@ -128,6 +149,12 @@
     font-size: 13px;
     display: inline;
   }
+  .select2{
+    width: 100% !important;
+  }
+  .select2-selection__choice{
+    color: #5f5858 !important;
+  }
 - if @ad.type_ad.eql?('banner')
   %p.hide= @ad.location
   :javascript
@@ -149,15 +176,18 @@
     if ($(this).find('p').text() == 'BANNER'){
       $('.file-drop-zone-title').text('1920 x 1080px')
       $('.opacity').hide()
+      $('.select2').val('')
       $('.banner-location').show()
     }else{
       if ($(this).find('p').text() == 'MEDIA BANNER'){
         $('.file-drop-zone-title').text('1080 x 600px')
         $('.opacity').hide()
+        $('.select2').val('')
         $('.media-banner-location').show()
       }else{
         $('.file-drop-zone-title').text('600 x 800px')
         $('.opacity').hide()
+        $('.select2').val('')
         $('.roba-pagina-location').show()
       }
     }
@@ -166,14 +196,6 @@
     $('#ad_location').val($(this).find('input').val())
   })  
 
-  var location_name = "#{@ad.location}"
-  $('input[type="radio"]').each(function() {
-    var location_id = $(this).attr('id');
-
-    if (location_id == location_name) {
-      $(this).prop('checked', 'checked')
-    }
-  });
   $('.simple_form').validate({
       event: 'blur',
       errorClass: 'error-class',
@@ -187,3 +209,6 @@
         $('.error-image').text('*Requerido')
       }
     });
+  $('.select2').select2({
+    multiple: true
+  });

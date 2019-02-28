@@ -2,6 +2,7 @@ es:
   keppler:
     sidebar-menu:
       keppler-publicity: Publicidad
+      publicity: Publicidad
       keppler-publicity-submenu:
         ads: Anuncios
     permissions:

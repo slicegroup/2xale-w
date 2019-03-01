@@ -1,32 +1,57 @@
 %nav.navbar.navbar-expand-lg
   %a.navbar-brand{href: "#"}
-    %img{ src: 'assets/keppler_frontend/app/logo_2xale_color.svg', alt: '2xale logo' }
+    %img{ src: 'assets/keppler_frontend/app/logo_2xale_color2.svg', alt: '2xale logo' }
   %button.navbar-toggler{"aria-controls" => "nav2xale", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav2xale", "data-toggle" => "collapse", type: "button"}
-    %span.navbar-toggler-icon
+    %span.icofont-navigation-menu
   #nav2xale.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
+      %li.d-block.d-md-none
+        .search-navbar
+          %form.form-inline
+            .input-group
+              %input.form-control{ type: 'search', placeholder: 'Buscar' }
+              .input-group-prepend
+                %i.icofont-search.input-group-text
       %li.nav-item.dropdown
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
           Categorías
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
           .row
-            - 3.times do
-              .col-lg-4
-                %a.dropdown-item.dropdown-category{href: "#"} Categorías
-                .dropdown-divider
-                - 5.times do
-                  %a.dropdown-item.dropdown-subcategory{href: "#"} Subcategorías
+            .col-lg-4
+              %a.dropdown-item.dropdown-category{href: "#"} Animales y mascotas
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Barcos y lanchas
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Belleza e Higiene personal
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Bienes y raices
+            .col-lg-4
+              %a.dropdown-item.dropdown-category{href: "#"} Bisuteria
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Calzado
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Construcción
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Corte y costura
+            .col-lg-4
+              %a.dropdown-item.dropdown-category{href: "#"} Cursos y Clases
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Deporte
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Electrónica
+              .dropdown-divider
+              %a.dropdown-item.dropdown-category{href: "#"} Hogar
+              .dropdown-divider
         %li.nav-item
           %a.nav-link{href: "#"} Nosotros
         %li.nav-item
           %a.nav-link{href: "#"} Contacto
-    %ul.navbar-nav.ml-auto
+    %ul.navbar-nav.ml-auto.navbar-contact
+      %li.nav-item
+        %a.nav-link{href: "#"} 
+          %i.icofont-email
+          servicioalcliente@2xale.com
       %li.nav-item
         %a.nav-link{href: "#"}
-          %i.icofont-facebook
-      %li.nav-item
-        %a.nav-link{href: "#"}
-          %i.icofont-twitter
-      %li.nav-item
-        %a.nav-link{href: "#"}
-          %i.icofont-instagram
+          %i.icofont-phone
+          +58 4120640761 / 414 6300761

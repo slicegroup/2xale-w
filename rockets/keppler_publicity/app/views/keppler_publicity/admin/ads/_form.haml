@@ -21,194 +21,112 @@
             %table.table.table-bordered
               %tbody
                 .form-padding
-                  %label.control-label.keppler_file.optional= t('activerecord.attributes.type')
-                  - unless @ad.errors[:location][0].blank?
-                    %p.error *Requerido
-                  .flex{ style: 'padding-bottom: 27px'}
-                    .banner.active
-                      .lines
-                        %p BANNER
-                    .medium.active
-                      .lines
-                        %p MEDIA BANNER
-                    .steal-page.active
-                      .lines
-                        %p ROBA PÁGINA
-                    = f.input :type_ad, as: :string, as: :hidden
-                  .col-xs-12
-                    %label.control-label.keppler_file.optional= t('activerecord.attributes.image')
-                    %p.error.error-image
-                    = f.input :image, as: :keppler_file, label: false # , max_size: 225
-                  .col-xs-12
-                    .form-group
-                      .banner-location.opacity
-                        %label= t('activerecord.attributes.location')
-                        - unless @ad.errors[:location][0].blank?
-                          %p.error *Requerido
-                        %select.form-control.select.optional.select2{ name: 'ad[location][]', multiple: true }
-                          %option{ value: 'home-1', selected: (f.object&.location&.include?('home-1')) } HOME
-                          %option{ value: 'products-1', selected: (f.object&.location&.include?('products-1')) } PRODUCTS
-                      .media-banner-location.opacity
-                        %label= t('activerecord.attributes.location')
-                        - unless @ad.errors[:location][0].blank?
-                          %p.error *Requerido
-                        %select.form-control.select.optional.select2{ name: 'ad[location][]', multiple: true }
-                          %option{ value: 'home-1', selected: (f.object&.location&.include?('home-1')) } HOME(1)
-                          %option{ value: 'home-2', selected: (f.object&.location&.include?('home-2')) } HOME(2)
-                      .roba-pagina-location.opacity
-                        %label= t('activerecord.attributes.location')
-                        - unless @ad.errors[:location][0].blank?
-                          %p.error *Requerido
-                        %select.form-control.select.optional.select2{ name: 'ad[location][]', multiple: true }
-                          %option{ value: 'home-1', selected: (f.object&.location&.include?('home-1')) } HOME(1)
-                          %option{ value: 'home-2', selected: (f.object&.location&.include?('home-2')) } HOME(2)
-                  /   .banner-location.opacity
-                  /     %div.location-form
-                  /       %input.location#home-banner-1{:name => "location-1", :type => "radio", :value => "home-banner-1"}
-                  /       %label{:for => "home-banner"} HOME
-                  /     %div.location-form
-                  /       %input.location#products-banner-1{:name => "location-2", :type => "radio", :value => "products-banner-1"}
-                  /       %label{:for => "products-banner"} PRODUCTS
-                  /   .media-banner-location.opacity
-                  /     %div.location-form
-                  /       %input.location#home-media-banner-1{:name => "location-3", :type => "radio", :value => "home-media-banner-1"}
-                  /       %label{:for => "home-media-banner-1"} HOME - Primer media banner
-                  /     %div.location-form
-                  /       %input.location#home-media-banner-2{:name => "location-4", :type => "radio", :value => "home-media-banner-2"}
-                  /       %label{:for => "home-media-banner-2"} HOME - Segundo media banner
-                  /   .roba-pagina-location.opacity
-                  /     %div.location-form
-                  /       %input.location#home-roba-pagina-1{:name => "location-5", :type => "radio", :value => "home-roba-pagina-1"}
-                  /       %label{:for => "home-roba-pagina-1"} HOME - Primer roba página
-                  /     %div.location-form
-                  /       %input.location#home-roba-pagina-2{:name => "location-6", :type => "radio", :value => "home-roba-pagina-2"}
-                  /       %label{:for => "home-roba-pagina-2"} HOME - Segundo roba página
-                  / = f.input :location, as: :hidden
+                  .col-md-12
+                    .nav-tabs-custom
+                      %ul.nav.nav-tabs
+                        %li.active
+                          %a{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#tab_1"} HOME
+                        %li
+                          %a{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#tab_2"} Tab 2
+                        %li.pull-right
+                          %a.text-muted{:href => "#"}
+                            %i.fa.fa-gear
+                      .tab-content
+                        #tab_1.tab-pane.active
+                          .home
+                            .banner
+                            .search-input
+                            .products
+                              .product
+                              .product
+                              .product
+                              .ad-steal-page
+                              .product
+                              .product
+                              .product
+                              .ad-steal-page
+                            .flex
+                              .ad-half-banner
+                              .ad-half-banner
+                            .categories
+                              .category
+                              .category
+                              .category
+                              .category
+                            .ad-banner
+                        #tab_2.tab-pane
+                          The European languages are members of the same family. Their separate existence is a myth.
+                          For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
+                          in their grammar, their pronunciation and their most common words. Everyone realizes why a
+                          new common language would be desirable: one could refuse to pay expensive translators. To
+                          achieve this, it would be necessary to have uniform grammar, pronunciation and more common
+                          words. If several languages coalesce, the grammar of the resulting language is more simple
+                          and regular than that of the individual languages.
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
 
 :scss
-  .flex div{
-    cursor: pointer;
+  .home{
+    width: 100%;
+    height: 2000px;
+    background: rgba(216, 214, 218, 0.8901960784);
+    margin: 10px;
+    padding-top: 67px;
   }
   .banner{
-    width: 386px;
-    height: 136px;
-    background: rgba(160, 158, 158, 0.5);
-    transition: 0.5s;
+    width: 60%;
+    height: 400px;
+    background: #cbcbcc;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
-  .medium{
-    width: 264px;
-    height: 136px;
-    background: rgba(160, 158, 158, 0.5);
+  .search-input{
+    position: absolute;
+    width: 50%;
+    height: 52px;
+    background: #ece4e4ed;
+    top: 300px;
+    right: 30px;
+    border-radius: 10px;
   }
-  .steal-page{
-    width: 123px;
-    height: 136px;
-    background: rgba(160, 158, 158, 0.5);
+  .products, .categories{
+    flex-wrap: wrap;
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+  }
+  .product, .ad-steal-page, .category{
+    height: 300px;
+    width: 22%;
+    background: #cbcbcc;
+    margin: 10px;
+  }
+  .product, .category{
+    border-radius: 10px;
   }
   .flex{
     display: flex;
-    margin-top: 16px;
-  }
-  .flex div{
-    margin-right: 20px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: colums;
   }
-  .lines{
-    width: 95%;
-    border: solid 1px #989191;
-    height: 87%;
-    margin: 0 !important;
-    border-style: dashed;
-    position: relative;
+  .ad-half-banner{
+    width: 45%;
+    height: 200px;
+    background: #9f9fd0;
+    margin: 10px;
   }
-  .medium div{
-    width: 92% !important;
+  .categories{
+    .category:nth-child(1) {
+    background: #f5efef !important;}
   }
-  .steal-page div{
-    width: 86% !important;
+  .ad-banner{
+    height: 200px;
+    width: 90%;
+    background: #9f9fd0;
+    margin: auto;
   }
-  .banner p{
-    font-size: 30px;
-    transition: 0.5s;
+  .ad-steal-page{
+   background: #9f9fd0;
   }
-  .medium p{
-    font-size: 22px;
-  }
-  .opacity{
-    display: none;
-  }
-  .error{
-    color: red;
-    font-size: 13px;
-    display: inline;
-  }
-  .select2{
-    width: 100% !important;
-  }
-  .select2-selection__choice{
-    color: #5f5858 !important;
-  }
-- if @ad.type_ad.eql?('banner')
-  %p.hide= @ad.location
-  :javascript
-    $('.banner').css('background-color', 'rgba(99, 101, 105, 0.4)')
-    $('.banner-location').show()
-- elsif @ad.type_ad.eql?('media banner')
-  :javascript
-    $('.medium').css('background-color', 'rgba(99, 101, 105, 0.4)')
-    $('.media-banner-location').show()
-- elsif @ad.type_ad.eql?('roba página')
-  :javascript
-    $('.steal-page').css('background-color', 'rgba(99, 101, 105, 0.4)')
-    $('.roba-pagina-location').show()
-:javascript
-  $('.active').click(function(){
-    $('.active').css('background-color', 'rgba(160, 158, 158, 0.5)')
-    $(this).css('background-color', 'rgba(99, 101, 105, 0.4)')
-    $('#ad_type_ad').val(($(this).find('p').text()).toLowerCase())
-    if ($(this).find('p').text() == 'BANNER'){
-      $('.file-drop-zone-title').text('1920 x 1080px')
-      $('.opacity').hide()
-      $('.select2').val('')
-      $('.banner-location').show()
-    }else{
-      if ($(this).find('p').text() == 'MEDIA BANNER'){
-        $('.file-drop-zone-title').text('1080 x 600px')
-        $('.opacity').hide()
-        $('.select2').val('')
-        $('.media-banner-location').show()
-      }else{
-        $('.file-drop-zone-title').text('600 x 800px')
-        $('.opacity').hide()
-        $('.select2').val('')
-        $('.roba-pagina-location').show()
-      }
-    }
-  })
-  $('.location-form').click(function(){
-    $('#ad_location').val($(this).find('input').val())
-  })  
-
-  $('.simple_form').validate({
-      event: 'blur',
-      errorClass: 'error-class',
-      validClass: 'valid-class',
-       rules: {
-         'ad[image]': { required: true},
-        },
-       messages: {
-        },
-      errorPlacement: function(error, element) {
-        $('.error-image').text('*Requerido')
-      }
-    });
-  $('.select2').select2({
-    multiple: true
-  });
+  

@@ -10,12 +10,12 @@
           Categorías
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
           .row
-            - 3.times do
+            - @categories.in_groups_of(3).each do |block|
               .col-lg-4
-                %a.dropdown-item.dropdown-category{href: "#"} Categorías
-                .dropdown-divider
-                - 5.times do
-                  %a.dropdown-item.dropdown-subcategory{href: "#"} Subcategorías
+                / %a.dropdown-item.dropdown-category{href: "#"} Categorías
+                / .dropdown-divider
+                - block.compact.each do |category|
+                  %a.dropdown-item.dropdown-subcategory{href: "#"}= category&.name
         %li.nav-item
           %a.nav-link{href: "#"} Nosotros
         %li.nav-item

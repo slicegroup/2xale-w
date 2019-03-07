@@ -74,6 +74,7 @@ es:
         clone: Permite al usuario clonar un registro existente dentro del módulo
     models:
       singularize:
+        ad: Anuncio
         seo: seo
         role: role
         customize: customize
@@ -84,6 +85,7 @@ es:
         user: usuario
         capsule: capsule
       pluralize:
+        ads: Anuncios
         seos: seos
         roles: roles
         customizes: customizes

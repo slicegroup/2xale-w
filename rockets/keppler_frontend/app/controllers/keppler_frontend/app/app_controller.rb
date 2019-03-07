@@ -7,6 +7,7 @@ module KepplerFrontend
     before_action :set_locale
     before_action :set_metas
     before_action :set_analytics
+    before_action :set_categories
 
     include KepplerCapsules::Concerns::Lib
     def set_metas
@@ -26,6 +27,10 @@ module KepplerFrontend
     end
 
     private
+
+    def set_categories
+      @categories = KepplerProducts::Category.all
+    end
 
     def live_editor_info      
       if params[:editor] && controller_name.eql?('frontend') && !action_name.eql?('keppler')

@@ -1,6 +1,6 @@
 %link{href: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css", rel: "stylesheet"}/
 %script{src: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"}
-= simple_form_for [:admin, :publicity, @ad] do |f|
+= simple_form_for [:admin, :publicity, @ad], remote: true do |f|
   .container
     .row
       .col-lg-2
@@ -33,27 +33,40 @@
                             %i.fa.fa-gear
                       .tab-content
                         #tab_1.tab-pane.active
+                          = f.input :image, label: false
+                          = f.input :type_ad, label: false
+                          = f.input :location, label: false
                           .home
-                            .banner
+                            .banner-up
                             .search-input
                             .products
                               .product
                               .product
                               .product
-                              .ad-steal-page
+                              .steal-page-1.publicity
+                                .file-drop-zone
+                                  .file-drop-zone-title Sube un anuncio...
                               .product
                               .product
                               .product
-                              .ad-steal-page
+                              .steal-page-2.publicity
+                                .file-drop-zone
+                                  .file-drop-zone-title Sube un anuncio...
                             .flex
-                              .ad-half-banner
-                              .ad-half-banner
+                              .half-banner-1.publicity
+                                .file-drop-zone
+                                  .file-drop-zone-title Sube un anuncio... 
+                              .half-banner-2.publicity
+                                .file-drop-zone
+                                  .file-drop-zone-title Sube un anuncio...
                             .categories
                               .category
                               .category
                               .category
                               .category
-                            .ad-banner
+                            .banner.publicity
+                              .file-drop-zone
+                                .file-drop-zone-title Sube un anuncio...
                         #tab_2.tab-pane
                           The European languages are members of the same family. Their separate existence is a myth.
                           For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
@@ -75,7 +88,7 @@
     margin: 10px;
     padding-top: 67px;
   }
-  .banner{
+  .banner-up{
     width: 60%;
     height: 400px;
     background: #cbcbcc;
@@ -97,7 +110,7 @@
     padding: 20px 0;
     justify-content: center;
   }
-  .product, .ad-steal-page, .category{
+  .product, .steal-page-1, .steal-page-2, .category{
     height: 300px;
     width: 22%;
     background: #cbcbcc;
@@ -110,7 +123,7 @@
     display: flex;
     justify-content: center;
   }
-  .ad-half-banner{
+  .half-banner-1, .half-banner-2{
     width: 45%;
     height: 200px;
     background: #9f9fd0;
@@ -120,13 +133,55 @@
     .category:nth-child(1) {
     background: #f5efef !important;}
   }
-  .ad-banner{
+  .banner{
     height: 200px;
     width: 90%;
     background: #9f9fd0;
     margin: auto;
   }
-  .ad-steal-page{
-   background: #9f9fd0;
+  .publicity{
+    background: white;
+    padding: 5px;
+    cursor: pointer;
   }
-  
+  #ad_image, #ad_location, #ad_type_ad{
+    display: none;
+  }
+  .file-drop-zone{
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+:javascript
+  $('.publicity').click(function(){
+    $('#ad_image').click();
+    if ($(this).hasClass('banner')){
+      $('#ad_location').val('home')
+      $('#ad_type_ad').val('banner')
+    }else{
+      if ($(this).hasClass('half-banner-1')){
+        $('#ad_location').val('home-1')
+        $('#ad_type_ad').val('half-banner')
+      }else{
+        if ($(this).hasClass('half-banner-2')){
+          $('#ad_location').val('home-2')
+          $('#ad_type_ad').val('half-banner')
+        }else{
+          if ($(this).hasClass('steal-page-1')){
+            $('#ad_location').val('home-1')
+            $('#ad_type_ad').val('steal-page')
+          }else{
+            if ($(this).hasClass('steal-page-2')){
+              $('#ad_location').val('home-2')
+              $('#ad_type_ad').val('steal-page')
+            }
+          }
+        }
+      }
+    }
+  })
+  $('#ad_image').change(function(){
+    $('#new_ad').submit()
+  })

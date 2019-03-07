@@ -22,7 +22,7 @@
                   .col-xs-12
                     = f.input :name, as: :string
                   .col-xs-12
-                    = f.input :featured, as: :keppler_boolean, label: t('activerecord.attributes.featured')
+                    = f.input :image, as: :keppler_file # , max_size: 225
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'

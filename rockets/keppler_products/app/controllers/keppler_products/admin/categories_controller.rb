@@ -27,12 +27,6 @@ module KepplerProducts
       # GET /products/1/edit
       def edit; end
 
-      #POST /toggle
-      def toggle
-        Category.find(params[:category_id]).update(featured: params[:category][:featured])
-        redirect_to admin_products_categories_path
-      end
-
       # POST /products
       def create
         @category = Category.new(category_params)
@@ -42,6 +36,13 @@ module KepplerProducts
         else
           render :new
         end
+      end
+
+      def toggle
+        id = params[:category_id]
+        featured = params[:category][:featured]
+        Category.find(id).update(featured: featured)
+        redirect_to_index(@objects)
       end
 
       # PATCH/PUT /products/1
@@ -99,7 +100,7 @@ module KepplerProducts
       # Only allow a trusted parameter "white list" through.
       def category_params
         params.require(:category).permit(
-          :name, :featured
+          :name, :featured, :image
         )
       end
     end

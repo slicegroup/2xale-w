@@ -3,7 +3,7 @@ class CreateKepplerPublicityAds < ActiveRecord::Migration[5.2]
     create_table :keppler_publicity_ads do |t|
       t.string :image
       t.string :type_ad
-      t.jsonb :location
+      t.string :location
       t.boolean :active
       t.integer :position
       t.datetime :deleted_at

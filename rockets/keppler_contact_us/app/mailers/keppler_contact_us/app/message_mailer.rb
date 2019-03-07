@@ -1,7 +1,7 @@
 module KepplerContactUs
   module App
     class MessageMailer < KepplerContactUs::ApplicationMailer
-      default from: SmtpSetting.first.email
+      # default from: SmtpSetting.first.email
 
       def mail_to_client(message)
         message_params(message)

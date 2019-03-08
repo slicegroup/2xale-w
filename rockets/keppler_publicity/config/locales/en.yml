@@ -17,7 +17,14 @@ en:
     actions:
   activerecord:
     attributes:
-      type_id: Type
+      location-and-type: Type - Location
+      location: Location
+      active: Active
+      type_ad: Type
+      location_ad: Select location
+      banner: Banner
+      half-banner: Half banner
+      steal-page: Steal page
     errors:
       messages:
   errors:

@@ -1,6 +1,6 @@
 %link{href: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css", rel: "stylesheet"}/
 %script{src: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"}
-= simple_form_for [:admin, :publicity, @ad], remote: true do |f|
+= simple_form_for [:admin, :publicity, @ad] do |f|
   .container
     .row
       .col-lg-2
@@ -22,6 +22,13 @@
               %tbody
                 .form-padding
                   .col-md-12
+                    = f.input :image, as: :keppler_file
+                  .col-md-12
+                    = f.input :url, as: :url
+                  = f.input :type_ad, label: false
+                  = f.input :location, label: false
+                  .col-md-12
+                    %label{:for => "ad[location]", class: 'control-label string required'}= t('activerecord.attributes.location_ad')
                     .nav-tabs-custom
                       %ul.nav.nav-tabs
                         %li.active
@@ -33,9 +40,6 @@
                             %i.fa.fa-gear
                       .tab-content
                         #tab_1.tab-pane.active
-                          = f.input :image, label: false
-                          = f.input :type_ad, label: false
-                          = f.input :location, label: false
                           .home
                             .banner-up
                             .search-input
@@ -43,30 +47,35 @@
                               .product
                               .product
                               .product
-                              .steal-page-1.publicity
+                              .steal-page-1.publicity{ class: @ad.type_ad.eql?('steal-page') && @ad.location.eql?('home-1') ? 'active' : '' }
                                 .file-drop-zone
-                                  .file-drop-zone-title Sube un anuncio...
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.steal-page').upcase
                               .product
                               .product
                               .product
-                              .steal-page-2.publicity
+                              .steal-page-2.publicity{ class: @ad.type_ad.eql?('steal-page') && @ad.location.eql?('home-2') ? 'active' : '' }
                                 .file-drop-zone
-                                  .file-drop-zone-title Sube un anuncio...
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.steal-page').upcase
                             .flex
-                              .half-banner-1.publicity
+                              .half-banner-1.publicity{ class: @ad.type_ad.eql?('half-banner') && @ad.location.eql?('home-1') ? 'active' : '' }
                                 .file-drop-zone
-                                  .file-drop-zone-title Sube un anuncio... 
-                              .half-banner-2.publicity
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.half-banner').upcase
+                              .half-banner-2.publicity{ class: @ad.type_ad.eql?('half-banner') && @ad.location.eql?('home-2') ? 'active' : '' }
                                 .file-drop-zone
-                                  .file-drop-zone-title Sube un anuncio...
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.half-banner').upcase
                             .categories
                               .category
                               .category
                               .category
                               .category
-                            .banner.publicity
+                            .banner.publicity{ class: @ad.type_ad.eql?('banner') && @ad.location.eql?('home-1') ? 'active' : '' }
                               .file-drop-zone
-                                .file-drop-zone-title Sube un anuncio...
+                                .file-drop-zone-title
+                                  = t('activerecord.attributes.banner').upcase
                         #tab_2.tab-pane
                           The European languages are members of the same family. Their separate existence is a myth.
                           For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
@@ -91,7 +100,7 @@
   .banner-up{
     width: 60%;
     height: 400px;
-    background: #cbcbcc;
+    background: #b7b7bd;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -113,7 +122,7 @@
   .product, .steal-page-1, .steal-page-2, .category{
     height: 300px;
     width: 22%;
-    background: #cbcbcc;
+    background: #b7b7bd;
     margin: 10px;
   }
   .product, .category{
@@ -144,7 +153,7 @@
     padding: 5px;
     cursor: pointer;
   }
-  #ad_image, #ad_location, #ad_type_ad{
+  #ad_location, #ad_type_ad{
     display: none;
   }
   .file-drop-zone{
@@ -153,12 +162,19 @@
     justify-content: center;
     align-items: center;
   }
+  .nav-tabs-custom > .nav-tabs > li.active{
+    border-top-color: #f44336 !important;
+  }
+  .active{
+    background: #d5d5da;
+  }
 
 :javascript
   $('.publicity').click(function(){
-    $('#ad_image').click();
+    $('.publicity').removeClass('active')
+    $(this).addClass('active')
     if ($(this).hasClass('banner')){
-      $('#ad_location').val('home')
+      $('#ad_location').val('home-1')
       $('#ad_type_ad').val('banner')
     }else{
       if ($(this).hasClass('half-banner-1')){
@@ -181,7 +197,4 @@
         }
       }
     }
-  })
-  $('#ad_image').change(function(){
-    $('#new_ad').submit()
   })

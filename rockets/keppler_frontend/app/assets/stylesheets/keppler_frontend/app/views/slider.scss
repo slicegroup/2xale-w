@@ -37,7 +37,7 @@
 }
 
 .banner-slider {
-  @include size(100%, calc(80vh + 20px));
+  @include size(100%, 450px);
   padding-bottom: 20px;
   display: flex !important;
 }
@@ -85,7 +85,7 @@
       font-weight: $semi-bold;
       color: $white;
       width: 70%;
-      font-size: 50px;
+      font-size: 40px;
       text-shadow: 0px 5px 5px rgba($black, .2);
       @include respond-to(xs) {
         font-size: 30px;
@@ -123,6 +123,7 @@
   
   h1 {
     font-family: $quicksand;
+    font-size: 30px;
     font-weight: $semi-bold;
     text-align: right;
     margin-top: 100px;

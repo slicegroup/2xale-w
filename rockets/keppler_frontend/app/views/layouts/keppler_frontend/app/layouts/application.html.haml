@@ -4,7 +4,7 @@
     = set_head
     = render 'keppler_frontend/app/partials/navbar'
     = yield
-    -# = render 'keppler_frontend/app/partials/footer'
+    = render 'keppler_frontend/app/partials/footer'
     // Boostrap CDN
     %script{ :src => "https://code.jquery.com/jquery-3.3.1.min.js" }
     %script{ :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
@@ -34,8 +34,10 @@
         slidesToShow: 3,
         dots: false,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
         arrows: false,
+        pauseOnHover: false,
         responsive: [
           {
             breakpoint: 600,

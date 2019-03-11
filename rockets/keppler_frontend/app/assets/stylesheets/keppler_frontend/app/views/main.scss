@@ -47,6 +47,11 @@
   margin-bottom: 50px;
 }
 
+.ad_left {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 550px);
+}
+
 footer {
   padding: 50px;
   background-color: $blue;

@@ -50,6 +50,9 @@
 .ad_left {
   @include bg(cover, no-repeat, center);
   @include size(100%, 550px);
+  @include respond-to(xs) {
+    display: none;
+  }
 }
 
 footer {

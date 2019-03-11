@@ -17,7 +17,11 @@
 
 .slider-nav {
   padding-left: 0;
-  height: 500px;
+  height: 400px;
+
+  @include respond-to(xs) {
+    display: none;
+  }
 
   li {
     list-style: none;
@@ -37,7 +41,7 @@
 }
 
 .slider-for {
-  height: 500px;
+  height: 400px;
 
   img {
     border-radius: 5px;
@@ -49,6 +53,12 @@
 
 .product-right-box {
   height: 400px;
+  box-shadow: 0 0 10px rgba($blue, .3);
+  padding: 20px;
+  border-radius: 5px;
+  @include respond-to(xs) {
+    height: auto;
+  }
 }
 
 .product-title {
@@ -58,13 +68,11 @@
 }
 
 .price-box {
-  margin-top: 50px;
+  margin-top: 30px;
   border-radius: 15px;
-  border: 1px solid #d1d1d1;
-  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
 
   span {
     color: $dark-gray;
@@ -83,14 +91,39 @@
   border-radius: 15px;
   padding: 5px 20px;
   height: 40px;
+  margin-top: 10px;
 }
 
 .product-description {
   padding: 50px;
+
+  @include respond-to(xs) {
+    padding: 50px 0;
+  }
 }
 
 .product-detail {
   padding: 50px 0;
+}
+
+.product-related {
+  h1.title {
+    font-family: $quicksand;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+
+    &::before {
+      @include pseudo();
+      width: 100px;
+      height: 4px;
+      background-color: $blue;
+      left: 0;
+      bottom: -10px;
+      border-radius: 5px;
+    }
+  }
 }
 
 .nav-tabs .nav-link {
@@ -107,4 +140,29 @@
 .tab-content {
   padding: 30px 20px;
   font-family: $quicksand;
+}
+
+.counter-product {
+  display: flex;
+  padding-top: 20px;
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    font-weight: $medium;
+    font-family: $quicksand;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #484848;
+
+    span {
+      display: block;
+    }
+  }
 }

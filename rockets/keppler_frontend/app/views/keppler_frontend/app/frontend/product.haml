@@ -24,6 +24,17 @@
           .title-box
             .badge.badge-offer Oferta
             %h1.product-title Apple iPhone XR (64GB)
+            .counter-product
+              %ul
+                %li
+                  %span#days
+                  Dias
+                %li
+                  %span#hours
+                  Horas
+                %li
+                  %span#minutes
+                  Minutos
           .price-box
             %span $749.99
             %a.btn.btn-product{ href: '', "data-toggle"=>"modal", "data-target"=>"#modalForm" } Solicitar
@@ -49,7 +60,6 @@
     %nav
       #nav-tab.nav.nav-tabs{role: "tablist"}
         %a#nav-description-tab.nav-item.nav-link.active{"aria-controls" => "nav-description", "aria-selected" => "true", "data-toggle" => "tab", href: "#nav-description", role: "tab"} Descripción
-        %a#nav-products-tab.nav-item.nav-link{"aria-controls" => "nav-products", "aria-selected" => "false", "data-toggle" => "tab", href: "#nav-products", role: "tab"} Productos Relacionados
     #nav-tabContent.tab-content
       #nav-description.tab-pane.fade.show.active{"aria-labelledby" => "nav-description-tab", role: "tabpanel"}
         Color:
@@ -65,36 +75,38 @@
         No Contract Wireless, No Activation Fees, No Credit Checks, & No Hassles On a Nationwide Lightning-fast Network.
         To activate your device, please visit the SIMPLE Mobile website and Activate your new phone with a SIMPLE Mobile 30-day service plan
         Note: This phone is carrier locked; Customers must have had their locked device activated on SIMPLE Mobile service for no fewer than 12 months, redeemed air time cards in no fewer than 12 months, and not have had their telephone number recycled or ported.
-      #nav-products.tab-pane.fade{"aria-labelledby" => "nav-products-tab", role: "tabpanel"}
-        .row
-          - 3.times do
-            .col-lg-4
-              .product-card
-                %a{ href: '' }
-                  .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
-                    %span.badge.badge-new New
-                .product-content
-                  %a{ href: '' }
-                    %small Ropa y Calzado
-                  %a{ href: '' }
-                    %h4 Adidas Perfomance
-                    .product-price
-                      %span 400$
-                    .counter
-                      %ul
-                        %li
-                          %span#days
-                          Dias
-                        %li
-                          %span#hours
-                          Horas
-                        %li
-                          %span#minutes
-                          Minutos
-                %a.product-footer{ href: '#' }
-                  .btn-more
-                    Solicitar
-                    %i.icofont-arrow-right
+%section.product-related
+  .container
+    %h1.title Productos Relacionados
+    .row
+      - 3.times do
+        .col-lg-4
+          .product-card
+            %a{ href: '' }
+              .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
+                %span.badge.badge-new New
+            .product-content
+              %a{ href: '' }
+                %small Ropa y Calzado
+              %a{ href: '' }
+                %h4 Adidas Perfomance
+                .product-price
+                  %span 400$
+                .counter
+                  %ul
+                    %li
+                      %span#days
+                      Dias
+                    %li
+                      %span#hours
+                      Horas
+                    %li
+                      %span#minutes
+                      Minutos
+            %a.product-footer{ href: '#' }
+              .btn-more
+                Solicitar
+                %i.icofont-arrow-right
 %section
   .container
     .row

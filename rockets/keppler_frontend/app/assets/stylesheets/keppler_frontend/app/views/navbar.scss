@@ -4,6 +4,10 @@
   @include respond-to(xs) {
     padding: 10px 20px;
   }
+
+  &.navbar-variant {
+    box-shadow: 0 0 10px rgba($blue, .3);
+  }
 }
 
 .navbar-brand {

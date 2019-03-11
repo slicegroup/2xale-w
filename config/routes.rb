@@ -192,6 +192,7 @@ Rails.application.routes.draw do
 
   # Publicity routes engine
   mount KepplerPublicity::Engine, at: '/', as: 'publicity'
+  mount KepplerContactUs::Engine, at: '/', as: 'messages'
 
   # KepplerForm routes engine
   mount KepplerForm::Engine, at: '/', as: 'keppler_form'

@@ -29,13 +29,19 @@ module KepplerPublicity
 
       # POST /publicities
       def create
-        @ad = Ad.new(ad_params)
-
+        @ad = KepplerPublicity::Ad.new(ad_params)
         if @ad.save
           redirect(@ad, params)
         else
           render :new
         end
+      end
+
+      def toggle
+        @ad =  KepplerPublicity::Ad.find(params[:ad_id])
+        KepplerPublicity::Ad.update_active(@ad)
+        @ad.update(active: params[:ad][:active])
+        redirect_to_index(@objects)
       end
 
       # PATCH/PUT /publicities/1
@@ -93,7 +99,7 @@ module KepplerPublicity
       # Only allow a trusted parameter "white list" through.
       def ad_params
         params.require(:ad).permit(
-          :image, :type_ad, :location, :active
+          :image, :type_ad, :location, :url
         )
       end
     end

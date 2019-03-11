@@ -3,19 +3,23 @@ es:
     sidebar-menu:
       keppler-products: Productos
       keppler-products-submenu:
+        category: Category
         products: Productos
         categories: Categorias
         products: Productos
     permissions:
     models:
       singularize:
+        category: category
         product: producto
         category: categoría
       pluralize:
+        categories: categories
         products: productos
         categories: categorias
         products: productos
     modules:
+      admin/category: Category
       admin/products: Productos
       admin/categories: Categorias
       admin/products: Productos

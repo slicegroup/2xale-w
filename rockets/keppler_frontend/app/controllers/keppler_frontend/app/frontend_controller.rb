@@ -9,6 +9,9 @@ module KepplerFrontend
 
     # begin keppler
     def index
+      @banners = KepplerBanners::Banner.all
+      @products = KepplerProducts::Product.latest
+      @categories_featureds = KepplerProducts::Category.featureds
     end
     # end keppler
 

@@ -22,7 +22,7 @@
           .box-body.no-padding
             %table.table
               %tbody
-                - @product.as_json(except: %w[id position deleted_at seller seller_name seller_phone seller_email]).each do |attribute, value|
+                - @product.as_json(except: %w[id position deleted_at seller seller_name seller_phone seller_email category_id]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2

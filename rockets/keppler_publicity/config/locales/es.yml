@@ -2,6 +2,7 @@ es:
   keppler:
     sidebar-menu:
       keppler-publicity: Publicidad
+      publicity: Publicidad
       keppler-publicity-submenu:
         ads: Anuncios
     permissions:
@@ -16,9 +17,14 @@ es:
     actions:
   activerecord:
     attributes:
+      location-and-type: Tipo - Ubicación
       location: Ubicación
       active: Activo
-      type: Tipo
+      type_ad: Tipo
+      location_ad: Selecciona la ubicación
+      banner: Banner
+      half-banner: Medio banner
+      steal-page: Roba Página
     errors:
       messages:
   errors:

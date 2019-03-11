@@ -1,3 +1,5 @@
+%link{href: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css", rel: "stylesheet"}/
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"}
 = simple_form_for [:admin, :publicity, @ad] do |f|
   .container
     .row
@@ -15,86 +17,184 @@
             .box-tools.pull-right
               %a.btn.btn-box-tool{'data-widget': 'collapse', type: 'button'}
                 %i.fa.fa-minus
-          .box-body
+          .box-body.x
             %table.table.table-bordered
               %tbody
                 .form-padding
-                  %label.control-label.keppler_file.optional= t('activerecord.attributes.type')
-                  .flex{ style: 'padding-bottom: 27px'}
-                    .banner.active
-                      .lines
-                        %p BANNER
-                    .medium.active
-                      .lines
-                        %p MEDIA BANNER
-                    .steal-page.active
-                      .lines
-                        %p ROBA PÁGINA
-                    = f.input :type_ad, as: :string, as: :hidden
-                  .col-xs-12
-                    = f.input :image, as: :keppler_file # , max_size: 225
-                  .col-xs-12
-                    = f.input :location, as: :radio_buttons, collection: [['0', 'About'], ['1', 'Home']], label_method: :second, value_method: :first, label: t('activerecord.attributes.location')
+                  .col-md-12
+                    = f.input :image, as: :keppler_file
+                  .col-md-12
+                    = f.input :url, as: :url
+                  = f.input :type_ad, label: false
+                  = f.input :location, label: false
+                  .col-md-12
+                    %label{:for => "ad[location]", class: 'control-label string required'}= t('activerecord.attributes.location_ad')
+                    .nav-tabs-custom
+                      %ul.nav.nav-tabs
+                        %li.active
+                          %a{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#tab_1"} HOME
+                        %li
+                          %a{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#tab_2"} Tab 2
+                        %li.pull-right
+                          %a.text-muted{:href => "#"}
+                            %i.fa.fa-gear
+                      .tab-content
+                        #tab_1.tab-pane.active
+                          .home
+                            .banner-up
+                            .search-input
+                            .products
+                              .product
+                              .product
+                              .product
+                              .steal-page-1.publicity{ class: @ad.type_ad.eql?('steal-page') && @ad.location.eql?('home-1') ? 'active' : '' }
+                                .file-drop-zone
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.steal-page').upcase
+                              .product
+                              .product
+                              .product
+                              .steal-page-2.publicity{ class: @ad.type_ad.eql?('steal-page') && @ad.location.eql?('home-2') ? 'active' : '' }
+                                .file-drop-zone
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.steal-page').upcase
+                            .flex
+                              .half-banner-1.publicity{ class: @ad.type_ad.eql?('half-banner') && @ad.location.eql?('home-1') ? 'active' : '' }
+                                .file-drop-zone
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.half-banner').upcase
+                              .half-banner-2.publicity{ class: @ad.type_ad.eql?('half-banner') && @ad.location.eql?('home-2') ? 'active' : '' }
+                                .file-drop-zone
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.half-banner').upcase
+                            .categories
+                              .category
+                              .category
+                              .category
+                              .category
+                            .banner.publicity{ class: @ad.type_ad.eql?('banner') && @ad.location.eql?('home-1') ? 'active' : '' }
+                              .file-drop-zone
+                                .file-drop-zone-title
+                                  = t('activerecord.attributes.banner').upcase
+                        #tab_2.tab-pane
+                          The European languages are members of the same family. Their separate existence is a myth.
+                          For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
+                          in their grammar, their pronunciation and their most common words. Everyone realizes why a
+                          new common language would be desirable: one could refuse to pay expensive translators. To
+                          achieve this, it would be necessary to have uniform grammar, pronunciation and more common
+                          words. If several languages coalesce, the grammar of the resulting language is more simple
+                          and regular than that of the individual languages.
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
+
 :scss
-  .flex div{
-    cursor: pointer;
+  .home{
+    width: 100%;
+    height: 2000px;
+    background: rgba(216, 214, 218, 0.8901960784);
+    margin: 10px;
+    padding-top: 67px;
   }
-  .banner{
-    width: 386px;
-    height: 136px;
-    background: rgba(160, 158, 158, 0.5);
-    transition: 0.5s;
+  .banner-up{
+    width: 60%;
+    height: 400px;
+    background: #b7b7bd;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
-  .medium{
-    width: 264px;
-    height: 136px;
-    background: rgba(160, 158, 158, 0.5);
+  .search-input{
+    position: absolute;
+    width: 50%;
+    height: 52px;
+    background: #ece4e4ed;
+    top: 300px;
+    right: 30px;
+    border-radius: 10px;
   }
-  .steal-page{
-    width: 123px;
-    height: 136px;
-    background: rgba(160, 158, 158, 0.5);
+  .products, .categories{
+    flex-wrap: wrap;
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+  }
+  .product, .steal-page-1, .steal-page-2, .category{
+    height: 300px;
+    width: 22%;
+    background: #b7b7bd;
+    margin: 10px;
+  }
+  .product, .category{
+    border-radius: 10px;
   }
   .flex{
     display: flex;
-    margin-top: 16px;
+    justify-content: center;
   }
-  .flex div{
-    margin-right: 20px;
+  .half-banner-1, .half-banner-2{
+    width: 45%;
+    height: 200px;
+    background: #9f9fd0;
+    margin: 10px;
+  }
+  .categories{
+    .category:nth-child(1) {
+    background: #f5efef !important;}
+  }
+  .banner{
+    height: 200px;
+    width: 90%;
+    background: #9f9fd0;
+    margin: auto;
+  }
+  .publicity{
+    background: white;
+    padding: 5px;
+    cursor: pointer;
+  }
+  #ad_location, #ad_type_ad{
+    display: none;
+  }
+  .file-drop-zone{
+    margin: 0 !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: colums;
   }
-  .lines{
-    width: 95%;
-    border: solid 1px #989191;
-    height: 87%;
-    margin: 0 !important;
-    border-style: dashed;
-    position: relative;
+  .nav-tabs-custom > .nav-tabs > li.active{
+    border-top-color: #f44336 !important;
   }
-  .medium div{
-    width: 92% !important;
-  }
-  .steal-page div{
-    width: 86% !important;
-  }
-  .banner p{
-    font-size: 30px;
-    transition: 0.5s;
-  }
-  .medium p{
-    font-size: 22px;
+  .active{
+    background: #d5d5da;
   }
 
 :javascript
-  $('.active').click(function(){
-    $('.active').css('background-color', 'rgba(160, 158, 158, 0.5)')
-    $(this).css('background-color', 'rgba(99, 101, 105, 0.4)')
-    $('#ad_type_ad').val($(this).find('p').text())
+  $('.publicity').click(function(){
+    $('.publicity').removeClass('active')
+    $(this).addClass('active')
+    if ($(this).hasClass('banner')){
+      $('#ad_location').val('home-1')
+      $('#ad_type_ad').val('banner')
+    }else{
+      if ($(this).hasClass('half-banner-1')){
+        $('#ad_location').val('home-1')
+        $('#ad_type_ad').val('half-banner')
+      }else{
+        if ($(this).hasClass('half-banner-2')){
+          $('#ad_location').val('home-2')
+          $('#ad_type_ad').val('half-banner')
+        }else{
+          if ($(this).hasClass('steal-page-1')){
+            $('#ad_location').val('home-1')
+            $('#ad_type_ad').val('steal-page')
+          }else{
+            if ($(this).hasClass('steal-page-2')){
+              $('#ad_location').val('home-2')
+              $('#ad_type_ad').val('steal-page')
+            }
+          }
+        }
+      }
+    }
   })

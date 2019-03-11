@@ -2,7 +2,6 @@
 %link{ href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css.map' }
 %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js' }
 
-
 = simple_form_for [:admin, :products, @product] do |f|
   .container
     .row
@@ -31,26 +30,34 @@
                       = f.input :category_id, collection: @categories, include_blank: false, label: t('activerecord.attributes.category_id')
                   .col-xs-12    
                     .col-xs-6
-                      = f.input :address, as: :string, label: t('activerecord.attributes.address')
+                      = f.input :price, as: :integer, label: t('activerecord.attributes.price')
                     .col-xs-6
                       %label{:for => "product[expiration]", class: 'control-label string required'}= t('activerecord.attributes.expiration')
                       #datetimepicker6.input-group.date{"data-date-format" => "dd/DD/mm/yyyy"}
                         %span.input-group-addon{ style: 'width: 100% !important' }
                           %input.form-control{:type => 'text', name: 'product[expiration]', style: 'border-radius: 15px;'}
                   .col-xs-12
+                    = f.input :address, as: :string, label: t('activerecord.attributes.address')
+                  .col-xs-12
                     = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
-                    = f.input :images, as: :keppler_file, multiple: true # , max_size: 225
+                    %p.bold= t('activerecord.attributes.images')
+                    - unless @product.errors[:images][0].blank?
+                      %p.error-class *Requerido
+                    = f.input :images, as: :keppler_file, multiple: true, label: false # , max_size: 225
                   .col-xs-12
-                    .col-xs-6.col-sellers
-                      %p.bold= t('activerecord.attributes.seller')
+                    .col-xs-6.col-md-12.col-sm-12.col-lg-6.col-sellers
+                      %p.bold
+                        = t('activerecord.attributes.seller')
+                        - unless @product.errors[:seller][0].blank?
+                          %span.error-class *Requerido
                       .options-sellers.seller1
                         %img{:src => "https://image.flaticon.com/icons/svg/1117/1117882.svg", :alt => "", width: '130px'}/
                         %p Empresa
                       .options-sellers.seller2
                         %img{:src => "https://image.flaticon.com/icons/svg/816/816548.svg", :alt => "", width: '130px'}/
                         %p Tercero
-                    .col-xs-6.fields
+                    .col-xs-6.col-md-12.col-sm-12.col-lg-6.fields
                       = f.input :seller, as: :string, as: :hidden
                       = f.input :seller_name, as: :string, label: t('activerecord.attributes.seller_name')
                       = f.input :seller_phone, as: :string, label: t('activerecord.attributes.seller_phone')
@@ -95,29 +102,43 @@
   }
   .fields{
     margin-top: 20px;
+    display: none;
   }
   .error-class{
     font-weight: 600;
     color: red;
     font-size: 12px;
   }
+  .date{
+    width: 100%;
+  }
+- if action_name.eql?('new')
+  :javascript
+    $(document).ready(function () {
+      $('#datetimepicker6').datetimepicker({
+         defaultDate: new Date(),
+         minDate: new Date(),
+         format: 'D/M/Y'
+       });
+      })
+- else
+  :javascript
+    $(document).ready(function () {
+      $('#datetimepicker6').datetimepicker({
+         minDate: new Date(),
+         format: 'D/M/Y'
+       });
+      $('')
+    $('#datetimepicker6').find('input').val("#{@product.expiration}")
+    })
 - if @product.seller.eql?('2xale')
   :javascript
     $('.seller1').addClass('selected')
-    $('#product_seller').val('2xale')
 - elsif (!@product.seller_name.blank?)
   :javascript
     $('.fields').show()
     $('.seller2').addClass('selected')
-    $('#product_seller').val('tercero')
 :javascript
-  $(document).ready(function () {
-    $('#datetimepicker6').datetimepicker({
-       defaultDate: new Date(),
-       minDate: new Date(),
-       format: 'D/M/Y'
-     });
-    $('.fields').hide()
     $('.seller2').click(function(){
       $('.fields').show()
       $(this).addClass('selected')
@@ -141,16 +162,21 @@
          'product[seller_name]': { required: true},
          'product[seller_phone]': { required: true, number: true},
          'product[seller_email]': { required: true, email: true},
+         'product[name]': {required: true},
+         'product[address]': {required: true},
+         'product[expiration]': {required: true}
         },
        messages: {
          'product[seller_name]': 'Indica el nombre del vendedor',
          'product[seller_phone]': 'Teléfono del vendedor',
-         'product[seller_email]': 'Correo del vendedor'
+         'product[seller_email]': 'Correo del vendedor',
+         'product[name]': 'Indica el nombre del producto',
+         'product[address]': 'Indica la ubicación del producto',
+         'product[address]': 'Indica la fecha de expiración del producto'
         },
       debug: true,errorElement: 'label',
       submitHandler: function(form){
         form.submit();
       }
     });
-  })
   

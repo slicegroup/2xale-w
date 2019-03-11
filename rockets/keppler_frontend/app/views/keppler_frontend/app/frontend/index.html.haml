@@ -1,16 +1,16 @@
 %section.home
   .home-slider
-    - 3.times do
+    - @banners.each do |banner|
       .banner-slider
         .banners-box
-          %img.banner-item{src:'https://images.unsplash.com/photo-1534497977663-a73dfabd7774?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=987&q=80'}
+          = image_tag banner.image.url, class: 'banner-item'
           .banner-mask
-            %h1 Titulo del Banner
+            %h1= banner.title
             %a.btn-more{ href: '' }
               Ver más
               %i.icofont-arrow-right
         .search-cta
-          %h1 Encuentra el producto que estás buscando
+          %h1= banner.search_text
   .search-input
     %form.form-inline
       .input-group
@@ -22,19 +22,19 @@
   .row
     .col-lg-9
       .row
-        - 6.times do
+        - @products.each do |product|
           .col-lg-4
             .product-card
               %a{ href: '' }
-                .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
+                .product-image{ style: "background-image: url('#{product.images.sample.url}')" }
                   %span.badge.badge-new New
               .product-content
                 %a{ href: '' }
-                  %small Ropa y Calzado
+                  %small= product&.category&.name || ''
                 %a{ href: '' }
-                  %h4 Adidas Perfomance
+                  %h4= product.name
                   .product-price
-                    %span 400$
+                    %span= product.price
                   .counter
                     %ul
                       %li
@@ -71,25 +71,11 @@
             %i.icofont-arrow-right
     .col-lg-9
       .row.categories-carousel
-        - 2.times do
+        - @categories_featureds.each do |category|
           .category-card
-            %img{src: 'https://images.unsplash.com/photo-1500840216050-6ffa99d75160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1073&q=80'}
+            = image_tag category.image.url
             %a.category-content{ href: '#' }
-              %h4 Belleza y cuidado
-              %span.btn-more
-                Ver más
-                %i.icofont-arrow-right
-          .category-card
-            %img{src: 'https://upload.wikimedia.org/wikipedia/commons/2/25/2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg'}
-            %a.category-content{ href: '#' }
-              %h4 Carros
-              %span.btn-more
-                Ver más
-                %i.icofont-arrow-right
-          .category-card
-            %img{src: 'https://images.unsplash.com/photo-1461218779480-bb61b6be1924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'}
-            %a.category-content{ href: '#' }
-              %h4 Hogar
+              %h4= category.name
               %span.btn-more
                 Ver más
                 %i.icofont-arrow-right

@@ -1,0 +1,22 @@
+#index-container{ controller: 'messages' }
+  .container-fluid
+    .row
+      .listing.col-lg-12.col-xs-12
+        %section.content
+          .row
+            .col-md-3
+              = render 'keppler_contact_us/admin/layouts/compose'
+              = render 'keppler_contact_us/admin/layouts/folders'
+              = render 'keppler_contact_us/admin/layouts/labels'
+                  
+            .col-md-9
+              .box.contact-us-container
+                = render 'keppler_contact_us/admin/layouts/table_header', q: q
+                .box-body.no-padding
+                  = render 'keppler_contact_us/admin/layouts/mailbox_controls', total: total, objects: objects
+                  = render 'keppler_contact_us/admin/layouts/listing_preloader'
+                  .objects-container
+                    = render 'keppler_contact_us/admin/layouts/listing', objects: objects, query: query
+
+        %center.paginator-module
+          = paginate objects, window: 1

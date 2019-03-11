@@ -1,0 +1,18 @@
+= simple_form_for ad, url: admin_publicity_ad_toggle_path(ad), method: :post do |f|
+  %label
+    - if ad.active
+      %label.switch
+        %input{name: "ad[active]", type: "hidden", value: "false"}
+        %input.active{id: "switch-#{ad.id}", :type => "checkbox", checked: "checked"}
+        %span.slider.round{onclick: "toggleActive('#{ad.id}')"}
+
+    - else
+      %label.switch
+        %input{name: "ad[active]", type: "hidden", value: "true"}
+        %input{id: "switch-#{ad.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "toggleActive('#{ad.id}')"}
+
+:javascript
+  function toggleActive(id) {
+    $("#edit_ad_"+id).submit()
+  }

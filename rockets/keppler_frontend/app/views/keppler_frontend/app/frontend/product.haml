@@ -8,7 +8,7 @@
       %li.breadcrumb-item
         %a{:href => "#"} Video 
     .row
-      .col-lg-8
+      .col-lg-6
         .row
           .col-lg-2
             %ul.slider-nav
@@ -26,7 +26,24 @@
             %h1.product-title Apple iPhone XR (64GB)
           .price-box
             %span $749.99
-            %a.btn.btn-product{ href: '' } Solicitar
+            %a.btn.btn-product{ href: '', "data-toggle"=>"modal", "data-target"=>"#modalForm" } Solicitar
+      .col-lg-2
+        .ad_left{ style: 'background-image: url("https://cdn-images-1.medium.com/max/1600/1*ibN0ptxrg6LkZ5DZbKv2YA.png")' }
+#modalForm.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modalFormLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        %form
+          .form-group
+            %label Nombre
+            %input.form-control
+          .form-group
+            %label Correo
+            %input.form-control
+          %button.btn.btn-primary{type: "submit"} Enviar solicitud
 %section.product-description
   .container
     %nav
@@ -78,6 +95,11 @@
                   .btn-more
                     Solicitar
                     %i.icofont-arrow-right
+%section
+  .container
+    .row
+      .col-lg-12
+        .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
 
 :javascript
    $('.slider-for').slick({

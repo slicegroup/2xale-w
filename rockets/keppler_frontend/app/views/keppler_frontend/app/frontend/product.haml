@@ -1,46 +1,97 @@
-%section.sp-vista-productos
-	.container
-		.row
-			.col-md-4
-				%ol.breadcrumb
-					%li.breadcrumb-item
-					%a{:href => "#"} Inicio 
-					%li.breadcrumb-item
-					%a{:href => "#"} PS4 
-					%li.breadcrumb-item
-					%a{:href => "#"} Video 
-			.col-md-8
-				Publicidad 
+%section.product-detail
+  .container
+    %ol.breadcrumb
+      %li.breadcrumb-item
+        %a{:href => "#"} Inicio 
+      %li.breadcrumb-item
+        %a{:href => "#"} PS4 
+      %li.breadcrumb-item
+        %a{:href => "#"} Video 
+    .row
+      .col-lg-8
+        .row
+          .col-lg-2
+            %ul.slider-nav
+              - 6.times do
+                %li
+                  %img{src: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/xr/iphone-xr-red-select-201809?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1551226038669', alt: ''}
+          .col-lg-10
+            .slider-for
+              - 6.times do
+                %img{src: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/xr/iphone-xr-red-select-201809?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1551226038669', alt: ''}
+      .col-lg-4
+        .product-right-box
+          .title-box
+            .badge.badge-offer Oferta
+            %h1.product-title Apple iPhone XR (64GB)
+          .price-box
+            %span $749.99
+            %a.btn.btn-product{ href: '' } Solicitar
+%section.product-description
+  .container
+    %nav
+      #nav-tab.nav.nav-tabs{role: "tablist"}
+        %a#nav-description-tab.nav-item.nav-link.active{"aria-controls" => "nav-description", "aria-selected" => "true", "data-toggle" => "tab", href: "#nav-description", role: "tab"} Descripción
+        %a#nav-products-tab.nav-item.nav-link{"aria-controls" => "nav-products", "aria-selected" => "false", "data-toggle" => "tab", href: "#nav-products", role: "tab"} Productos Relacionados
+    #nav-tabContent.tab-content
+      #nav-description.tab-pane.fade.show.active{"aria-labelledby" => "nav-description-tab", role: "tabpanel"}
+        Color:
+        Red
+        Size:
+        64 GB
+        6.1-inch Liquid Retina display (LCD)
+        IP67 water and dust resistant (max depth of 1 m up to 30 mins)
+        12MP camera with OIS and 7MP TrueDepth front camera
+        Face ID for secure authentication and Apple Pay
+        A12 Bionic with next-generation Neural Engine
+        Wireless charging—works with Qi chargers
+        No Contract Wireless, No Activation Fees, No Credit Checks, & No Hassles On a Nationwide Lightning-fast Network.
+        To activate your device, please visit the SIMPLE Mobile website and Activate your new phone with a SIMPLE Mobile 30-day service plan
+        Note: This phone is carrier locked; Customers must have had their locked device activated on SIMPLE Mobile service for no fewer than 12 months, redeemed air time cards in no fewer than 12 months, and not have had their telephone number recycled or ported.
+      #nav-products.tab-pane.fade{"aria-labelledby" => "nav-products-tab", role: "tabpanel"}
+        .row
+          - 3.times do
+            .col-lg-4
+              .product-card
+                %a{ href: '' }
+                  .product-image{ style: 'background-image: url("https://images.unsplash.com/photo-1532471965572-092fb677a6a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")' }
+                    %span.badge.badge-new New
+                .product-content
+                  %a{ href: '' }
+                    %small Ropa y Calzado
+                  %a{ href: '' }
+                    %h4 Adidas Perfomance
+                    .product-price
+                      %span 400$
+                    .counter
+                      %ul
+                        %li
+                          %span#days
+                          Dias
+                        %li
+                          %span#hours
+                          Horas
+                        %li
+                          %span#minutes
+                          Minutos
+                %a.product-footer{ href: '#' }
+                  .btn-more
+                    Solicitar
+                    %i.icofont-arrow-right
 
-		%section.producto-general          
-			.row
-				.col-md-4
-					.cont-producto-a
-						.slider-productos
-							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-01.png');"}
-							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-02.jpg');"}
-							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-03.png');"}
-							.imagen-slider-productos{:style => "background-image: url('/assets/keppler_frontend/app/ps4-04.png');"}
-						.slider-nav 
-							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-01.png');"}
-							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-02.jpg');"}
-							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-03.png');"}
-							.imagen-slider-productos-nav{:style => "background-image: url('/assets/keppler_frontend/app/ps4-04.png');"}
-				.col-md-8
-					.cont-producto-b
-						.row
-							.col-6
-								%h3 Ps4 con su Control
-								%p.parrafo-a 
-									Modelo:
-									%span V.2 
-								%p.parrafo-a  
-									Tipo de Producto:
-									%span Electronico
-								%p.parrafo-producto PS4 nuevo de paquete con su control inalanbirco, contiene 360gb de memoria en el disco duro, con la capacidad nueva de cargar el control para que dure hasta 10 horas de juegos continuos.
-							.col-6
-								%h3 Información del Vendedor
-						%h4 400.00$
-						%button Comprar
-						
-
+:javascript
+   $('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: false,
+    focusOnSelect: true,
+    vertical: true
+  });

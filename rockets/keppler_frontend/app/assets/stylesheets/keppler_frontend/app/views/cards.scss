@@ -1,4 +1,24 @@
 // Products
+.products {
+  h1.title {
+    font-family: $quicksand;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+
+    &::before {
+      @include pseudo();
+      width: 100px;
+      height: 4px;
+      background-color: $blue;
+      left: 0;
+      bottom: -10px;
+      border-radius: 5px;
+    }
+  }
+}
+
 .product-card {
   font-family: $quicksand;
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
@@ -111,20 +131,47 @@
 .categories-text {
   position: relative;
   height: 100%;
+
+  @include respond-to(xs) {
+    height: 200px;
+  }
   
   h1 {
     font-family: $quicksand;
     font-weight: $bold;
     text-transform: uppercase;
+    position: relative;
+    margin-bottom: 50px;
+
+    &::before {
+      @include pseudo();
+      width: 100px;
+      height: 4px;
+      background-color: $blue;
+      left: 0;
+      bottom: -10px;
+      border-radius: 5px;
+    }
+
+    @include respond-to(xs) {
+      font-size: 30px;
+    }
   }
 
   span {
     font-family: $quicksand;
+    @include respond-to(xs) {
+      display: none; 
+    }
   }
 
   .carousel-buttons {
     position: absolute;
     bottom: 60px;
+
+    @include respond-to(xs) {
+      bottom: 40px; 
+    }
   }
 
   .left, .right {

@@ -1,37 +1,30 @@
-%section.sp-footer
-  %footer{:id => "footer"}
-  / Footer 
-  .container
-    .row
-      .col-md-4.text-center
-        %img{:src => "/assets/keppler_frontend/app/logo_2xale.svg"}
-
-      .col-md-4 
-        .colm-a
-          %h4 Contactos
-          %p Telefono: +584120640761 / 414 6300761 
-          %p Correo:  servicioalcliente@2xale.com 
-          .colm-b
-            .sp-links-footer
-              %a.links-redes{:href => "#"}
-                %i.fa.fa-facebook.official  
-                  %span Facebook 
-              %a.links-redes{:href => "#"}
-                %i.fa.fa-instagram 
-                  %span Instagram
-              %a.links-redes{:href => "#"}
-                %i.fa.fa-twitter 
-                  %span Twitter	 
-            .sp-links-footer
-              
-            .sp-links-footer
-              
-          
-      .col-md-4
-        .about-footer
-          %h4 Nosotros
-          %p 2xale, surge de la combinación de un día de unión y compromiso y del nombre propio de su creador; con el sueño de ser una marca reconocida en el mundo y con la iniciativa de brindar apoyo a quienes se les dificulta la venta de diversos productos, siendo el enlace más confiable entre el vendedor y el comprador; además de ofrecer el impulso de negocios y empresas a través de la publicidad en nuestra página web.
-      .col-md-12
-        %article
-          .copy-footer
-            %p Copyright 2Xale 2019 | Powered by Slice Group with Keppler
+%footer
+  .row
+    .col-lg-8.offset-lg-2
+      .footer-block
+        %img{src: "assets/keppler_frontend/app/logo_2xale_white.svg"}
+        .footer-list
+          %ul.contact-list
+            %li
+              %strong Telefónos
+              %br
+              +58 4120640761 / 414 6300761
+            %li
+              %strong Correo Electrónico
+              %br
+              %a{href:''} servicioalcliente@2xale.com
+          %ul.rrss
+            %li
+              %a{href:''}
+                %i.icofont-facebook
+            %li
+              %a{href:''}
+                %i.icofont-instagram
+            %li
+              %a{href:''}
+                %i.icofont-twitter
+        %small.copyright
+          Copyright 2Xale 2019 | Powered by 
+          %a{href:''} Slice Group
+          with
+          %a{href:''} Keppler

@@ -39,10 +39,7 @@ module KepplerPublicity
 
       def toggle
         @ad =  KepplerPublicity::Ad.find(params[:ad_id])
-        @actives = KepplerPublicity::Ad.have_actives(@ad)
-        if @actives.any?
-          @actives.update(active: false)
-        end
+        KepplerPublicity::Ad.update_active(@ad)
         @ad.update(active: params[:ad][:active])
         redirect_to_index(@objects)
       end

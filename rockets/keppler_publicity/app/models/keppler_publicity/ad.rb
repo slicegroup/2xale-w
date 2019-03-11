@@ -15,7 +15,18 @@ module KepplerPublicity
     validates_presence_of :image, :type_ad, :location, :url
 
     def self.have_actives(ad)
-      where(type_ad: ad.type_ad, location: ad.location)
+      where(
+        type_ad: ad.type_ad, 
+        location: ad.location, 
+        active: true
+      )
+    end
+
+    def self.update_active(ad)
+      actives = have_actives(ad)
+      return if actives.blank?
+
+      actives.update(active: false)
     end
 
     def self.index_attributes

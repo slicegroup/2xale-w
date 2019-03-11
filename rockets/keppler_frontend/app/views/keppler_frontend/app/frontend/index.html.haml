@@ -29,7 +29,7 @@
                   %span.badge.badge-new New
               .product-content
                 %a{ href: '' }
-                  %small= product.category.name
+                  %small= product&.category&.name || ''
                 %a{ href: '' }
                   %h4= product.name
                   .product-price

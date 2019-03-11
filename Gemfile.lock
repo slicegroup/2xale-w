@@ -18,6 +18,17 @@ PATH
       simple_form
 
 PATH
+  remote: rockets/keppler_contact_us
+  specs:
+    keppler_contact_us (0.1.0)
+      haml_rails
+      jquery-validation-rails
+      pundit
+      rails (= 5.2.0)
+      recaptcha
+      simple_form
+
+PATH
   remote: rockets/keppler_form
   specs:
     keppler_form (0.1.0)
@@ -639,6 +650,7 @@ DEPENDENCIES
   kaminari-i18n (= 0.5.0)
   keppler_banners!
   keppler_capsules!
+  keppler_contact_us!
   keppler_form!
   keppler_frontend!
   keppler_ga_dashboard!

@@ -8,6 +8,7 @@ class CreateKepplerProductsProducts < ActiveRecord::Migration[5.2]
       t.date :expiration
       t.text :description
       t.jsonb :images
+      t.string :price
       t.string :seller
       t.string :seller_name
       t.string :seller_phone

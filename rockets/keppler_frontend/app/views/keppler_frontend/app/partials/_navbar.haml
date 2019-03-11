@@ -17,31 +17,12 @@
           Categorías
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
           .row
-            .col-lg-4
-              %a.dropdown-item.dropdown-category{href: "#"} Animales y mascotas
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Barcos y lanchas
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Belleza e Higiene personal
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Bienes y raices
-            .col-lg-4
-              %a.dropdown-item.dropdown-category{href: "#"} Bisuteria
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Calzado
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Construcción
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Corte y costura
-            .col-lg-4
-              %a.dropdown-item.dropdown-category{href: "#"} Cursos y Clases
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Deporte
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Electrónica
-              .dropdown-divider
-              %a.dropdown-item.dropdown-category{href: "#"} Hogar
-              .dropdown-divider
+            - @categories.in_groups_of(3).each do |block|
+              .col-lg-4
+                / %a.dropdown-item.dropdown-category{href: "#"} Categorías
+                / .dropdown-divider
+                - block.compact.each do |category|
+                  %a.dropdown-item.dropdown-subcategory{href: "#"}= category&.name
         %li.nav-item
           %a.nav-link{href: "#"} Nosotros
         %li.nav-item

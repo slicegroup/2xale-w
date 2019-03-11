@@ -69,6 +69,7 @@ en:
         clone: Permite al usuario clonar un registro existente dentro del módulo
     models:
       singularize:
+        ad: ad
         seo: seo
         role: role
         customize: customize
@@ -79,6 +80,7 @@ en:
         user: user
         capsule: capsule
       pluralize:
+        ads: ads
         seos: seos
         roles: roles
         customizes: customizes

@@ -4,6 +4,7 @@ module App
     layout 'layouts/templates/application'
     def index
     end
+
     def productos
     end
   end

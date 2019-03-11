@@ -1,0 +1,296 @@
+!!!
+%html
+  %head
+    -# Metatags
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}
+    %meta{ charset: 'utf-8'}
+    %meta{ content: 'width=device-width', name: 'viewport'}
+    %meta{ content: 'IE=edge', 'http-equiv': 'X-UA-Compatible'}
+    %meta{ name: 'x-apple-disable-message-reformatting'}
+    %link{ href: "https://fonts.googleapis.com/css?family=Patua+One", rel:   "stylesheet"}/
+
+    -# Styles
+    :sass
+      @import url('https://fonts.googleapis.com/css?family=Patua+One')
+      @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro')
+      @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900')
+      .mailer-body
+        color: #383a34
+        //font-family: 'Watchword'
+        font-family: sans-serif
+        margin: 0
+        .mailer
+          padding: 50px 0
+          width: 100%
+          background-image: url(http://i66.tinypic.com/k0gjmh.png), linear-gradient(to bottom, #242d4b 0%, #1e2b40 60%, #fff 60%)
+          background-repeat: no-repeat
+          background-size: contain
+          background-position: center
+          margin: 0 auto
+          &-logo
+            .logo
+              width: 400px
+              margin-bottom: 10px
+              @media (max-width: 600px)
+                width: 300px
+          &-card
+            background: white
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2)
+            max-width: 800px
+            margin: 0 auto
+            padding: 40px 5%
+            width: 90%
+            &-header
+              h1, h2, h3, h4, h5, h6, hr
+                margin-bottom: 10px
+              @media (max-width: 600px)
+                h1
+                  font-size: 1.5rem
+                h2
+                  font-size: 1rem
+            &-body
+              padding: 20px
+              .email-container
+                max-width: 680px
+                margin: 0 auto
+
+                table
+                  margin: 0 auto
+                  padding-bottom: 10px
+                  @media (max-width: 600px)
+                    font-size: 12px
+                .buttons
+                  margin: 20px
+                  .btn
+                    background: #00b4e1
+                    padding: 10px 20px
+                    border-radius: 2px
+                    color: #fff !important
+                    text-decoration: none
+                    box-shadow: 2px 2px 2px #aaa
+                    transition: .3s
+                    &:hover
+                      box-shadow: 3px 3px 3px #aaa
+                      transition: .3s
+            &-footer
+              width: 100%
+              // font-family: Montserrat
+              @media (max-width: 600px)
+                font-size: 12px
+              a
+                text-decoration: none
+                color: #f44336
+                font-weight: 600
+      .separator
+        width: 50%
+        background: linear-gradient(to right, #31547a, #2e315e)
+        border: none
+        height: 5px
+      .primary-txt
+        color: #f44336
+      .primary-bg
+        background: linear-gradient(to right, #31547a, #2e315e)
+      .center
+        text-align: center
+        width: 100%
+        margin: 0 auto
+      .button
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2)
+        // box-shadow: 2px 2px 2px #aaa
+        cursor: pointer
+        font-family: sans-serif
+        font-size: 15px
+        line-height: 15px
+        text-decoration: none
+        padding: 13px 17px
+        color: #fff
+        display: block
+        border-radius: 20px
+        border: 0
+        transition: .3s
+        &:hover, &:focus, &:active
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2)
+          // box-shadow: 3px 3px 3px #aaa
+          filter: brightness(110%)
+          outline: none
+          transition: .3s
+        &-primary
+          background: #f44336
+
+  -# Content Body
+  %body.mailer-body
+    .mailer
+      .mailer-logo
+        -# = image_tag attachments['logo.png'].url, class: 'logo'
+      .mailer-card
+        .mailer-card-header
+          %center
+            %h1
+              %span{ style: 'color: #f44336; font-family: "Patua One", cursive; font-weight: 400' } 
+                Keppler
+              %span{ style: 'color: #f44336; font-weight: 400' } Contact Us
+            
+              
+        %hr.separator
+        .mailer-card-body
+          .email-container
+            %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+              %tr
+                %td
+                  %img.fluid.g-img{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/1360/600/?random", style: "width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto;", width: "680" }/
+              %tr
+                %td
+                  %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                    %tr
+                      %td{ style: "padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" }
+                        %h1{ style: "margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;" }
+                          ¡Hola #{@message.name}!
+                        %h4{ style: "margin: 0 0 10px;" }
+                          Gracias por escribirnos. Nos comunicaremos contigo en la brevedad posible.
+                        %p{ style: "margin: 0 0 10px;" }
+                          Contenido: #{@message.content}
+                        %p{ style: "margin: 0 0 10px;" }
+                          Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+                        %ul{ style: "padding: 0; margin: 0; list-style-type: disc;" }
+                          %li.list-item-first{ style: "margin:0 0 10px 30px;" }
+                            A list item.
+                          %li{ style: "margin:0 0 10px 30px;" }
+                            Another list item here.
+                          %li.list-item-last{ style: "margin: 0 0 0 30px;" }
+                            Everyone gets a list item, list items for everyone!
+                    %tr
+                      %td{ style: "padding: 0 20px 20px;" }
+                        %table{ align: "center", border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "margin: auto;" }
+                          %tr
+                            %td.button-td.button-td-primary
+                              %a.button.button-primary{ href: "https://google.com/", style: "color: #fff" }
+                                Centered Primary Button
+              %tr
+                %td{ style: "text-align: center; background-image: url('https://picsum.photos/680/180/?random'); background-color: #222222; background-position: center center !important; background-size: cover !important;", valign: "middle" }
+                  %div{ style: "background: rgba(0,0,0,0.5);" }
+                    %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "max-width:500px; margin: auto;", width: "100%" }
+                      %tr
+                        %td{ style: "text-align: center; padding: 40px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;", valign: "middle" }
+                          %p{ style: "margin: 0;" }
+                            Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut erat.
+              %tr
+                %td{ height: "100%", style: "background-color: #ffffff;", valign: "top", width: "100%" }
+                  %table{ align: "center", border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "max-width:660px;", width: "100%" }
+                    %tr
+                      %td{ align: "center", style: "font-size:0; padding: 10px 0;", valign: "top" }
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ style: "padding: 10px 10px;" }
+                                %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "font-size: 14px;text-align: left;", width: "100%" }
+                                  %tr
+                                    %td
+                                      %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/310/310/?random", style: "width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;", width: "310" }/
+                                  %tr
+                                    %td.stack-column-center{ style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" }
+                                      %p{ style: "margin: 0;" }
+                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ style: "padding: 10px 10px;" }
+                                %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "font-size: 14px;text-align: left;", width: "100%" }
+                                  %tr
+                                    %td
+                                      %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/310/310/?random", style: "width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;", width: "310" }/
+                                  %tr
+                                    %td.stack-column-center{ style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" }
+                                      %p{ style: "margin: 0;" }
+                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              %tr
+                %td{ height: "100%", style: "padding: 10px 0; background-color: #ffffff;", valign: "top", width: "100%" }
+                  %table{ align: "center", border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "max-width:660px;", width: "100%" }
+                    %tr
+                      %td{ align: "center", style: "font-size:0;", valign: "top" }
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:220px; vertical-align:top; width:100%;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ style: "padding: 10px 10px;" }
+                                %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "font-size: 14px;text-align: left;", width: "100%" }
+                                  %tr
+                                    %td
+                                      %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/200/200/?random", style: "width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;", width: "200" }/
+                                  %tr
+                                    %td.stack-column-center{ style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" }
+                                      %p{ style: "margin: 0;" }
+                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:220px; vertical-align:top; width:100%;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ style: "padding: 10px 10px;" }
+                                %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "font-size: 14px;text-align: left;", width: "100%" }
+                                  %tr
+                                    %td
+                                      %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/200/200/?random", style: "width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;", width: "200" }/
+                                  %tr
+                                    %td.stack-column-center{ style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" }
+                                      %p{ style: "margin: 0;" }
+                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:220px; vertical-align:top; width:100%;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ style: "padding: 10px 10px;" }
+                                %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "font-size: 14px;text-align: left;", width: "100%" }
+                                  %tr
+                                    %td
+                                      %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/200/200/?random", style: "width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;", width: "200" }/
+                                  %tr
+                                    %td.stack-column-center{ style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" }
+                                      %p{ style: "margin: 0;" }
+                                        Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              %tr
+                %td{ dir: "ltr", height: "100%", style: "padding: 10px 0; background-color: #ffffff;", valign: "top", width: "100%" }
+                  %table{ align: "center", border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "max-width:660px;", width: "100%" }
+                    %tr
+                      %td{ align: "center", style: "font-size:0; padding: 10px 0;", valign: "top" }
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width: 200px; min-width:160px; vertical-align:top; width:100%;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ dir: "ltr", style: "padding: 0 10px 10px 10px;" }
+                                %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/200/200/?random", style: "width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;", width: "200" }/
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td.center-on-narrow{ dir: "ltr", style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 10px 0; text-align: left;" }
+                                %h2 
+                                  Class aptent taciti sociosqu
+                                %p{ style: "margin: 0 0 10px 0;" }
+                                  Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                %table.center-on-narrow{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "float:left;" }
+                                  %tr
+                                    %td
+                                      %a.button.button-primary{ href: "https://google.com/", style: "color: #fff" }
+                                        Primary Button
+              %tr
+                %td{ dir: "rtl", height: "100%", style: "padding: 10px 0; background-color: #ffffff;", valign: "top", width: "100%" }
+                  %table{ align: "center", border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "max-width:660px;", width: "100%" }
+                    %tr
+                      %td{ align: "center", style: "font-size:0; padding: 10px 0;", valign: "top" }
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width: 200px; min-width:160px; vertical-align:top; width:100%;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td{ dir: "ltr", style: "padding: 0 10px 10px 10px;" }
+                                %img.center-on-narrow{ alt: "alt_text", border: "0", height: "", src: "https://picsum.photos/200/200/?random", style: "width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;", width: "200" }/
+                        .stack-column{ style: "display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" }
+                          %table{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", width: "100%" }
+                            %tr
+                              %td.center-on-narrow{ dir: "ltr", style: "font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 10px 0; text-align: left;" }
+                                %h2 
+                                  Class aptent taciti sociosqu
+                                %p{ style: "margin: 0 0 10px 0;" }
+                                  Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                %table.center-on-narrow{ border: "0", cellpadding: "0", cellspacing: "0", role: "presentation", style: "float:left;" }
+                                  %tr
+                                    %td
+                                      %a.button.button-primary{ href: "https://google.com/", style: "color: #fff" }
+                                        Primary Button
+        %hr.separator
+        .mailer-card-footer.center
+          %small
+            Keppler &reg; 2018 - Todos los derechos reservados - Desarrollado por
+          = link_to "Slice Group", "https://slicegroup.xyz"

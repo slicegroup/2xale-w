@@ -58,6 +58,8 @@
                         = sort_link(@q, attribute) do
                           = t("activerecord.attributes.#{attribute.to_s}")
                     %th
+                      = t("activerecord.attributes.active")
+                    %th
                     %th
               %tbody.objects-container
                 = render 'admin/layouts/listing_preloader'

@@ -1,0 +1,30 @@
+.container-fluid
+  .row
+    .listing.col-lg-12.col-xs-12
+      %section.content
+        .row
+          .col-md-3
+            = render 'keppler_contact_us/admin/layouts/compose'
+            = render 'keppler_contact_us/admin/layouts/folders'
+            = render 'keppler_contact_us/admin/layouts/labels'
+          .col-md-9
+            -# = render 'admin/settings/form', setting: @setting.smtp_setting, render: @render#, color: @color
+            #settings
+              .container-fluid
+                #action-section
+                  -# = simple_form_for Setting.first, url: '/admin/settings/email_setting', method: :put do |f|
+                  = simple_form_for KepplerContactUs::Setting.new, url: admin_contact_us_settings_path do |f|
+                    .row
+                      -# = render partial: "admin/settings/fields/#{render}", locals: { f: f, color: color }
+                      .col-lg-12
+                        .box.slice-box
+                          .box-header.with-border
+                            %h3.box-title
+                              = t('keppler.sidebar-menu.setting-submenu.email-setting-smtp')
+                            .box-tools.pull-right
+                              %a.btn.btn-box-tool{ 'data-widget': 'collapse', type: 'button' }
+                                %i.icon-minus
+                          .box-body.pure-input
+                            = f.input :messages_to, label: t('keppler-contact-us.attributes.to_emails'), placeholder: t('keppler-contact-us.actions.insert_email'), as: :string, input_html: { 'data-role': 'tagsinput', value: (object&.from_email if action_name.eql?('reply')) }, class: 'form-control bootstrap-tagsinput'
+                            .pull-right
+                              = f.button :submit, t('keppler.actions.apply'), class: 'btn-primary'

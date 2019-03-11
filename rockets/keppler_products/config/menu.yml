@@ -6,19 +6,19 @@ menu:
     icon: rocket
     model: User
     submenu:
+      - category:
+          name: category
+          url_path: /admin/products/categories
+          icon: layers
+          current: ['/admin/products/categories']
+          model: KepplerProducts::Category
+
       - product:
           name: products
           url_path: /admin/products/products
           icon: layers
           current: ['/admin/products/products']
           model: KepplerProducts::Product
-
-      - category:
-          name: categories
-          url_path: /admin/products/categories
-          icon: layers
-          current: ['/admin/products/categories']
-          model: KepplerProducts::Category
 
       # - new:
       #     name: + Add new module

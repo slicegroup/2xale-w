@@ -1,14 +1,14 @@
 modules:
-  products:
-    name: Product
-    model: KepplerProductsProduct
+  categories:
+    name: Category
+    model: KepplerProductsCategory
     actions: [
       'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
     ]
 
-  categories:
-    name: Category
-    model: KepplerProductsCategory
+  products:
+    name: Product
+    model: KepplerProductsProduct
     actions: [
       'index', 'create', 'update', 'destroy', 'download', 'upload', 'clone'
     ]

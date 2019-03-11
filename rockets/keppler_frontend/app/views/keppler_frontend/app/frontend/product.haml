@@ -2,23 +2,23 @@
   .container
     %ol.breadcrumb
       %li.breadcrumb-item
-        %a{:href => "#"} Inicio 
+        %a{:href => app_index_path} Inicio 
       %li.breadcrumb-item
-        %a{:href => "#"} PS4 
+        %a{:href => "#"}= @product&.category.name || ''
       %li.breadcrumb-item
-        %a{:href => "#"} Video 
+        %a= @product.name
     .row
       .col-lg-6
         .row
           .col-lg-2
             %ul.slider-nav
-              - 6.times do
+              - @product.images.each do |image|
                 %li
-                  %img{src: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/xr/iphone-xr-red-select-201809?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1551226038669', alt: ''}
+                  = image_tag image.url
           .col-lg-10
             .slider-for
-              - 6.times do
-                %img{src: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/xr/iphone-xr-red-select-201809?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1551226038669', alt: ''}
+              - @product.images.each do |image|
+                = image_tag image.url
       .col-lg-4
         .product-right-box
           .title-box

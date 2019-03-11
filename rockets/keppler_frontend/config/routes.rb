@@ -1,6 +1,6 @@
 KepplerFrontend::Engine.routes.draw do
-  root to: 'app/frontend#index', as: :keppler
-  get '/product', to: 'app/frontend#product', as: :app_product
+  root to: 'app/frontend#index', as: :app_index
+  get '/product/:id', to: 'app/frontend#product', as: :app_product
 
   namespace :admin do
     scope :frontend, as: :frontend do

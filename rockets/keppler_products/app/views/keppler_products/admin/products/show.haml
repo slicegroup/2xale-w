@@ -22,7 +22,7 @@
           .box-body.no-padding
             %table.table
               %tbody
-                - @product.as_json(except: %w[id position deleted_at seller seller_name seller_phone seller_email category_id]).each do |attribute, value|
+                - @product.as_json(except: %w[id position deleted_at seller seller_name seller_phone seller_email category_id offer]).each do |attribute, value|
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.#{attribute}")
                     %td.display-value.fs-body-1.tc-black-2
@@ -36,6 +36,13 @@
                 %tr.list-row
                   %th.display-label= t("activerecord.attributes.category_id")
                   %td.display-value.fs-body-1.tc-black-2= @product.category.name
+                %tr.list-row
+                  %th.display-label= t("activerecord.attributes.offer")
+                  %td.display-value.fs-body-1.tc-black-2.text-overflow
+                    - if @product.offer?
+                      %i.icon-star{ style: 'color: yellow' }
+                    - else
+                      %i.icon-close{ style: 'color: red' }
                 - if @product.seller.eql?('2xale')
                   %tr.list-row
                     %th.display-label= t("activerecord.attributes.seller")

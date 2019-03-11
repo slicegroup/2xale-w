@@ -16,6 +16,7 @@ module KepplerFrontend
     # end keppler
 
     def product
+      @product = KepplerProducts::Product.find(params[:id])
     end
     
     private

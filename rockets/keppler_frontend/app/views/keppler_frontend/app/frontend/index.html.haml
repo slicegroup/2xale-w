@@ -25,9 +25,12 @@
         - @products.each do |product|
           .col-lg-4
             .product-card
-              %a{ href: '' }
+              %a{ href: app_product_path(product.id) }
                 .product-image{ style: "background-image: url('#{product.images.sample.url}')" }
-                  %span.badge.badge-new New
+                  - if product.offer
+                    %span.badge.badge-offer Oferta
+                  - else
+                    %span.badge.badge-new Nuevo
               .product-content
                 %a{ href: '' }
                   %small= product&.category&.name || ''

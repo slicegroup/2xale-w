@@ -26,6 +26,7 @@ en:
       featured: Featured
       address: Address
       category_id: Category
+      offer: Offer
     errors:
       messages:
   errors:

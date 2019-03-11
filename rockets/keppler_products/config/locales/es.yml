@@ -37,6 +37,7 @@ es:
       featured: Destacada
       address: Ubicación
       category_id: Categoría
+      offer: Oferta
     errors:
       messages:
   errors:

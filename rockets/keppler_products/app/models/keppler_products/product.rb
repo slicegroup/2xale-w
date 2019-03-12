@@ -14,6 +14,7 @@ module KepplerProducts
     acts_as_paranoid
     belongs_to :category, class_name: 'KepplerProducts::Category'
     validates_presence_of :name, :images, :description, :seller, :expiration, :address, :price
+    validates_uniqueness_of :name
 
     def self.index_attributes
       %i[name category_id address seller seller_name seller_phone seller_email]

@@ -32,7 +32,7 @@
                   - else
                     %span.badge.badge-new Nuevo
               .product-content
-                %a{ href: app_product_path(product.id) }
+                %a{ href: app_category_path(product.category.id) }
                   %small= product&.category&.name || ''
                 %a{ href: app_product_path(product.id) }
                   %h4= product.name

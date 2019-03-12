@@ -87,13 +87,13 @@
                 .counter
                   %ul
                     %li
-                      %span#days
+                      %span{id: "days#{product.id}"}
                       Dias
                     %li
-                      %span#hours
+                      %span{id: "hours#{product.id}"}
                       Horas
                     %li
-                      %span#minutes
+                      %span{id: "minutes#{product.id}"}
                       Minutos
             %a.product-footer{ href: app_product_path(product.id) }
               .btn-more
@@ -121,3 +121,32 @@
     focusOnSelect: true,
     vertical: true
   });
+  var expiration = "#{@product.expiration_parsed}"
+    var second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    var countDown = new Date(expiration + " 00:00:00").getTime(),
+        now = new Date().getTime(),
+        distance = countDown - now;
+      
+    $('#days').html(Math.floor(distance / (day)))
+    $('#hours').html(Math.floor((distance % (day)) / (hour)))
+    $('#minutes').html(Math.floor((distance % (hour)) / (minute)))
+- @products.each do |product|
+  :javascript
+    var expiration = "#{product.expiration_parsed}"
+    var id = "#{product.id}"
+    var second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    var countDown = new Date(expiration + " 00:00:00").getTime(),
+        now = new Date().getTime(),
+        distance = countDown - now;
+      
+    $('#days'+id).html(Math.floor(distance / (day)))
+    $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
+    $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))

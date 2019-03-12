@@ -32,12 +32,12 @@
                   - else
                     %span.badge.badge-new Nuevo
               .product-content
-                %a{ href: '' }
+                %a{ href: app_product_path(product.id) }
                   %small= product&.category&.name || ''
-                %a{ href: '' }
+                %a{ href: app_product_path(product.id) }
                   %h4= product.name
                   .product-price
-                    %span= product.price
+                    %span= number_to_currency(product.price)
                   .counter
                     %ul
                       %li
@@ -49,7 +49,7 @@
                       %li
                         %span#minutes
                         Minutos
-              %a.product-footer{ href: '#' }
+              %a.product-footer{ href: app_product_path(product.id) }
                 .btn-more
                   Solicitar
                   %i.icofont-arrow-right
@@ -65,19 +65,20 @@
   .row
     .col-lg-3
       .categories-text
-        %h1 Categorias destacadas
+        %h1.title Categorias destacadas
         %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
-        .carousel-buttons
-          %button.btn.left
-            %i.icofont-arrow-left
-          %button.btn.right
-            %i.icofont-arrow-right
+        - unless @categories_featureds.size < 3
+          .carousel-buttons
+            %button.btn.left
+              %i.icofont-arrow-left
+            %button.btn.right
+              %i.icofont-arrow-right
     .col-lg-9
       .row.categories-carousel
         - @categories_featureds.each do |category|
           .category-card
             = image_tag category.image.url
-            %a.category-content{ href: '#' }
+            = link_to app_category_path(category.id), class: 'category-content' do
               %h4= category.name
               %span.btn-more
                 Ver más

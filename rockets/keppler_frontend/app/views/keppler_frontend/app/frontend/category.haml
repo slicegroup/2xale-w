@@ -1,0 +1,48 @@
+%section.banner-category
+  .banner-slider
+    .banners-box
+      = image_tag @category.image.url, class: 'banner-item'
+      .banner-mask
+        %h1= @category.name
+    .search-cta
+      %h1 algun texto relacionado a la categoria?? agregar campo de texto
+  .search-input
+    %form.form-inline
+      .input-group
+        %input.form-control{ type: 'search', placeholder: 'Buscar' }
+        .input-group-prepend
+          %i.icofont-search.input-group-text
+%section.categories
+  .container
+    .row
+      - @category.products.each do |product|
+        .col-lg-4
+          .product-card
+            %a{ href: app_product_path(product.id) }
+              .product-image{ style: "background-image: url('#{product.images.sample.url}')" }
+                - if product.offer
+                  %span.badge.badge-offer Oferta
+                - else
+                  %span.badge.badge-new Nuevo
+            .product-content
+              %a{ href: app_product_path(product.id) }
+                %small= product&.category&.name || ''
+              %a{ href: app_product_path(product.id) }
+                %h4= product.name
+                .product-price
+                  %span= number_to_currency(product.price)
+                .counter
+                  %ul
+                    %li
+                      %span#days
+                      Dias
+                    %li
+                      %span#hours
+                      Horas
+                    %li
+                      %span#minutes
+                      Minutos
+            %a.product-footer{ href: app_product_path(product.id) }
+              .btn-more
+                Solicitar
+                %i.icofont-arrow-right

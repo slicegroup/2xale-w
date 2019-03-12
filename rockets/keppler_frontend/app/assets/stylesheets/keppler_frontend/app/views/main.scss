@@ -1,3 +1,25 @@
+h1.title {
+  font-family: $quicksand;
+  font-weight: $bold;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    width: 100px;
+    height: 4px;
+    background-color: $blue;
+    left: 0;
+    bottom: -10px;
+    border-radius: 5px;
+  }
+
+  @include respond-to(xs) {
+    font-size: 30px;
+  }
+}
+
 .products {
   padding: 50px 50px;
   @include respond-to(xs) {

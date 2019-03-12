@@ -1,11 +1,9 @@
 %section.banner-category
-  .banner-slider
-    .banners-box
-      = image_tag @category.image.url, class: 'banner-item'
-      .banner-mask
+  .banner-category-box
+    .banner-category-inner
+      = image_tag @category.image.url
+      .banner-category-mask
         %h1= @category.name
-    .search-cta
-      %h1 algun texto relacionado a la categoria?? agregar campo de texto
   .search-input
     %form.form-inline
       .input-group
@@ -14,6 +12,7 @@
           %i.icofont-search.input-group-text
 %section.categories
   .container
+    .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
     .row
       - @category.products.each do |product|
         .col-lg-4
@@ -46,3 +45,4 @@
               .btn-more
                 Solicitar
                 %i.icofont-arrow-right
+    .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }

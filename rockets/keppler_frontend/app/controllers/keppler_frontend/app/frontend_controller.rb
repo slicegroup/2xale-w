@@ -26,7 +26,7 @@ module KepplerFrontend
 
     def category
       @category = KepplerProducts::Category.find(params[:id])
-      # @products = KepplerProducts::Product.all
+      @products = KepplerProducts::Product.where(category_id: @category.id)
     end
 
     private

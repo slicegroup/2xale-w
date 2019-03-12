@@ -22,7 +22,7 @@
                 / %a.dropdown-item.dropdown-category{href: "#"} Categorías
                 / .dropdown-divider
                 - block.compact.each do |category|
-                  %a.dropdown-item.dropdown-subcategory{href: "#"}= category&.name
+                  %a.dropdown-item.dropdown-subcategory{href: app_category_path(category)}= category&.name
         %li.nav-item
           %a.nav-link{href: "#"} Nosotros
         %li.nav-item

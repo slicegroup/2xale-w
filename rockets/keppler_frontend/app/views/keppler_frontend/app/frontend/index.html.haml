@@ -29,7 +29,7 @@
                 .product-image{ style: "background-image: url('#{product.images.sample.url}')" }
                   - if product.offer
                     %span.badge.badge-offer Oferta
-                  - else
+                  - elsif product.new?
                     %span.badge.badge-new Nuevo
               .product-content
                 %a{ href: '' }
@@ -37,52 +37,72 @@
                 %a{ href: '' }
                   %h4= product.name
                   .product-price
-                    %span= product.price
+                    %span= number_to_currency(product.price)
                   .counter
                     %ul
                       %li
-                        %span#days
+                        %span{id: "days#{product.id}"}
                         Dias
                       %li
-                        %span#hours
+                        %span{id: "hours#{product.id}"}
                         Horas
                       %li
-                        %span#minutes
+                        %span{id: "minutes#{product.id}"}
                         Minutos
               %a.product-footer{ href: '#' }
                 .btn-more
                   Solicitar
                   %i.icofont-arrow-right
+                
     .col-lg-3
-      - 2.times do
-        .ad_full{ style: 'background-image: url("https://cdn-images-1.medium.com/max/1600/1*ibN0ptxrg6LkZ5DZbKv2YA.png")' }
+      = publicity('steal_page', KepplerPublicity::Ad.publicity('home-1', 'steal-page'))
+      = publicity('steal_page', KepplerPublicity::Ad.publicity('home-2', 'steal-page'))
 %section.half_banners
   .row
-    - 2.times do
-      .col-lg-6
-        .ad_half{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
-%section.categories
-  .row
-    .col-lg-3
-      .categories-text
-        %h1 Categorias destacadas
-        %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
-        .carousel-buttons
-          %button.btn.left
-            %i.icofont-arrow-left
-          %button.btn.right
-            %i.icofont-arrow-right
-    .col-lg-9
-      .row.categories-carousel
-        - @categories_featureds.each do |category|
-          .category-card
-            = image_tag category.image.url
-            %a.category-content{ href: '#' }
-              %h4= category.name
-              %span.btn-more
-                Ver más
-                %i.icofont-arrow-right
+    .col-lg-6
+      = publicity('half_banner', KepplerPublicity::Ad.publicity('home-1', 'half-banner'))
+    .col-lg-6
+      = publicity('half_banner', KepplerPublicity::Ad.publicity('home-2', 'half-banner'))
+- unless @categories_featureds.blank?
+  %section.categories
+    .row
+      .col-lg-3
+        .categories-text
+          %h1 Categorias destacadas
+          %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
+          .carousel-buttons
+            %button.btn.left
+              %i.icofont-arrow-left
+            %button.btn.right
+              %i.icofont-arrow-right
+      .col-lg-9
+        .row.categories-carousel
+          - @categories_featureds.each do |category|
+            .category-card
+              = image_tag category.image.url
+              %a.category-content{ href: '#' }
+                %h4= category.name
+                %span.btn-more
+                  Ver más
+                  %i.icofont-arrow-right
 %section.full_banner_ad
   .row
     .col-lg-12
-      .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+      = publicity('banner', KepplerPublicity::Ad.publicity('home-1', 'banner'))
+
+- @products.each do |product|
+  :javascript
+    var expiration = "#{product.expiration_parsed}"
+    var id = "#{product.id}"
+    var second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    var countDown = new Date(expiration + " 00:00:00").getTime(),
+        now = new Date().getTime(),
+        distance = countDown - now;
+      
+    $('#days'+id).html(Math.floor(distance / (day)))
+    $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
+    $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))

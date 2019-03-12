@@ -38,6 +38,10 @@ module KepplerPublicity
       )
     end
 
+    def self.publicity(location, type_ad)
+      where(location: location, type_ad: type_ad, active: true).first
+    end
+
     def self.update_active(ad)
       actives = have_actives(ad)
       return if actives.blank?

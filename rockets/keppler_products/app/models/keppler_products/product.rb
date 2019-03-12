@@ -24,5 +24,19 @@ module KepplerProducts
       last(6)
     end
 
+    def expiration_parsed
+      expiration.strftime("%b %d, %Y")
+    end
+
+    def self.find_by_category(category, product_id)
+      where(category_id: category).where.not(id: product_id)
+    end
+
+    def new?
+      dif = (Time.now - self.created_at)
+      days = (dif/3600)/24
+      days < 3 ? true : false
+    end
+
   end
 end

@@ -15,6 +15,7 @@ class CreateKepplerProductsProducts < ActiveRecord::Migration[5.2]
       t.string :seller_email
       t.integer :position
       t.datetime :deleted_at
+      t.timestamps
     end
   end
 end

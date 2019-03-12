@@ -4,7 +4,7 @@
       %li.breadcrumb-item
         %a{:href => app_index_path} Inicio
       %li.breadcrumb-item
-        %a{:href => "#"}= @product&.category.name || ''
+        %a{:href => app_category_path(@product.category.id)}= @product&.category.name || ''
       %li.breadcrumb-item
         %a= @product.name
     .row

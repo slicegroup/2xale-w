@@ -23,7 +23,12 @@ module KepplerFrontend
         @product.id
       )
     end
-    
+
+    def category
+      @category = KepplerProducts::Category.find(params[:id])
+      # @products = KepplerProducts::Product.all
+    end
+
     private
     # begin callback user_authenticate
     def user_authenticate

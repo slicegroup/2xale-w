@@ -2,7 +2,7 @@
   .container
     %ol.breadcrumb
       %li.breadcrumb-item
-        %a{:href => app_index_path} Inicio 
+        %a{:href => app_index_path} Inicio
       %li.breadcrumb-item
         %a{:href => "#"}= @product&.category.name || ''
       %li.breadcrumb-item
@@ -37,7 +37,7 @@
                   %span#minutes
                   Minutos
           .price-box
-            %span $749.99
+            %span= number_to_currency(@product.price)
             %a.btn.btn-product{ href: '', "data-toggle"=>"modal", "data-target"=>"#modalForm" } Solicitar
       .col-lg-2
         .ad_left{ style: 'background-image: url("https://cdn-images-1.medium.com/max/1600/1*ibN0ptxrg6LkZ5DZbKv2YA.png")' }
@@ -63,7 +63,7 @@
         %a#nav-description-tab.nav-item.nav-link.active{"aria-controls" => "nav-description", "aria-selected" => "true", "data-toggle" => "tab", href: "#nav-description", role: "tab"} Descripción
     #nav-tabContent.tab-content
       #nav-description.tab-pane.fade.show.active{"aria-labelledby" => "nav-description-tab", role: "tabpanel"}
-        = @product.description
+        = raw @product.description
 %section.product-related
   .container
     %h1.title Productos Relacionados
@@ -78,12 +78,12 @@
                 - else
                   %span.badge.badge-new Nuevo
             .product-content
-              %a{ href: '' }
+              %a{ href: app_category_path(product.category.id) }
                 %small= product&.category&.name || ''
-              %a{ href: '' }
+              %a{ href: app_product_path(product.id) }
                 %h4= product.name
                 .product-price
-                  %span= product.price
+                  %span= number_to_currency(product.price)
                 .counter
                   %ul
                     %li
@@ -95,7 +95,7 @@
                     %li
                       %span{id: "minutes#{product.id}"}
                       Minutos
-            %a.product-footer{ href: '#' }
+            %a.product-footer{ href: app_product_path(product.id) }
               .btn-more
                 Solicitar
                 %i.icofont-arrow-right

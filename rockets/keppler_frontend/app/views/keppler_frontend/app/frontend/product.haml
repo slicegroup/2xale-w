@@ -83,7 +83,7 @@
               %a{ href: app_product_path(product.id) }
                 %h4= product.name
                 .product-price
-                  %span= product.price
+                  %span= number_to_currency(product.price)
                 .counter
                   %ul
                     %li

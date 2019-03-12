@@ -34,7 +34,9 @@
                         %li.active
                           %a{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#tab_1"} HOME
                         %li
-                          %a{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#tab_2"} Tab 2
+                          %a{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#product"} PRODUCT
+                        %li
+                          %a{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#category"} CATEGORY
                         %li.pull-right
                           %a.text-muted{:href => "#"}
                             %i.fa.fa-gear
@@ -72,28 +74,80 @@
                               .category
                               .category
                               .category
-                            .banner.publicity{ class: @ad.type_ad.eql?('banner') && @ad.location.eql?('home-1') ? 'active' : '' }
+                            .banner-1.publicity{ class: @ad.type_ad.eql?('banner') && @ad.location.eql?('home-1') ? 'active' : '' }
                               .file-drop-zone
                                 .file-drop-zone-title
                                   = t('activerecord.attributes.banner').upcase
-                        #tab_2.tab-pane
-                          The European languages are members of the same family. Their separate existence is a myth.
-                          For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
-                          in their grammar, their pronunciation and their most common words. Everyone realizes why a
-                          new common language would be desirable: one could refuse to pay expensive translators. To
-                          achieve this, it would be necessary to have uniform grammar, pronunciation and more common
-                          words. If several languages coalesce, the grammar of the resulting language is more simple
-                          and regular than that of the individual languages.
+                        #product.tab-pane
+                          .product-view
+                            .content-product-and-ad
+                              .card-product
+                              .steal-page-3.publicity
+                                .file-drop-zone
+                                  .file-drop-zone-title
+                                    = t('activerecord.attributes.steal-page').upcase
+                            .products
+                              .product
+                              .product
+                              .product
+                              .product
+                            .banner-2.publicity
+                              .file-drop-zone
+                                .file-drop-zone-title
+                                  = t('activerecord.attributes.banner').upcase
+                        #category.tab-pane
+                          .category-view
+                            .banner-up
+                            .search-input
+                            .banner-3.publicity
+                              .file-drop-zone
+                                .file-drop-zone-title
+                                  = t('activerecord.attributes.banner').upcase
+                            .products
+                              .product
+                              .product
+                              .product
+                              .product
+                            .banner-4.publicity
+                              .file-drop-zone
+                                .file-drop-zone-title
+                                  = t('activerecord.attributes.banner').upcase
+                            .banner-5.publicity
+                              .file-drop-zone
+                                .file-drop-zone-title
+                                  = t('activerecord.attributes.banner').upcase
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
 
 :scss
+  .file-drop-zone-title{
+    cursor: pointer !important;
+  }
+  .steal-page-3{
+    margin: 0 !important;
+  }
+  .content-product-and-ad{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .card-product{
+    height: 300px;
+    width: 60%;
+    background: #b7b7bd;
+  }
+  .product-view, .category-view{
+    height: 1000px;
+    margin: 10px;
+    padding-top: 67px;
+  }
+  .category-view{
+    height: 1300px !important;
+  }
   .home{
     width: 100%;
     height: 2000px;
-    background: rgba(216, 214, 218, 0.8901960784);
     margin: 10px;
     padding-top: 67px;
   }
@@ -119,7 +173,7 @@
     padding: 20px 0;
     justify-content: center;
   }
-  .product, .steal-page-1, .steal-page-2, .category{
+  .product, .steal-page-1, .steal-page-2, .category, .steal-page-3{
     height: 300px;
     width: 22%;
     background: #b7b7bd;
@@ -142,11 +196,14 @@
     .category:nth-child(1) {
     background: #f5efef !important;}
   }
-  .banner{
+  .banner, .banner-4, .banner-2, .banner-3, .banner-5{
     height: 200px;
     width: 90%;
     background: #9f9fd0;
     margin: auto;
+  }
+  .banner-3, .banner-5{
+    margin-top: 20px;
   }
   .publicity{
     background: white;
@@ -168,12 +225,18 @@
   .active{
     background: #d5d5da;
   }
+  .category-view .banner-up{
+    height: 200px !important;
+  }
+  .category-view .search-input{
+    top: 220px !important;
+  }
 
 :javascript
   $('.publicity').click(function(){
     $('.publicity').removeClass('active')
     $(this).addClass('active')
-    if ($(this).hasClass('banner')){
+    if ($(this).hasClass('banner-1')){
       $('#ad_location').val('home-1')
       $('#ad_type_ad').val('banner')
     }else{
@@ -192,6 +255,31 @@
             if ($(this).hasClass('steal-page-2')){
               $('#ad_location').val('home-2')
               $('#ad_type_ad').val('steal-page')
+            }else{
+              if($(this).hasClass('steal-page-3')){
+                $('#ad_location').val('product-1')
+                $('#ad_type_ad').val('steal-page')
+              }else{
+                if($(this).hasClass('banner-2')){
+                  $('#ad_location').val('product-1')
+                  $('#ad_type_ad').val('banner')
+                }else{
+                  if($(this).hasClass('banner-3')){
+                    $('#ad_location').val('category-1')
+                    $('#ad_type_ad').val('banner')
+                  }else{
+                    if($(this).hasClass('banner-4')){
+                      $('#ad_location').val('category-2')
+                      $('#ad_type_ad').val('banner')
+                    }else{
+                      if($(this).hasClass('banner-5')){
+                        $('#ad_location').val('category-3')
+                        $('#ad_type_ad').val('banner')
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

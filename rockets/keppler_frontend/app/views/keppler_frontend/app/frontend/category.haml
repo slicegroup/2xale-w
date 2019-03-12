@@ -12,7 +12,7 @@
           %i.icofont-search.input-group-text
 %section.categories
   .container
-    .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+    = publicity('banner', KepplerPublicity::Ad.publicity('category-1', 'banner'))
     .row
       - @category.products.each do |product|
         .col-lg-4
@@ -33,16 +33,33 @@
                 .counter
                   %ul
                     %li
-                      %span#days
+                      %span{id: "days#{product.id}"}
                       Dias
                     %li
-                      %span#hours
+                      %span{id: "hours#{product.id}"}
                       Horas
                     %li
-                      %span#minutes
+                      %span{id: "minutes#{product.id}"}
                       Minutos
             %a.product-footer{ href: app_product_path(product.id) }
               .btn-more
                 Solicitar
                 %i.icofont-arrow-right
-    .ad_banner_full{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+    = publicity('banner', KepplerPublicity::Ad.publicity('category-2', 'banner'))
+    = publicity('banner', KepplerPublicity::Ad.publicity('category-3', 'banner'))
+- @products.each do |product|
+  :javascript
+    var expiration = "#{product.expiration_parsed}"
+    var id = "#{product.id}"
+    var second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    var countDown = new Date(expiration + " 00:00:00").getTime(),
+        now = new Date().getTime(),
+        distance = countDown - now;
+      
+    $('#days'+id).html(Math.floor(distance / (day)))
+    $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
+    $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))

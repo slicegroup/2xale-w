@@ -2,4 +2,4 @@
 	.ad_full{ style: 'background-image: url("https://cdn-images-1.medium.com/max/1600/1*ibN0ptxrg6LkZ5DZbKv2YA.png")' }
 - else
 	%a{ href: ad&.url, target: '_blank' }
-		.ad_full{ style: "background-image: url('#{ad.image.url}')" }
+		%div{ style: "background-image: url('#{ad.image.url}')", class: action_name.eql?('index') ? 'ad_full' : 'ad_left' }

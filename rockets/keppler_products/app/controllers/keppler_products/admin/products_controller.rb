@@ -7,6 +7,7 @@ module KepplerProducts
     class ProductsController < ::Admin::AdminController
       layout 'keppler_products/admin/layouts/application'
       before_action :set_product, only: %i[show edit update destroy]
+      before_action :products_status
       before_action :index_variables
       before_action :set_categories, only: %i[new create edit update]
       include ObjectQuery
@@ -78,6 +79,10 @@ module KepplerProducts
 
       private
 
+      def products_status
+        Product.products_actives
+      end
+
       def set_categories
         @categories = Category.all
       end
@@ -100,7 +105,7 @@ module KepplerProducts
         params.require(:product).permit(
           :name, :category_id, :price, :address, 
           :expiration, :description, {images: []}, 
-          :seller, :seller_name, :seller_phone, :seller_email, :offer
+          :seller, :seller_name, :seller_phone, :seller_email, :offer, :active
         )
       end
     end

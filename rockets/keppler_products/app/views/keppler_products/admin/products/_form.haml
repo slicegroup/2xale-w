@@ -64,6 +64,7 @@
                       = f.input :seller_email, as: :string, label: t('activerecord.attributes.seller_email')
                   .col-xs-12
                     = f.input :offer, as: :keppler_boolean
+                    = f.input :active, as: :keppler_boolean
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'

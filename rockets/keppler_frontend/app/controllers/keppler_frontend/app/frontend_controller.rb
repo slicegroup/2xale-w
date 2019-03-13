@@ -22,6 +22,8 @@ module KepplerFrontend
         category, 
         @product.id
       )
+      @poll = KepplerForm::Poll.first
+      @result = KepplerForm::Result.new
     end
 
     def category

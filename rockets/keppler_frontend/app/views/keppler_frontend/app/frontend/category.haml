@@ -21,7 +21,7 @@
               .product-image{ style: "background-image: url('#{product.images.sample.url}')" }
                 - if product.offer
                   %span.badge.badge-offer Oferta
-                - else
+                - elsif product.new?
                   %span.badge.badge-new Nuevo
             .product-content
               %a{ href: app_category_path(product.category.id) }

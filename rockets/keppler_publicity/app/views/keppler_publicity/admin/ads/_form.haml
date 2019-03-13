@@ -122,6 +122,9 @@
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
 
 :scss
+  #tab_1{
+    height: 2000px;
+  }
   .file-drop-zone-title{
     cursor: pointer !important;
   }
@@ -146,8 +149,6 @@
     height: 1300px !important;
   }
   .home{
-    width: 100%;
-    height: 2000px;
     margin: 10px;
     padding-top: 67px;
   }
@@ -230,6 +231,34 @@
   }
   .category-view .search-input{
     top: 220px !important;
+  }
+  .banner-1{
+    width: 95%;
+    margin: auto;
+  }
+  @media (max-width: 1250px) {
+    #tab_1 .products div {
+      max-height: 220px;
+    }
+    .category-view .products div {
+      max-height: 220px;
+    }
+    #tab_1 .categories div {
+      max-height: 220px;
+    }
+    .banner-up{
+      height: 300px;
+    }
+    .search-input{
+      top: 270px;
+    }
+    #tab_1{
+      height: 1650px;
+    }
+    .category-view{
+      height: 1250px !important;
+    }
+
   }
 
 :javascript

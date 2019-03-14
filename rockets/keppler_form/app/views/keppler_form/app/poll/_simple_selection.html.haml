@@ -6,5 +6,5 @@
       %p.description-encuesta= question.description
   - question.options.each do |option|
     .radio.radio-primary
-      %input{ type: 'radio', name: "question-#{question.id}[radio]", id: "radio_button-#{question.id}_option-#{option.id}", value: option.name }
+      %input{ type: 'radio', name: "simple_selection-#{question.id}[answer][#{option.id}]", id: "radio_button-#{question.id}_option-#{option.id}", value: option.name }
       %label.opciones{ for: "radio_button-#{question.id}_option-#{option.id}" }= option.name

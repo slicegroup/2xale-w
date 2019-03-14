@@ -1,20 +1,28 @@
 %section.banner-category
   .banner-category-box
     .banner-category-inner
-      = image_tag @category.image.url
+      = image_tag @category&.image&.url || ''
       .banner-category-mask
-        %h1= @category.name
+        - if @q.blank?
+          %h1= @category.name
+        - elsif @products.blank? && !@q.blank?
+          %h1 No se han encontrado resultados para: "#{@q}"
+        - else
+          %h1 Se muestran resultados de: "#{@q}"
   .search-input
-    %form.form-inline
+    = simple_form_for @product, url: app_category_path(1), method: :get, class: 'form-inline' do
       .input-group
-        %input.form-control{ type: 'search', placeholder: 'Buscar' }
+        %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
         .input-group-prepend
           %i.icofont-search.input-group-text
 %section.categories
   .container
     = publicity('banner', KepplerPublicity::Ad.publicity('category-1', 'banner'))
     .row
-      - @category.products.each do |product|
+      / - if @products.blank?
+      /   .col-xs-12.text-center
+      /     %p No hay resultados
+      - @products.each do |product|
         .col-lg-4
           .product-card
             %a{ href: app_product_path(product.id) }
@@ -47,6 +55,18 @@
                 %i.icofont-arrow-right
     = publicity('banner', KepplerPublicity::Ad.publicity('category-2', 'banner'))
     = publicity('banner', KepplerPublicity::Ad.publicity('category-3', 'banner'))
+:javascript
+  $('.icofont-search').click(function(){
+    if ($('#search-input').val().length > 0){
+      $('#new_product').submit()
+    }
+  })
+  $('#search-input').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (($(this).val().length > 0) && (keycode == '13')){
+      $('#new_product').submit()
+    }
+  })
 - @products.each do |product|
   :javascript
     var expiration = "#{product.expiration_parsed}"

@@ -19,6 +19,13 @@ menu:
           icon: layers
           current: ['/admin/products/products']
           model: KepplerProducts::Product
+      
+      - cotization:
+          name: cotizations
+          url_path: /admin/products/cotizations
+          icon: layers
+          current: ['/admin/products/cotizations']
+          model: KepplerProducts::Cotization
 
       # - new:
       #     name: + Add new module

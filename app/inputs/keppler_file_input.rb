@@ -33,7 +33,7 @@ class KepplerFileInput < SimpleForm::Inputs::Base
   private
 
   def init_preview
-    return if @obj_attr.try(:file).nil?
+    return if @obj_attr.nil?
     initializers
     if @obj_attr.is_a?(Array)
       @obj_attr.each { |img| preview_tag(img) }

@@ -48,7 +48,9 @@
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
           %span{"aria-hidden" => "true"} ×
       .modal-body
-        = simple_form_for [:admin, :form, @poll, @result], url: app_new_cotization_path do |f|
+        = simple_form_for [:admin, :form, @poll, @result], url: app_new_cotization_path, method: :post do |f|
+          .hidden
+            %input{:type => "text", value: @product.id, name: 'product_id'}/
           = render 'keppler_form/app/poll/build_questions', questions: @poll.questions
           = f.submit 'Enviar solicitud', class: 'btn btn-primary'
 %section.product-description
@@ -99,7 +101,16 @@
     .row
       .col-lg-12
         = publicity('banner', KepplerPublicity::Ad.publicity('product-1', 'banner'))
-
+:scss
+  .hidden{
+    display: none;
+  }
+- if flash[:notice].eql?("Mensaje enviado")
+  :javascript
+    Swal.fire({
+      type: 'success',
+      title: 'Solicitud enviada con exito'
+    })
 :javascript
    $('.slider-for').slick({
     slidesToShow: 1,

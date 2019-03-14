@@ -12,9 +12,9 @@
         .search-cta
           %h1= banner.search_text
   .search-input
-    %form.form-inline
+    = simple_form_for @product, url: app_category_path(1), method: :get, class: 'form-inline' do
       .input-group
-        %input.form-control{ type: 'search', placeholder: 'Buscar' }
+        %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
         .input-group-prepend
           %i.icofont-search.input-group-text
 %section.products
@@ -90,7 +90,12 @@
   .row
     .col-lg-12
       = publicity('banner', KepplerPublicity::Ad.publicity('home-1', 'banner'))
-
+:javascript
+  $('.icofont-search').click(function(){
+    if ($('#search-input').val().length > 0){
+      $('#new_product').submit()
+    }
+  })
 - @products.each do |product|
   :javascript
     var expiration = "#{product.expiration_parsed}"

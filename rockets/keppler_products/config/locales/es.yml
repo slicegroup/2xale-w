@@ -3,6 +3,7 @@ es:
     sidebar-menu:
       keppler-products: Productos
       keppler-products-submenu:
+        cotizations: Cotizations
         category: Category
         products: Productos
         categories: Categorias
@@ -10,15 +11,18 @@ es:
     permissions:
     models:
       singularize:
+        cotization: cotization
         category: category
         product: producto
         category: categoría
       pluralize:
+        cotizations: cotizations
         categories: categories
         products: productos
         categories: categorias
         products: productos
     modules:
+      admin/cotizations: Cotizations
       admin/category: Category
       admin/products: Productos
       admin/categories: Categorias

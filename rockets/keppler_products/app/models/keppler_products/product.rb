@@ -14,6 +14,7 @@ module KepplerProducts
     acts_as_list
     acts_as_paranoid
     belongs_to :category, class_name: 'KepplerProducts::Category'
+    has_many :cotizations
     validates_presence_of :name, :images, :description, :seller, :expiration, :address, :price
     validates_uniqueness_of :name
 
@@ -41,7 +42,7 @@ module KepplerProducts
     def set_default_active
       self.active = self.active.nil? ? false : self.active
     end
-
+    
     def expiration_parsed
       expiration.strftime("%b %d, %Y")
     end

@@ -7,6 +7,7 @@
 %link{ href: "https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css", rel: "stylesheet"}/
 = stylesheet_link_tag 'keppler_frontend/app/application', media: 'all', 'data-turbolinks-track': 'reload' , async: true
 // Javascripts
+%script{:src => "https://cdn.jsdelivr.net/npm/sweetalert2@8"}
 = javascript_include_tag 'keppler_frontend/app/application', 'data-turbolinks-track': 'reload'
 // Google Analytics
 = render 'layouts/keppler_frontend/app/layouts/google_analytics'

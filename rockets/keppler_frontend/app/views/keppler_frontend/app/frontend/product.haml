@@ -53,6 +53,7 @@
             .hidden
               %input{:type => "text", value: @product.id, name: 'product_id'}/
             = render 'keppler_form/app/poll/build_questions', questions: @poll.questions
+            = recaptcha_tags
             = f.submit 'Enviar solicitud', class: 'btn btn-primary'
 %section.product-description
   .container
@@ -111,6 +112,13 @@
     Swal.fire({
       type: 'success',
       title: 'Solicitud enviada con exito'
+    })
+- if flash[:recaptcha_error].eql?("Oh! It's error with reCAPTCHA!")
+  :javascript
+    Swal.fire({
+      type: 'error',
+      title: '¡Lo siento!',
+      text: 'Hubo un error en el reCAPTCHA, tu mensaje no ha sido enviado.'
     })
 :javascript
    $('.slider-for').slick({

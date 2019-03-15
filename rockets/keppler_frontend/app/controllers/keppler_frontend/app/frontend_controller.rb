@@ -29,17 +29,20 @@ module KepplerFrontend
     end
 
     def new_cotization
-      @poll = KepplerForm::Poll.first
       @product = KepplerProducts::Product.find(params[:product_id])
-      body = "#{@poll.questions.map { |q| '<b>' + q.sentence + ': <b/>' + ((%w[short_text numeric long_text yes_or_not].include?(q.ask_type) ? params[q.ask_type.underscore + '-' + q.id.to_s]['answer'] : q.options.map { |o| (params[q.ask_type.underscore + '-' + q.id.to_s]['answer'][o.id.to_s] unless params[q.ask_type.underscore + '-' + q.id.to_s].blank?) }.join(', ')))}}"
-      @cotization = KepplerProducts::Cotization.create( 
-        product_id: @product.id,
-        product_name: @product.name,
-        product_price: @product.price,
-        expiration: @product.expiration,
-        content: body
-      )
-      flash[:notice] = "Mensaje enviado"
+      if verify_recaptcha(model: @message, timeout: 10, message: "Oh! It's error with reCAPTCHA!")
+        @poll = KepplerForm::Poll.first
+        body = "#{@poll.questions.map { |q| '<b>' + q.sentence + ': <b/>' + ((%w[short_text numeric long_text yes_or_not].include?(q.ask_type) ? params[q.ask_type.underscore + '-' + q.id.to_s]['answer'] : q.options.map { |o| (params[q.ask_type.underscore + '-' + q.id.to_s]['answer'][o.id.to_s] unless params[q.ask_type.underscore + '-' + q.id.to_s].blank?) }.join(', ')))}}"
+        @cotization = KepplerProducts::Cotization.create( 
+          product_id: @product.id,
+          product_name: @product.name,
+          product_price: @product.price,
+          expiration: @product.expiration,
+          content: body
+        )
+        flash[:notice] = "Mensaje enviado"
+      end
+      byebug
       redirect_to app_product_path(@product.id)
     end
 

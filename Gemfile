@@ -101,6 +101,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #javascript
 gem 'gon', '6.2.1'
+gem "recaptcha", require: "recaptcha/rails"
 
 
 # Development

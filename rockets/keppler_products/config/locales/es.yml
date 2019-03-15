@@ -3,34 +3,38 @@ es:
     sidebar-menu:
       keppler-products: Productos
       keppler-products-submenu:
-        cotizations: Cotizations
-        category: Category
+        cotizations: Cotizaciones
+        category: Categoría
         products: Productos
-        categories: Categorias
+        categories: Categorías
         products: Productos
     permissions:
     models:
       singularize:
-        cotization: cotization
-        category: category
+        cotization: cotización
+        category: categoría
         product: producto
         category: categoría
       pluralize:
-        cotizations: cotizations
-        categories: categories
+        cotizations: cotizaciones
+        categories: categorías
         products: productos
-        categories: categorias
+        categories: categorías
         products: productos
     modules:
-      admin/cotizations: Cotizations
-      admin/category: Category
+      admin/cotizations: Cotizaciones
+      admin/category: Categorías
       admin/products: Productos
-      admin/categories: Categorias
+      admin/categories: Categorías
       admin/products: Productos
     messages:
     actions:
   activerecord:
     attributes:
+      product: Producto
+      product_name: Nombre del producto
+      product_price: Precio del producto
+      information_client: Información del cliente
       name: Nombre
       expiration: Fecha de expiración
       seller: Vendedor
@@ -42,6 +46,7 @@ es:
       address: Ubicación
       category_id: Categoría
       offer: Oferta
+      create: Fecha de solicitud
     errors:
       messages:
   errors:

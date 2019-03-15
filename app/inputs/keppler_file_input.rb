@@ -44,10 +44,12 @@ class KepplerFileInput < SimpleForm::Inputs::Base
   end
 
   def preview_tag(preview)
-    tag =
-      "<img class='kv-preview-data file-preview-image'
-      src='/uploads#{preview.file.file.split('/uploads').last}'>"
-    @previews.push(tag)
+    unless preview.file.nil?
+      tag =
+        "<img class='kv-preview-data file-preview-image'
+        src='/uploads#{preview.file.file.split('/uploads').last}'>"
+      @previews.push(tag)
+    end
   end
 
   # def init_preview_details

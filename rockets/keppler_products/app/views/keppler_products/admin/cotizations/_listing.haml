@@ -29,7 +29,7 @@
     /         %span= object.try(attribute).try(:truncate_words, 4)
     %td
       = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
-        %span= object.created_at
+        %span= object.created_at.strftime("%b %d, %Y")
     %td
       = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
         %span= object.product_name

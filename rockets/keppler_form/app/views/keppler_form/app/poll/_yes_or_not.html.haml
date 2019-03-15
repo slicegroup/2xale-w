@@ -5,8 +5,8 @@
     - unless question.description.blank?
       %p.description-encuesta= question.description
   .radio.radio-primary
-    %input{ type: 'radio', name: "question-#{question.id}[true-or-false]", id: "question-#{question.id}_option-true", value: 'Sí' }
-    %label.opciones{ for: "question-#{question.id}_option-true" } Sí
+    %input{ type: 'radio', name: "yes_or_not-#{question.id}[answer]", id: "yes_or_not-#{question.id}_option-true", value: 'Sí' }
+    %label.opciones{ for: "yes_or_not-#{question.id}_option-true" } Sí
   .radio.radio-primary
-    %input{ type: 'radio', name: "question-#{question.id}[true-or-false]", id: "question-#{question.id}_option-false", value: 'No' }
-    %label.opciones{ for: "question-#{question.id}_option-false" } No
+    %input{ type: 'radio', name: "yes_or_not-#{question.id}[answer]", id: "yes_or_not-#{question.id}_option-false", value: 'No' }
+    %label.opciones{ for: "yes_or_not-#{question.id}_option-false" } No

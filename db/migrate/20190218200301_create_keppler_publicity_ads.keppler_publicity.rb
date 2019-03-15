@@ -8,6 +8,7 @@ class CreateKepplerPublicityAds < ActiveRecord::Migration[5.2]
       t.boolean :active
       t.integer :position
       t.datetime :deleted_at
+      t.timestamps
     end
   end
 end

@@ -6,6 +6,7 @@ class CreateKepplerProductsCategories < ActiveRecord::Migration[5.2]
       t.boolean :featured
       t.integer :position
       t.datetime :deleted_at
+      t.timestamps
     end
   end
 end

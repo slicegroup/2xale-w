@@ -31,13 +31,12 @@ module KepplerFrontend
     def new_cotization
       @poll = KepplerForm::Poll.first
       @product = KepplerProducts::Product.find(params[:product_id])
-      body = "#{@poll.questions.map { |q| '<b>' + q.sentence + ': <b/>' + ((%w[short_text numeric long_text].include?(q.ask_type) ? params[q.ask_type.underscore + '-' + q.id.to_s]['answer'] : q.options.map { |o| (params[q.ask_type.underscore + '-' + q.id.to_s]['answer'][o.id.to_s] unless params[q.ask_type.underscore + '-' + q.id.to_s].blank?) }.join(', ')))}}"
+      body = "#{@poll.questions.map { |q| '<b>' + q.sentence + ': <b/>' + ((%w[short_text numeric long_text yes_or_not].include?(q.ask_type) ? params[q.ask_type.underscore + '-' + q.id.to_s]['answer'] : q.options.map { |o| (params[q.ask_type.underscore + '-' + q.id.to_s]['answer'][o.id.to_s] unless params[q.ask_type.underscore + '-' + q.id.to_s].blank?) }.join(', ')))}}"
       @cotization = KepplerProducts::Cotization.create( 
         product_id: @product.id,
         product_name: @product.name,
         product_price: @product.price,
         expiration: @product.expiration,
-        created_at: Time.now,
         content: body
       )
       flash[:notice] = "Mensaje enviado"

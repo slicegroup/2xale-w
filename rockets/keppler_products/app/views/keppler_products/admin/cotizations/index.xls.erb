@@ -15,7 +15,7 @@
       </Row>
     <% @cotizations.each do |cotization| %>
       <Row>
-        <Cell><Data ss:Type="String"><%= cotization.created_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= cotization.created_at.strftime("%b %d, %Y") %></Data></Cell>
         <Cell><Data ss:Type="String"><%= cotization.product_name %></Data></Cell>
         <Cell><Data ss:Type="String"><%= cotization.expiration %></Data></Cell>
         <Cell><Data ss:Type="String"><%= number_to_currency(cotization.product_price) %></Data></Cell>

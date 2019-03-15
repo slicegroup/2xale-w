@@ -6,6 +6,7 @@ class CreateKepplerBannersBanners < ActiveRecord::Migration[5.2]
       t.string :image
       t.integer :position
       t.datetime :deleted_at
+      t.timestamps
     end
   end
 end

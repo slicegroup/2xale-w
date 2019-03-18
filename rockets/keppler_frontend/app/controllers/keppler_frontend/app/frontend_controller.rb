@@ -40,6 +40,7 @@ module KepplerFrontend
           expiration: @product.expiration,
           content: body
         )
+        ContactMailer.send_cotization(@cotization).deliver_now
         flash[:notice] = "Mensaje enviado"
       end
       byebug

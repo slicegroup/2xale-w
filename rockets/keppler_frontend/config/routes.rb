@@ -3,6 +3,7 @@ KepplerFrontend::Engine.routes.draw do
   get '/product/:product_id', to: 'app/frontend#product', as: :app_product
   get '/category/:id', to: 'app/frontend#category', as: :app_category
   post '/new_cotization', to: 'app/frontend#new_cotization', as: :app_new_cotization
+  get '/about', to: 'app/frontend#about', as: :app_about
 
   namespace :admin do
     scope :frontend, as: :frontend do

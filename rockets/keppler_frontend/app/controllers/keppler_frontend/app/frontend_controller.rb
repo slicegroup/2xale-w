@@ -42,7 +42,7 @@ module KepplerFrontend
         )
         flash[:notice] = "Mensaje enviado"
       end
-      byebug
+      # byebug
       redirect_to app_product_path(@product.id)
     end
 
@@ -54,6 +54,9 @@ module KepplerFrontend
         @category = KepplerProducts::Category.find(params[:id])
         @products = KepplerProducts::Product.actives.where(category_id: @category.id)
       end
+    end
+
+    def about
     end
 
     private

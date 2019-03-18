@@ -62,6 +62,8 @@ module KepplerFrontend
     end
 
     def about
+      @message = KepplerContactUs::Message.new
+      byebug
     end
 
     private

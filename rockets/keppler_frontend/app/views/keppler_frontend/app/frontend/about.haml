@@ -24,17 +24,44 @@
       .col-lg-6
         .contact-box
           %h1.title Contacta con nosotros!
-          %form
+          = simple_form_for @message, url: app_about_path, id: 'contact_form' do
             .form-group
               %label Nombre
-              %input.form-control
+              %input.form-control{name: 'name'}
             .form-group
               %label Correo Electrónico
-              %input.form-control
+              %input.form-control{name: 'email'}
             .form-group
               %label Asunto
-              %input.form-control
+              %input.form-control{name: 'subject'}
+            .form-group
+              %label Teléfono
+              %input.form-control{name: 'phone'}
             .form-group
               %label Mensaje
-              %textarea.form-control
-            %input.btn.btn-product{value: 'Enviar'}
+              %textarea.form-control{name: 'message'}
+            %input.btn.btn-product{value: 'Enviar', type: 'submit'}
+:javascript
+  $('#contact_form').validate({
+    event: 'blur',
+    errorClass: 'error-class',
+    validClass: 'valid-class',
+     rules: {
+       'name': { required: true},
+       'email': { required: true, email: true},
+       'subject': {required: true},
+       'phone': {required: true, number: true},
+       'message': {required: true},
+      },
+     messages: {
+       'name': 'Indica tu nombre',
+       'email': 'Teléfono',
+       'subject': 'Indica tu correo',
+       'phone': 'Indica tu teléfono',
+       'message': 'Escribe un mensaje'
+      },
+    debug: true,errorElement: 'label',
+    submitHandler: function(form){
+      form.submit();
+    }
+  });

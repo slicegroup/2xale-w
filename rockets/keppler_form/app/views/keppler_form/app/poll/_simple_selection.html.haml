@@ -1,10 +1,19 @@
+-# .question
+-#   %h3
+-#     - unless question.sentence.blank?
+-#       %li.question-encuesta= question.sentence
+-#     - unless question.description.blank?
+-#       %p.description-encuesta= question.description
+-#   - question.options.each do |option|
+-#     .radio.radio-primary
+-#       %input{ type: 'radio', name: "simple_selection-#{question.id}[answer][#{option.id}]", id: "radio_button-#{question.id}_option-#{option.id}", value: option.name }
+-#       %label.opciones{ for: "radio_button-#{question.id}_option-#{option.id}" }= option.name
 .question
-  %h3
-    - unless question.sentence.blank?
-      %li.question-encuesta= question.sentence
-    - unless question.description.blank?
-      %p.description-encuesta= question.description
+  - unless question.sentence.blank?
+    %label= question.sentence
+  - unless question.description.blank?
+    %p.description-encuesta= question.description
   - question.options.each do |option|
-    .radio.radio-primary
-      %input{ type: 'radio', name: "simple_selection-#{question.id}[answer][#{option.id}]", id: "radio_button-#{question.id}_option-#{option.id}", value: option.name }
+    .radio.radio-primary.inputGroup
+      %input{ type: 'radio', name: "question-#{question.id}[radio]", id: "radio_button-#{question.id}_option-#{option.id}", value: option.name }
       %label.opciones{ for: "radio_button-#{question.id}_option-#{option.id}" }= option.name

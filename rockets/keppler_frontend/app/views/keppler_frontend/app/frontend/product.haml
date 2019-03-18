@@ -45,6 +45,10 @@
   .modal-dialog{role: "document"}
     .modal-content
       .modal-header
+        %h2
+          Solicita ahora
+          %br/
+          = @product.name
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
           %span{"aria-hidden" => "true"} ×
       .modal-body
@@ -54,7 +58,8 @@
               %input{:type => "text", value: @product.id, name: 'product_id'}/
             = render 'keppler_form/app/poll/build_questions', questions: @poll.questions
             = recaptcha_tags
-            = f.submit 'Enviar solicitud', class: 'btn btn-primary'
+            .float-right
+              = f.submit 'Enviar solicitud', class: 'btn btn-product'
 %section.product-description
   .container
     %nav

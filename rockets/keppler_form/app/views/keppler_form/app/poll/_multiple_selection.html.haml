@@ -1,10 +1,17 @@
+-# .question
+-#   %h3
+-#     - unless question.sentence.blank?
+-#       %li.question-encuesta= question.sentence
+-#     - unless question.description.blank?
+-#       %p.description-encuesta= question.description
+-#   - question.options.each do |option|
+-#     .fields.check.check-primary{id: "option-#{option.id}"}
+-#       %input.btn.btn-check.opciones{ name: "question-#{question.id}[multiple]", id: "multiple_selection_option-#{option.id}", type: 'checkbox', value: option.name }
+-#       %label.opciones{ for: "multiple_selection_option-#{option.id}" }= option.name
 .question
-  %h3
-    - unless question.sentence.blank?
-      %li.question-encuesta= question.sentence
-    - unless question.description.blank?
-      %p.description-encuesta= question.description
-  - question.options.each do |option|
-    .fields.check.check-primary{id: "option-#{option.id}"}
-      %input.btn.btn-check.opciones{ name: "question-#{question.id}[multiple]", id: "multiple_selection_option-#{option.id}", type: 'checkbox', value: option.name }
-      %label.opciones{ for: "multiple_selection_option-#{option.id}" }= option.name
+  %label.label-form= question.sentence
+  .flex-form
+    - question.options.each do |option|
+      .fields.check.check-primary.inputGroupMultiple{id: "option-#{option.id}"}
+        %input.btn.btn-check.opciones{ name: "#{question.ask_type}-#{question.id}[answer][#{option.id}]", id: "#{question.ask_type}_option-#{option.id}", type: 'checkbox', value: option.name }
+        %label.opciones{ for: "#{question.ask_type}_option-#{option.id}" }= option.name

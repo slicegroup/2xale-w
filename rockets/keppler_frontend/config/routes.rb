@@ -4,6 +4,7 @@ KepplerFrontend::Engine.routes.draw do
   get '/category/:id', to: 'app/frontend#category', as: :app_category
   post '/new_cotization', to: 'app/frontend#new_cotization', as: :app_new_cotization
   get '/about', to: 'app/frontend#about', as: :app_about
+  post '/message_contact', to: 'app/frontend#message_contact', as: :app_message_contact
 
   namespace :admin do
     scope :frontend, as: :frontend do

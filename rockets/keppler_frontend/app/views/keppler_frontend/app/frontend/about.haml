@@ -24,7 +24,7 @@
       .col-lg-6
         .contact-box
           %h1.title Contacta con nosotros!
-          = simple_form_for @message, url: app_about_path, id: 'contact_form' do
+          = simple_form_for @message, url: app_message_contact_path, html: {id: 'contact_form'}, method: :post do
             .form-group
               %label Nombre
               %input.form-control{name: 'name'}
@@ -40,7 +40,21 @@
             .form-group
               %label Mensaje
               %textarea.form-control{name: 'message'}
+            = recaptcha_tags
             %input.btn.btn-product{value: 'Enviar', type: 'submit'}
+- if flash[:notice].eql?("Mensaje enviado")
+  :javascript
+    Swal.fire({
+      type: 'success',
+      title: 'Mensaje enviado con exito'
+    })
+- if flash[:recaptcha_error].eql?("Oh! It's error with reCAPTCHA!")
+  :javascript
+    Swal.fire({
+      type: 'error',
+      title: '¡Lo siento!',
+      text: 'Hubo un error en el reCAPTCHA, tu mensaje no ha sido enviado.'
+    })
 :javascript
   $('#contact_form').validate({
     event: 'blur',

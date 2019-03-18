@@ -63,7 +63,21 @@ module KepplerFrontend
 
     def about
       @message = KepplerContactUs::Message.new
-      byebug
+    end
+
+    def message_contact
+      if verify_recaptcha(model: @message, timeout: 10, message: "Oh! It's error with reCAPTCHA!")
+        @message =  KepplerContactUs::Message.create(
+          name: params[:name],
+          from_email: params[:email],
+          subject: params[:subject],
+          phone: params[:phone],
+          content: params[:message],
+          )
+        ContactMailer.send_message(@message).deliver_now
+        flash[:notice] = "Mensaje enviado"
+      end
+      redirect_to app_about_path
     end
 
     private

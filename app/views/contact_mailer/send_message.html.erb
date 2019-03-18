@@ -1,0 +1,339 @@
+<html>
+<head>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    *:not(br):not(tr):not(html) {
+      font-family: 'Raleway', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100% !important;
+      height: 100%;
+      margin: 0;
+      line-height: 1.4;
+      color: #6a6d6d;
+      -webkit-text-size-adjust: none;
+      background-image: url('../img/formu.jpg');
+    }
+
+    p, ul, ol, blockquote {
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    p,h4,h5{
+      font-family: "Karla", sans-serif;
+    }
+    a{
+      font-family: 'Raleway', sans-serif;
+    }
+
+    td {
+      font-family: "Karla", sans-serif;
+      word-break: break-word;
+    }
+
+    h2,h3{
+      font-family: 'Raleway', sans-serif;
+      color: #6d6a6a;
+    }
+
+    h1{
+      color: white;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /* Layout ------------------------------ */
+    .email-wrapper {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+      background-color: #585858;
+    }
+
+    .email-content {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+    }
+
+    /* Masthead ----------------------- */
+    .email-masthead {
+      padding: 25px 0;
+      text-align: center;
+      background-color: #b35077;
+    }
+
+    .email-masthead img {
+      height: 25%;
+    }
+
+    .email-masthead_logo {
+      width: 94px;
+    }
+
+    .email-masthead_name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #bbbfc3;
+      text-decoration: none;
+      text-shadow: 0 1px 0 white;
+    }
+
+    /* Body ------------------------------ */
+    .email-body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+      border-top: 1px solid #EDEFF2;
+      border-bottom: 1px solid #EDEFF2;
+      background-color: #FFFFFF;
+    }
+
+    .email-body_inner {
+      width: 570px;
+      margin: 0 auto;
+      padding: 0;
+      -premailer-width: 570px;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+      background-color: #FFFFFF;
+    }
+
+    .email-footer {
+      width: 570px;
+      margin: 0 auto;
+      padding: 0;
+      -premailer-width: 570px;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+      text-align: center;
+    }
+
+    .email-footer p {
+      color: #fff;
+    }
+
+    .body-action {
+      width: 100%;
+      margin: 30px auto;
+      padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+      text-align: center;
+    }
+
+    .body-sub {
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid #EDEFF2;
+    }
+
+    .content-cell {
+      padding: 35px;
+      font-weight: bold;
+      font-size: 30px;
+      font-family: raleway;
+      color: white;
+    }
+
+    /* Attribute list ------------------------------ */
+    .attributes {
+      margin: 0 0 21px;
+    }
+
+    .attributes_content {
+      background-color: #fff;
+      padding: 16px;
+    }
+
+    .attributes_item {
+      padding: 0;
+      line-height: 28px;
+    }
+
+    .attributes_item strong {
+      color: #6a6d6d;
+      font-size: 15px;
+      font-family: karla;
+    }
+
+    .attributes_item img {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    #company {
+      color: white;
+      text-decoration: none !important;
+    }
+
+    /* Utilities ------------------------------ */
+    .align-right {
+      text-align: right;
+    }
+
+    .align-left {
+      text-align: left;
+    }
+
+    .align-center {
+      text-align: center;
+    }
+
+    /*Media Queries ------------------------------ */
+    @media only screen and (max-width:600px) {
+      .email-body_inner, .email-footer {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width:500px) {
+      .button {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width:767px) {
+      .email-masthead img {
+        width: 30%;
+      }
+
+    }
+
+    /* Type ------------------------------ */
+    h1 {
+      margin-top: 0;
+      color: #6a6d6d;
+      font-size: 19px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2F3133;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #2F3133;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    p {
+      margin-top: 0;
+      color: #74787E;
+      font-size: 16px;
+      line-height: 1.5em;
+      text-align: center;
+    }
+
+    p.sub {
+      font-size: 13px;
+    }
+
+    p.center {
+      text-align: center;
+    }
+    .green{
+	    	background: #99bf6c;
+	  }
+  </style>
+</head>
+<body>
+  <table cellpadding='0' cellspacing='0' class='email-wrapper' width='100%'>
+    <tr>
+      <tr class="green">
+	  		<td align="center">
+	  			<table cellpadding='0' cellspacing='0' class='email-footer' width='100%'>
+	  				<tr class="biocert">
+	  					<td align='center' class='content-cell'>
+                <h1>
+                  2XALE
+                </h1>
+	  					</td>
+	  				</tr>
+	  			</table>
+	  		</td>
+	  	</tr>
+        <table cellpadding='0' cellspacing='0' class='email-content' width='100%'>
+          <!-- Email Body -->
+          <tr>
+            <td cellpadding='0' cellspacing='0' class='email-body' width='100%'>
+              <table align='center' cellpadding='0' cellspacing='0' class='email-body_inner' width='570'>
+                <!-- Body content -->
+                <tr>
+                  <td class='content-cell'>
+                    <h1>
+                      Hola ¡Ha recibido un nuevo mensaje!
+                    </h1>
+                    <p>La información de contacto es</p>
+                    <table cellpadding='0' cellspacing='0' class='attributes' width='100%'>
+                      <tr>
+                        <td class='attributes_content'>
+                          <table cellpadding='0' cellspacing='0' width='100%'>
+
+<tr>
+        <td class='attributes_item'>
+          <strong>Name:</strong>
+          <strong><%= @message.name %></strong>
+        </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+  <td>
+    <table align='center' cellpadding='0' cellspacing='0' class='email-footer' width='570'>
+      <tr>
+        <td align='center' class='content-cell'>
+          <p class='sub align-center'>2xale © - 2019 | Todos los derechos reservados</p>
+          <p class='sub align-center'>
+            Desarrollado por
+            <a href='http://slicegroup.xyz' id='company'>
+              <strong>Slice Group</strong>
+            </a>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html> 

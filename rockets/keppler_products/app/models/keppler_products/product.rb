@@ -11,6 +11,7 @@ module KepplerProducts
     include Searchable
     before_create :set_default_active
     mount_uploaders :images, AttachmentUploader
+    mount_uploader :cover, AttachmentUploader
     acts_as_list
     acts_as_paranoid
     belongs_to :category, class_name: 'KepplerProducts::Category'

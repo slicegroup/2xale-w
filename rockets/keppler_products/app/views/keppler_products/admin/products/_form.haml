@@ -41,6 +41,8 @@
                   .col-xs-12
                     = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
+                    = f.input :cover, as: :keppler_file, label: t('activerecord.attributes.cover')
+                  .col-xs-12
                     %p.bold= t('activerecord.attributes.images')
                     - unless @product.errors[:images][0].blank?
                       %p.error-class *Requerido

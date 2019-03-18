@@ -105,7 +105,7 @@ module KepplerProducts
         params.require(:product).permit(
           :name, :category_id, :price, :address, 
           :expiration, :description, {images: []}, 
-          :seller, :seller_name, :seller_phone, :seller_email, :offer, :active
+          :seller, :seller_name, :seller_phone, :seller_email, :offer, :active, :cover
         )
       end
     end

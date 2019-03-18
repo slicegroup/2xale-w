@@ -32,6 +32,7 @@ en:
       category_id: Category
       offer: Offer
       create: Created at
+      cover: Cover image
     errors:
       messages:
   errors:

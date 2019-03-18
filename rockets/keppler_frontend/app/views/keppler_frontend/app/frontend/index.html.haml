@@ -22,11 +22,11 @@
   .row
     .col-lg-9
       .row
-        - @products.each do |product|
+        - @products.reverse.each do |product|
           .col-lg-4
             .product-card
               %a{ href: app_product_path(product.id) }
-                .product-image{ style: "background-image: url('#{product.images.sample.url}')" }
+                .product-image{ style: "background-image: url('#{product.cover.url}')" }
                   - if product.offer
                     %span.badge.badge-offer Oferta
                   - elsif product.new?

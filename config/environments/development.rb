@@ -30,22 +30,30 @@ Rails.application.configure do
   config.assets.debug = true
 
   config.time_zone = 'Caracas'
+  config.action_mailer.delivery_method = :sendmail
+  # Defaults to:
+  # config.action_mailer.sendmail_settings = {
+  #   location: '/usr/sbin/sendmail',
+  #   arguments: '-i'
+  # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'pruebamaria26@gmail.com'}
 
+
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: Rails.application.secrets.domain_name,
-    authentication: 'plain',
-    enable_starttls_auto: true,
-    user_name: Rails.application.secrets.email,
-    password: Rails.application.secrets.password
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'pruebamaria26@gmail.com',
+    password:             '26930921',
+    authentication:       'plain',
+    enable_starttls_auto: true
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Send email in development mode?
-  config.action_mailer.perform_deliveries = true
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
@@ -54,8 +62,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.assets.precompile += %w( 
-    keppler_frontend/app/grapes/grapes-editor.js keppler_frontend/app/grapes/font-awesome.css 
-    keppler_frontend/app/grapes/grapes-editor.js keppler_frontend/app/grapes/grapes-custom.scss
-  )
 end

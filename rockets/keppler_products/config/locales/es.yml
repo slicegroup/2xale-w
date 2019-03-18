@@ -47,6 +47,7 @@ es:
       category_id: Categoría
       offer: Oferta
       create: Fecha de solicitud
+      cover: Imágen de portada
     errors:
       messages:
   errors:

@@ -1,0 +1,111 @@
+.about_contact {
+  padding: 50px 0;
+  .logo {
+    text-align: center;
+    img {
+      width: 140px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.contact-list {
+  font-family: $quicksand;
+  padding-left: 0;
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $blue;
+    transition: all ease-in-out .1s;
+
+    &:hover {
+      color: $light-green;
+      text-decoration: none;
+      transition: all ease-in-out .1s;
+    }
+  }
+}
+
+.rrss {
+  padding-left: 0;
+  display: inline-flex;
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: $blue;
+    transition: all ease-in-out .1s;
+
+    &:hover {
+      color: $light-green;
+      text-decoration: none;
+      transition: all ease-in-out .1s;
+    }
+  }
+
+  i {
+    font-size: 25px;
+    margin-right: 15px;
+  }
+}
+
+.about-text {
+  font-family: $quicksand;
+  font-size: 16px;
+  text-align: center;
+}
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  font-family: $quicksand;
+
+  i {
+    font-size: 70px;
+    color: $light-green;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    color: $light-green;
+    font-weight: $bold;
+    font-size: 25px;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 15px;
+
+    &::before {
+      content: '\eed6';
+      font-family: "IcoFont";
+      margin-right: 10px;
+    }
+  }
+}
+
+.contact-box {
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba($blue, 0.3);
+  padding: 30px;
+}
+
+.about-box {
+  padding: 30px;
+}

@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-	default from: 'pruebamaria26@gmail.com'
+	default from: 'atencionalcliente@2xale.com'
 
 	def send_cotization(cotization)
 		@cotization = cotization

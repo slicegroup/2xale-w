@@ -55,6 +55,11 @@
                 %i.icofont-arrow-right
     = publicity('banner', KepplerPublicity::Ad.publicity('category-2', 'banner'))
     = publicity('banner', KepplerPublicity::Ad.publicity('category-3', 'banner'))
+    - if @products.count > 6
+      %nav{"aria-label" => "Page navigation"}
+        %ul.pagination
+          %center.paginator-module
+            = paginate @products
 :javascript
   $('.icofont-search').click(function(){
     if ($('#search-input').val().length > 0){

@@ -55,6 +55,9 @@ module KepplerFrontend
         @category = KepplerProducts::Category.find(params[:id])
         @products = KepplerProducts::Product.actives.where(category_id: @category.id)
       end
+      if @products.count > 6
+        @products.page(params[:page]).per(12)
+      end
     end
 
     def about

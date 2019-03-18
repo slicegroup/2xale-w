@@ -38,21 +38,23 @@ Rails.application.configure do
   # }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'pruebamaria26@gmail.com'}
+  config.action_mailer.default_options = {from: 'atencionalcliente@2xale.com'}
 
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'smtp.zoho.com',
     port:                 587,
-    domain:               'gmail.com',
-    user_name:            'pruebamaria26@gmail.com',
-    password:             '26930921',
+    domain:               '2xale.com',
+    user_name:            'atencionalcliente@2xale.com',
+    password:             'lbqQz1PVjg',
+    ssl:                    true,
+    tls:                    true,
     authentication:       'plain',
     enable_starttls_auto: true
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Send email in development mode?
 
   # Adds additional error checking when serving assets at runtime.

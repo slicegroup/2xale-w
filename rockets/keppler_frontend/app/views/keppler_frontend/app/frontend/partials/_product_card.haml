@@ -1,0 +1,30 @@
+.col-lg-4
+  .product-card
+    %a{ href: app_product_path(product.id) }
+      .product-image{ style: "background-image: url('#{product.cover.url}')" }
+        - if product.offer
+          %span.badge.badge-offer Oferta
+        - elsif product.new?
+          %span.badge.badge-new Nuevo
+    .product-content
+      %a{ href: app_category_path(product.category.id) }
+        %small= product&.category&.name || ''
+      %a{ href: app_product_path(product.id) }
+        %h4= product.name
+        .product-price
+          %span= number_to_currency(product.price)
+        .counter
+          %ul
+            %li
+              %span{id: "days#{product.id}"}
+              Dias
+            %li
+              %span{id: "hours#{product.id}"}
+              Horas
+            %li
+              %span{id: "minutes#{product.id}"}
+              Minutos
+    %a.product-footer{ href: app_product_path(product.id) }
+      .btn-more
+        Solicitar
+        %i.icofont-arrow-right

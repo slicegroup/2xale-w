@@ -1,0 +1,15 @@
+:javascript
+  var expiration = "#{product.expiration_parsed}"
+  var id = "#{product.id}"
+  var second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+  var countDown = new Date(expiration + " 00:00:00").getTime(),
+      now = new Date().getTime(),
+      distance = countDown - now;
+    
+  $('#days'+id).html(Math.floor(distance / (day)))
+  $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
+  $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))

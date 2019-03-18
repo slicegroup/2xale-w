@@ -19,47 +19,18 @@
   .container
     = publicity('banner', KepplerPublicity::Ad.publicity('category-1', 'banner'))
     .row
-      / - if @products.blank?
-      /   .col-xs-12.text-center
-      /     %p No hay resultados
-      - @products.each do |product|
-        .col-lg-4
-          .product-card
-            %a{ href: app_product_path(product.id) }
-              .product-image{ style: "background-image: url('#{product.cover.url}')" }
-                - if product.offer
-                  %span.badge.badge-offer Oferta
-                - elsif product.new?
-                  %span.badge.badge-new Nuevo
-            .product-content
-              %a{ href: app_category_path(product.category.id) }
-                %small= product&.category&.name || ''
-              %a{ href: app_product_path(product.id) }
-                %h4= product.name
-                .product-price
-                  %span= number_to_currency(product.price)
-                .counter
-                  %ul
-                    %li
-                      %span{id: "days#{product.id}"}
-                      Dias
-                    %li
-                      %span{id: "hours#{product.id}"}
-                      Horas
-                    %li
-                      %span{id: "minutes#{product.id}"}
-                      Minutos
-            %a.product-footer{ href: app_product_path(product.id) }
-              .btn-more
-                Solicitar
-                %i.icofont-arrow-right
+      - @products.first(6).each do |product|
+        = render 'keppler_frontend/app/frontend/partials/product_card', product: product
     = publicity('banner', KepplerPublicity::Ad.publicity('category-2', 'banner'))
+    - unless @others_products.nil?
+      .row
+        - @others_products.each do |product|
+          = render 'keppler_frontend/app/frontend/partials/product_card', product: product
     = publicity('banner', KepplerPublicity::Ad.publicity('category-3', 'banner'))
-    - if @products.count > 6
-      %nav{"aria-label" => "Page navigation"}
-        %ul.pagination
-          %center.paginator-module
-            = paginate @products
+    %nav{"aria-label" => "Page navigation"}
+      %ul.pagination
+        %center.paginator-module
+          = paginate @products
 :javascript
   $('.icofont-search').click(function(){
     if ($('#search-input').val().length > 0){
@@ -73,18 +44,7 @@
     }
   })
 - @products.each do |product|
-  :javascript
-    var expiration = "#{product.expiration_parsed}"
-    var id = "#{product.id}"
-    var second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-    var countDown = new Date(expiration + " 00:00:00").getTime(),
-        now = new Date().getTime(),
-        distance = countDown - now;
-      
-    $('#days'+id).html(Math.floor(distance / (day)))
-    $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
-    $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))
+  = render 'keppler_frontend/app/frontend/partials/script_expiration', product: product
+- unless @others_products.nil?
+  - @others_products.each do |product|
+    = render 'keppler_frontend/app/frontend/partials/script_expiration', product: product

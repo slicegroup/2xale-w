@@ -50,13 +50,14 @@ module KepplerFrontend
     def category
       if params[:q]
         @q = params[:q]
-        @products = KepplerProducts::Product.actives.ransack(description_or_name_cont: @q).result
+        @products = KepplerProducts::Product.actives.ransack(description_or_name_cont: @q).result.page(params[:page]).per(12)
       else
         @category = KepplerProducts::Category.find(params[:id])
-        @products = KepplerProducts::Product.actives.where(category_id: @category.id)
+        @products = KepplerProducts::Product.actives.where(category_id: @category.id).page(params[:page]).per(12)
       end
       if @products.count > 6
-        @products.page(params[:page]).per(12)
+        products_ids = @products.first(6).map(&:id)
+        @others_products = KepplerProducts::Product.where.not(id: products_ids).first(6)
       end
     end
 

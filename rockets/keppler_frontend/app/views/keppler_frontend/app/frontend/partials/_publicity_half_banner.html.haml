@@ -1,1 +1,5 @@
-.ad_half{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+- if ad.nil?
+	.ad_half{ style: 'background-image: url("https://juzarraga.files.wordpress.com/2012/01/mcd_mcbites.jpg")' }
+- else
+	%a{ href: ad&.url, target: '_blank' }
+		.ad_half{ style: "background-image: url('#{ad.image.url}')"}

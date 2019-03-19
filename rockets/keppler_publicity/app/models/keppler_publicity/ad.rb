@@ -13,8 +13,9 @@ module KepplerPublicity
     acts_as_list
     acts_as_paranoid
     validate  :check_dimensions, :on => [:create, :update]
-    validate  :validate_url
+    # validate  :validate_url
     validates_presence_of :image, :type_ad, :location, :url
+    before_create :active_save
 
     def validate_url
       url = URI.parse(self.url)
@@ -28,6 +29,12 @@ module KepplerPublicity
         else
           errors.add(:url, "La URL introducida no es válida")
         end
+    end
+
+    def active_save
+      byebug
+      return unless active
+      KepplerPublicity::Ad.update_active(self)
     end
 
     def self.have_actives(ad)

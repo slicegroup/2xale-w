@@ -28,6 +28,8 @@
                   = f.input :type_ad, label: false
                   = f.input :location, label: false
                   .col-md-12
+                    = f.input :active, as: :keppler_boolean
+                  .col-md-12
                     %label{:for => "ad[location]", class: 'control-label string required'}= t('activerecord.attributes.location_ad')
                     .nav-tabs-custom
                       %ul.nav.nav-tabs

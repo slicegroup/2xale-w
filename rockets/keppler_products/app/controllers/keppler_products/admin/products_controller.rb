@@ -90,7 +90,7 @@ module KepplerProducts
       def index_variables
         @q = Product.ransack(params[:q])
         @products = @q.result(distinct: true)
-        @objects = @products.page(@current_page).order(position: :desc)
+        @objects = @products.page(@current_page).order(position: :asc)
         @total = @products.size
         @attributes = Product.index_attributes
       end

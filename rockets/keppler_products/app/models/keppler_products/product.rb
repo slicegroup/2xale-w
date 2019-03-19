@@ -24,7 +24,7 @@ module KepplerProducts
     end
 
     def self.latest
-      where(active: true).last(6)
+      where(active: true).order(position: :asc).first(6)
     end
 
     def self.products_actives

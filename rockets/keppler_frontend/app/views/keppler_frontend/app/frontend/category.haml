@@ -19,12 +19,12 @@
   .container
     = publicity('banner', KepplerPublicity::Ad.publicity('category-1', 'banner'))
     .row
-      - @products.first(6).each do |product|
+      - @products.first(3).each do |product|
         = render 'keppler_frontend/app/frontend/partials/product_card', product: product
     = publicity('banner', KepplerPublicity::Ad.publicity('category-2', 'banner'))
     - unless @others_products.nil?
       .row
-        - @others_products.first(6).each do |product|
+        - @others_products.first(3).each do |product|
           = render 'keppler_frontend/app/frontend/partials/product_card', product: product
     = publicity('banner', KepplerPublicity::Ad.publicity('category-3', 'banner'))
     %nav{"aria-label" => "Page navigation"}

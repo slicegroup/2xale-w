@@ -19,16 +19,16 @@ module KepplerPublicity
 
     def validate_url
       url = URI.parse(self.url)
-        req = Net::HTTP.new(url.host, url.port)
-        req.use_ssl = true
-        if !url.host.nil?
-          res = req.request_head('/')
-          if !res.code.eql?('200')
-            errors.add(:url, "La URL introducida no es válida")
-          end
-        else
+      req = Net::HTTP.new(url.host, url.port)
+      req.use_ssl = true
+      if !url.host.nil?
+        res = req.request_head('/')
+        if !res.code.eql?('200')
           errors.add(:url, "La URL introducida no es válida")
         end
+      else
+        errors.add(:url, "La URL introducida no es válida")
+      end
     end
 
     def active_save

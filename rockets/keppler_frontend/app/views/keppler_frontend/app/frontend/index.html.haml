@@ -6,7 +6,7 @@
           = image_tag banner.image.url, class: 'banner-item'
           .banner-mask
             %h1= banner.title
-            %a.btn-more{ href: '' }
+            %a.btn-more{ href: banner.url, target: '_blank' }
               Ver más
               %i.icofont-arrow-right
         .search-cta
@@ -68,7 +68,7 @@
     .row
       .col-lg-3
         .categories-text
-          %h1.title Categorias destacadas
+          %h1.title Categorías destacadas
           %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
         - unless @categories_featureds.size < 3
           .carousel-buttons

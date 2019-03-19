@@ -60,7 +60,7 @@
                             = t("activerecord.attributes.#{attribute.to_s}")
                     %th
                     %th
-              %tbody.objects-container
+              %tbody.objects-container{ 'data-update-url': sort_admin_products_products_path }
                 = render 'admin/layouts/listing_preloader'
                 = render 'listing', objects: @objects, query: @query, attributes: @attributes
 

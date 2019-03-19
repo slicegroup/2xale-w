@@ -86,15 +86,16 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address:              'cloud.tremmelca.net',
-    port:                 465,
+    port:                 587,
     domain:               'www.2xale.com',
     user_name:            'atencionalcliente@2xale.com',
     password:             'lbqQz1PVjg',
     authentication:   'plain',
-    ssl: false,
+    ssl: true,
     openssl_verify_auto: 'none',
     tls: true,
-    enable_starttls_auto: true }
+    enable_starttls_auto: true 
+  }
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false

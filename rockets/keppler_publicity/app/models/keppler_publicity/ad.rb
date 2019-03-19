@@ -32,7 +32,6 @@ module KepplerPublicity
     end
 
     def active_save
-      byebug
       return unless active
       KepplerPublicity::Ad.update_active(self)
     end

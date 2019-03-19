@@ -31,8 +31,7 @@
                       (#{@object.from_email})
                   %h5
                     #{t('activerecord.attributes.to_emails')}: 
-                    - @object.to_emails.split(',').each do |to_email|
-                      %small.label.label-default #{to_email}
+                    %small.label.label-default atencionalcliente@2xale.com
                 / /.mailbox-read-info
                 .mailbox-controls.with-border
                   .btn-group
@@ -87,7 +86,18 @@
                   %span.mailbox-read-time.pull-right= I18n.l(@object.created_at, format: :long)
                 / /.mailbox-controls
                 .mailbox-read-message
-                  = raw @object.content
+                  %p
+                    Nombre:
+                    = @object.name
+                  %p
+                    Teléfono:
+                    = @object.phone
+                  %p
+                    Correo:
+                    = @object.from_email
+                  %p
+                    Su mensaje:
+                    = raw @object.content
 :javascript 
   function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;

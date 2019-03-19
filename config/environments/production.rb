@@ -92,7 +92,9 @@ Rails.application.configure do
     password:             Rails.application.secrets.password,
     authentication:   'plain',
     enable_starttls_auto: true,
-    ssl: true }
+    ssl: true,
+    tls: false,
+    enable_starttls_auto: true }
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false

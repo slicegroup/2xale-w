@@ -7,13 +7,9 @@
   .box-body.no-padding
     %ul.nav.nav-pills.nav-stacked
       - @labels.each do |label|
-        %li{ class: ('active' if controller_path.include?(label[:name])) }
-          = link_to "/admin/contact_us/#{controller_name}/#{label[:name]}" do
-            %i{ class: "icon-#{label[:icon]}"}
-            = t("keppler-contact-us.labels.#{label[:name]}")
-            -# %span.label.pull-right{ class: (controller_path.include?(label[:name]) ? 'label-keppler' : 'label-default') }= module_name.unread_count
-      %li{ class: ('active' if controller_path.include?('settings')) }
-        = link_to admin_contact_us_settings_path do
-          %i.icon-settings
-          = t("keppler-contact-us.labels.settings")
-          -# %span.label.pull-right{ class: (controller_path.include?(label[:name]) ? 'label-keppler' : 'label-default') }= module_name.unread_count
+        - unless label[:name].eql?('sent') || label[:name].eql?('unread') || label[:name].eql?('read') || label[:name].eql?('favorites')
+          %li{ class: ('active' if controller_path.include?(label[:name])) }
+            = link_to "/admin/contact_us/#{controller_name}/#{label[:name]}" do
+              %i{ class: "icon-#{label[:icon]}"}
+              = t("keppler-contact-us.labels.#{label[:name]}")
+              -# %span.label.pull-right{ class: (controller_path.include?(label[:name]) ? 'label-keppler' : 'label-default') }= module_name.unread_count

@@ -85,11 +85,11 @@ Rails.application.configure do
   config.action_mailer.default charset: 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    address:              Rails.application.secrets.address,
-    port:                 Rails.application.secrets.port,
-    domain:               Rails.application.secrets.domain_name,
-    user_name:            Rails.application.secrets.email,
-    password:             Rails.application.secrets.password,
+    address:              'cloud.tremmelca.net',
+    port:                 587,
+    domain:               'www.2xale.com',
+    user_name:            'atencionalcliente@2xale.com',
+    password:             'lbqQz1PVjg',
     authentication:   'plain',
     ssl: false,
     tls: true,

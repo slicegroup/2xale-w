@@ -86,12 +86,13 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address:              'cloud.tremmelca.net',
-    port:                 587,
+    port:                 465,
     domain:               'www.2xale.com',
     user_name:            'atencionalcliente@2xale.com',
     password:             'lbqQz1PVjg',
     authentication:   'plain',
     ssl: true,
+    openssl_verify_auto: 'none',
     tls: true,
     enable_starttls_auto: true }
 

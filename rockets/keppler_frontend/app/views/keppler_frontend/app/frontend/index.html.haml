@@ -22,7 +22,7 @@
   .row
     .col-lg-9
       .row
-        - @products.reverse.each do |product|
+        - @products.each do |product|
           .col-lg-4
             .product-card
               %a{ href: app_product_path(product.id) }

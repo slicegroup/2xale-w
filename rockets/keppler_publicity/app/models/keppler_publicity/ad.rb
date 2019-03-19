@@ -58,11 +58,11 @@ module KepplerPublicity
     def check_dimensions
       return if image_cache.nil?
       if type_ad.eql?('banner')
-        check_dimensions_type(1080, 700)
+        check_dimensions_type(1080, 150)
       elsif type_ad.eql?('half-banner')
-        check_dimensions_type(900, 550)
+        check_dimensions_type(600, 150)
       elsif type_ad.eql?('steal-page')
-        check_dimensions_type(300, 550)
+        check_dimensions_type(200, 250)
       end
     end
 

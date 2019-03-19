@@ -94,7 +94,8 @@ Rails.application.configure do
     ssl: true,
     openssl_verify_auto: 'none',
     tls: true,
-    enable_starttls_auto: true 
+    enable_starttls_auto: true,
+    openssl_verify_mode: 'none'
   }
 
   # Disable automatic flushing of the log to improve performance.

@@ -92,8 +92,6 @@ Rails.application.configure do
     password:             'lbqQz1PVjg',
     authentication:   'plain',
     ssl: false,
-    openssl_verify_auto: 'none',
-    tls: true,
     enable_starttls_auto: true,
     openssl_verify_mode: 'none'
   }

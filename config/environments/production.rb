@@ -91,7 +91,7 @@ Rails.application.configure do
     user_name:            'atencionalcliente@2xale.com',
     password:             'lbqQz1PVjg',
     authentication:   'plain',
-    ssl: false,
+    ssl: true,
     enable_starttls_auto: true,
     openssl_verify_mode: 'none'
   }

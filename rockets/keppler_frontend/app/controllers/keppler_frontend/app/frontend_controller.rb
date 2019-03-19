@@ -58,7 +58,7 @@ module KepplerFrontend
       if @products.count > 6
         products_ids = @products.first(6).map(&:id)
         if @category.nil?
-          @others_products = KepplerProducts::Product.where.not(id: products_ids).first(6)
+          @others_products = KepplerProducts::Product.actives.where.not(id: products_ids).ransack(description_or_name_cont: @q).result
         else
           @others_products = KepplerProducts::Product.where(category_id: @category.id).where.not(id: products_ids).first(6)
         end

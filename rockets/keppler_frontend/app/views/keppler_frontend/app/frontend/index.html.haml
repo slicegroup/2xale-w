@@ -70,12 +70,12 @@
         .categories-text
           %h1.title Categorias destacadas
           %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
-        - unless @categories_featureds.size < 3
-          .carousel-buttons
-            %button.btn.left
-              %i.icofont-arrow-left
-            %button.btn.right
-              %i.icofont-arrow-right
+          - unless @categories_featureds.size < 3
+            .carousel-buttons
+              %button.btn.left
+                %i.icofont-arrow-left
+              %button.btn.right
+                %i.icofont-arrow-right
       .col-lg-9
         .row.categories-carousel
           - @categories_featureds.each do |category|

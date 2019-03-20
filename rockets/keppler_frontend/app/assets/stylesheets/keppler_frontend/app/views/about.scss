@@ -104,6 +104,9 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba($blue, 0.3);
   padding: 30px;
+  @include respond-to(xs) {
+    margin: 0;
+  }
 }
 
 .about-box {

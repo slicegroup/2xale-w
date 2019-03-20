@@ -359,8 +359,16 @@ textarea {
   box-shadow: 0 0 0 transparent;
 }
 
+.modal {
+  background-color: rgba(darken($blue, 50), .4);
+}
+
 .modal-dialog {
   max-width: 60vw;
+
+  @include respond-to(xs) {
+    max-width: 95vw;
+  }
 
   .modal-body {
     padding: 30px;

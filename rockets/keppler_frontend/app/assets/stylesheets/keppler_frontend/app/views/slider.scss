@@ -50,8 +50,9 @@
   margin-top: 10px;
   @include respond-to(xs) {
     width: 100%;
+    border-radius: 0;
   }
-  
+
   .banner-item {
     @include size(100%);
     border-radius: 0 10px 10px 0;
@@ -120,7 +121,7 @@
   @include respond-to(xs) {
     display: none;
   }
-  
+
   h1 {
     font-family: $quicksand;
     font-size: 30px;
@@ -146,7 +147,7 @@
   @include respond-to(xs) {
     display: none;
   }
-  
+
   @include respond-to(sm) {
     padding-right: 25px;
   }
@@ -156,7 +157,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,.5);
     border-radius: 10px;
   }
-  
+
   .form-control {
     border: 0;
     height: 60px;
@@ -169,7 +170,7 @@
       font-weight: $semi-bold;
     }
 
-    &:focus{ 
+    &:focus{
       box-shadow: 0 0 0 transparent;
       border: 2px solid $blue;
     }

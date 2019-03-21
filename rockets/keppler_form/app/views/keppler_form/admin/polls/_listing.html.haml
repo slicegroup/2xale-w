@@ -80,7 +80,7 @@
               = t('keppler.actions.edit')
         - if can?(model).destroy?
           %li
-            = link_to({action: :destroy, id: object.id}, {title: t('keppler.actions.delete'), method: :delete, data: { confirm: t('keppler.messages.data_confirm') }}) do
+            = link_to app_form_poll_path(object), method: :delete do
               %i.icon-trash
               = t('keppler.actions.delete')
 

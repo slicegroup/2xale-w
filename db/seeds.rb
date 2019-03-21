@@ -19,6 +19,11 @@ User.create(
   password_confirmation: '+12345678+', role_ids: '1'
 )
 
+KepplerForm::Poll.create(
+  name: 'Formulario de cotización',
+  language: 'ES',
+  pulic: true)
+
 puts 'admin@keppler.io has been created'
 
 

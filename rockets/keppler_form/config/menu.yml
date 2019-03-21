@@ -3,6 +3,6 @@ menu:
   form:
     name: Form
     current: ['/admin/form/polls']
-    url_path: /admin/form/polls
+    url_path: /admin/form/polls/1
     icon: list
     model: KepplerForm::Poll

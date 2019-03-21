@@ -23,8 +23,12 @@ module KepplerProducts
       %i[name category_id address seller seller_name seller_phone seller_email]
     end
   
-    def self.latest
+    def self.latest_six
       where(active: true).order(position: :asc).first(6)
+    end
+
+    def self.latest_four
+      where(active: true).order(position: :asc).first(4)
     end
 
     def self.products_actives

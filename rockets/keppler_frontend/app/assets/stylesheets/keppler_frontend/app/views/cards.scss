@@ -19,6 +19,10 @@
     }
   }
 
+  @include respond-to(sm) {
+    height: 400px;
+  }
+
   .product-image {
     @include bg(cover, no-repeat, center);
     @include size(100%, 50%);
@@ -59,6 +63,9 @@
       h4 {
         font-weight: $medium;
         color: #484848;
+        @include respond-to(sm) {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -76,6 +83,12 @@
     color: $blue;
     padding: 10px;
     transition: all ease-in-out .3s;
+
+    @include respond-to(xs) {
+        text-decoration: none;
+        background-color: $blue;
+        color: $white;
+    }
 
     .btn-more {
       font-weight: $bold;

@@ -1,46 +1,56 @@
 %section.product-detail
-  .container
-    %ol.breadcrumb
-      %li.breadcrumb-item
-        %a{:href => app_index_path} Inicio
-      %li.breadcrumb-item
-        %a{:href => app_category_path(@product.category.id)}= @product&.category.name || ''
-      %li.breadcrumb-item
-        %a= @product.name
-    .row
-      .col-lg-6
-        .row
-          .col-lg-2
-            %ul.slider-nav
-              - @product.images.each do |image|
-                %li
-                  = image_tag image.url
-          .col-lg-10
-            .slider-for
-              - @product.images.each do |image|
+  %ol.breadcrumb
+    %li.breadcrumb-item
+      %a{:href => app_index_path} Inicio
+    %li.breadcrumb-item
+      %a{:href => app_category_path(@product.category.id)}= @product&.category.name || ''
+    %li.breadcrumb-item
+      %a= @product.name
+  .row
+    .col-lg-6
+      .row
+        .col-lg-2
+          %ul.slider-nav
+            - @product.images.each do |image|
+              %li
                 = image_tag image.url
-      .col-lg-4
-        .product-right-box
-          .title-box
-            -if @product.offer
-              .badge.badge-offer Oferta
-            %h1.product-title= @product.name
-            .counter-product
-              %ul
-                %li
-                  %span#days
-                  Dias
-                %li
-                  %span#hours
-                  Horas
-                %li
-                  %span#minutes
-                  Minutos
-          .price-box
-            %span= number_to_currency(@product.price)
+        .col-lg-10
+          .slider-for
+            - @product.images.each do |image|
+              = image_tag image.url
+    .col-lg-4
+      .product-right-box
+        .title-box
+          -if @product.offer
+            .badge.badge-offer Oferta
+          %h1.product-title= @product.name
+          .counter-product
+            %ul
+              %li
+                %span#days
+                Dias
+              %li
+                %span#hours
+                Horas
+              %li
+                %span#minutes
+                Minutos
+        .price-box
+          %span= number_to_currency(@product.price)
+          - if @product.seller.eql?('2xale')
             %a.btn.btn-product{ href: '', "data-toggle"=>"modal", "data-target"=>"#modalForm" } Solicitar
-      .col-lg-2
-        = publicity('steal_page', KepplerPublicity::Ad.publicity('product-1', 'steal-page'))
+          - else
+            .seller-contact
+              %h3 Contacto al vendedor
+              %dl
+                %dt Nombre:
+                %dd= @product.seller_name
+                %dt Correo Electrónico:
+                %dd= @product.seller_email
+                %dt Teléfono:
+                %dd= @product.seller_phone
+    .col-lg-2
+      = publicity('steal_page', KepplerPublicity::Ad.publicity('product-1', 'steal-page'))
 #modalForm.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modalFormLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog{role: "document"}
     .modal-content

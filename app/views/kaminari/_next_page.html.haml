@@ -5,7 +5,7 @@
 -#    total_pages:   total number of pages
 -#    per_page:      number of items to fetch per page
 -#    remote:        data-remote
-%span.next
+%li.page-item
   - unless current_page.last?
-    = link_to url, rel: 'next', remote: remote, class: 'btn-pag', title: 'Next' do
-      %i.icon-arrow-right
+    = link_to url, rel: 'next', remote: remote, class: 'page-link', title: 'Next' do
+      %i.icofont-arrow-right

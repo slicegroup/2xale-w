@@ -26,9 +26,13 @@
       - @others_products.first(6).each do |product|
         = render 'keppler_frontend/app/frontend/partials/product_card', product: product
   = publicity('banner', KepplerPublicity::Ad.publicity('category-3', 'banner'))
-  %nav{"aria-label" => "Page navigation"}
-    %ul.pagination
-      %center.paginator-module
+  -# %nav{"aria-label" => "Page navigation"}
+  -#   %ul.pagination
+  -#     %center.paginator-module
+  -#       = paginate @products
+  %center
+    %nav{"aria-label" => "Page navigation example"}
+      %ul.pagination
         = paginate @products
 :javascript
   $('.icofont-search').click(function(){

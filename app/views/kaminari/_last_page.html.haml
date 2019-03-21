@@ -5,7 +5,7 @@
 -#    total_pages:   total number of pages
 -#    per_page:      number of items to fetch per page
 -#    remote:        data-remote
-%span.last
+%li.page-item
   - unless current_page.last?
-    = link_to url, :remote => remote, class: "btn-pag", title: 'Last page' do
-      %i.fa.fa-angle-double-right
+    = link_to url, :remote => remote, class: "page-link", title: 'Last page' do
+      %i.icofont-arrow-left

@@ -17,7 +17,7 @@
 
 .slider-nav {
   padding-left: 0;
-  height: 400px;
+  height: 500px;
 
   @include respond-to(xs) {
     display: none;
@@ -45,7 +45,7 @@
 }
 
 .slider-for {
-  height: 400px;
+  height: 500px;
   @include respond-to(xs) {
     height: auto;
   }
@@ -66,7 +66,7 @@
 }
 
 .product-right-box {
-  height: 400px;
+  height: 500px;
   // box-shadow: 0 0 10px rgba($blue, .3);
   padding: 20px;
   border-radius: 5px;
@@ -122,7 +122,10 @@
 }
 
 .product-detail {
-  padding: 50px 0;
+  padding: 50px;
+  @include respond-to(xs) {
+    padding: 50px 10px;
+  }
 }
 
 .product-related {
@@ -390,4 +393,23 @@ textarea {
       color: $blue;
     }
   }
+}
+
+.seller-contact {
+  padding: 20px;
+  width: 100%;
+  margin-top: 25px;
+  box-shadow: 0 0 10px rgba($blue, .3);
+
+   h3 {
+     font-family: $quicksand;
+     font-size: 15px;
+     font-weight: $semi-bold;
+     color: $blue;
+   }
+
+   dl {
+     font-family: $quicksand;
+     font-size: 14px;
+   }
 }

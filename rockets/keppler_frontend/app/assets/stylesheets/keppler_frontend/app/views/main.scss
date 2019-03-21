@@ -23,9 +23,10 @@ h1.title {
 .products {
   padding: 50px 50px;
   @include respond-to(xs) {
-    padding: 100px 20px 50px;
+    padding: 60px 5px 50px;
   }
 }
+
 
 .categories {
   padding: 50px;
@@ -55,41 +56,17 @@ h1.title {
   display: flex;
 }
 
-.steal-pages-xs {
-  display: none;
-
-  @include respond-to(xs) {
-    display: block;
-  }
-
-  @include respond-to(sm) {
-    display: block;
-  }
-}
-
-.steal-pages-sm {
-  display: block;
-
-  @include respond-to(xs) {
-    display: none;
-  }
-
-  @include respond-to(sm) {
-    display: none;
-  }
-}
-
 .ad_full {
   @include bg(cover, no-repeat, center);
   @include size(100%, 550px);
   margin-bottom: 50px;
 
-  @include respond-to(xs) {
-      @include size(50%, 290px);
-  }
+  // @include respond-to(xs) {
+  //     @include size(50%, 290px);
+  // }
 
   @include respond-to(sm) {
-      @include size(50%, 600px);
+      @include size(100%, 400px);
   }
 }
 
@@ -191,5 +168,30 @@ footer {
       font-size: 25px;
       margin-right: 15px;
     }
+  }
+}
+
+
+.products-tablet-down {
+  display: none;
+
+  @include respond-to(xs) {
+    display: block;
+  }
+
+  @include respond-to(sm) {
+    display: block;
+  }
+}
+
+.products-desktop {
+  display: block;
+
+  @include respond-to(xs) {
+    display: none;
+  }
+
+  @include respond-to(sm) {
+    display: none;
   }
 }

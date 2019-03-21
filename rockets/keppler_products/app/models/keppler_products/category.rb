@@ -22,8 +22,16 @@ module KepplerProducts
       %i[name image]
     end
 
+    def self.with_products
+      all.select do |category|
+        category unless category.products.blank?
+      end
+    end
+
     def self.featureds
-      where(featured: true)
+      with_products.select do |category|
+        category if category.featured
+      end
     end
 
     def set_default_featured

@@ -23,7 +23,7 @@ module KepplerFrontend
     private
 
     def set_categories
-      @categories = KepplerProducts::Category.all.sort_by { |c| c.name.downcase }
+      @categories = KepplerProducts::Category.with_products.sort_by { |c| c.name.downcase }
     end
   end
 end

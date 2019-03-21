@@ -22,7 +22,7 @@ module KepplerProducts
     def self.index_attributes
       %i[name category_id address seller seller_name seller_phone seller_email]
     end
-
+  
     def self.latest
       where(active: true).order(position: :asc).first(6)
     end

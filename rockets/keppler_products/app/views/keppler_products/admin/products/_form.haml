@@ -128,13 +128,12 @@
       })
 - else
   :javascript
-    $(document).ready(function () {
+    $(document).on('turbolinks:load', function () {
       $('#datetimepicker6').datetimepicker({
          minDate: new Date(),
          format: 'D/M/Y'
        });
-      $('')
-    $('#datetimepicker6').find('input').val("#{@product.expiration}")
+      $('#datetimepicker6').find('input').val("#{@product.expiration}")
     })
 - if @product.seller.eql?('2xale')
   :javascript

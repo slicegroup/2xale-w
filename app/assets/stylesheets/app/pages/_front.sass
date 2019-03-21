@@ -1,83 +1,201 @@
-main
-  .front
-    height: 120vh
-    position: relative
-    width: 100%
-    z-index: 1
-    .languages
-      display: flex
-      margin: 50px
-      position: absolute
-      z-index: 9
-      a
-        color: #fff
-        display: block
-        font-family: "Open Sans", sans-serif
-        font-size: 17px
-        padding: 0 1rem
-        line-height: 20px
-        position: relative
-        transition: all ease-in-out .3s
-        &:first-child
-          border-right: 2px solid $white
-        &.active-lang
-          font-weight: bold
-    .btn-main
-      background-color:  #f44336
-      border-radius: 30px
-      color:  white
-      cursor: pointer
-      font-weight:  600
-      margin: 40px 50px
-      padding: 11px 20px 8px 20px
-      position: absolute
-      right: 0
-      z-index: 9
-    .front-content
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      height: 80%
-      left: 0px
-      top: 0px
-      position: absolute
-      width: 100%
-    .front-logo
-      z-index: 2
-      span
-        color: $white
-        font-family: $putua
-        font-size: 140px
-    .front-social
-      ul
-        margin: 0
-        display: table
-        li
-          display: inline-flex
-          list-style: none
-          &:first-child
-            margin-left:  0
-    .front-footer
-      position: fixed
-      top: 400px
-      width: 100%
-    .mouse-scroll
-      position: fixed
-      top: 400px
-      width: 100%
-      .mouse
-        width: 20px
-        height: 40px
-        padding: 6px
-        border: solid 2px #fff
-        border-radius: 20px
-        margin: 0 auto
-        .scroll
-          width: 4px
-          height: 10px
-          background: #fff
-          border-radius: 20px
-          animation-name: scroll-down
-          animation-duration: 1s
-          animation-iteration-count: infinite
+h1.title {
+  font-family: $quicksand;
+  font-weight: $bold;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    width: 100px;
+    height: 4px;
+    background-color: $blue;
+    left: 0;
+    bottom: -10px;
+    border-radius: 5px;
+  }
+
+  @include respond-to(xs) {
+    font-size: 30px;
+  }
+}
+
+.products {
+  padding: 50px 50px;
+  @include respond-to(xs) {
+    padding: 60px 5px 50px;
+  }
+}
+
+
+.categories {
+  padding: 50px;
+  @include respond-to(xs) {
+    padding: 50px 10px;
+  }
+}
+
+.half_banners, .full_banner_ad {
+  padding: 10px 50px;
+  @include respond-to(xs) {
+    padding: 10px;
+  }
+}
+
+.badge-offer {
+  background-color: $green;
+  color: $white;
+}
+
+.badge-new {
+  background-color: $blue;
+  color: $white;
+}
+
+.steal-page {
+  display: flex;
+}
+
+.ad_full {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 550px);
+  margin-bottom: 50px;
+
+  // @include respond-to(xs) {
+  //     @include size(50%, 290px);
+  // }
+
+  @include respond-to(sm) {
+      @include size(100%, 400px);
+  }
+}
+
+.ad_half {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 200px);
+  margin-bottom: 50px;
+
+  @include respond-to(xs) {
+      @include size(100%, 30vw);
+  }
+}
+
+.ad_banner_full {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 200px);
+  margin-bottom: 50px;
+
+  @include respond-to(xs) {
+    @include bg(cover, no-repeat, right);
+    @include size(100%, 20vw);
+  }
+
+  @include respond-to(sm) {
+    @include bg(cover, no-repeat, right);
+    @include size(100%, 20vw);
+  }
+}
+
+.ad_left {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 550px);
+  @include respond-to(xs) {
+    display: none;
+  }
+}
+
+footer {
+  padding: 50px;
+  background-color: $blue;
+  text-align: center;
+  font-family: $quicksand;
+  color: $white;
+
+  .copyright {
+    a {
+      color: $light-green;
+      font-weight: $bold;
+    }
+  }
+
+  img {
+    width: 140px;
+    margin-bottom: 40px;
+  }
+
+  .contact-list {
+    padding-left: 0;
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: $white;
+      transition: all ease-in-out .1s;
+
+      &:hover {
+        color: $light-green;
+        text-decoration: none;
+        transition: all ease-in-out .1s;
+      }
+    }
+  }
+
+  .rrss {
+    padding-left: 0;
+    display: inline-flex;
+    ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      color: $white;
+      transition: all ease-in-out .1s;
+
+      &:hover {
+        color: $light-green;
+        text-decoration: none;
+        transition: all ease-in-out .1s;
+      }
+    }
+
+    i {
+      font-size: 25px;
+      margin-right: 15px;
+    }
+  }
+}
+
+
+.products-tablet {
+  display: none;
+
+  @include respond-to(sm) {
+    display: block;
+  }
+}
+
+.products-mobile {
+  display: none;
+
+  @include respond-to(xs) {
+    display: block;
+  }
+}
+
+.products-desktop {
+  display: block;
+
+  @include respond-to(xs) {
+    display: none;
+  }
+
+  @include respond-to(sm) {
+    display: none;
+  }
+}

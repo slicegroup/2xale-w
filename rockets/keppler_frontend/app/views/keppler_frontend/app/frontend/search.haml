@@ -3,7 +3,10 @@
     .banner-category-inner
       = image_tag @category&.image&.url || ''
       .banner-category-mask
-        %h1= @category.name
+        - if @products_total.blank?
+          %h1 No se han encontrado resultados para: "#{@q}"
+        - else
+          %h1 Se muestran resultados de: "#{@q}"
   .search-input
     = simple_form_for @product, url: app_search_path, method: :get, class: 'form-inline' do
       .input-group

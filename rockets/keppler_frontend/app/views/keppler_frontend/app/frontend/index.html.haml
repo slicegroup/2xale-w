@@ -13,7 +13,7 @@
         .search-cta
           %h1= banner.search_text
   .search-input
-    = simple_form_for @product, url: app_category_path(1), method: :get, class: 'form-inline' do
+    = simple_form_for @product, url: app_search_path(), method: :get, class: 'form-inline' do
       .input-group
         %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
         .input-group-prepend

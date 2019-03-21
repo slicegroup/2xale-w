@@ -19,9 +19,13 @@
           %i.icofont-search.input-group-text
 %section.products
   %h1.title Productos
-  .row
+  .row.row-no-margin
     .col-lg-9
-      .row
+      .row.row-no-margin
+        .col-lg-3.steal-pages-xs
+          .steal-page
+            = publicity('steal_page', KepplerPublicity::Ad.publicity('home-1', 'steal-page'))
+            = publicity('steal_page', KepplerPublicity::Ad.publicity('home-2', 'steal-page'))
         - @products.each do |product|
           .col-lg-4
             .product-card
@@ -53,29 +57,29 @@
                 .btn-more
                   Solicitar
                   %i.icofont-arrow-right
-                
-    .col-lg-3
+
+    .col-lg-3.steal-pages-sm
       = publicity('steal_page', KepplerPublicity::Ad.publicity('home-1', 'steal-page'))
       = publicity('steal_page', KepplerPublicity::Ad.publicity('home-2', 'steal-page'))
 %section.half_banners
-  .row
+  .row.row-no-margin
     .col-lg-6
       = publicity('half_banner', KepplerPublicity::Ad.publicity('home-1', 'half-banner'))
     .col-lg-6
       = publicity('half_banner', KepplerPublicity::Ad.publicity('home-2', 'half-banner'))
 - unless @categories_featureds.blank?
   %section.categories
-    .row
+    .row.row-no-margin
       .col-lg-3
         .categories-text
           %h1.title Categorías destacadas
           %span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus incidunt temporibus, at consequuntur expedita et quaerat.
-        - unless @categories_featureds.size < 3
-          .carousel-buttons
-            %button.btn.left
-              %i.icofont-arrow-left
-            %button.btn.right
-              %i.icofont-arrow-right
+          - unless @categories_featureds.size < 3
+            .carousel-buttons
+              %button.btn.left
+                %i.icofont-arrow-left
+              %button.btn.right
+                %i.icofont-arrow-right
       .col-lg-9
         .row.categories-carousel
           - @categories_featureds.each do |category|
@@ -87,7 +91,7 @@
                   Ver más
                   %i.icofont-arrow-right
 %section.full_banner_ad
-  .row
+  .row.row-no-margin
     .col-lg-12
       = publicity('banner', KepplerPublicity::Ad.publicity('home-1', 'banner'))
 :javascript
@@ -108,7 +112,7 @@
     var countDown = new Date(expiration + " 00:00:00").getTime(),
         now = new Date().getTime(),
         distance = countDown - now;
-      
+
     $('#days'+id).html(Math.floor(distance / (day)))
     $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
     $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))

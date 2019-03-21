@@ -116,9 +116,16 @@
     height: 200px;
   }
 
+  @include respond-to(sm) {
+    height: 200px;
+  }
+
   span {
     font-family: $quicksand;
     @include respond-to(xs) {
+      display: none;
+    }
+    @include respond-to(sm) {
       display: none;
     }
   }
@@ -146,11 +153,22 @@
   }
 }
 
+.categories-carousel, .row-no-margin {
+  @include respond-to(xs) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .category-card {
   @include size(100%, 500px);
   position: relative;
   border-radius: 5px;
   padding: 0 15px;
+
+  @include respond-to(xs) {
+    padding: 0;
+  }
 
   img {
     @include size(100%);
@@ -169,6 +187,10 @@
     justify-content: flex-end;
     color: $white;
     padding:  50px 20px;
+
+    @include respond-to(xs) {
+      @include size(100%);
+    }
 
     &:hover {
       text-decoration: none;

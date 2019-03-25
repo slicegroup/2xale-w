@@ -192,7 +192,7 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.action_mailer.default_url_options =
-    { host: 'lideraccion.herokuapp.com' }
+    { host: '2xale.com' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -201,9 +201,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-    domain: 'lideraccion.herokuapp.com',
-    user_name: 'galenicostest@gmail.com',
-    password: 'UserRoot1..',
+    domain: '2xale.com',
+    user_name: 'atencionalcliente@2xale.com',
+    password: 'lbqQz1PVjg',
     authentication:   'plain',
     enable_starttls_auto: true,
     ssl: false,

@@ -1,0 +1,39 @@
+= simple_form_for product, url: admin_products_product_toggle_path(product), method: :post do |f|
+  %label
+    - if !product.active
+      %label.switch
+        %input{name: "product[featured]", type: "hidden", value: "true"}
+        %input{id: "switch-#{product.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "product_deactivated()"}
+    - elsif @products_count >= 6 && !product.featured
+      %label.switch
+        %input{name: "product[featured]", type: "hidden", value: "true"}
+        %input{id: "switch-#{product.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "notPermission()"}
+    - elsif product.featured?
+      %label.switch
+        %input{name: "product[featured]", type: "hidden", value: "false"}
+        %input.active{id: "switch-#{product.id}", :type => "checkbox", checked: "checked"}
+        %span.slider.round{onclick: "sendPermission('#{product.id}')"}
+    - else
+      %label.switch
+        %input{name: "product[featured]", type: "hidden", value: "true"}
+        %input{id: "switch-#{product.id}", :type => "checkbox"}
+        %span.slider.round{onclick: "sendPermission('#{product.id}')"}
+
+:javascript
+  function sendPermission(id) {
+    $("#edit_product_"+id).submit()
+  }
+  function notPermission(){
+    Swal.fire({
+      type: 'error',
+      title: 'No pueden haber mas de 6 productos destacados',
+    })
+  }
+  function product_deactivated(){
+    Swal.fire({
+      type: 'error',
+      title: 'El producto no puede destacarse si esta desactivo',
+    })
+  }

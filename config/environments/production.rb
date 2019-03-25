@@ -199,14 +199,15 @@ Rails.application.configure do
   config.action_mailer.default charset: 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    address: 'cloud.tremmelca.com',
+    address: 'cloud.tremmelca.net',
     port: '465',
     domain: '2xale.com',
     user_name: 'atencionalcliente@2xale.com',
     password: 'lbqQz1PVjg',
     authentication:   'plain',
     enable_starttls_auto: true,
-    ssl: false,
+    ssl: true,
+    tls: true,
     openssl_verify_mode: 'none'
   }
 

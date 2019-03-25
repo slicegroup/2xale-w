@@ -84,7 +84,7 @@ Rails.application.configure do
     domain:               '2xale.com',
     user_name:            'atencionalcliente@2xale.com',
     password:             'lbqQz1PVjg',
-    ssl:                    false,
+    ssl:                    true,
     tls:                    false,
     authentication:       'plain',
     enable_starttls_auto: true

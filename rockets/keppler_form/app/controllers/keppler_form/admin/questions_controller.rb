@@ -6,8 +6,8 @@ module KepplerForm
       layout 'keppler_form/admin/layouts/application'
       skip_before_action :verify_authenticity_token
       before_action :authenticate_user!
-      before_action :set_poll
-      before_action :set_question, except: %i[create]
+      before_action :set_poll, except: %i[toggle]
+      before_action :set_question, except: %i[create toggle]
       include ObjectQuery
 
       def create
@@ -27,6 +27,11 @@ module KepplerForm
         @questions = Question.where(poll_id: @poll.id)
         @question.results_questions.destroy
         @question.destroy
+      end
+
+      def toggle
+        Question.find(params[:question_id]).update(required_attr: params[:question][:required_attr])
+        redirect_to admin_form_poll_path(1)
       end
 
       def edit; end

@@ -13,5 +13,5 @@
   .flex-form
     - question.options.each do |option|
       .fields.check.check-primary.inputGroupMultiple{id: "option-#{option.id}"}
-        %input.btn.btn-check.opciones{ name: "#{question.ask_type}-#{question.id}[answer][#{option.id}]", id: "#{question.ask_type}_option-#{option.id}", type: 'checkbox', value: option.name }
+        %input.btn.btn-check.opciones{ required: question.required_attr?, name: "#{question.ask_type}-#{question.id}[answer][#{option.id}]", id: "#{question.ask_type}_option-#{option.id}", type: 'checkbox', value: option.name }
         %label.opciones{ for: "#{question.ask_type}_option-#{option.id}" }= option.name

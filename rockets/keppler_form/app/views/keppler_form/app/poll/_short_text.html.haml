@@ -10,4 +10,4 @@
     %label= question.sentence
   - unless question.description.blank?
     %p.description-encuesta= question.description
-  %input.input-escuesta-1.form-control{ name: "short_text-#{question.id}[answer]", id: "short_text_answer-#{question.id}", placeholder: false, type: 'text'}
+  %input.input-escuesta-1.form-control{ name: "short_text-#{question.id}[answer]", id: "short_text_answer-#{question.id}", placeholder: false, type: 'text', required: question.required_attr? }

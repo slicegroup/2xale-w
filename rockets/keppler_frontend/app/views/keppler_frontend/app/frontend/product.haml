@@ -68,7 +68,6 @@
               %input{:type => "text", value: @product.id, name: 'product_id'}/
             = render 'keppler_form/app/poll/build_questions', questions:  @poll.questions.order(id: :asc)
             = recaptcha_tags
-            .error
             .float-right
               = f.submit 'Enviar solicitud', class: 'btn btn-product'
 %section.product-description
@@ -142,8 +141,8 @@
     errorClass: 'error-class',
     validClass: 'valid-class',
     debug: true,errorElement: 'label',
-    errorPlacement: function(error, element) {
-      $('.error').text('* Faltan rellenar campos')
+    submitHandler: function(form){
+      form.submit();
     }
   });
    $('.slider-for').slick({
@@ -190,7 +189,3 @@
     $('#days'+id).html(Math.floor(distance / (day)))
     $('#hours'+id).html(Math.floor((distance % (day)) / (hour)))
     $('#minutes'+id).html(Math.floor((distance % (hour)) / (minute)))
-:scss
-  .error-class {
-    color: red;
-  }

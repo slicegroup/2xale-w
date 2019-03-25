@@ -76,6 +76,7 @@ module KepplerFrontend
           content: params[:message],
           )
         ContactMailer.send_message(@message).deliver_now
+        ContactMailer.thanks(@message).deliver_now
         flash[:notice] = "Mensaje enviado"
       end
       redirect_to app_about_path

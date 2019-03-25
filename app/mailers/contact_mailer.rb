@@ -10,4 +10,9 @@ class ContactMailer < ApplicationMailer
 		@message = message
 	  mail(to: 'castrogonzalezmariajose6@gmail.com', subject: 'Tienes un nuevo mensaje en 2xale')
 	end
+
+	def thanks(message)
+		@message = message
+		mail(to: message.from_email, subject: 'Gracias por contactarnos')
+	end
 end

@@ -22,7 +22,7 @@ User.create(
 KepplerForm::Poll.create(
   name: 'Formulario de cotización',
   language: 'ES',
-  pulic: true)
+  public: true)
 
 puts 'admin@keppler.io has been created'
 

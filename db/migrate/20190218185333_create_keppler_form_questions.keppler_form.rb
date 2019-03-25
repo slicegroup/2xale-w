@@ -8,6 +8,7 @@ class CreateKepplerFormQuestions < ActiveRecord::Migration[5.2]
       t.integer :poll_id
       t.integer :position
       t.datetime :deleted_at
+      t.boolean :required_attr, default: false
 
       t.timestamps null: false
     end

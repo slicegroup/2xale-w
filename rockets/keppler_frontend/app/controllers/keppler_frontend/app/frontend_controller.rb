@@ -12,8 +12,8 @@ module KepplerFrontend
     # begin keppler
     def index
       @banners = KepplerBanners::Banner.all
-      @products_six = KepplerProducts::Product.latest_six
-      @products_four = KepplerProducts::Product.latest_four
+      @products_six = KepplerProducts::Product.featureds
+      @products_four = KepplerProducts::Product.featureds.last(4)
       @categories_featureds = KepplerProducts::Category.featureds
     end
     # end keppler

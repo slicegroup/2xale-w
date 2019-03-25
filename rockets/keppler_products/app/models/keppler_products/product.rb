@@ -22,6 +22,10 @@ module KepplerProducts
     def self.index_attributes
       %i[name category_id address seller seller_name seller_phone seller_email]
     end
+
+    def self.featureds
+      where(featured: true)
+    end
   
     def self.latest_six
       where(active: true).order(position: :asc).first(6)

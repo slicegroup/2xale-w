@@ -6,8 +6,6 @@
           %label{ for:"question#{question.id}-option#{option.id}" }
             = option.name
             %input{ id: "fields-question#{question.id}-option#{option.id}", type: 'radio', name: "question#{question.id}" }
-            %span.cr{ style: 'margin: 3px; border-radius: 50%' }
-              %i.cr-icon.fa.fa-circle
       .delete-sentence
         = link_to({ controller: :questions, action: :delete_option, poll_id: question.poll.id, id: question.id, option_id: option.id }, method: :delete, remote: true) do
           .right

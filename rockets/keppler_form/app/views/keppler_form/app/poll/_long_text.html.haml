@@ -11,3 +11,4 @@
   - unless question.description.blank?
     %p.description-encuesta= question.description
   %textarea.message-escuesta-1.form-control{ name: "long_text-#{question.id}[answer]", placeholder: false, id: "long_text_answer-#{question.id}", type: 'text', required: question.required_attr? }
+  .errorSpan

@@ -136,11 +136,13 @@
       text: 'Hubo un error en el reCAPTCHA, tu mensaje no ha sido enviado.'
     })
 :javascript
+  $.validator.messages.required = 'Este campo es requerido';
   $('#new_result').validate({
     event: 'blur',
     errorClass: 'error-class',
     validClass: 'valid-class',
-    debug: true,errorElement: 'label',
+    debug: true, 
+    errorElement: 'span',
     submitHandler: function(form){
       form.submit();
     }

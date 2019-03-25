@@ -1,9 +1,9 @@
 ---
-  name: Keppler Admin
+  name: 2xale
   description: Welcome to Keppler Admin
-  email: 
-  phone: 
-  mobile: 
+  email: ''
+  phone: ''
+  mobile: ''
   address: test
   port: '25'
   domain_name: keppler.com

@@ -1,5 +1,5 @@
 - if ad.nil?
-	.ad_full{ style: "background-image: url('/assets/keppler_frontend/app/RobaPagina300x550_1.png')" }
+	.ad_full{ style: "background-image: url('/assets/keppler_frontend/app/RobaPagina300x550_1.png')", class: action_name.eql?('product') ? 'ad_full-product': '' }
 - else
 	%a{ href: ad&.url, target: '_blank' }
 		%div{ style: "background-image: url('#{ad.image.url}')", class: action_name.eql?('index') ? 'ad_full' : 'ad_left' }

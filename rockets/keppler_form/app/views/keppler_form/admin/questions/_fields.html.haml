@@ -1,6 +1,6 @@
 .swith-required
   = simple_form_for question, url: admin_form_poll_question_toggle_path(1, question.id), method: :post do |f|
-    %label
+    %label{ style: 'display: flex'}
       - if question.required_attr?
         %label.switch
           %input{name: "question[required_attr]", type: "hidden", value: "false"}
@@ -12,7 +12,7 @@
           %input{name: "question[required_attr]", type: "hidden", value: "true"}
           %input{id: "switch-#{question.id}", :type => "checkbox"}
           %span.slider.round{onclick: "sendPermission('#{question.id}')"}
-      %p Requerido
+      %p{style: 'margin-left: 10px;'} Requerido
 = link_to({ controller: :questions, action: :edit, poll_id: question.poll.id, id: question.id }, remote: true, class: 'edit-sentence') do
   .fields-editable
     .right

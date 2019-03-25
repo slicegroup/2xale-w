@@ -6,14 +6,14 @@ module KepplerFrontend
     # End callbacks area (don't delete)
     include FrontsHelper
     before_action :products_status
-    before_action :set_product, only: %i[index category]
+    before_action :set_product, only: %i[index category search]
     layout 'layouts/keppler_frontend/app/layouts/application'
 
     # begin keppler
     def index
       @banners = KepplerBanners::Banner.all
-      @products_six = KepplerProducts::Product.latest_six
-      @products_four = KepplerProducts::Product.latest_four
+      @products_six = KepplerProducts::Product.featureds
+      @products_four = KepplerProducts::Product.featureds.last(4)
       @categories_featureds = KepplerProducts::Category.featureds
     end
     # end keppler
@@ -49,21 +49,17 @@ module KepplerFrontend
     end
 
     def category
-      if params[:q]
-        @q = params[:q]
-        @products = KepplerProducts::Product.actives.ransack(description_or_name_cont: @q).result.page(params[:page]).per(12)
-      else
-        @category = KepplerProducts::Category.find(params[:id])
-        @products = KepplerProducts::Product.actives.where(category_id: @category.id).page(params[:page]).per(12)
-      end
-      if @products.count > 6
-        products_ids = @products.first(6).map(&:id)
-        if @category.nil?
-          @others_products = KepplerProducts::Product.actives.where.not(id: products_ids).ransack(description_or_name_cont: @q).result
-        else
-          @others_products = KepplerProducts::Product.actives.where(category_id: @category.id).where.not(id: products_ids).first(6)
-        end
-      end
+      @category = KepplerProducts::Category.find(params[:id])
+      @products_total = KepplerProducts::Product.actives.where(category_id: @category.id).page(params[:page]).per(12)
+      @products = @products_total.first(12)
+      @count = @products.count
+    end
+
+    def search
+      @q = params[:q]
+      @products_total = KepplerProducts::Product.actives.ransack(description_or_name_cont: @q).result.page(params[:page]).per(12)
+      @products = @products_total.first(12)
+      @count = @products.count
     end
 
     def about

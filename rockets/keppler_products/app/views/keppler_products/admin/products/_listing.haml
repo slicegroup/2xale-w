@@ -36,7 +36,9 @@
     %td
       = link_to({ action: :show, id: object.id, search: @query }, { class: 'show-row' }) do
         %span= object.seller.eql?('2xale') ? object.seller : object.seller_name
-
+    %td
+      %span
+        = render 'switch_featured', product: object
     %td.dropdown{ style: 'width: 15px;padding-right:15px;' }
       %a.action-btn.pull-right{:id => "menu-#{object.id}", 'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown' }
         %i.icon-options-vertical

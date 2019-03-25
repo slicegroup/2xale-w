@@ -7,6 +7,7 @@ module KepplerProducts
     class ProductsController < ::Admin::AdminController
       layout 'keppler_products/admin/layouts/application'
       before_action :set_product, only: %i[show edit update destroy]
+      before_action :products_featured_count, only: %i[index]
       before_action :products_status
       before_action :index_variables
       before_action :set_categories, only: %i[new create edit update]
@@ -38,6 +39,11 @@ module KepplerProducts
         else
           render :new
         end
+      end
+
+      def toggle
+        Product.find(params[:product_id]).update(featured: params[:product][:featured])
+        redirect_to_index(@objects)
       end
 
       # PATCH/PUT /products/1
@@ -107,6 +113,10 @@ module KepplerProducts
           :expiration, :description, {images: []}, 
           :seller, :seller_name, :seller_phone, :seller_email, :offer, :active, :cover
         )
+      end
+
+      def products_featured_count
+        @products_count = Product.where(featured: true).count
       end
     end
   end

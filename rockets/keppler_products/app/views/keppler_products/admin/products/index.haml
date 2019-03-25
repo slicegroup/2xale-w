@@ -59,6 +59,8 @@
                           = sort_link(@q, attribute) do
                             = t("activerecord.attributes.#{attribute.to_s}")
                     %th
+                      = t("activerecord.attributes.featured")
+                    %th
                     %th
               %tbody.objects-container{ 'data-update-url': sort_admin_products_products_path }
                 = render 'admin/layouts/listing_preloader'

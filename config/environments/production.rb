@@ -77,23 +77,18 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Send deprecation notices to registered listeners.
-  config.action_mailer.default_url_options =
-    { host: '2xale.com' }
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default charset: 'utf-8'
-
   config.action_mailer.smtp_settings = {
     address:              'cloud.tremmelca.net',
-    port:                 465,
+    port:                 587,
     domain:               '2xale.com',
     user_name:            'atencionalcliente@2xale.com',
     password:             'lbqQz1PVjg',
-    authentication:   'plain',
-    ssl: false,
-    enable_starttls_auto: true  }
-
+    ssl:                    false,
+    tls:                    false,
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 
   # openssl_verify_mode: 'none'
 

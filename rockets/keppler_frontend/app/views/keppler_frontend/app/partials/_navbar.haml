@@ -16,15 +16,11 @@
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
           Categorías
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          .row
-            - @categories.in_groups_of(3).each do |block|
-              .col-lg-2
-                / %a.dropdown-item.dropdown-category{href: "#"} Categorías
-                / .dropdown-divider
-                - block.compact.each do |category|
+          - @categories.in_groups_of(4).each do |block|
+            %ul.list-categories
+              - block.compact.each do |category|
+                %li
                   %a.dropdown-item.dropdown-subcategory{href: app_category_path(category)}= category&.name
-        -# %li.nav-item
-        -#   %a.nav-link{href: "/about"} Nosotros
         %li.nav-item
           %a.nav-link{href: "/about"} Contáctanos
     %ul.navbar-nav.ml-auto.navbar-contact
@@ -35,4 +31,4 @@
       %li.nav-item
         %a.nav-link{href: "#"}
           %i.icofont-phone
-          +58 4120640761 / 414 6300761
+          +58 414 6300761 / 4120640761 

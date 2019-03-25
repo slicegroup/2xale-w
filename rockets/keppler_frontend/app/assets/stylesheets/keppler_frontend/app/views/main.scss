@@ -111,6 +111,20 @@ h1.title {
   }
 }
 
+.ad_full-product {
+  @include bg(cover, no-repeat, center);
+  @include size(100%, 500px);
+  margin-bottom: 0;
+
+  // @include respond-to(xs) {
+  //     @include size(50%, 290px);
+  // }
+
+  @include respond-to(sm) {
+      @include size(100%, 400px);
+  }
+}
+
 .ad_half {
   @include bg(cover, no-repeat, center);
   @include size(100%, 200px);
@@ -239,4 +253,11 @@ footer {
   @include respond-to(sm) {
     display: none;
   }
+}
+
+.error-class {
+  color: red;
+  font-family: $quicksand;
+  font-weight: $medium;
+  font-size: 13px;
 }

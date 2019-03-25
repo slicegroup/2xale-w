@@ -26,6 +26,7 @@ KepplerForm::Engine.routes.draw do
 
         resources :questions do
           get '(page/:page)', action: :index, on: :collection, as: ''
+          post 'toggle', to: 'toggle', as: :toggle
           get '/clone', action: 'clone'
           delete '(page/:page)/destroy_multiple', action: :destroy_multiple, on: :collection
         end

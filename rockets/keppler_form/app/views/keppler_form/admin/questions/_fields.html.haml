@@ -1,8 +1,26 @@
+.swith-required
+  = simple_form_for question, url: admin_form_poll_question_toggle_path(1, question.id), method: :post do |f|
+    %label
+      - if question.required_attr?
+        %label.switch
+          %input{name: "question[required_attr]", type: "hidden", value: "false"}
+          %input.active{id: "switch-#{question.id}", :type => "checkbox", checked: "checked"}
+          %span.slider.round{onclick: "sendPermission('#{question.id}')"}
+
+      - else
+        %label.switch
+          %input{name: "question[required_attr]", type: "hidden", value: "true"}
+          %input{id: "switch-#{question.id}", :type => "checkbox"}
+          %span.slider.round{onclick: "sendPermission('#{question.id}')"}
+      %p Requerido
 = link_to({ controller: :questions, action: :edit, poll_id: question.poll.id, id: question.id }, remote: true, class: 'edit-sentence') do
   .fields-editable
     .right
       %i.icon-pencil
     %h4= question.sentence.blank? ? "[ #{t('keppler-form.actions.add-sentence')} ]" : question.sentence
     %h5= question.description.blank? ? "[ #{t('keppler-form.actions.add-description')} ]" : question.description
-  .maria
-    %p required_attr
+
+:javascript
+  function sendPermission(id) {
+    $("#edit_question_"+id).submit()
+  }

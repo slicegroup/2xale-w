@@ -6,13 +6,13 @@ menu:
     url_path: /admin/contact_us/messages
     icon: envelope
     model: KepplerContactUs::Message
-    submenu:
-      - messages:
-          name: messages
-        #   icon: envelope-open
-          url_path: /admin/contact_us/messages
-          current: ['/admin/contact_us/messages']
-          model: KepplerContactUs::Message
+    # submenu:
+    #   - messages:
+    #       name: messages
+    #     #   icon: envelope-open
+    #       url_path: /admin/contact_us/messages
+    #       current: ['/admin/contact_us/messages']
+    #       model: KepplerContactUs::Message
       # - sent:
       #     name: sent
       #   #   icon: paper-plane
@@ -31,12 +31,12 @@ menu:
     #       url_path: /admin/contact_us/messages/read
     #       current: ['/admin/contact_us/messages/read']
     #       model: KepplerContactUs::Message
-      - favorites:
-          name: favorites
-        #   icon: star
-          url_path: /admin/contact_us/messages/favorites
-          current: ['/admin/contact_us/messages/favorites']
-          model: KepplerContactUs::Message
+      # - favorites:
+      #     name: favorites
+      #   #   icon: star
+      #     url_path: /admin/contact_us/messages/favorites
+      #     current: ['/admin/contact_us/messages/favorites']
+      #     model: KepplerContactUs::Message
       # - settings:
       #     name: settings
       #   #   icon: settings

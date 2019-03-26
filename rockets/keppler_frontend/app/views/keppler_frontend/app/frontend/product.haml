@@ -67,6 +67,7 @@
             .hidden
               %input{:type => "text", value: @product.id, name: 'product_id'}/
             = render 'keppler_form/app/poll/build_questions', questions:  @poll.questions.order(id: :asc)
+            = recaptcha_tags
             .float-right
               = f.submit 'Enviar solicitud', class: 'btn btn-product'
 %section.product-description

@@ -7,4 +7,7 @@
 -#    per_page:      number of items to fetch per page
 -#    remote:        data-remote
 %li.page-item{:class => page.current? ? "active" : ""}
-  = link_to_unless page.current?, page, url, {:remote => remote, rel: page.next? ? 'next' : page.prev? ? 'prev' : nil, :class => page.current? ? "page-link" : "page-link" }
+  - if page.current?
+    %span.page-link= page
+  - else
+    = link_to page, url, {:remote => remote, rel: page.next? ? 'next' : page.prev? ? 'prev' : nil, :class => "page-link" }

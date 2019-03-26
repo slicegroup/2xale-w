@@ -32,10 +32,11 @@
                     .col-xs-6
                       = f.input :price, as: :integer, label: t('activerecord.attributes.price')
                     .col-xs-6
-                      %label{:for => "product[expiration]", class: 'control-label string required'}= t('activerecord.attributes.expiration')
-                      #datetimepicker6.input-group.date{"data-date-format" => "dd/DD/mm/yyyy"}
-                        %span.input-group-addon{ style: 'width: 100% !important' }
-                          %input.form-control{:type => 'text', name: 'product[expiration]', style: 'border-radius: 15px;'}
+                      %label.label-expiration{:for => "product[expiration]", class: 'control-label string required'}= t('activerecord.attributes.expiration')
+                      / #datetimepicker6.input-group.date{"data-date-format" => "dd/DD/mm/yyyy"}
+                      /   %span.input-group-addon{ style: 'width: 100% !important' }
+                      /     %input.form-control{:type => 'text', name: 'product[expiration]', style: 'border-radius: 15px;'}
+                      %input.form-control{:min => "2013-12-25", :name => "product[expiration]", :type => "date", value: action_name.eql?('edit') ? @product.expiration : ''}/
                   .col-xs-12
                     = f.input :address, as: :string, label: t('activerecord.attributes.address')
                   .col-xs-12
@@ -72,6 +73,9 @@
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'
                       = f.button :submit, t('keppler.actions.save_and_add_another'), name: '_add_other'
 :scss
+  .label-expiration{
+    display: block;
+  }
   .bold{
     font-weight: bold;
     margin-bottom: 21px;
@@ -117,24 +121,24 @@
   .date{
     width: 100%;
   }
-- if action_name.eql?('new')
-  :javascript
-    $(document).ready(function () {
-      $('#datetimepicker6').datetimepicker({
-         defaultDate: new Date(),
-         minDate: new Date(),
-         format: 'D/M/Y'
-       });
-      })
-- else
-  :javascript
-    $(document).ready(function () {
-      $('#datetimepicker6').datetimepicker({
-         minDate: new Date(),
-         format: 'D/M/Y'
-       });
-      $('#datetimepicker6').find('input').val("#{@product.expiration}")
-    })
+/ - if action_name.eql?('new')
+/   :javascript
+/     $(document).ready(function () {
+/       $('#datetimepicker6').datetimepicker({
+/          defaultDate: new Date(),
+/          minDate: new Date(),
+/          format: 'D/M/Y'
+/        });
+/       })
+/ - else
+/   :javascript
+/     $(document).ready(function () {
+/       $('#datetimepicker6').datetimepicker({
+/          minDate: new Date(),
+/          format: 'D/M/Y'
+/        });
+/       $('#datetimepicker6').find('input').val("#{@product.expiration}")
+/     })
 - if @product.seller.eql?('2xale')
   :javascript
     $('.seller1').addClass('selected')
@@ -143,44 +147,45 @@
     $('.fields').show()
     $('.seller2').addClass('selected')
 :javascript
-    $('.seller2').click(function(){
-      $('.fields').show()
-      $(this).addClass('selected')
-      $('.seller1').removeClass('selected')
-      $('#product_seller').val('tercero')
-    })
-    $('.seller1').click(function(){
-      $('.fields').hide()
-      $(this).addClass('selected')
-      $('.seller2').removeClass('selected')
-      $('#product_seller').val('2xale')
-      $('#product_seller_name').val('')
-      $('#product_seller_phone').val('')
-      $('#product_seller_email').val('')
-    })
-    $('.simple_form').validate({
-      event: 'blur',
-      errorClass: 'error-class',
-      validClass: 'valid-class',
-       rules: {
-         'product[seller_name]': { required: true},
-         'product[seller_phone]': { required: true, number: true},
-         'product[seller_email]': { required: true, email: true},
-         'product[name]': {required: true},
-         'product[address]': {required: true},
-         'product[expiration]': {required: true}
-        },
-       messages: {
-         'product[seller_name]': 'Indica el nombre del vendedor',
-         'product[seller_phone]': 'Teléfono del vendedor',
-         'product[seller_email]': 'Correo del vendedor',
-         'product[name]': 'Indica el nombre del producto',
-         'product[address]': 'Indica la ubicación del producto',
-         'product[address]': 'Indica la fecha de expiración del producto'
-        },
-      debug: true,errorElement: 'label',
-      submitHandler: function(form){
-        form.submit();
-      }
-    });
-  
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementsByName("product[expiration]")[0].setAttribute('min', today);
+  $('.seller2').click(function(){
+    $('.fields').show()
+    $(this).addClass('selected')
+    $('.seller1').removeClass('selected')
+    $('#product_seller').val('tercero')
+  })
+  $('.seller1').click(function(){
+    $('.fields').hide()
+    $(this).addClass('selected')
+    $('.seller2').removeClass('selected')
+    $('#product_seller').val('2xale')
+    $('#product_seller_name').val('')
+    $('#product_seller_phone').val('')
+    $('#product_seller_email').val('')
+  })
+  $('.simple_form').validate({
+    event: 'blur',
+    errorClass: 'error-class',
+    validClass: 'valid-class',
+     rules: {
+       'product[seller_name]': { required: true},
+       'product[seller_phone]': { required: true, number: true},
+       'product[seller_email]': { required: true, email: true},
+       'product[name]': {required: true},
+       'product[address]': {required: true},
+       'product[expiration]': {required: true}
+      },
+     messages: {
+       'product[seller_name]': 'Indica el nombre del vendedor',
+       'product[seller_phone]': 'Teléfono del vendedor',
+       'product[seller_email]': 'Correo del vendedor',
+       'product[name]': 'Indica el nombre del producto',
+       'product[address]': 'Indica la ubicación del producto',
+       'product[address]': 'Indica la fecha de expiración del producto'
+      },
+    debug: true,errorElement: 'label',
+    submitHandler: function(form){
+      form.submit();
+    }
+  });

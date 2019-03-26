@@ -72,28 +72,41 @@ Rails.application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
-  config.time_zone = 'Caracas'
+
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
   # Send deprecation notices to registered listeners.
-  config.action_mailer.default_options = {from: 'atencionalcliente@2xale.com'}
-  config.action_mailer.default_url_options = { host: 'https://www.2xale.com/' }
+  config.action_mailer.default_url_options =
+    { host: Rails.application.secrets.domain_name }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default charset: 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    address:              'cloud.tremmelca.net',
-    port:                 587,
-    domain:               '2xale.com',
-    user_name:            'atencionalcliente@2xale.com',
-    password:             'lbqQz1PVjg',
-    ssl:                    true,
-    tls:                    false,
-    authentication:       'plain',
-    enable_starttls_auto: true }
+    address:              Rails.application.secrets.address,
+    port:                 Rails.application.secrets.port,
+    domain:               Rails.application.secrets.domain_name,
+    user_name:            Rails.application.secrets.email,
+    password:             Rails.application.secrets.password,
+    authentication:   'plain',
+    enable_starttls_auto: true,
+    ssl: false,
+  }
+
+  # config.action_mailer.smtp_settings = {
+  #   address:              Rails.application.secrets.address,
+  #   port:                 Rails.application.secrets.port,
+  #   domain:               Rails.application.secrets.domain_name,
+  #   user_name:            Rails.application.secrets.email,
+  #   password:             Rails.application.secrets.password,
+  #   authentication:   :plain,
+  #   enable_starttls_auto: true,
+  #   open_ssl_verify_mode: 'none',
+  #   ssl: true,
+  #   tls: true
+  # }
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
@@ -103,4 +116,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.assets.precompile += %w(
+    keppler_frontend/app/grapes/grapes-editor.js keppler_frontend/app/grapes/font-awesome.css
+    keppler_frontend/app/grapes/grapes-editor.js keppler_frontend/app/grapes/grapes-custom.scss
+  )
 end

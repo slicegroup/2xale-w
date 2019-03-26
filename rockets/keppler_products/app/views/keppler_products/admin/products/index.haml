@@ -7,6 +7,13 @@
             = t("keppler.models.pluralize.products").humanize
           = entries(@total, @objects)
         %section.content-actions
+          %div
+            = simple_form_for KepplerProducts::Product.new, url: admin_products_products_path, method: :get do
+              .select-filter
+                %select.form-control#filter_by_role{ name: 'filter', onchange: '$("#new_product").submit()' }
+                  %option{ name: 'filter', value: 'all', selected: (!params[:filter].eql?('expired')) } Todos
+                  %option{ name: 'filter', value: 'expired', selected: (params[:filter].eql?('expired')) } Vencidos
+                  
           .toolbar
             .toolbar-item
               = link_to reload_admin_products_products_path, class: 'tool-btn', remote: true, title: t('keppler.actions.reload_page') do

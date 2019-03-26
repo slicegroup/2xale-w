@@ -1,339 +1,366 @@
-<html>
-<head>
-  <meta content='width=device-width, initial-scale=1.0' name='viewport'>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
-
-    *:not(br):not(tr):not(html) {
-      font-family: 'Raleway', sans-serif;
-      box-sizing: border-box;
-    }
-
-    body {
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <meta name="format-detection" content="telephone=no" />
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!--<![endif]-->
+    <style type="text/css">
+      body {
+      -webkit-text-size-adjust: 100% !important;
+      -ms-text-size-adjust: 100% !important;
+      -webkit-font-smoothing: antialiased !important;
+      }
+      img {
+      border: 0 !important;
+      outline: none !important;
+      }
+      p {
+      Margin: 0px !important;
+      Padding: 0px !important;
+      }
+      table {
+      border-collapse: collapse;
+      mso-table-lspace: 0px;
+      mso-table-rspace: 0px;
+      }
+      td, a, span {
+      border-collapse: collapse;
+      mso-line-height-rule: exactly;
+      }
+      .ExternalClass * {
+      line-height: 100%;
+      }
+      span.MsoHyperlink {
+      mso-style-priority:99;
+      color:inherit;}
+      span.MsoHyperlinkFollowed {
+      mso-style-priority:99;
+      color:inherit;}
+      </style>
+      <style media="only screen and (min-width:481px) and (max-width:599px)" type="text/css">
+      @media only screen and (min-width:481px) and (max-width:599px) {
+      table[class=em_main_table] {
       width: 100% !important;
-      height: 100%;
-      margin: 0;
-      line-height: 1.4;
-      color: #6a6d6d;
-      -webkit-text-size-adjust: none;
-      background-image: url('../img/formu.jpg');
-    }
-
-    p, ul, ol, blockquote {
-      line-height: 1.4;
-      text-align: left;
-    }
-
-    p,h4,h5{
-      font-family: "Karla", sans-serif;
-    }
-    a{
-      font-family: 'Raleway', sans-serif;
-    }
-
-    td {
-      font-family: "Karla", sans-serif;
-      word-break: break-word;
-    }
-
-    h2,h3{
-      font-family: 'Raleway', sans-serif;
-      color: #6d6a6a;
-    }
-
-    h1{
-      color: white;
-      font-family: 'Raleway', sans-serif;
-    }
-
-    /* Layout ------------------------------ */
-    .email-wrapper {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      -premailer-width: 100%;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
-      background-color: #585858;
-    }
-
-    .email-content {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      -premailer-width: 100%;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
-    }
-
-    /* Masthead ----------------------- */
-    .email-masthead {
-      padding: 25px 0;
-      text-align: center;
-      background-color: #b35077;
-    }
-
-    .email-masthead img {
-      height: 25%;
-    }
-
-    .email-masthead_logo {
-      width: 94px;
-    }
-
-    .email-masthead_name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #bbbfc3;
-      text-decoration: none;
-      text-shadow: 0 1px 0 white;
-    }
-
-    /* Body ------------------------------ */
-    .email-body {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      -premailer-width: 100%;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
-      border-top: 1px solid #EDEFF2;
-      border-bottom: 1px solid #EDEFF2;
-      background-color: #FFFFFF;
-    }
-
-    .email-body_inner {
-      width: 570px;
-      margin: 0 auto;
-      padding: 0;
-      -premailer-width: 570px;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
-      background-color: #FFFFFF;
-    }
-
-    .email-footer {
-      width: 570px;
-      margin: 0 auto;
-      padding: 0;
-      -premailer-width: 570px;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
-      text-align: center;
-    }
-
-    .email-footer p {
-      color: #fff;
-    }
-
-    .body-action {
-      width: 100%;
-      margin: 30px auto;
-      padding: 0;
-      -premailer-width: 100%;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
-      text-align: center;
-    }
-
-    .body-sub {
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid #EDEFF2;
-    }
-
-    .content-cell {
-      padding: 35px;
-      font-weight: bold;
-      font-size: 30px;
-      font-family: raleway;
-      color: white;
-    }
-
-    /* Attribute list ------------------------------ */
-    .attributes {
-      margin: 0 0 21px;
-    }
-
-    .attributes_content {
-      background-color: #fff;
-      padding: 16px;
-    }
-
-    .attributes_item {
-      padding: 0;
-      line-height: 28px;
-    }
-
-    .attributes_item strong {
-      color: #6a6d6d;
-      font-size: 15px;
-      font-family: karla;
-    }
-
-    .attributes_item img {
-      margin-top: 20px;
-      width: 100%;
-    }
-
-    #company {
-      color: white;
-      text-decoration: none !important;
-    }
-
-    /* Utilities ------------------------------ */
-    .align-right {
-      text-align: right;
-    }
-
-    .align-left {
-      text-align: left;
-    }
-
-    .align-center {
-      text-align: center;
-    }
-
-    /*Media Queries ------------------------------ */
-    @media only screen and (max-width:600px) {
-      .email-body_inner, .email-footer {
-        width: 100% !important;
       }
-
-    }
-
-    @media only screen and (max-width:500px) {
-      .button {
-        width: 100% !important;
+      table[class=em_wrapper] {
+      width: 100% !important;
       }
-
-    }
-
-    @media only screen and (max-width:767px) {
-      .email-masthead img {
-        width: 30%;
+      td[class=em_hide], br[class=em_hide] {
+      display: none !important;
       }
-
-    }
-
-    /* Type ------------------------------ */
-    h1 {
-      margin-top: 0;
-      color: #6a6d6d;
-      font-size: 19px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #2F3133;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    h3 {
-      margin-top: 0;
-      color: #2F3133;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    p {
-      margin-top: 0;
-      color: #74787E;
-      font-size: 16px;
-      line-height: 1.5em;
-      text-align: center;
-    }
-
-    p.sub {
-      font-size: 13px;
-    }
-
-    p.center {
-      text-align: center;
-    }
-    .green{
-	    	background: #99bf6c;
-	  }
-  </style>
-</head>
-<body>
-  <table cellpadding='0' cellspacing='0' class='email-wrapper' width='100%'>
-    <tr>
-      <tr class="green">
-	  		<td align="center">
-	  			<table cellpadding='0' cellspacing='0' class='email-footer' width='100%'>
-	  				<tr class="biocert">
-	  					<td align='center' class='content-cell'>
-                <h1>
-                  2XALE
-                </h1>
-	  					</td>
-	  				</tr>
-	  			</table>
-	  		</td>
-	  	</tr>
-        <table cellpadding='0' cellspacing='0' class='email-content' width='100%'>
-          <!-- Email Body -->
-          <tr>
-            <td cellpadding='0' cellspacing='0' class='email-body' width='100%'>
-              <table align='center' cellpadding='0' cellspacing='0' class='email-body_inner' width='570'>
-                <!-- Body content -->
-                <tr>
-                  <td class='content-cell'>
-                    <h1>
-                      Hola ¡Gracias por contactarnos!
-                    </h1>
-                    <p>Te recordamos la información</p>
-                    <table cellpadding='0' cellspacing='0' class='attributes' width='100%'>
-                      <tr>
-                        <td class='attributes_content'>
-                          <table cellpadding='0' cellspacing='0' width='100%'>
-
-<tr>
-        <td class='attributes_item'>
-          <strong>Name:</strong>
-          <strong><%= @message.name %></strong>
-        </td>
-  </tr>
-</table>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-  <td>
-    <table align='center' cellpadding='0' cellspacing='0' class='email-footer' width='570'>
+      img[class=em_full_img] {
+      width: 100% !important;
+      height: auto !important;
+      }
+      td[class=em_align_cent] {
+      text-align: center !important;
+      }
+      td[class=em_pad_top]{
+      padding-top:20px !important;
+      }
+      td[class=em_aside]{
+      padding-left:10px !important;
+      padding-right:10px !important;
+      }
+      td[class=em_height]{
+      height: 20px !important;
+      }
+      td[class=em_space]{
+      width:10px !important;	
+      }
+      td[class=em_width55] {
+      width:80px !important;
+	  text-align:center !important;
+      }
+      td[class=em_width75] {
+      width:100px !important;
+      }
+      td[class=em_font]{
+      font-size:14px !important;	
+      }
+      td[class=em_font2] {
+      text-align:center !important;
+      }
+      td[class=em_align_cent1] {
+      text-align: center !important;
+      padding-bottom: 10px !important;
+      }
+      }
+      </style>
+      <style media="only screen and (max-width:480px)" type="text/css">
+      @media only screen and (max-width:480px) {
+      table[class=em_main_table] {
+      width: 100% !important;
+      }
+      table[class=em_wrapper] {
+      width: 100% !important;
+      }
+      td[class=em_hide], br[class=em_hide], span[class=em_hide] {
+      display: none !important;
+      }
+      img[class=em_full_img] {
+      width: 100% !important;
+      height: auto !important;
+      }
+      td[class=em_align_cent] {
+      text-align: center !important;
+      }
+      td[class=em_pad_top]{
+      padding-top:20px !important;
+      }
+      td[class=em_height]{
+      height: 20px !important;
+      }
+      td[class=em_aside]{
+      padding-left:10px !important;
+      padding-right:10px !important;
+      } 
+      td[class=em_font]{
+      font-size:14px !important;
+      line-height:28px !important;
+      }
+      td[class=em_font1]{
+      font-size:14px !important;
+      line-height:18px !important;
+      }
+      td[class=em_font2]{
+      font-size:14px !important;
+      line-height:18px !important;
+      text-align:center !important;
+      }
+      td[class=em_space]{
+      width:10px !important;	
+      }
+      span[class=em_br]{
+      display:block !important;
+      }
+      td[class=em_width55] {
+      width:55px !important;
+      font-size:15px !important;
+      line-height:19px !important;
+	  text-align:center !important;
+      }
+      td[class=em_width75] {
+      width:75px !important;
+      font-size:15px !important;
+      line-height:19px !important;
+      }
+      td[class=em_align_cent1] {
+      text-align: center !important;
+      padding-bottom: 10px !important;
+      }
+      }
+    </style>
+  </head>
+  <body style="margin:0px; padding:0px;" bgcolor="#ffffff">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff"> 
+      <!-- BODY  -->
       <tr>
-        <td align='center' class='content-cell'>
-          <p class='sub align-center'>2xale © - 2019 | Todos los derechos reservados</p>
-          <p class='sub align-center'>
-            Desarrollado por
-            <a href='http://slicegroup.xyz' id='company'>
-              <strong>Slice Group</strong>
-            </a>
-          </p>
+        <td align="center" valign="top"  bgcolor="#ffffff">
+          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
+            <!-- === LOGO SECTION === -->
+            <tr>
+              <td height="40" class="em_height">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://www.2xale.com/assets/keppler_frontend/app/logo_2xale_color2.svg" width="230" height="80" style="display:block;font-family: Arial, sans-serif; font-size:15px; line-height:18px; color:#30373b;  font-weight:bold;" border="0" alt="LoGo Here" /></a></td>
+            </tr>
+            <tr>
+              <td height="30" class="em_height">&nbsp;</td>
+            </tr>
+            <!-- === //LOGO SECTION === -->
+            <!-- THANK YOU SECTION -->
+            <tr>
+              <td valign="top" class="em_aside">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="50" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="font-family:'Quicksand', sans-serif; font-size:25px; font-weight:bold; line-height:22px; color:#2670ca; text-transform:uppercase;">Gracias por</td>
+                  </tr>
+                  <tr>
+                    <td height="14" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="font-family:'Quicksand', sans-serif; font-size:18px; font-weight:bold; line-height:22px; color:#2670ca; text-transform:uppercase;">contactarnos</td>
+                  </tr>
+                  <tr>
+                    <td height="25" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="1" bgcolor="#d6d7d8" style="font-size:0px;line-height:0px;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/spacer.gif" width="1" height="1" alt="" style="display:block;" border="0" /></td>
+                  </tr>
+                  <tr>
+                    <td height="27" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="font-family:'Quicksand', sans-serif; font-size:16px; line-height:22px; color:#30373b;">
+                      Te recordamos tus datos
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="23" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td valign="top">
+                            <table width="290" border="0" cellspacing="0" cellpadding="0" align="left" class="em_wrapper" bgcolor="#f6f7f8">
+                              <tr>
+                                <td align="center" valign="middle" class="em_font1" height="42" style="font-family:'Quicksand', sans-serif; font-size:17px; font-weight:bold; color:#30373b; text-transform:uppercase;">
+                                  <span style="color:#2670ca;">Nombre:</span> 
+                                  <br>
+                                  <%= @message.name %>
+                                </td>
+                              </tr>
+                            </table>
+                            <table width="290" border="0" cellspacing="0" cellpadding="0" align="right" class="em_wrapper">
+                              <tr>
+                                <td valign="top" class="em_pad_top">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0"  bgcolor="#f6f7f8" >
+                                    <tr>
+                                      <td align="center" valign="middle" class="em_font1" height="42" style="font-family:'Quicksand', sans-serif; font-size:17px; font-weight:bold; color:#30373b; text-transform:uppercase;">
+                                        <span style="color:#2670ca;">Correo Electrónico:</span> 
+                                        <br>
+                                        <%= @message.email %>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td valign="top">
+                              <table width="290" border="0" cellspacing="0" cellpadding="0" align="left" class="em_wrapper" bgcolor="#f6f7f8">
+                                <tr>
+                                  <td align="center" valign="middle" class="em_font1" height="42" style="font-family:'Quicksand', sans-serif; font-size:17px; font-weight:bold; color:#30373b; text-transform:uppercase;">
+                                    <span style="color:#2670ca;">Telefóno:</span>
+                                    <br>
+                                    <%= @message.phone %>
+                                  </td>
+                                </tr>
+                              </table>
+                              <table width="290" border="0" cellspacing="0" cellpadding="0" align="right" class="em_wrapper">
+                                <tr>
+                                  <td valign="top" class="em_pad_top">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"  bgcolor="#f6f7f8" >
+                                      <tr>
+                                        <td align="center" valign="middle" class="em_font1" height="42" style="font-family:'Quicksand', sans-serif; font-size:17px; font-weight:bold; color:#30373b; text-transform:uppercase;">
+                                          <span style="color:#2670ca;">Asunto:</span>
+                                          <br>
+                                          <%= @message.subject %>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td height="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td valign="top">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="left" class="em_wrapper" bgcolor="#f6f7f8">
+                                  <tr>
+                                    <td align="center" valign="middle" class="em_font1" height="42" style="font-family:'Quicksand', sans-serif; font-size:17px; font-weight:bold; color:#30373b; text-transform:uppercase;">
+                                      <span style="color:#2670ca;">Mensaje:</span>
+                                      <br>
+                                      <%= @message.content %>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                  <tr>
+                    <td height="25" class="em_height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="12" style="font-size:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" class="em_height">&nbsp;</td>
+                  </tr>
+                  
+                </table>
+              </td>
+            </tr>
+            <!-- //THANK YOU SECTION -->
+          </table>
         </td>
       </tr>
+      <!-- //BODY  -->
+      <!-- === FOOTER SECTION === -->
+      <tr>
+        <td align="center" valign="top"  bgcolor="#2670ca" class="em_aside">
+          <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="em_main_table" style="table-layout:fixed;">
+            <tr>
+              <td height="35" class="em_height">&nbsp;</td>
+            </tr>
+            <tr>
+              <td valign="top" align="center">
+                <table border="0" cellspacing="0" cellpadding="0" align="center">
+                  <tr>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><i class="fab fa-facebook-f" style="font-size: 25px; color: #fff;"></i></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><i class="fab fa-instagram" style="font-size: 25px; color: #fff;"></i></a></td>
+                    <td width="7">&nbsp;</td>
+                    <td valign="top"><a href="#" target="_blank" style="text-decoration:none;"><i class="fab fa-twitter" style="font-size: 25px; color: #fff;"></i></a></td>
+                    <td width="7">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td height="22" class="em_height">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="10" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center" style="font-family:'Quicksand', sans-serif; font-size:12px; line-height:18px; color:#fff;text-transform:uppercase;">
+                Copyright 2Xale 2019 | Powered by <a href="https://slicegroup.co/" style="color: #a8d42e;font-weight: 600;text-decoration: none;">Slice Group</a> with <a href="https://keppleradmin.com/" style="font-weight: 600;text-decoration: none;color: #a8d42e;">Keppler</a>
+              </td>
+            </tr>
+            <tr>
+              <td height="10" style="font-size:1px; line-height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="35" class="em_height">&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- === //FOOTER SECTION === -->
     </table>
-  </td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</body>
-</html> 
+    <div style="display:none; white-space:nowrap; font:20px courier; color:#ffffff; background-color:#ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+  </body>
+</html>

@@ -72,13 +72,13 @@ Rails.application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
-
+  config.time_zone = 'Caracas'
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
   # Send deprecation notices to registered listeners.
-  config.action_mailer.default_url_options =
-    { host: 'mantprocaweb.com' }
+  config.action_mailer.default_options = {from: 'atencionalcliente@2xale.com'}
+  config.action_mailer.default_url_options = { host: 'https://www.2xale.com/' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -86,13 +86,14 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address:              'cloud.tremmelca.net',
-    port:                 '587',
-    domain:               'mantprocaweb.com ',
-    user_name:            'operation@mantprocaweb.com',
-    password:             'EQtc5LRupE',
-    authentication:   'plain',
-    enable_starttls_auto: true,
-    ssl: false }
+    port:                 587,
+    domain:               '2xale.com',
+    user_name:            'atencionalcliente@2xale.com',
+    password:             'lbqQz1PVjg',
+    ssl:                    true,
+    tls:                    false,
+    authentication:       'plain',
+    enable_starttls_auto: true }
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false

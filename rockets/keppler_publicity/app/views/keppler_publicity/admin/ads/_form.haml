@@ -242,6 +242,9 @@
     width: 95%;
     margin: auto;
   }
+  .blue{
+   background: #2670ca;
+  }
   @media (max-width: 1250px) {
     #tab_1 .products div {
       max-height: 220px;
@@ -265,12 +268,13 @@
       height: 1250px !important;
     }
 
+
   }
 
 :javascript
   $('.publicity').click(function(){
-    $('.publicity').removeClass('active')
-    $(this).addClass('active')
+    $('.publicity').removeClass('blue')
+    $(this).addClass('blue')
     if ($(this).hasClass('banner-1')){
       $('#ad_location').val('home-1')
       $('#ad_type_ad').val('banner')

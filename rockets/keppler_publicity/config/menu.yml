@@ -1,17 +1,17 @@
 menu:
   keppler_publicity:
     name: Publicity
-    current: ['/']
-    url_path: /
+    current: ['/admin/publicity/ads']
+    url_path: /admin/publicity/ads
     icon: rocket
-    model: User
-    submenu:
-      - ad:
-          name: ads
-          url_path: /admin/publicity/ads
-          icon: layers
-          current: ['/admin/publicity/ads']
-          model: KepplerPublicity::Ad
+    model: KepplerPublicity::Ad
+    # submenu:
+    #   - ad:
+    #       name: ads
+    #       url_path: /admin/publicity/ads
+    #       icon: layers
+    #       current: ['/admin/publicity/ads']
+    #       model: KepplerPublicity::Ad
 
       # - new:
       #     name: + Add new module

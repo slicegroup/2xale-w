@@ -92,7 +92,6 @@ Rails.application.configure do
     password:             Rails.application.secrets.password,
     authentication:   'plain',
     enable_starttls_auto: true,
-    ssl: false,
   }
 
   # config.action_mailer.smtp_settings = {

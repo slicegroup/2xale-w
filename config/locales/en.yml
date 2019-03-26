@@ -1,4 +1,7 @@
 en:
+  keppler-contact-us:
+    modules:
+      keppler_contact_us/admin/messages: Messages
   keppler:
     language: 
       select_lang: Select a language
@@ -69,6 +72,11 @@ en:
         clone: Permite al usuario clonar un registro existente dentro del módulo
     models:
       singularize:
+        message: message
+        banner: banner
+        cotization: cotization
+        product: product
+        category: categoría
         ad: ad
         seo: seo
         role: role
@@ -80,6 +88,11 @@ en:
         user: user
         capsule: capsule
       pluralize:
+        messages: messages
+        banners: banners
+        cotizations: cotizations
+        products: products
+        categories: categorías
         ads: ads
         seos: seos
         roles: roles

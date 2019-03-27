@@ -24,8 +24,15 @@ module KepplerProducts
 
     def self.with_products
       all.select do |category|
-        category unless category.products.blank?
+        category if category.products_not_expired?(category)
       end
+    end
+
+    def products_not_expired?(category)
+      total = self.products.count
+      inactives = self.products.where(active: false).count
+
+      !total.eql?(inactives)
     end
 
     def self.featureds

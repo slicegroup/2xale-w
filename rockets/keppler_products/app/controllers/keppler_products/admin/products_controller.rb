@@ -15,6 +15,15 @@ module KepplerProducts
 
       # GET /products
       def index
+        if params[:filter].eql?('expired')
+          @objects = Kaminari.paginate_array(Product.expireds).page(@current_page).per(10)
+        else
+          @q = Product.ransack(params[:q])
+          @products = @q.result(distinct: true)
+          @objects = @products.page(@current_page).order(position: :asc).per(10)
+        end
+        @total = @products.size
+        @attributes = Product.index_attributes
         respond_to_formats(@products)
         redirect_to_index(@objects)
       end

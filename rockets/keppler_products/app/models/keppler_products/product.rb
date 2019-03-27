@@ -23,6 +23,13 @@ module KepplerProducts
       %i[name category_id address seller seller_name seller_phone seller_email]
     end
 
+    def self.expireds
+      products = all.select do |product|
+        product if product.is_expired?
+      end
+      products
+    end
+
     def self.featureds
       where(featured: true)
     end
@@ -45,6 +52,11 @@ module KepplerProducts
     def is_active?
       return true if self.expiration > Time.now
       self.update(active: false)
+      false
+    end
+
+    def is_expired?
+      return true if self.expiration < Time.now
       false
     end
 

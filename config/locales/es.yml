@@ -39,6 +39,11 @@ es:
         admins: Administradores
       roles: Roles
       keppler-design: 'Diseño Keppler'
+      keppler-products-submenu:
+        categories: Categorías
+        products: Productos
+        cotizations: Cotizaciones
+        products-expireds: Productos vencidos
       keppler-design-submenu:
         frontend-templates: 'Plantillas y Temas'
         admin-appearance: 'Apariencia de Keppler'

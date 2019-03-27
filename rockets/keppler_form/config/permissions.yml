@@ -1,6 +1,7 @@
 modules:
  polls:
     name: Polls
+    model: KepplerFormPoll
     actions: [
       'index', 'create', 'update',
       'destroy', 'download', 'upload',

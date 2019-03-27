@@ -48,6 +48,11 @@ en:
       keppler-blog-submenu:
         posts: Posts
         categories: Categories
+      keppler-products-submenu:
+        categories: Categories
+        products: Products
+        cotizations: Cotizations
+        products-expireds: Products expireds
     customize:
       admin-theme: Keppler Theme
       time-zone: Time Zone

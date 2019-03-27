@@ -7,7 +7,7 @@ menu:
     model: User
     submenu:
       - category:
-          name: category
+          name: categories
           url_path: /admin/products/categories
           icon: layers
           current: ['/admin/products/categories']
@@ -16,6 +16,13 @@ menu:
       - product:
           name: products
           url_path: /admin/products/products
+          icon: layers
+          current: ['/admin/products/products']
+          model: KepplerProducts::Product
+
+      - product:
+          name: products expireds
+          url_path: /admin/products/products?utf8=✓&filter=expired
           icon: layers
           current: ['/admin/products/products']
           model: KepplerProducts::Product

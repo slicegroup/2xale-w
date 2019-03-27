@@ -2,6 +2,7 @@
 #= require jquery
 #= require jquery-ui/widgets/datepicker
 #= require jquery-ui/widgets/sortable
+#= require jquery_ujs
 #= require nprogress
 #= require nprogress-turbolinks
 #= require ckeditor/init

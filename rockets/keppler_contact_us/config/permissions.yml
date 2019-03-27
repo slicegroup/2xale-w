@@ -1,6 +1,7 @@
 modules:
  messages:
     name: Message
+    model: KepplerContactUsMessage
     actions: [
       'index', 'create', 'update',
       'destroy', 'download', 'upload',

@@ -1,7 +1,6 @@
 %section.banner-category
   .banner-category-box
     .banner-category-inner
-      = image_tag @category&.image&.url || ''
       .banner-category-mask
         - if @products_total.blank?
           %h1 No se han encontrado resultados para: "#{@q}"

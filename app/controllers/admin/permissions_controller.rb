@@ -34,6 +34,7 @@ module Admin
         @actions = all_actions
         @role.first_permission(@module, @actions)
       end
+      redirect_to admin_role_add_permissions_path
     end
 
     private

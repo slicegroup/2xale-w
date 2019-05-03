@@ -31,7 +31,7 @@ module KepplerContactUs
           KepplerContactUs::Admin::MessageMailer.with(object: @object).send_mail(@object).deliver_now
           flash[:notice] = actions_messages(@objects)
         end
-        redirect_to_index(@objects)
+        redirect_to action: "listing"
       end
 
       # GET /messages/1
@@ -42,7 +42,7 @@ module KepplerContactUs
       # DELETE /messages/1
       def destroy
         @object.destroy
-        redirect_to_index(@objects)
+        redirect_to action: "listing"
       end
 
       def destroy_multiple
@@ -60,6 +60,7 @@ module KepplerContactUs
       end
       
       def send_message
+        byebug
         message_params[:to_emails].split(', ')
         @object = model.new(message_params)
         if @object.save

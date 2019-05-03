@@ -1,4 +1,14 @@
 en:
+  keppler-contact-us:
+    actions:
+      insert_email: Receivers
+      insert_subject: Subject
+      send: Send
+    attributes:
+      to_emails: To emails
+      subject: Subject
+      content: Content
+      sent: Sent
   keppler:
     sidebar-menu:
       keppler-contact-us: Keppler Contact Us

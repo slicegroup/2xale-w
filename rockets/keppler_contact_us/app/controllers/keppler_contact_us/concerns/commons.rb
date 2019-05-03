@@ -21,7 +21,11 @@ module KepplerContactUs
       end
 
       def query_objects
-        @q = model.ransack(params[:q])
+        if params[:q]
+          @q = model.ransack(content_or_subject_cont: params[:q][:name_or_from_email_or_to_emails_or_subject_or_content_cont])
+        else
+          @q = model.ransack(params[:q])
+        end
         q = @q.result(distinct: true)
         @objects = q.page(@current_page).order(position: :desc)
         @total = q.size

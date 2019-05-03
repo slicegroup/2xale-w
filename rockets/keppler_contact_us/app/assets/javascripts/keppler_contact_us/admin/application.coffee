@@ -1,3 +1,4 @@
+#= require rails-ujs
 #= require activestorage
 # require bootstrap-wysihtml5
 # require bootstrap-wysihtml5/locales

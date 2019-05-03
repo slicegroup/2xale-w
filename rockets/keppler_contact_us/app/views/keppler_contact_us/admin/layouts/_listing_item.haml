@@ -1,5 +1,5 @@
 %td
-  = link_to admin_contact_us_message_path(object), class: 'btn btn-default btn-sm', 'data-toggle': 'tooltip', 'data-original-title': t('keppler.actions.delete'), method: :delete, data: { confirm: t('keppler.messages.data_confirm') } do
+  = link_to admin_contact_us_message_path(object), class: 'btn btn-default btn-sm', 'data-toggle': 'tooltip', 'data-original-title': t('keppler.actions.delete'), method: :delete do
     %i.icon-trash
 %td.mailbox-content.mailbox-read
   = link_to admin_contact_us_message_path(object, search: query), class: 'mailbox-link' do

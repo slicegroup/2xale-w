@@ -45,6 +45,11 @@ module KepplerContactUs
         redirect_to action: "listing"
       end
 
+      def remove
+        model.find(params[:id]).destroy
+        redirect_to action: "listing"
+      end
+
       def destroy_multiple
         model.destroy redefine_ids(params[:multiple_ids])
         redirect_to_index(@objects)

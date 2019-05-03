@@ -13,6 +13,7 @@ KepplerContactUs::Engine.routes.draw do
         get '(page/:page)', action: :listing, on: :collection, as: ''
         get '/clone', action: :clone
         post '/upload', action: :upload
+        post '/remove/:id', action: :remove, as: :remove
         get '/download', action: :download
         get '/favorite', action: :favorite
         get '/reply', action: :reply

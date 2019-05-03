@@ -3,6 +3,7 @@
 #= require jquery-ui/widgets/datepicker
 #= require jquery-ui/widgets/sortable
 #= require jquery_ujs
+#= require turbolinks
 #= require nprogress
 #= require nprogress-turbolinks
 #= require ckeditor/init

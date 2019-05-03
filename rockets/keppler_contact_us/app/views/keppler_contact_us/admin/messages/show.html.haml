@@ -28,10 +28,10 @@
                     #{t('activerecord.attributes.from_email')}:
                     %small.label.label-default
                       #{@object.name}
-                      (#{@object.from_email})
+                      atencionalcliente@2xale.com
                   %h5
                     #{t('activerecord.attributes.to_emails')}: 
-                    %small.label.label-default atencionalcliente@2xale.com
+                    %small.label.label-default= @object.to_emails
                 / /.mailbox-read-info
                 .mailbox-controls.with-border
                   .btn-group
@@ -63,15 +63,16 @@
                   %span.mailbox-read-time.pull-right= I18n.l(@object.created_at, format: :long)
                 / /.mailbox-controls
                 .mailbox-read-message
-                  %p
-                    Nombre:
-                    = @object.name
-                  %p
-                    Teléfono:
-                    = @object.phone
-                  %p
-                    Correo:
-                    = @object.from_email
+                  - unless @object.from_email.eql?('current@2xale.com')
+                    %p
+                      Nombre:
+                      = @object.name
+                    %p
+                      Teléfono:
+                      = @object.phone
+                    %p
+                      Correo:
+                      = @object.from_email
                   %p
                     Su mensaje:
                     = raw @object.content

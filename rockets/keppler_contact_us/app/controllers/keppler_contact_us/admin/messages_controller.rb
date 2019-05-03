@@ -28,7 +28,7 @@ module KepplerContactUs
         message_params[:to_emails].split(', ')
         @object = model.new(message_params)
         if @object.save
-          KepplerContactUs::Admin::MessageMailer.with(object: @object).send_mail(@object).deliver_now
+          ContactMailer.current_send_email(@object).deliver_now
           flash[:notice] = actions_messages(@objects)
         end
         redirect_to action: "listing"

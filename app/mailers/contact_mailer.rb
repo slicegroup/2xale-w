@@ -15,4 +15,9 @@ class ContactMailer < ApplicationMailer
 		@message = message
 		mail(to: message.from_email, subject: 'Gracias por contactarnos')
 	end
+
+	def current_send_email(message)
+		@message = message
+		mail(to: @message.to_emails.split(', '), subject: @message.subject)
+	end
 end

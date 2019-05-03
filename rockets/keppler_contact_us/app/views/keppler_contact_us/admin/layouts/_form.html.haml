@@ -20,7 +20,7 @@
 
                     .box-body.message-form
                       = f.input :name, input_html: { value: current_user.name }, as: :hidden
-                      = f.input :from_email, input_html: { value: current_user.email }, as: :hidden
+                      = f.input :from_email, input_html: { value: 'current@2xale.com' }, as: :hidden
                       .form-group
                         = f.input :to_emails, label: t('keppler-contact-us.attributes.to_emails'), placeholder: t('keppler-contact-us.actions.insert_email'), as: :string, input_html: { 'data-role': 'tagsinput', value: (object&.from_email if action_name.eql?('reply')) }, class: 'form-control bootstrap-tagsinput'
                       .form-group

@@ -3,7 +3,7 @@
     %i.icon-trash
 %td.mailbox-content.mailbox-read
   = link_to admin_contact_us_message_path(object, search: query), class: 'mailbox-link' do
-    - if object.from_email.eql?(current_user.email)
+    - if object.from_email.eql?('current@2xale.com')
       %i.icon-check{ title: t('keppler-contact-us.attributes.sent') }
     - else
       %span{ id: "read-status-#{object.id}" }

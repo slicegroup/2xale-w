@@ -18,6 +18,10 @@ module KepplerBanners
     def self.index_attributes
       %i[title image]
     end
+
+    def self.actives
+      where(active: true)
+    end
     
     def validate_url
       url = URI.parse(self.url)

@@ -4,7 +4,7 @@ module Admin
   # RolesController
   class RolesController < AdminController
     skip_before_action :verify_authenticity_token
-    before_action :set_role, only: %i[show edit update destroy]
+    before_action :set_role, only: %i[show edit update destroy remove]
     before_action :show_history, only: [:index]
     before_action :authorization, except: %i[reload]
     include ObjectQuery
@@ -58,6 +58,11 @@ module Admin
       else
         render :new
       end
+    end
+
+    def remove
+      @role.destroy
+      redirect_to admin_roles_path, notice: actions_messages(@role)
     end
 
     # DELETE /roles/1

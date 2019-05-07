@@ -13,6 +13,10 @@ class RolePolicy < ControllerPolicy
     false
   end
 
+  def remove?
+    true
+  end
+
   def add_permissions?
     keppler_admin? || user_can?(@objects, 'add_permissions')
   end

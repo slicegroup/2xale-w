@@ -14,6 +14,14 @@ module KepplerBanners
     acts_as_paranoid
     validates_presence_of :image, :banner_url
     # validate  :validate_url
+    validate  :check_dimensions, :on => [:create, :update]
+
+    def check_dimensions
+      return if image_cache.nil?
+      if (image.width < 600) || ( image.height < 400)
+        errors.add :image, "Dimensión incorrecta <br/> El tamaño de la imágen cargada es de: #{image.width}x#{image.height}px y no cumple con las dimensiones recomendadas: 600x400px".html_safe
+      end
+    end
 
     def self.index_attributes
       %i[title image]

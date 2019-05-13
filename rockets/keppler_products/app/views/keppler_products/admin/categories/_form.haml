@@ -22,7 +22,10 @@
                   .col-xs-12
                     = f.input :name, as: :string
                   .col-xs-12
-                    = f.input :image, as: :keppler_file, max_size: 200 # , max_size: 225
+                    %label.control-label
+                      = t('activerecord.attributes.image')
+                      (Dimensión mínima: 600x400px - Peso máximo: 200kb)
+                    = f.input :image, as: :keppler_file, max_size: 200, label: false # , max_size: 225
                   .col-xs-12
                     .pull-right
                       = f.button :submit, t('keppler.actions.save'), name: '_save', class: 'btn-primary'

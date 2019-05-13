@@ -26,7 +26,10 @@
               %tbody
                 .form-padding
                   .col-md-12
-                    = f.input :image, as: :keppler_file, max_size: 200
+                    %label.control-label
+                      = t('activerecord.attributes.image')
+                      (Peso máximo: 200kb)
+                    = f.input :image, as: :keppler_file, max_size: 200, label: false
                   .col-md-12
                     = f.input :url, as: :url
                   = f.input :type_ad, label: false

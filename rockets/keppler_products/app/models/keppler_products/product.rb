@@ -18,6 +18,19 @@ module KepplerProducts
     has_many :cotizations
     validates_presence_of :name, :images, :description, :seller, :expiration, :address, :price
     validates_uniqueness_of :name
+    validate  :check_dimensions, :on => [:create, :update]
+
+    def check_dimensions
+      return if images_cache.nil? || cover_cache.nil?
+      if (cover.width < 400) || ( cover.height < 600)
+        errors.add :cover, "Dimensión incorrecta <br/> El tamaño de la imágen cargada es de: #{cover.width}x#{cover.height}px y no cumple con las dimensiones recomendadas: 400x600px".html_safe
+      end
+      images.each_with_index do |image, i|
+        if (image.width < 400) || ( image.height < 400)
+          errors.add :images, "Dimensión incorrecta <br/> El tamaño de la imágen #{i+1} cargada es de: #{image.width}x#{image.height}px y no cumple con las dimensiones recomendadas: 400x400px".html_safe
+        end
+      end
+    end
 
     def self.index_attributes
       %i[name category_id address seller seller_name seller_phone seller_email]

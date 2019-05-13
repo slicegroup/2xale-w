@@ -1,6 +1,6 @@
 = simple_form_for banner, url: admin_banners_banner_toggle_path(banner), method: :post do |f|
   %label
-    - if @objects.where(active: true).count >= 3 && !banner.active  
+    - if @objects.where(active: true).count >= 5 && !banner.active  
       %label.switch
         %input{name: "banner[active]", type: "hidden", value: "false"}
         %input{id: "switch-#{banner.id}", :type => "checkbox"}

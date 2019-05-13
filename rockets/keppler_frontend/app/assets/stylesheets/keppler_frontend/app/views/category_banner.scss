@@ -26,7 +26,8 @@
     @include size(100%);
     border-radius: 0 10px 10px 0;
     object-fit: cover;
-    opacity: 0.9;
+    opacity: 0.6;
+    filter: grayscale(100%);
     position: relative;
     @include respond-to(xs) {
       border-radius: 0;

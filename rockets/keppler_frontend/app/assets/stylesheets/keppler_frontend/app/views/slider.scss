@@ -44,7 +44,6 @@
 
 .banners-box {
   @include size(60%, 100%);
-  background-color: rgba($green, 1);
   position: relative;
   border-radius: 0 10px 10px 0;
   margin-top: 10px;
@@ -57,8 +56,6 @@
     @include size(100%);
     border-radius: 0 10px 10px 0;
     object-fit: cover;
-    filter: grayscale(100%);
-    opacity: 0.6;
     position: relative;
     @include respond-to(xs) {
       border-radius: 0;

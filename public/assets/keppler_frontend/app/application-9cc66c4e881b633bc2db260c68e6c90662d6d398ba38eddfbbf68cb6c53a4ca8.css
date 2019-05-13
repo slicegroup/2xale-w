@@ -1,0 +1,1631 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/* line 1, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about_contact {
+  padding: 50px 0;
+}
+/* line 3, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about_contact .logo {
+  text-align: center;
+}
+/* line 5, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about_contact .logo img {
+  width: 140px;
+  margin-bottom: 40px;
+}
+
+/* line 12, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.contact-list {
+  font-family: "Quicksand";
+  padding-left: 0;
+}
+/* line 15, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.contact-list li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+/* line 20, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.contact-list a {
+  color: #2670ca;
+  transition: all ease-in-out .1s;
+}
+/* line 24, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.contact-list a:hover {
+  color: #a8d42e;
+  text-decoration: none;
+  transition: all ease-in-out .1s;
+}
+
+/* line 32, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.rrss {
+  padding-left: 0;
+  display: inline-flex;
+}
+/* line 35, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.rrss ul {
+  margin-bottom: 0;
+}
+/* line 39, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.rrss li {
+  list-style: none;
+}
+/* line 43, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.rrss a {
+  color: #2670ca;
+  transition: all ease-in-out .1s;
+}
+/* line 47, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.rrss a:hover {
+  color: #a8d42e;
+  text-decoration: none;
+  transition: all ease-in-out .1s;
+}
+/* line 54, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.rrss i {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+/* line 60, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-text {
+  font-family: "Quicksand";
+  font-size: 16px;
+  text-align: center;
+}
+
+/* line 66, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Quicksand";
+}
+/* line 73, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-item i {
+  font-size: 70px;
+  color: #a8d42e;
+  margin-bottom: 10px;
+}
+/* line 79, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-item h1 {
+  margin-bottom: 10px;
+  color: #a8d42e;
+  font-weight: 700;
+  font-size: 25px;
+}
+/* line 86, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-item ul {
+  padding-left: 0;
+}
+/* line 90, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-item li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+/* line 94, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-item li::before {
+  content: '\eed6';
+  font-family: "IcoFont";
+  margin-right: 10px;
+}
+
+/* line 102, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.contact-box {
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(38, 112, 202, 0.3);
+  padding: 30px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 102, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+  .contact-box {
+    margin: 0;
+  }
+}
+
+/* line 112, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/about.scss */
+.about-box {
+  padding: 30px;
+}
+
+/* line 2, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card {
+  font-family: "Quicksand";
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  height: 550px;
+  margin-bottom: 50px;
+  transition: all ease-in-out .3s;
+  position: relative;
+}
+/* line 11, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card:hover {
+  transition: all ease-in-out .3s;
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
+/* line 14, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card:hover .product-footer {
+  transition: all ease-in-out .3s;
+  text-decoration: none;
+  background-color: #2670ca;
+  color: #fff;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 2, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .product-card {
+    height: 400px;
+  }
+}
+/* line 26, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* line 33, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-image .badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+}
+/* line 41, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-price {
+  color: #2670ca;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+/* line 48, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-content {
+  height: 50%;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+/* line 54, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-content small {
+  color: #333333;
+}
+/* line 59, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-content a:hover {
+  text-decoration: none;
+}
+/* line 63, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-content a h4 {
+  font-weight: 500;
+  color: #484848;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 63, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .product-card .product-content a h4 {
+    font-size: 18px;
+  }
+}
+/* line 73, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-footer {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 5px 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #2670ca;
+  padding: 10px;
+  transition: all ease-in-out .3s;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 73, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .product-card .product-footer {
+    text-decoration: none;
+    background-color: #2670ca;
+    color: #fff;
+  }
+}
+/* line 93, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .product-footer .btn-more {
+  font-weight: 700;
+}
+/* line 98, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .counter {
+  display: flex;
+  justify-content: center;
+}
+/* line 102, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .counter ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+/* line 107, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .counter li {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  font-weight: 500;
+  padding-right: 10px;
+  font-size: 13px;
+  color: #484848;
+}
+/* line 116, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.product-card .counter li span {
+  display: block;
+}
+
+/* line 124, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.categories-text {
+  position: relative;
+  height: 100%;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 124, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .categories-text {
+    height: 200px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 124, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .categories-text {
+    height: 200px;
+  }
+}
+/* line 136, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.categories-text span {
+  font-family: "Quicksand";
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 136, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .categories-text span {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 136, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .categories-text span {
+    display: none;
+  }
+}
+/* line 146, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.categories-text .carousel-buttons {
+  position: absolute;
+  bottom: 60px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 146, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .categories-text .carousel-buttons {
+    bottom: 40px;
+  }
+}
+/* line 155, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.categories-text .left, .categories-text .right {
+  background-color: rgba(38, 112, 202, 0.8);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 30px;
+}
+/* line 161, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.categories-text .left:focus, .categories-text .left:hover, .categories-text .right:focus, .categories-text .right:hover {
+  background-color: #2670ca;
+  outline: none;
+  box-shadow: 0 0 0 transparent;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 169, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .categories-carousel, .row-no-margin {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* line 176, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.category-card {
+  height: 500px;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+  padding: 0 15px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 176, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .category-card {
+    padding: 0;
+  }
+}
+/* line 186, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.category-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+/* line 192, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.category-card .category-content {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, transparent 50%);
+  top: 0;
+  height: 100%;
+  width: calc(100% - 30px);
+  position: absolute;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  padding: 50px 20px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 192, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+  .category-card .category-content {
+    height: 100%;
+    width: 100%;
+  }
+}
+/* line 208, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.category-card .category-content:hover {
+  text-decoration: none;
+}
+/* line 212, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.category-card .category-content h4 {
+  text-transform: uppercase;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 28px;
+}
+/* line 219, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/cards.scss */
+.category-card .category-content span {
+  color: #fff;
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* line 1, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category {
+  position: relative;
+}
+/* line 4, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category .search-input {
+  transform: translateY(-50%);
+}
+
+/* line 9, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category-box {
+  height: 250px;
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex !important;
+}
+
+/* line 15, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category-inner {
+  height: 100%;
+  width: 60%;
+  background-color: #469224;
+  position: relative;
+  border-radius: 0 10px 10px 0;
+  margin-top: 10px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 15, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+  .banner-category-inner {
+    width: 100%;
+  }
+}
+/* line 25, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category-inner img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 25, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+  .banner-category-inner img {
+    border-radius: 0;
+  }
+}
+/* line 37, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category-inner .banner-category-mask {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  top: 0;
+  padding: 20px 50px;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 1px 1px 10px rgba(70, 146, 36, 0.5);
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 37, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+  .banner-category-inner .banner-category-mask {
+    border-radius: 0;
+    padding: 20px;
+  }
+}
+/* line 52, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+.banner-category-inner .banner-category-mask h1 {
+  text-transform: uppercase;
+  font-family: "Quicksand";
+  font-weight: 600;
+  color: #fff;
+  width: 70%;
+  font-size: 40px;
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 52, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/category_banner.scss */
+  .banner-category-inner .banner-category-mask h1 {
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* line 42, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+h1.title {
+  font-family: "Quicksand";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+}
+/* line 49, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+h1.title::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: #2670ca;
+  left: 0;
+  bottom: -10px;
+  border-radius: 5px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 42, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  h1.title {
+    font-size: 30px;
+  }
+}
+
+/* line 64, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.products {
+  padding: 50px 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 64, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .products {
+    padding: 60px 5px 50px;
+  }
+}
+
+/* line 72, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.categories {
+  padding: 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 72, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .categories {
+    padding: 50px 10px;
+  }
+}
+
+/* line 79, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.half_banners, .full_banner_ad {
+  padding: 10px 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 79, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .half_banners, .full_banner_ad {
+    padding: 10px;
+  }
+}
+
+/* line 86, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.badge-offer {
+  background-color: #469224;
+  color: #fff;
+}
+
+/* line 91, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.badge-new {
+  background-color: #2670ca;
+  color: #fff;
+}
+
+/* line 96, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.steal-page {
+  display: flex;
+}
+
+/* line 100, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.ad_full {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 100, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .ad_full {
+    height: 400px;
+    width: 100%;
+  }
+}
+
+/* line 114, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.ad_full-product {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 114, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .ad_full-product {
+    height: 400px;
+    width: 100%;
+  }
+}
+
+/* line 128, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.ad_half {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 128, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .ad_half {
+    height: 30vw;
+    width: 100%;
+  }
+}
+
+/* line 138, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.ad_banner_full {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 138, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .ad_banner_full {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    height: 20vw;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 138, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .ad_banner_full {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    height: 20vw;
+    width: 100%;
+  }
+}
+
+/* line 154, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.ad_left {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  width: 100%;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 154, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .ad_left {
+    display: none;
+  }
+}
+
+/* line 162, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer {
+  padding: 50px;
+  background-color: #2670ca;
+  text-align: center;
+  font-family: "Quicksand";
+  color: #fff;
+}
+/* line 170, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .copyright a {
+  color: #a8d42e;
+  font-weight: 700;
+}
+/* line 176, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer img {
+  width: 140px;
+  margin-bottom: 40px;
+}
+/* line 181, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .contact-list {
+  padding-left: 0;
+}
+/* line 183, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .contact-list li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+/* line 188, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .contact-list a {
+  color: #fff;
+  transition: all ease-in-out .1s;
+}
+/* line 192, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .contact-list a:hover {
+  color: #a8d42e;
+  text-decoration: none;
+  transition: all ease-in-out .1s;
+}
+/* line 200, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .rrss {
+  padding-left: 0;
+  display: inline-flex;
+}
+/* line 203, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .rrss ul {
+  margin-bottom: 0;
+}
+/* line 207, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .rrss li {
+  list-style: none;
+}
+/* line 211, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .rrss a {
+  color: #fff;
+  transition: all ease-in-out .1s;
+}
+/* line 215, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .rrss a:hover {
+  color: #a8d42e;
+  text-decoration: none;
+  transition: all ease-in-out .1s;
+}
+/* line 222, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+footer .rrss i {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+/* line 230, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.products-tablet {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 230, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .products-tablet {
+    display: block;
+  }
+}
+
+/* line 238, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.products-mobile {
+  display: none;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 238, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .products-mobile {
+    display: block;
+  }
+}
+
+/* line 246, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.products-desktop {
+  display: block;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 246, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .products-desktop {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 246, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+  .products-desktop {
+    display: none;
+  }
+}
+
+/* line 258, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/main.scss */
+.error-class {
+  color: red;
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-size: 13px;
+}
+
+/* line 1, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.navbar {
+  padding: 10px 50px;
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 1, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+  .navbar {
+    padding: 10px 20px;
+  }
+}
+/* line 8, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.navbar.navbar-variant {
+  box-shadow: 0 0 10px rgba(38, 112, 202, 0.3);
+}
+
+/* line 14, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.navbar-brand img {
+  width: 70px;
+}
+
+/* line 20, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.nav-item .nav-link {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Quicksand";
+  color: #2670ca;
+}
+
+/* line 28, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.dropdown-menu {
+  padding: 20px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Quicksand";
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 28, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+  .dropdown-menu {
+    box-shadow: 0 0 0 transparent;
+    width: 100%;
+    padding: 5px;
+  }
+}
+/* line 39, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.dropdown-menu.show {
+  display: flex;
+}
+/* line 43, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.dropdown-menu .dropdown-subcategory {
+  font-weight: 400;
+  padding: 5px 15px;
+}
+/* line 47, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.dropdown-menu .dropdown-subcategory:hover {
+  color: #2670ca;
+}
+
+/* line 53, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.list-categories {
+  padding-left: 0;
+}
+/* line 55, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.list-categories li {
+  list-style: none;
+}
+
+/* line 60, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.navbar-contact .nav-link {
+  text-transform: inherit;
+  font-weight: 400;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 65, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+  .navbar-collapse {
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    top: 82px;
+    width: 100%;
+    left: 0px;
+    padding: 20px;
+  }
+}
+
+/* line 78, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.navbar-toggler:focus {
+  outline: none;
+}
+/* line 81, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.navbar-toggler span {
+  color: #a8d42e;
+  font-size: 30px;
+}
+
+/* line 88, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.search-navbar .input-group {
+  width: 100% !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+/* line 95, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.search-navbar .form-control {
+  border: 0;
+  font-family: "Quicksand";
+  border-radius: 10px;
+  padding: 6px 20px;
+}
+/* line 101, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.search-navbar .form-control::placeholder {
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+/* line 106, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.search-navbar .form-control:focus {
+  box-shadow: 0 0 0 transparent;
+  border: 2px solid #2670ca;
+}
+/* line 112, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.search-navbar .input-group-prepend {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 60px;
+}
+/* line 117, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/navbar.scss */
+.search-navbar .input-group-prepend .input-group-text {
+  width: 60px;
+  background-color: #2670ca;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  font-size: 18px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 1, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.breadcrumb {
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+/* line 7, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.breadcrumb-item a {
+  font-family: "Quicksand";
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+/* line 14, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "»";
+}
+
+/* line 18, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.slider-nav {
+  padding-left: 0;
+  height: 500px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 18, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .slider-nav {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 18, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .slider-nav {
+    display: none;
+  }
+}
+/* line 30, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.slider-nav li {
+  list-style: none;
+}
+/* line 33, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.slider-nav li img {
+  width: 100%;
+  margin: 5px 0;
+  border: 3px solid transparent;
+  border-radius: 5px;
+}
+/* line 41, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.slider-nav .slick-current img {
+  border: 3px solid transparent;
+  border-color: #2670ca;
+}
+
+/* line 47, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.slider-for {
+  height: 500px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 47, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .slider-for {
+    height: auto;
+  }
+}
+/* line 53, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.slider-for img {
+  border-radius: 5px;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 53, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .slider-for img {
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 53, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .slider-for img {
+    height: auto;
+  }
+}
+
+/* line 68, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.product-right-box {
+  height: 500px;
+  padding: 20px;
+  border-radius: 5px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 68, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .product-right-box {
+    height: auto;
+  }
+}
+
+/* line 78, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.product-title {
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* line 84, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.price-box {
+  margin-top: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* line 91, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.price-box span {
+  color: #333333;
+  font-size: 30px;
+  font-family: "Quicksand";
+  font-weight: 700;
+}
+
+/* line 99, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.btn-product {
+  color: #fff;
+  background-color: #2670ca;
+  font-family: "Quicksand";
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 15px;
+  padding: 5px 20px;
+  height: 40px;
+  margin-top: 10px;
+}
+/* line 110, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.btn-product:hover {
+  background-color: #026cee;
+  color: #fff;
+}
+
+/* line 116, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.product-description {
+  padding: 0 50px 50px 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 116, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .product-description {
+    padding: 50px 0;
+  }
+}
+
+/* line 124, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.product-detail {
+  padding: 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 124, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .product-detail {
+    padding: 50px 10px;
+  }
+}
+
+/* line 132, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.product-related h1.title {
+  font-family: "Quicksand";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+}
+/* line 139, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.product-related h1.title::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: #2670ca;
+  left: 0;
+  bottom: -10px;
+  border-radius: 5px;
+}
+
+/* line 151, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.nav-tabs .nav-link {
+  font-family: "Quicksand";
+  font-weight: 600;
+  color: #333333;
+  border-radius: 5px;
+}
+/* line 157, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.nav-tabs .nav-link.active {
+  color: #2670ca;
+}
+
+/* line 162, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.tab-content {
+  padding: 30px 20px;
+  font-family: "Quicksand";
+}
+
+/* line 167, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.counter-product {
+  display: flex;
+  padding-top: 20px;
+}
+/* line 171, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.counter-product ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+/* line 176, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.counter-product li {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Quicksand";
+  padding-right: 10px;
+  font-size: 15px;
+  color: #484848;
+}
+/* line 186, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.counter-product li span {
+  display: block;
+}
+
+/* line 193, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup {
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* line 199, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup label {
+  padding: 5px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+/* line 211, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup label:before {
+  border-radius: 50%;
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+
+/* line 223, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup label:after {
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: 2px solid #D1D7DC;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: -2px -3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+/* line 242, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup input:checked ~ label {
+  color: #2670ca;
+}
+
+/* line 245, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+
+/* line 250, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup input:checked ~ label:after {
+  background-color: #2670ca;
+  border-color: #2670ca;
+}
+
+/* line 254, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* CHECKBOX CUSTOM */
+/* line 269, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple {
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* line 275, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple label {
+  padding: 5px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+/* line 287, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple label:before {
+  /* border-radius: 50%; */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+
+/* line 299, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple label:after {
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: 2px solid #D1D7DC;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: -2px -3px;
+  /* border-radius: 50%; */
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+/* line 318, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple input:checked ~ label {
+  color: #2670ca;
+}
+
+/* line 321, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+
+/* line 326, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple input:checked ~ label:after {
+  background-color: #2670ca;
+  border-color: #2670ca;
+}
+
+/* line 330, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.inputGroupMultiple input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* line 344, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.question {
+  margin: 15px 0;
+}
+
+/* line 348, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+label {
+  text-transform: uppercase;
+  color: #333333;
+  font-family: "Quicksand";
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* line 356, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+textarea {
+  resize: none;
+}
+
+/* line 360, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.form-control:focus {
+  border: 2px solid #2670ca;
+  box-shadow: 0 0 0 transparent;
+}
+
+/* line 365, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 369, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.modal-dialog {
+  max-width: 60vw;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 369, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+  .modal-dialog {
+    max-width: 95vw;
+  }
+}
+/* line 376, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.modal-dialog .modal-body {
+  padding: 30px;
+}
+/* line 380, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.modal-dialog .modal-content {
+  border: none;
+}
+/* line 385, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.modal-dialog .modal-header h2 {
+  font-family: "Quicksand";
+  font-size: 18px;
+  font-weight: 600;
+  color: #2670ca;
+}
+/* line 392, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.modal-dialog .modal-header .close {
+  color: #2670ca;
+}
+
+/* line 398, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.seller-contact {
+  padding: 20px;
+  width: 100%;
+  margin-top: 25px;
+  box-shadow: 0 0 10px rgba(38, 112, 202, 0.3);
+}
+/* line 404, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.seller-contact h3 {
+  font-family: "Quicksand";
+  font-size: 15px;
+  font-weight: 600;
+  color: #2670ca;
+}
+/* line 411, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/productos.scss */
+.seller-contact dl {
+  font-family: "Quicksand";
+  font-size: 14px;
+}
+
+/* line 1, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home {
+  position: relative;
+}
+
+/* line 5, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider {
+  position: relative;
+}
+/* line 8, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider .slick-dots {
+  bottom: 10%;
+}
+/* line 12, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider .slick-dots li {
+  width: 20px;
+  height: 10px;
+}
+/* line 17, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider .slick-dots li button {
+  width: 20px;
+  height: 10px;
+}
+/* line 21, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider .slick-dots li button::before {
+  width: 20px;
+  height: 10px;
+  content: '';
+  border-radius: 15px;
+  background-color: #2670ca;
+}
+/* line 30, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider .slick-dots li.slick-active {
+  width: 30px;
+}
+/* line 34, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.home-slider .slick-dots li.slick-active button::before {
+  width: 30px;
+}
+
+/* line 39, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banner-slider {
+  height: 450px;
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex !important;
+}
+
+/* line 45, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banners-box {
+  height: 100%;
+  width: 60%;
+  position: relative;
+  border-radius: 0 10px 10px 0;
+  margin-top: 10px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 45, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .banners-box {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+/* line 55, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banners-box .banner-item {
+  height: 100%;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+  object-fit: cover;
+  opacity: 0.9;
+  position: relative;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 55, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .banners-box .banner-item {
+    border-radius: 0;
+  }
+}
+/* line 66, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banners-box .banner-mask {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  top: 0;
+  padding: 20px 50px;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 1px 1px 10px rgba(70, 146, 36, 0.5);
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 66, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .banners-box .banner-mask {
+    border-radius: 0;
+    padding: 20px;
+  }
+}
+/* line 81, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banners-box .banner-mask h1 {
+  text-transform: uppercase;
+  font-family: "Quicksand";
+  font-weight: 600;
+  color: #fff;
+  width: 70%;
+  font-size: 40px;
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 81, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .banners-box .banner-mask h1 {
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+  }
+}
+/* line 96, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banners-box .banner-mask .btn-more {
+  color: #fff;
+  font-family: "Quicksand";
+  font-weight: 600;
+  font-size: 22px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 96, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .banners-box .banner-mask .btn-more {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+/* line 107, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.banners-box .banner-mask .btn-more:hover, .banners-box .banner-mask .btn-more:focus, .banners-box .banner-mask .btn-more:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 115, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-cta {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 115, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .search-cta {
+    display: none;
+  }
+}
+/* line 123, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-cta h1 {
+  font-family: "Quicksand";
+  font-size: 30px;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 100px;
+  margin-right: 50px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 123, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .search-cta h1 {
+    margin-right: 25px;
+    font-size: 25px;
+  }
+}
+
+/* line 138, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50%;
+  padding-right: 50px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  /* line 138, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .search-input {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 138, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+  .search-input {
+    padding-right: 25px;
+  }
+}
+/* line 153, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input .input-group {
+  width: 100% !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+/* line 159, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input .form-control {
+  border: 0;
+  height: 60px;
+  font-family: "Quicksand";
+  border-radius: 10px;
+  padding: 6px 20px;
+}
+/* line 166, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input .form-control::placeholder {
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+/* line 171, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input .form-control:focus {
+  box-shadow: 0 0 0 transparent;
+  border: 2px solid #2670ca;
+}
+/* line 177, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input .input-group-prepend {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 60px;
+}
+/* line 182, /home/castro/Escritorio/Proyectos/2xale-w/rockets/keppler_frontend/app/assets/stylesheets/keppler_frontend/app/views/slider.scss */
+.search-input .input-group-prepend .input-group-text {
+  width: 60px;
+  background-color: #2670ca;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  font-size: 18px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

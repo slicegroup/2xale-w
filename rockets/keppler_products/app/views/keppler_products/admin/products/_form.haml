@@ -42,12 +42,12 @@
                   .col-xs-12
                     = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini' } }
                   .col-xs-12
-                    = f.input :cover, as: :keppler_file, label: t('activerecord.attributes.cover')
+                    = f.input :cover, as: :keppler_file, label: t('activerecord.attributes.cover'), max_size: 200
                   .col-xs-12
                     %p.bold= t('activerecord.attributes.images')
                     - unless @product.errors[:images][0].blank?
                       %p.error-class *Requerido
-                    = f.input :images, as: :keppler_file, multiple: true, label: false # , max_size: 225
+                    = f.input :images, as: :keppler_file, multiple: true, label: false, max_size: 200 # , max_size: 225
                   .col-xs-12
                     .col-xs-6.col-md-12.col-sm-12.col-lg-6.col-sellers
                       %p.bold

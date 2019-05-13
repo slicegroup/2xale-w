@@ -26,7 +26,7 @@
               %tbody
                 .form-padding
                   .col-md-12
-                    = f.input :image, as: :keppler_file
+                    = f.input :image, as: :keppler_file, max_size: 200
                   .col-md-12
                     = f.input :url, as: :url
                   = f.input :type_ad, label: false

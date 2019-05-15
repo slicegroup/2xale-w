@@ -221,7 +221,11 @@
                                   <td align="center" valign="middle" class="em_font1" height="42" style="font-family:'Quicksand', sans-serif; font-size:17px; font-weight:bold; color:#30373b; text-transform:uppercase;">
                                     <span style="color:#2670ca;">Descripción del producto:</span> 
                                     <br>
-                                    <%= @cotization.content %>
+                                    <%- @cotization.content_converter.each do |info| %>
+                                      <p>
+                                        <%= raw info %>
+                                      </p>
+                                    <% end %>
                                   </td>
                                 </tr>
                               </table>

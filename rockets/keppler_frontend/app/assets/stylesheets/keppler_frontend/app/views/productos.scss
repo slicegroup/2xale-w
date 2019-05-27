@@ -11,13 +11,6 @@
   }
 }
 
-.address {
-  font-family: $quicksand;
-  font-weight: $regular;
-  margin-top: 10px;
-  color: #484848;
-}
-
 .breadcrumb-item+.breadcrumb-item::before {
   content: "»";
 }

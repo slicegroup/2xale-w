@@ -7,9 +7,9 @@
     %ul.navbar-nav.mr-auto
       %li.d-block.d-md-none
         .search-navbar
-          %form.form-inline
+          = simple_form_for @product, url: app_search_path(), method: :get, class: 'form-inline' do
             .input-group
-              %input.form-control{ type: 'search', placeholder: 'Buscar' }
+              %input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
               .input-group-prepend
                 %i.icofont-search.input-group-text
       %li.nav-item.dropdown

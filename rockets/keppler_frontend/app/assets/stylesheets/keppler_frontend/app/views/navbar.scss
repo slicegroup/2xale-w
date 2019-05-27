@@ -38,11 +38,19 @@
 
   &.show {
     display: flex;
+
+    @include respond-to(xs) {
+      display: block;
+    }
   }
 
   .dropdown-subcategory {
     font-weight: $regular;
     padding: 5px 15px;
+
+    @include respond-to(xs) {
+      white-space: inherit;
+    }
     
     &:hover {
       color: $blue;

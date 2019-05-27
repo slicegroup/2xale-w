@@ -40,6 +40,10 @@
   @include size(100%, 450px);
   padding-bottom: 20px;
   display: flex !important;
+
+  @include respond-to(xs) {
+    height: 60vw;
+  }
 }
 
 .banners-box {

@@ -35,6 +35,10 @@
               %li
                 %span#minutes
                 Minutos
+        - if @product.seller.eql?('2xale')
+          %p.address
+            Dirección:
+            = @product.address
         .price-box
           %span= number_to_currency(@product.price)
           - if @product.seller.eql?('2xale')
@@ -49,6 +53,8 @@
                 %dd= @product.seller_email
                 %dt Teléfono:
                 %dd= @product.seller_phone
+                %dt Direccion:
+                %dd= @product.address
     .col-lg-3
       = publicity('steal_page', KepplerPublicity::Ad.publicity('product-1', 'steal-page'))
 #modalForm.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modalFormLabel", role: "dialog", tabindex: "-1"}

@@ -6,7 +6,7 @@ module KepplerFrontend
     # End callbacks area (don't delete)
     include FrontsHelper
     before_action :products_status
-    before_action :set_product, only: %i[index category search]
+    before_action :set_product, only: %i[index category search about]
     layout 'layouts/keppler_frontend/app/layouts/application'
 
     # begin keppler

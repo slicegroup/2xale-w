@@ -9,9 +9,15 @@
         .search-navbar
           = simple_form_for @product, url: app_search_path(), method: :get, class: 'form-inline' do
             .input-group
-              %input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
+              %input.form-control#input-responsive{ type: 'search', placeholder: 'Buscar', name: 'q'}
               .input-group-prepend
-                %i.icofont-search.input-group-text
+                %i.icofont-search.input-group-text.search-responsive
+          :javascript
+            $('.search-responsive').click(function(){
+              if ($('#input-responsive').val().length > 0){
+                $('#new_product').submit()
+              }
+            })
       %li.nav-item.dropdown
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
           Categorías

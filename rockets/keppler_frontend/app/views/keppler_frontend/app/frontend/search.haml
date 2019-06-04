@@ -10,7 +10,7 @@
     = simple_form_for @product, url: app_search_path, method: :get, class: 'form-inline' do
       .input-group
         %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
-        .input-group-prepend
+        %button.input-group-prepend{ type: 'submit'}
           %i.icofont-search.input-group-text
 %section.categories
   = publicity('banner', KepplerPublicity::Ad.publicity('category-1', 'banner'))

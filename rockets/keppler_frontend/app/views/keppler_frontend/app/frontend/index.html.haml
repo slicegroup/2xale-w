@@ -13,10 +13,11 @@
         .search-cta
           %h1= banner.search_text
   .search-input
-    = simple_form_for @product, url: app_search_path(), method: :get, class: 'form-inline' do
+    = simple_form_for @product, url: app_search_path(), method: :get, class: 'form-inline' do |f|
       .input-group
         %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
-        .input-group-prepend
+        / = f.submit '', input_html: {class: 'input-group-prepend'}
+        %button.input-group-prepend{ type: 'submit'}
           %i.icofont-search.input-group-text
 %section.products
   %h1.title Productos

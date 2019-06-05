@@ -17,8 +17,9 @@
       .input-group
         %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
         / = f.submit '', input_html: {class: 'input-group-prepend'}
-        %button.input-group-prepend{ type: 'submit'}
-          %i.icofont-search.input-group-text
+        .input-group-prepend
+          %button.btn{ type: 'submit'}
+            %i.icofont-search.input-group-text
 %section.products
   %h1.title Productos
   .row.row-no-margin

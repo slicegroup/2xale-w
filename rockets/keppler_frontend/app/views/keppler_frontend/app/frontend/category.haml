@@ -9,7 +9,8 @@
       .input-group
         %input#search-input.form-control{ type: 'search', placeholder: 'Buscar', name: 'q'}
         .input-group-prepend
-          %i.icofont-search.input-group-text
+          %button.btn{type: "submit"}
+            %i.icofont-search.input-group-text
 %section.categories
   = publicity('banner', KepplerPublicity::Ad.publicity('category-1', 'banner'))
   .row

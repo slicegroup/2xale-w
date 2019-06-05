@@ -183,8 +183,14 @@
     border-bottom-right-radius: 10px;
     width: 60px;
 
-    .input-group-text {
+    button {
       width: 60px;
+      padding: 0;
+      border: none;
+    }
+
+    .input-group-text {
+      @include size(100%, 60px);
       background-color: $blue;
       color: $white;
       border: 0;

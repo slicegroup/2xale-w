@@ -73,6 +73,6 @@ window.setTimeout(function() {
   }
   testAd.remove();
   if (adBlockEnabled) {
-    alert('Por favor, desactiva el ADBlocker ')
+    // alert('Por favor, desactiva el ADBlocker ')
   }
 }, 100);

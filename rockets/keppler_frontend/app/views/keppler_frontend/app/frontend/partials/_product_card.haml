@@ -14,10 +14,11 @@
         .product-price
           %span= number_to_currency(product.price)
         .counter
+          %span Finalizará en:
           %ul
             %li
               %span{id: "days#{product.id}"}
-              Dias
+              Días
             %li
               %span{id: "hours#{product.id}"}
               Horas

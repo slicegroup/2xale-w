@@ -98,10 +98,16 @@
   .counter {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
+    span {
+      color: $dark-gray;
+    }
+    
     ul {
       padding-left: 0;
       margin-bottom: 0;
+      margin-top: 10px;
     }
 
     li {

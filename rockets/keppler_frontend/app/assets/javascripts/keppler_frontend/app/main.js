@@ -1,3 +1,15 @@
+$(window).scroll(function() {
+  $(this).scrollTop() >= 50 ? $("#return-to-top").fadeIn(200) : $("#return-to-top").fadeOut(200)
+})
+
+function returnTop() {
+  $("#return-to-top").click(function() {
+      $("body,html").animate({
+          scrollTop: 0
+      }, 500)
+  })
+}
+
 $(document).ready(function(){
   $('.home-slider').slick({
     slidesToScroll: 1,
@@ -49,3 +61,18 @@ $(document).ready(function(){
       
     }, second)
 });
+
+var adBlockEnabled = false;
+var testAd = document.createElement('div');
+testAd.innerHTML = '&nbsp;';
+testAd.className = 'adsbox';
+document.body.appendChild(testAd);
+window.setTimeout(function() {
+  if (testAd.offsetHeight === 0) {
+    adBlockEnabled = true;
+  }
+  testAd.remove();
+  if (adBlockEnabled) {
+    alert('Por favor, desactiva el ADBlocker ')
+  }
+}, 100);

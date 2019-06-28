@@ -25,10 +25,11 @@
             .badge.badge-offer Oferta
           %h1.product-title= @product.name
           .counter-product
+            %span Finalizará en:
             %ul
               %li
                 %span#days
-                Dias
+                Días
               %li
                 %span#hours
                 Horas
@@ -105,10 +106,11 @@
                 .product-price
                   %span= number_to_currency(product.price)
                 .counter
+                  %span Finalizará en:
                   %ul
                     %li
                       %span{id: "days#{product.id}"}
-                      Dias
+                      Días
                     %li
                       %span{id: "hours#{product.id}"}
                       Horas

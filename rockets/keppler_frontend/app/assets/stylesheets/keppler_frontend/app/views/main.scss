@@ -39,6 +39,38 @@ $bg-dark: rgba(22,21,21, 0.5);
 $border-radius: 15px;
 $border-width: 2px;
 
+
+.return-to-top {
+  background-color: $light-green;
+  border-radius: 35px;
+  bottom: 20px;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+  display: none;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  text-decoration: none;
+  transition: all .3s ease;
+  width: 50px;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover, &:focus, &:visited {
+    text-decoration: none;
+  }
+
+  i { 
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+    position: relative;
+    top: -2px;
+    transition: all .3s ease;
+  }
+}
+
 h1.title {
   font-family: $quicksand;
   font-weight: $bold;

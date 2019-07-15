@@ -1,7 +1,12 @@
 !!!
 %html
-  %body
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}
+    %meta{:name => "description", :content => '2xale'}
+    %meta{:name => "keywords", :content => 'venta, compra'}/
     = set_head
+  %body
     = render 'keppler_frontend/app/partials/navbar'
     = yield
     = render 'keppler_frontend/app/partials/footer'

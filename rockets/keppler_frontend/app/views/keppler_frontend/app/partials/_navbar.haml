@@ -22,7 +22,7 @@
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
           Categorías
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          - @categories.in_groups_of(4).each do |block|
+          - @categories.in_groups_of(6).each do |block|
             %ul.list-categories
               - block.compact.each do |category|
                 %li

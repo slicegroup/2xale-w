@@ -1,14 +1,7 @@
 $(window).scroll(function() {
   $(this).scrollTop() >= 50 ? $("#return-to-top").fadeIn(200) : $("#return-to-top").fadeOut(200)
 })
-
-function returnTop() {
-  $("#return-to-top").click(function() {
-      $("body,html").animate({
-          scrollTop: 0
-      }, 500)
-  })
-}
+//console.warn($(".return-to-top").css('background-color', '#000'))
 
 $(document).ready(function(){
   $('.home-slider').slick({
@@ -62,17 +55,20 @@ $(document).ready(function(){
     }, second)
 });
 
-var adBlockEnabled = false;
-var testAd = document.createElement('div');
-testAd.innerHTML = '&nbsp;';
-testAd.className = 'adsbox';
-document.body.appendChild(testAd);
-window.setTimeout(function() {
-  if (testAd.offsetHeight === 0) {
-    adBlockEnabled = true;
-  }
-  testAd.remove();
-  if (adBlockEnabled) {
-    // alert('Por favor, desactiva el ADBlocker ')
-  }
-}, 100);
+// var adBlockEnabled = false;
+// var testAd = document.createElement('div');
+// testAd.innerHTML = '&nbsp;';
+// testAd.className = 'adsbox';
+// document.body.appendChild(testAd);
+// window.setTimeout(function() {
+//   if (testAd.offsetHeight === 0) {
+//     adBlockEnabled = true;
+//   }
+//   testAd.remove();
+//   if (adBlockEnabled) {
+//     $('.ad_full').css('background-image', "url('assets/keppler_frontend/app/adBlocker_RobaPagina.png')")
+//     $('.ad_full-product').css('background-image', "url('assets/keppler_frontend/app/adBlocker_RobaPagina.png')")
+//     $('.ad_half').css('background-image', "url('assets/keppler_frontend/app/adBlocker_MediaBanner.png')")
+//     $('.ad_banner_full').css('background-image', "url('assets/keppler_frontend/app/adBlocker_Banner.png')")
+//   }
+// }, 100);
